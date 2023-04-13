@@ -18,11 +18,11 @@ public class ExampleJavaMod extends Mod{
         Events.on(ClientLoadEvent.class, e -> {
             //show dialog upon startup
             Time.runTask(10f, () -> {
-                BaseDialog dialog = new BaseDialog("frog");
-                dialog.cont.add("behold").row();
+                BaseDialog dialog = new BaseDialog("shit");
+                dialog.cont.add("Ah shit").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("example-java-mod-frog")).pad(20f).row();
-                dialog.cont.button("I see", dialog::hide).size(100f, 50f);
+                dialog.cont.image(Core.atlas.find("example-java-mod-GTA")).pad(20f).row();
+                dialog.cont.button("Here we go again", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
         });
@@ -30,7 +30,7 @@ public class ExampleJavaMod extends Mod{
 
     @Override
     public void loadContent(){
-        Log.info("Loading some example content.");
+        Log.info("Loading some content i totally made myself.");
     }
 
 }
