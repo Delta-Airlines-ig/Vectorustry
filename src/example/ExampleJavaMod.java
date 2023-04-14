@@ -34,3 +34,16 @@ public class ExampleJavaMod extends Mod{
     }
 
 }
+//i have no clue what im doing i just stole this from some other mods
+    @Override
+    public void loadContent(){
+        EarthLiquids.load();
+        EarthItems.load();
+        EarthBlocks.load();
+        EarthPlanets.load();
+        EarthSectors.load();
+        EarthTechTree.load();
+        
+    }
+
+}
