@@ -29,17 +29,7 @@ public class IdkMod extends Mod{
         });
     }
 
-    @Override
-    public void loadContent(){
-        Log.info("Loading some content i totally made myself.");
-              //  EarthLiquids.load();
-        EarthItems.load();
-        EarthBlocks.load();
-        EarthPlanets.load();
-     //   EarthSectors.load();
-     //   EarthTechTree.load();
-        
-    }
+//here?
 
 }
 //i have no clue what im doing i just stole this from some other mods
@@ -54,4 +44,14 @@ public class IdkMod extends Mod{
         
    // }
 //}
-
+    @Override
+    public void loadContent(){
+        Log.info("Loading some content i totally made myself.");
+              //  EarthLiquids.load();
+        EarthItems.load();
+        EarthBlocks.load();
+        EarthPlanets.load();
+     //   EarthSectors.load();
+     //   EarthTechTree.load();
+        
+    }
