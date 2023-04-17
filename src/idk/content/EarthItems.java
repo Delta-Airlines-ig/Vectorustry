@@ -14,8 +14,8 @@ public class EarthItems{
     //other things
     iron, lithium, tin, steel, stone;
   //add voltite alloys
-
-    public static void load() {
+//static here? \/
+    public void load() {
        // voltite = new Item("voltite", Color.valueOf("00f0ec")){{
                 //description = "seemingly magical substance. holds alot of charge and will react violently with itself in certain conditions. when alloyed with metals, they become far more durable for some reason. this was discovered hundreds of years ago but was never published for unknown reasons, we only know this because of some old documents found aboard the spacecraft that crashed on Serpulo.";
                 //charge = 9.5f;
