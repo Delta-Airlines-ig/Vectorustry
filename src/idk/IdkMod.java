@@ -8,6 +8,7 @@ import mindustry.content.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
+import mindustry.mod.Mods.*;
 import mindustry.ui.dialogs.*;
 
 public class IdkMod extends Mod{
