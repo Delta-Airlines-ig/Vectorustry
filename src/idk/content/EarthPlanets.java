@@ -20,7 +20,7 @@ public class EarthPlanets{
                 atmosphereRadIn = 0.05f;
                 tidalLock = true;
                 hasAtmosphere = true;
-                generator = new idkGenerator();
+                //generator = new idkGenerator();
                 meshLoader = () -> new HexMesh(this, 5);
                 startSector = 1;
                 bloom = true;
