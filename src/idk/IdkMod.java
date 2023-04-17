@@ -22,7 +22,7 @@ public class IdkMod extends Mod{
                 BaseDialog dialog = new BaseDialog("shit");
                 dialog.cont.add("Ah shit").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("example-java-mod-GTA")).pad(20f).row();
+                dialog.cont.image(Core.atlas.find("example-java-mod-GTA.png")).pad(20f).row();
                 dialog.cont.button("Here we go again", dialog::hide).size(150f, 60f);
                 dialog.show();
             });
@@ -34,7 +34,7 @@ public class IdkMod extends Mod{
     public void loadContent(){
         Log.info("Loading some content i totally made myself.");
               //  EarthLiquids.load();
-       //EarthItems.load();
+       EarthItems.load();
        // EarthBlocks.load();
       //  EarthPlanets.load();
      //   EarthSectors.load();
