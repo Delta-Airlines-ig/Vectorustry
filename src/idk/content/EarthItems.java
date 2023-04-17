@@ -1,4 +1,4 @@
-package Idk.content;
+package idk.content;
 
 import arc.*;
 import arc.graphics.*;
