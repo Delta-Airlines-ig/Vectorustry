@@ -22,11 +22,11 @@ public class EarthPlanets{
               //  hasAtmosphere = true;
                 //generator = new idkGenerator();
               //  meshLoader = () -> new HexMesh(this, 5);
-              //  startSector = 1;
-              //  bloom = true;
-              //  allowSectorInvasion = true;
-              //  allowWaves = true;
-              //  accessible = true;
+                startSector = 1;
+                bloom = true;
+                allowSectorInvasion = true;
+                allowWaves = true;
+                accessible = true;
                 //defaultCore = "fortress";
             }};
         }
