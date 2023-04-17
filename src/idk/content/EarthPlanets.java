@@ -14,19 +14,16 @@ public class EarthPlanets{
         try{
           //placeholder name ig idk a good planet name
             earth = new Planet("earth?", Planets.sun, 1f, 2); {{
-               // atmosphereColor = Color.gray.cpy();
-               // landCloudColor = Color.clear.cpy();
-               // atmosphereRadOut = 0.5f;
-               // atmosphereRadIn = 0.05f;
-               // tidalLock = true;
-              //  hasAtmosphere = true;
-                //generator = new idkGenerator();
-              //  meshLoader = () -> new HexMesh(this, 5);
+                atmosphereColor = Color.gray.cpy();
+                landCloudColor = Color.clear.cpy();
+                atmosphereRadOut = 0.5f;
+                atmosphereRadIn = 0.05f;
+                tidalLock = true;
+                hasAtmosphere = true;
+           //     generator = new SharMoonGenerator();
+                meshLoader = () -> new HexMesh(this, 5);
                 startSector = 1;
-                bloom = true;
-                allowSectorInvasion = true;
-                allowWaves = true;
-                accessible = true;
+                bloom = false;
                 //defaultCore = "fortress";
             }};
         }
