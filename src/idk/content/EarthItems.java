@@ -24,7 +24,7 @@ public class EarthItems{
 
 
       
-        iron = new Item("iron", Pal2.ice){{
+        iron = new Item("iron"){{
             flammability = 0f;
             explosiveness = 0f;
             hardness = 0;
