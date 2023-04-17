@@ -625,10 +625,11 @@ public class idkGenerator extends PlanetGenerator {
         });
 //imma just made the difficulty like 10 everywhere just to see what happense
        // float difficulty = sector.threat;
+                float difficulty = 10;
         ints.clear();
         ints.ensureCapacity(width * height / 4);
 
-        int ruinCount = rand.random(-2, -1); //disabled ruins
+        int ruinCount = rand.random(0, 10); //disabled ruins
         /*
         if(ruinCount > 0){
             int padding = 25;
