@@ -7,7 +7,7 @@ import mindustry.content.*;
 import mindustry.graphics.g3d.*;
 import mindustry.type.*;
 
-public class MindyPlanets{
+public class EarthPlanets{
     public static Planet earth;
 
     public static void load(){
