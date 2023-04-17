@@ -3,6 +3,7 @@ package idk.content;
 import arc.graphics.*;
 import arc.util.*;
 //import idk.planets.*;
+import mindustry.maps.planet.*;
 import mindustry.content.*;
 import mindustry.graphics.g3d.*;
 import mindustry.type.*;
