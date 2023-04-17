@@ -27,7 +27,7 @@ public class MindyPlanets{
                 allowSectorInvasion = true;
                 allowWaves = true;
                 accessible = true;
-                defaultCore = "fortress";
+                //defaultCore = "fortress";
             }};
         }
         catch(Exception e){
