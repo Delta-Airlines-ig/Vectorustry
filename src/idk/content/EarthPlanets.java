@@ -13,7 +13,7 @@ public class EarthPlanets{
     public static void load(){
         try{
           //placeholder name ig idk a good planet name
-            earth = new Planet("earth?", Planets.sun, 1f, 2); {{
+            earth = new Planet("earth?", Planets.sun, 1f, 2) {{
                 atmosphereColor = Color.gray.cpy();
                 landCloudColor = Color.clear.cpy();
                 atmosphereRadOut = 0.5f;
