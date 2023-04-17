@@ -45,6 +45,6 @@ public class ExampleJavaMod extends Mod{
      //   EarthSectors.load();
      //   EarthTechTree.load();
         
-    }
+    };
 }
 
