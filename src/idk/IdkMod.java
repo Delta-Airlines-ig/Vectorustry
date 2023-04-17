@@ -2,7 +2,7 @@ package idk;
 
 import arc.*;
 import arc.util.*;
-import idk.sec.idk.content.*;
+import idk.content.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
