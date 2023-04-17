@@ -12,7 +12,7 @@ import mindustry.ui.dialogs.*;
 
 public class IdkMod extends Mod{
 
-    public ExampleJavaMod(){
+    public IdkMod(){
         Log.info("Loaded ExampleJavaMod constructor.");
 
         //listen for game load event
