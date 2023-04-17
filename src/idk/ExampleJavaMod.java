@@ -23,7 +23,7 @@ public class ExampleJavaMod extends Mod{
                 dialog.cont.add("Ah shit").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
                 dialog.cont.image(Core.atlas.find("example-java-mod-GTA")).pad(20f).row();
-                dialog.cont.button("Here we go again", dialog::hide).size(100f, 60f);
+                dialog.cont.button("Here we go again", dialog::hide).size(150f, 60f);
                 dialog.show();
             });
         });
@@ -32,19 +32,26 @@ public class ExampleJavaMod extends Mod{
     @Override
     public void loadContent(){
         Log.info("Loading some content i totally made myself.");
-    }
-
-}
-//i have no clue what im doing i just stole this from some other mods
-    @Override
-    public void loadContent(){
-      //  EarthLiquids.load();
+              //  EarthLiquids.load();
         EarthItems.load();
         EarthBlocks.load();
         EarthPlanets.load();
      //   EarthSectors.load();
      //   EarthTechTree.load();
         
-    };
+    }
+
+}
+//i have no clue what im doing i just stole this from some other mods
+  //  @Override
+  //  public void loadContent(){
+      //  EarthLiquids.load();
+   //     EarthItems.load();
+   //     EarthBlocks.load();
+   //     EarthPlanets.load();
+     //   EarthSectors.load();
+     //   EarthTechTree.load();
+        
+   // }
 }
 
