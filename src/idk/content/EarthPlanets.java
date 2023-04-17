@@ -24,7 +24,7 @@ public class EarthPlanets{
               //  meshLoader = () -> new HexMesh(this, 5);
                 startSector = 1;
                 accessible = true;
-                sectorSeed = -1f;
+                sectorSeed = -1;
              //   bloom = false;
                 //defaultCore = "fortress";
                 
