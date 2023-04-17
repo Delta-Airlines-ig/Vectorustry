@@ -3,7 +3,7 @@ package idk.content;
 import arc.graphics.*;
 import arc.util.*;
 //import idk.planets.*;
-import mindustry.maps.generator.*;
+import mindustry.maps.generators.PlanetGenerator;
 import mindustry.content.*;
 import mindustry.graphics.g3d.*;
 import mindustry.type.*;
