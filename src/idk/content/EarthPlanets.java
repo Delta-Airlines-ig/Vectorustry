@@ -3,7 +3,7 @@ package idk.content;
 import arc.graphics.*;
 import arc.util.*;
 //import idk.planets.*;
-import mindustry.maps.planet.*;
+import mindustry.maps.generator.*;
 import mindustry.content.*;
 import mindustry.graphics.g3d.*;
 import mindustry.type.*;
@@ -23,7 +23,7 @@ public class EarthPlanets{
               //  hasAtmosphere = true;
               //  generator = new idkGenerator();
                 //placeholder
-                 generator = new SerpuloPlanetGenerator();
+                 generator = new PlanetGenerator();
               //  meshLoader = () -> new HexMesh(this, 5);
                 startSector = 1;
                 accessible = true;
