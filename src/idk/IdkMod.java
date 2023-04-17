@@ -2,7 +2,7 @@ package idk;
 
 import arc.*;
 import arc.util.*;
-import idk.content.*;
+import idk.content.EarthItems;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
