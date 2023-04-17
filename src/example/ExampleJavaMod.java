@@ -2,6 +2,7 @@ package example;
 
 import arc.*;
 import arc.util.*;
+import idk.content.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
