@@ -20,7 +20,9 @@ public class EarthPlanets{
                // atmosphereRadIn = 0.05f;
                // tidalLock = true;
               //  hasAtmosphere = true;
-           //     generator = new SharMoonGenerator();
+              //  generator = new idkGenerator();
+                //placeholder
+                 generator = new SerpuloPlanetGenerator();
               //  meshLoader = () -> new HexMesh(this, 5);
                 startSector = 1;
                 accessible = true;
