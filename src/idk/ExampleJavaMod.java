@@ -33,8 +33,6 @@ public class ExampleJavaMod extends Mod{
     public void loadContent(){
         Log.info("Loading some content i totally made myself.");
     }
-
-}
 //i have no clue what im doing i just stole this from some other mods
     @Override
     public void loadContent(){
@@ -46,5 +44,7 @@ public class ExampleJavaMod extends Mod{
      //   EarthTechTree.load();
         
     }
+
+}
 
 }
