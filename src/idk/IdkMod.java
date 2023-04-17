@@ -1,4 +1,4 @@
-package example;
+package idk;
 
 import arc.*;
 import arc.util.*;
@@ -10,7 +10,7 @@ import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
-public class ExampleJavaMod extends Mod{
+public class IdkMod extends Mod{
 
     public ExampleJavaMod(){
         Log.info("Loaded ExampleJavaMod constructor.");
