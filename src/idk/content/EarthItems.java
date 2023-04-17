@@ -12,7 +12,7 @@ public class EarthItems{
   //add voltite alloys
 
     public static void load(){
-        voltite = new Item("voltite", Color.valueOf("00f0ec")){
+        voltite = new Item("voltite", Color.valueOf("00f0ec")){{
                 //description = "seemingly magical substance. holds alot of charge and will react violently with itself in certain conditions. when alloyed with metals, they become far more durable for some reason. this was discovered hundreds of years ago but was never published for unknown reasons, we only know this because of some old documents found aboard the spacecraft that crashed on Serpulo.";
                 //charge = 9.5f;
                 //radioactivity = 0f;
@@ -20,7 +20,7 @@ public class EarthItems{
                 //flammability = 0f;
                 //cost = 0.1f;
                 //hardness = 15;
-        };
+        }};
 
 
       
