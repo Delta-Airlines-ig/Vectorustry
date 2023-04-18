@@ -82,20 +82,7 @@ public class placeholdergen extends PlanetGenerator{
             any = true;
         }
 
-        if(noise < 0.16){
-            for(Ptile other : tile.tiles){
-                var osec = sector.planet.getSector(other);
-
-                //no sectors near start sector!
-                if(
-                    osec.id == sector.planet.startSector || //near starting sector
-                    osec.generateEnemyBase && poles < 0.85 || //near other base
-                    (sector.preset != null && noise < 0.11) //near preset
-                ){
-                    return;
-                }
-            }
-        }
+     
 
         sector.generateEnemyBase = any;
     }
@@ -237,7 +224,7 @@ public class placeholdergen extends PlanetGenerator{
             }
         }
 
-        cells(4);
+        cells(3);
         distort(10f, 12f);
 
         float constraint = 1.3f;
