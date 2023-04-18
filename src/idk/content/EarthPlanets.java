@@ -30,6 +30,7 @@ public class EarthPlanets{
                 sectorSeed = -1;
                bloom = false;
                 //defaultCore = "fortress";
+                defaultCore = "fortress";
                 
             }};
         }
