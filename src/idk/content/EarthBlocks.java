@@ -31,7 +31,7 @@ public class EarthBlocks{
     //environment
     public static Block Redsand, ExposedStone, ExposedStoneWall, RedishStoneWall, RedStonewall, RedStone, RedishStone,
     //ores
-    oreIron, oreAluminum, oreLithium, oreTin, oreUranium //not done with uranium
+    oreIron, oreAluminum, oreLithium, oreTin, oreUranium, //not done with uranium
     //walls
     leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge,
     //drills
