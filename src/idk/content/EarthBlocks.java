@@ -104,10 +104,7 @@ public class EarthBlocks{
             requirements(Category.turret, with(Items.copper, 30, EarthItems.Iron, 35));
 
             range = 130f; //must be set before ammo()
-            ammo(
-                    Items.copper, new BasicBulletType(6, 5f),
-                    EarthItems.Iron, new BasicBulletType(5, 6f),
-            );
+            ammo(Items.copper, new BasicBulletType(6, 5f), EarthItems.Iron, new BasicBulletType(5, 6f));
             health = 100;
             size = 1;
             reload = 30f;
@@ -120,7 +117,7 @@ public class EarthBlocks{
             range = 130f; //must be set before ammo()
             ammo(
                     Items.copper, new BasicBulletType(9, 7f),
-                    EarthItems.Iron, new BasicBulletType(7, 9f),
+                    EarthItems.Iron, new BasicBulletType(7, 9f)
             );
             health = 300;
             size = 1;
@@ -131,7 +128,7 @@ public class EarthBlocks{
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
             requirements(Category.crafting, with(EarthItems.iron, 65, Items.copper, 40, Items.lead, 60, EarthItems.stone, 50));
-            outputItem(EarthItems.steel, 1)
+            outputItem(EarthItems.steel, 1);
             craftTime = 120f;
             size = 2;
             hasPower = true;
@@ -180,7 +177,7 @@ public class EarthBlocks{
         drillMechanised = new Drill("drill-mechanised"){{
             itemCapacity = 25;
             hasPower = false;
-          tier = 1
+          tier = 1;
             requirements(Category.production, with(Items.copper, 30, EarthItems.iron, 20, EarthItems.stone, 10));
         }};
 
@@ -188,7 +185,7 @@ public class EarthBlocks{
             size = 2;
             itemCapacity = 50;
             mineSpeed = 3.5f;
-            tier = 2
+            tier = 2;
             requirements(Category.production, with(Items.copper, 135, EarthItems.iron, 90, Items.silicon, 90, EarthItems.lithium, 45, EarthItems.tin, 15, EarthItems.steel, 30));
         }};
            drillModernised = new Drill("drill-modernised"){{
@@ -196,7 +193,7 @@ public class EarthBlocks{
             itemCapacity = 50;
             mineSpeed = 4.5f;
             hasPower = true;
-            tier = 3
+            tier = 3;
             consumePower(5.6f);
             requirements(Category.production, with(Items.copper, 175, EarthItems.iron, 120, Items.silicon, 100, EarthItems.tin, 45, EarthItems.lithium, 60, Earthitems.steel, 60, EarthItems.voltite, 25));
         }};
