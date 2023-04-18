@@ -17,14 +17,14 @@ public class EarthPlanets{
             earth = new Planet("earth?", Planets.sun, 1f, 2) {{
                 //atmosphereColor = Color.gray.cpy();
                 //landCloudColor = Color.clear.cpy();
-                atmosphereRadOut = 0.5f;
-                atmosphereRadIn = 0.05f;
+              //  atmosphereRadOut = 0.5f;
+              //  atmosphereRadIn = 0.05f;
                // tidalLock = true;
-                hasAtmosphere = true;
+               // hasAtmosphere = true;
               //  generator = new idkGenerator();
                 //placeholder
                  generator = new placeholdergen();
-                meshLoader = () -> new HexMesh(this, 12);
+                meshLoader = () -> new HexMesh(this, 4);
                 startSector = 1;
                 accessible = true;
                 sectorSeed = -1;
