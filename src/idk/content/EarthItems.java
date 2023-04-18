@@ -12,7 +12,7 @@ public class EarthItems{
         //voltite
         voltite, 
     //other things
-    iron, lithium, tin, steel, stone;
+    iron, lithium, tin, steel, stone, aluminum;
   //add voltite alloys
 //static here? \/
     public static void load(){
@@ -54,6 +54,9 @@ public class EarthItems{
             flammability = 0f;
             cost = 2;
         }};
-
+        aluminum = new Item("aluminum", Color.valueOf("ec83af")){{
+            flammability = 0f;
+            cost = 1;
+        }};
     }
 }
