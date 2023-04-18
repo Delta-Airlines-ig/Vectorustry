@@ -2,7 +2,7 @@ package idk.content;
 
 import arc.graphics.*;
 import arc.util.*;
-//import idk.planets.*;
+import idk.planets.*;
 import mindustry.maps.generators.PlanetGenerator;
 import mindustry.content.*;
 import mindustry.graphics.g3d.*;
@@ -23,7 +23,7 @@ public class EarthPlanets{
               //  hasAtmosphere = true;
               //  generator = new idkGenerator();
                 //placeholder
-                 generator = new PlanetGenerator();
+                 generator = new placeholdergen();
               //  meshLoader = () -> new HexMesh(this, 5);
                 startSector = 1;
                 accessible = true;
