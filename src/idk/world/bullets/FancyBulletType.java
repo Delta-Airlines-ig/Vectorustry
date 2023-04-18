@@ -36,35 +36,4 @@ public class FancyBulletType extends BulletType{
     public FancyBulletType(){
         this(1f, 1f, "bullet");
     }
-
-    @Override
-    public void load(){
-        super.load();
-
-        backRegion = Core.atlas.find(backSprite == null ? (sprite + "-back") : backSprite);
-        frontRegion = Core.atlas.find(sprite);
-    }
-
-    @Override
-    public void draw(Bullet b){
-        super.draw(b);
-        float shrink = shrinkInterp.apply(b.fout());
-        float height = this.height * ((1f - shrinkY) + shrinkY * shrink);
-        float width = this.width * ((1f - shrinkX) + shrinkX * shrink);
-        float offset = -90 + (spin != 0 ? Mathf.randomSeed(b.id, 360f) + b.time * spin : 0f) + rotationOffset;
-
-        Color mix = Tmp.c1.set(mixColorFrom).lerp(mixColorTo, b.fin());
-
-        Draw.mixcol(mix, mix.a);
-
-        if(backRegion.found()){
-            Draw.color(backColor);
-            Draw.rect(backRegion, b.x, b.y, width, height, b.rotation() + offset);
-        }
-
-        Draw.color(frontColor);
-        Draw.rect(frontRegion, b.x, b.y, width, height, b.rotation() + offset);
-
-        Draw.reset();
-    }
 }
