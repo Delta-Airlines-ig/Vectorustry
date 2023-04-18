@@ -23,17 +23,17 @@ public class FancyBulletType extends BulletType{
     public TextureRegion backRegion;
     public TextureRegion frontRegion;
 
-    public BasicBulletType(float speed, float damage, String bulletSprite){
+    public FancyBulletType(float speed, float damage, String bulletSprite){
         super(speed, damage);
         this.sprite = bulletSprite;
     }
     
-    public BasicBulletType(float speed, float damage){
+    public FancyBulletType(float speed, float damage){
         this(speed, damage, "bullet");
     }
 
     /** For mods. */
-    public BasicBulletType(){
+    public FancyBulletType(){
         this(1f, 1f, "bullet");
     }
 
