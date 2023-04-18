@@ -50,7 +50,7 @@ public class EarthBlocks{
             albedo = 0.5f;
         }};
         ExposedStone = new Floor("exposed-stone"){{
-            itemDrop = EarthItems.Stone; 
+            itemDrop = EarthItems.stone; 
             playerUnmineable = true;
             variants = 0;
             albedo = 0.5f;
@@ -79,32 +79,32 @@ public class EarthBlocks{
         //endregion
 
         //ores
-        oreIron = new OreBlock(EarthItems.Iron){{
+        oreIron = new OreBlock(EarthItems.iron){{
             oreDefault = false;
             oreThreshold = 0.841f;
             oreScale = 25.580953f;
         }};
-        oreAluminum = new OreBlock(EarthItems.Aluminum){{
+        oreAluminum = new OreBlock(EarthItems.aluminum){{
             oreDefault = false;
             oreThreshold = 0.849f;
             oreScale = 15.580953f;
         }};
-        oreLithium = new OreBlock(EarthItems.Lithium){{
+        oreLithium = new OreBlock(EarthItems.lithium){{
             oreDefault = false;
             oreThreshold = 0.869f;
             oreScale = 10.580953f;
         }};
-        oreTin = new OreBlock(EarthItems.Tin){{
+        oreTin = new OreBlock(EarthItems.tin){{
             oreDefault = false;
             oreThreshold = 0.879f;
             oreScale = 9.580953f;
         }};
         //turrets
         solo = new ItemTurret("solo"){{
-            requirements(Category.turret, with(Items.copper, 30, EarthItems.Iron, 35));
+            requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
 
             range = 130f; //must be set before ammo()
-            ammo(Items.copper, new BasicBulletType(6, 5f), EarthItems.Iron, new BasicBulletType(5, 6f));
+            ammo(Items.copper, new BasicBulletType(6, 5f), EarthItems.iron, new BasicBulletType(5, 6f));
             health = 100;
             size = 1;
             reload = 30f;
@@ -112,7 +112,7 @@ public class EarthBlocks{
             shootCone = 30f;
         }};
         trio = new ItemTurret("trio"){{
-            requirements(Category.turret, with(Items.copper, 30, MindyItems.scalarRaw, 35, Items.silicon, 8));
+            requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35, Items.silicon, 8));
 
             range = 130f; //must be set before ammo()
             ammo(
