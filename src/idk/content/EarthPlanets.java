@@ -29,8 +29,8 @@ public class EarthPlanets{
                 accessible = true;
                 sectorSeed = -1;
                bloom = false;
-                //defaultCore = "fortress";
-                defaultCore = "coreShard";
+                //defaultCore = fortress;
+                defaultCore = coreShard;
                 
             }};
         }
