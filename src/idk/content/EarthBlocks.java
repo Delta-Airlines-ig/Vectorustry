@@ -104,7 +104,7 @@ public class EarthBlocks{
             requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
 
             range = 130f; //must be set before ammo()
-            ammo(Items.copper, new BasicBulletType(6, 5f), EarthItems.iron, new BasicBulletType(5, 6f));
+            ammo(Items.copper, new BasicBulletType(6f, 5f), EarthItems.iron, new BasicBulletType(5f, 6f));
             health = 100;
             size = 1;
             reload = 30f;
@@ -116,8 +116,8 @@ public class EarthBlocks{
 
             range = 130f; //must be set before ammo()
             ammo(
-                    Items.copper, new BasicBulletType(9, 7f),
-                    EarthItems.Iron, new BasicBulletType(7, 9f)
+                    Items.copper, new BasicBulletType(9f, 7f),
+                    EarthItems.iron, new BasicBulletType(7f, 9f)
             );
             health = 300;
             size = 1;
@@ -138,7 +138,7 @@ public class EarthBlocks{
             solid = true;
 
             consumePower(1.5f);
-            consumeItems(EarthItems.steel, 5, Items.coal, 2);
+            consumeItems[EarthItems.steel, 5, Items.coal, 2];
 
         }};
 //walls
