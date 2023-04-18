@@ -138,7 +138,7 @@ public class EarthBlocks{
             solid = true;
 
             consumePower(1.5f);
-            consumeItems[EarthItems.steel, 5, Items.coal, 2];
+            consumeItems(with(Items.coal, 2, EarthItems.iron, 5));
 
         }};
 //walls
