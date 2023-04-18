@@ -102,9 +102,21 @@ public class EarthBlocks{
         //turrets
         solo = new ItemTurret("solo"){{
             requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
-
-            range = 130f; //must be set before ammo()
-            ammo(Items.copper, new BasicBulletType(6f, 5f), EarthItems.iron, new BasicBulletType(5f, 6f));
+            ammo(
+                Items.copper,  new BasicBulletType(6f, 5){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                    ammoMultiplier = 2;
+                }},
+                EarthItems.iron, new BasicBulletType(5f, 6){{
+                    width = 9f;
+                    height = 12f;
+                    reloadMultiplier = 0.6f;
+                    ammoMultiplier = 4;
+                    lifetime = 60f;
+                }}
+            );
             health = 100;
             size = 1;
             reload = 30f;
@@ -113,11 +125,20 @@ public class EarthBlocks{
         }};
         trio = new ItemTurret("trio"){{
             requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35, Items.silicon, 8));
-
-            range = 130f; //must be set before ammo()
-            ammo(
-                    Items.copper, new BasicBulletType(9f, 7f),
-                    EarthItems.iron, new BasicBulletType(7f, 9f)
+                        ammo(
+                Items.copper,  new BasicBulletType(9f, 7){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                    ammoMultiplier = 2;
+                }},
+                EarthItems.iron, new BasicBulletType(7f, 9){{
+                    width = 9f;
+                    height = 12f;
+                    reloadMultiplier = 0.6f;
+                    ammoMultiplier = 4;
+                    lifetime = 60f;
+                }}
             );
             health = 300;
             size = 1;
@@ -128,7 +149,7 @@ public class EarthBlocks{
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
             requirements(Category.crafting, with(EarthItems.iron, 65, Items.copper, 40, Items.lead, 60, EarthItems.stone, 50));
-            outputItem(EarthItems.steel, 1);
+            outputItem = new ItemStack(EarthItems.steel, 1);
             craftTime = 120f;
             size = 2;
             hasPower = true;
@@ -177,6 +198,7 @@ public class EarthBlocks{
         drillMechanised = new Drill("drill-mechanised"){{
             itemCapacity = 25;
             hasPower = false;
+                        drillTime = 500;
           tier = 1;
             requirements(Category.production, with(Items.copper, 30, EarthItems.iron, 20, EarthItems.stone, 10));
         }};
@@ -184,18 +206,18 @@ public class EarthBlocks{
         drillElectric = new Drill("drill-electric"){{
             size = 2;
             itemCapacity = 50;
-            mineSpeed = 3.5f;
+            drillTime = 300;
             tier = 2;
             requirements(Category.production, with(Items.copper, 135, EarthItems.iron, 90, Items.silicon, 90, EarthItems.lithium, 45, EarthItems.tin, 15, EarthItems.steel, 30));
         }};
            drillModernised = new Drill("drill-modernised"){{
             size = 3;
             itemCapacity = 50;
-            mineSpeed = 4.5f;
             hasPower = true;
+            drillTime = 150;
             tier = 3;
             consumePower(5.6f);
-            requirements(Category.production, with(Items.copper, 175, EarthItems.iron, 120, Items.silicon, 100, EarthItems.tin, 45, EarthItems.lithium, 60, Earthitems.steel, 60, EarthItems.voltite, 25));
+            requirements(Category.production, with(Items.copper, 175, EarthItems.iron, 120, Items.silicon, 100, EarthItems.tin, 45, EarthItems.lithium, 60, EarthItems.steel, 60, EarthItems.voltite, 25));
         }};
 
     
