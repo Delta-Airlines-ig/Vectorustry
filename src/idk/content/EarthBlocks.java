@@ -103,13 +103,13 @@ public class EarthBlocks{
         solo = new ItemTurret("solo"){{
             requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
             ammo(
-                Items.copper,  new BasicBulletType(6f, 5){{
+                Items.copper,  new FancyBulletType(6f, 5){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
                     ammoMultiplier = 2;
                 }},
-                EarthItems.iron, new BasicBulletType(5f, 6){{
+                EarthItems.iron, new FancyBulletType(5f, 6){{
                     width = 9f;
                     height = 12f;
                     reloadMultiplier = 0.6f;
@@ -126,13 +126,13 @@ public class EarthBlocks{
         trio = new ItemTurret("trio"){{
             requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35, Items.silicon, 8));
                         ammo(
-                Items.copper,  new BasicBulletType(9f, 7){{
+                Items.copper,  new FancyBulletType(9f, 7){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
                     ammoMultiplier = 2;
                 }},
-                EarthItems.iron, new BasicBulletType(7f, 9){{
+                EarthItems.iron, new FancyBulletType(7f, 9){{
                     width = 9f;
                     height = 12f;
                     reloadMultiplier = 0.6f;
