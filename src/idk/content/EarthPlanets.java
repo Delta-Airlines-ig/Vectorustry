@@ -24,11 +24,11 @@ public class EarthPlanets{
               //  generator = new idkGenerator();
                 //placeholder
                  generator = new placeholdergen();
-              //  meshLoader = () -> new HexMesh(this, 5);
+                meshLoader = () -> new HexMesh(this, 5);
                 startSector = 1;
                 accessible = true;
                 sectorSeed = -1;
-             //   bloom = false;
+               bloom = false;
                 //defaultCore = "fortress";
                 
             }};
