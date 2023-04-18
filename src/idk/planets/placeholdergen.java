@@ -9,6 +9,7 @@ import arc.util.noise.*;
 import mindustry.ai.*;
 import mindustry.ai.BaseRegistry.*;
 import mindustry.content.*;
+import idk.content.*;
 import mindustry.game.*;
 import mindustry.graphics.g3d.PlanetGrid.*;
 import mindustry.maps.generators.*;
@@ -29,7 +30,7 @@ public class placeholdergen extends PlanetGenerator{
 
     Block[][] arr =
     {
-    {Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone},
+    {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone},
     {Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone, Blocks.stone},
     {Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone, Blocks.stone},
     {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.snow, Blocks.iceSnow, Blocks.ice},
@@ -398,7 +399,7 @@ public class placeholdergen extends PlanetGenerator{
             });
         }
 
-        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead);
+        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, EarthBlocks.oreIron);
         float poles = Math.abs(sector.tile.v.y);
         float nmag = 0.5f;
         float scl = 1f;
@@ -409,14 +410,21 @@ public class placeholdergen extends PlanetGenerator{
         }
 
         if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.5f*addscl){
-            ores.add(Blocks.oreTitanium);
+            ores.add(EarthBlocks.oreLithium);
         }
-
-        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 2, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.7f*addscl){
-            ores.add(Blocks.oreThorium);
+        
+        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.5f*addscl){
+            ores.add(EarthBlocks.oreTin);
         }
+        
+        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.5f*addscl){
+            ores.add(EarthBlocks.oreAluminum);
+        }
+       // if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 2, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.7f*addscl){
+            //ores.add(EarthBlocks.oreUranium);
+        //}
 
-        if(rand.chance(0.25)){
+        if(rand.chance(0.5)){
             ores.add(Blocks.oreScrap);
         }
 
@@ -439,7 +447,7 @@ public class placeholdergen extends PlanetGenerator{
                 }
             }
 
-            if(ore == Blocks.oreScrap && rand.chance(0.33)){
+            if(ore == Blocks.oreScrap && rand.chance(0.44)){
                 floor = Blocks.metalFloorDamaged;
             }
         });
@@ -470,7 +478,7 @@ public class placeholdergen extends PlanetGenerator{
 
             //hotrock tweaks
             if(floor == Blocks.hotrock){
-                if(Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 80)) > 0.035){
+                if(Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 80)) > 0.045){
                     floor = Blocks.basalt;
                 }else{
                     ore = Blocks.air;
