@@ -15,6 +15,11 @@ public class EarthPlanets{
         try{
           //placeholder name ig idk a good planet name
             earth = new Planet("earth?", Planets.sun, 1f, 2) {{
+                bloom = true;
+			visible = true;
+			accessible = true;
+			hasAtmosphere = true;
+			alwaysUnlocked = true;
                 //atmosphereColor = Color.gray.cpy();
                 //landCloudColor = Color.clear.cpy();
               //  atmosphereRadOut = 0.5f;
@@ -23,12 +28,30 @@ public class EarthPlanets{
                // hasAtmosphere = true;
               //  generator = new idkGenerator();
                 //placeholder
+                ruleSetter = r -> {
+				r.hideBannedBlocks = true;
+				r.waveTeam = Team.crux;
+				r.placeRangeCheck = false;
+				r.showSpawns = true;
+				r.waveSpacing = 40 * Time.toSeconds;
+				r.initialWaveSpacing = 8f * Time.toMinutes;
+				if(r.sector.preset == null)r.winWave = 150;
+				r.coreDestroyClear = true;
+				
+				Rules.TeamRule teamRule = r.teams.get(r.defaultTeam);
+				teamRule.rtsAi = true;
+				teamRule.unitBuildSpeedMultiplier = 10f;
+				teamRule.blockDamageMultiplier = 2f;
+				teamRule.buildSpeedMultiplier = 3f;
+				teamRule.blockHealthMultiplier = 1.75f;
+				
+				teamRule = r.teams.get(r.waveTeam);
+				teamRule.infiniteAmmo = teamRule.infiniteResources = true;
+			};
                  generator = new placeholdergen();
                 meshLoader = () -> new HexMesh(this, 4);
                 startSector = 1;
-                accessible = true;
                 sectorSeed = -1;
-               bloom = false;
                 //defaultCore = fortress;
                 defaultCore = Blocks.coreShard;
                 
