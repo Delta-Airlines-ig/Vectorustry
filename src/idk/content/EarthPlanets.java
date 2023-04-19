@@ -16,6 +16,8 @@ public class EarthPlanets{
         try{
           //placeholder name ig idk a good planet name
             earth = new Planet("earth?", Planets.sun, 1f, 2) {{
+		    name = "??";
+		    discription = "glhf";
                 bloom = true;
 			visible = true;
 			accessible = true;
@@ -34,8 +36,8 @@ public class EarthPlanets{
 				r.waveTeam = Team.crux;
 				r.placeRangeCheck = false;
 				r.showSpawns = true;
-				r.waveSpacing = 40 * Time.toSeconds;
-				r.initialWaveSpacing = 8f * Time.toMinutes;
+				r.waveSpacing = 15 * Time.toSeconds;
+				r.initialWaveSpacing = 150f * Time.toMinutes;
 				if(r.sector.preset == null)r.winWave = 150;
 				r.coreDestroyClear = true;
 				
