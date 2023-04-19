@@ -47,7 +47,7 @@ public class EarthBlocks{
         Redsand = new Floor("redsand"){{
             itemDrop = Items.sand; 
             playerUnmineable = true;
-            variants = 0;
+            variants = 1;
             albedo = 0.5f;
         }};
         ExposedStone = new Floor("exposed-stone"){{
