@@ -38,7 +38,7 @@ public class EarthItems{
         }};
 
         lithium = new Item("lithium"){{
-            localizedName = "lithium"
+            localizedName = "lithium";
             description = "used in batteries and other electronic components, also a bit explosive";
             flammability = 0.1f;
             explosiveness = 0.3f;
@@ -73,7 +73,7 @@ public class EarthItems{
             cost = 1;
         }};
         uranium = new Item("uranium", Color.valueOf("ec83af")){{
-            description = "used in a similer way to thorium but is far more radioactive"
+            description = "used in a similer way to thorium but is far more radioactive";
             localizedName = "uranium";
             hardness = 3;
             radioactivity = 2f;
