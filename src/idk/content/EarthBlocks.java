@@ -53,6 +53,7 @@ public class EarthBlocks{
         }};
         ExposedStone = new Floor("exposed-stone"){{
             itemDrop = EarthItems.stone; 
+            localizedName = "exposed-stone";
             wall = ExposedStoneWall;
             playerUnmineable = true;
             variants = 0;
@@ -60,22 +61,27 @@ public class EarthBlocks{
         }};
 
         ExposedStoneWall = new StaticWall("exposed-stone-wall"){{
-            variants = 2;
+            localizedName = "exposed-stone-wall";
+            variants = 0;
         }};
         RedishStoneWall = new StaticWall("redishstone-wall"){{
+            localizedName = "redishstone-wall";
             variants = 0;
         }};
         RedStonewall = new StaticWall("redstone-wall"){{
+            localizedName = "redstone-wall";
             variants = 0;
         }};
 
         RedStone = new Floor("redstone"){{
+            localizedName = "redstone";
             wall = RedStonewall;
             speedMultiplier = 1f;
             variants = 0;
             albedo = 0.5f;
         }};
         RedishStone = new Floor("redishstone"){{
+            localizedName = "redishstone";
             wall = RedishStoneWall;
             speedMultiplier = 1f;
             variants = 0;
