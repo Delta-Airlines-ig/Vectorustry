@@ -45,6 +45,7 @@ public class EarthBlocks{
 
     public static void load() {
         Redsand = new Floor("redsand"){{
+            localizedName = "redsand";
             itemDrop = Items.sand; 
             playerUnmineable = true;
             variants = 0;
