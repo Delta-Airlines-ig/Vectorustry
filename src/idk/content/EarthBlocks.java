@@ -151,8 +151,14 @@ public class EarthBlocks{
                     lifetime = 60f;
                 }}
             );
+           shoot = new ShootAlternate(){{
+                shots = 3;
+                barrels = 3;
+                spread = 3.5f;
+                shotDelay = 5f;
+            }};
             health = 300;
-            size = 1;
+            size = 2;
             reload = 10f;
             inaccuracy = 4f;
             shootCone = 30f;
