@@ -16,7 +16,8 @@ public class EarthPlanets{
         try{
           //placeholder name ig idk a good planet name
             earth = new Planet("earth?", Planets.sun, 1f, 2) {{
-		    	icon = "??";
+		    localizedName = "placeholder name ig";
+		    	icon = "router";
 			iconColor = Color.red;
                 bloom = true;
 			visible = true;
