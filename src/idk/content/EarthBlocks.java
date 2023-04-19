@@ -47,11 +47,12 @@ public class EarthBlocks{
         Redsand = new Floor("redsand"){{
             itemDrop = Items.sand; 
             playerUnmineable = true;
-            variants = 1;
+            variants = 0;
             albedo = 0.5f;
         }};
         ExposedStone = new Floor("exposed-stone"){{
             itemDrop = EarthItems.stone; 
+            wall = ExposedStoneWall;
             playerUnmineable = true;
             variants = 0;
             albedo = 0.5f;
@@ -68,11 +69,13 @@ public class EarthBlocks{
         }};
 
         RedStone = new Floor("redstone"){{
+            wall = RedStonewall;
             speedMultiplier = 1f;
             variants = 0;
             albedo = 0.5f;
         }};
         RedishStone = new Floor("redishstone"){{
+            wall = RedishStoneWall;
             speedMultiplier = 1f;
             variants = 0;
             albedo = 0.5f;
