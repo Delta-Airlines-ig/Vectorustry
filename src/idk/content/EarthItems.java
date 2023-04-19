@@ -6,24 +6,25 @@ import mindustry.*;
 import mindustry.game.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
+import mindustry.ctype.UnlockableContent;
 
 public class EarthItems{
     public static Item 
         //voltite
         voltite, 
     //other things
-    iron, lithium, tin, steel, stone, aluminum;
+    iron, lithium, tin, steel, stone, aluminum, uranium;
   //add voltite alloys
 //static here? \/
     public static void load(){
         voltite = new Item("voltite", Color.valueOf("00f0ec")){{
             localizedName = "voltite";
-                //description = "seemingly magical substance. holds alot of charge and will react violently with itself in certain conditions. when alloyed with metals, they become far more durable for some reason. this was discovered hundreds of years ago but was never published for unknown reasons, we only know this because of some old documents found aboard the spacecraft that crashed on Serpulo.";
+               description = "seemingly magical substance. holds alot of charge and will react violently with itself in certain conditions. when alloyed with metals, they become far more durable for some reason. this was discovered hundreds of years ago but was never published for unknown reasons, we only know this because of some old documents found aboard the spacecraft that crashed on Serpulo.";
                 charge = 9.5f;
-                //radioactivity = 0f;
-                //explosiveness = 1f;
-                //flammability = 0f;
-                //cost = 0.1f;
+                radioactivity = 0f;
+                explosiveness = 1f;
+                flammability = 0.2f;
+                cost = 0.1f;
                 //hardness = 15;
        }};
 
@@ -62,6 +63,14 @@ public class EarthItems{
         }};
         aluminum = new Item("aluminum", Color.valueOf("ec83af")){{
             localizedName = "aluminum";
+            flammability = 0f;
+            hardness = 2;
+            cost = 1;
+        }};
+        uranium = new Item("uranium", Color.valueOf("ec83af")){{
+            localizedName = "uranium";
+            hardness = 3;
+            radioactivity = 2f;
             flammability = 0f;
             cost = 1;
         }};
