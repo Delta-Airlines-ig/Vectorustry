@@ -16,8 +16,8 @@ public class EarthPlanets{
         try{
           //placeholder name ig idk a good planet name
             earth = new Planet("earth?", Planets.sun, 1f, 2) {{
-		    name = "??";
-		    discription = "glhf";
+		    	icon = "??";
+			iconColor = Color.red;
                 bloom = true;
 			visible = true;
 			accessible = true;
