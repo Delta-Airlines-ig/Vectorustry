@@ -27,13 +27,13 @@ public class placeholdergen extends PlanetGenerator{
     float scl = 5f;
     float waterOffset = 0.07f;
     boolean genLakes = false;
-//top 2 are replaced
+//top 4 are replaced
     Block[][] arr =
     {
-    {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone},
-    {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone},
-    {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone, Blocks.stone},
-    {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.snow, Blocks.iceSnow, Blocks.ice},
+    {Blocks.water, Blocks.sandWater, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone},
+    {Blocks.water, Blocks.sandWater, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone},
+    {Blocks.water, Blocks.sandWater, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone, Blocks.stone},
+    {Blocks.water, Blocks.sandWater, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.RedishStone, EarthBlocks.RedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.snow, Blocks.iceSnow, Blocks.ice},
     {Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.basalt, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.ice},
     {Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.iceSnow, Blocks.snow, Blocks.snow, Blocks.ice, Blocks.snow, Blocks.ice},
     {Blocks.deepwater, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.moss, Blocks.snow, Blocks.basalt, Blocks.basalt, Blocks.basalt, Blocks.ice, Blocks.snow, Blocks.ice},
@@ -75,12 +75,12 @@ public class placeholdergen extends PlanetGenerator{
 
         Ptile tile = sector.tile;
 
-        boolean any = false;
+        boolean any = true;
         float poles = Math.abs(tile.v.y);
         float noise = Noise.snoise3(tile.v.x, tile.v.y, tile.v.z, 0.001f, 0.58f);
-
+//swapped the any values idk what they do
         if(noise + poles/7.1 > 0.12 && poles > 0.23){
-            any = true;
+            any = false;
         }
 
      
@@ -288,7 +288,7 @@ public class placeholdergen extends PlanetGenerator{
         }
 
         //randomly connect rooms together
-        int connections = rand.random(Math.max(rooms - 1, 1), rooms + 3);
+        int connections = rand.random(Math.max(rooms - 1, 1), rooms + 10);
         for(int i = 0; i < connections; i++){
             roomseq.random(rand).connect(roomseq.random(rand));
         }
@@ -462,7 +462,7 @@ public class placeholdergen extends PlanetGenerator{
 
         pass((x, y) -> {
             //random moss
-            if(floor == Blocks.sporeMoss){
+            if(floor == EarthBlocks.Redsand){
                 if(Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 65)) > 0.02){
                     floor = EarthBlocks.RedishStone;
                 }
@@ -477,20 +477,20 @@ public class placeholdergen extends PlanetGenerator{
             }
 
             //hotrock tweaks
-            if(floor == Blocks.hotrock){
+            if(floor == Blocks.stone){
                 if(Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 80)) > 0.045){
-                    floor = Blocks.basalt;
+                    floor = EarthBlocks.ExposedStone;
                 }else{
                     ore = Blocks.air;
                     boolean all = true;
                     for(Point2 p : Geometry.d4){
                         Tile other = tiles.get(x + p.x, y + p.y);
-                        if(other == null || (other.floor() != Blocks.hotrock && other.floor() != Blocks.magmarock)){
+                        if(other == null || (other.floor() != Blocks.stone && other.floor() != EarthBlocks.RedStone)){
                             all = false;
                         }
                     }
                     if(all){
-                        floor = Blocks.magmarock;
+                        floor = EarthBlocks.RedStone;
                     }
                 }
             }else if(genLakes && floor != Blocks.basalt && floor != Blocks.ice && floor.asFloor().hasSurface()){
