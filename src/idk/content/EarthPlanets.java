@@ -60,7 +60,7 @@ public class EarthPlanets{
                 defaultCore = Blocks.coreShard;
                 
             }};
-		placeholdermoon = new Planet("placeholdermoon", EarthPlanets.earth, 0.25f, 0.5) {{
+		placeholdermoon = new Planet("placeholdermoon", EarthPlanets.earth, 0.25f, 1) {{
 		    localizedName = "kansas";
 		    	icon = "router";
 			rotateTime = 1f;
