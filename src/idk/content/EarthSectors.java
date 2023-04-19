@@ -1,5 +1,5 @@
-package newhorizon.content;
-
+package idk.content;
+import idk.content.*;
 import mindustry.type.SectorPreset;
 
 public class Earthsectors{
