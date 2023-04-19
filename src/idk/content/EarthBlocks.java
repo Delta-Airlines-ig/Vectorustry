@@ -94,25 +94,25 @@ public class EarthBlocks{
             oreDefault = false;
             oreThreshold = 0.841f;
             oreScale = 25.580953f;
-            variants = 1;
+            variants = 2;
         }};
         oreAluminum = new OreBlock(EarthItems.aluminum){{
             oreDefault = false;
             oreThreshold = 0.849f;
             oreScale = 15.580953f;
-            variants = 1;
+            variants = 2;
         }};
         oreLithium = new OreBlock(EarthItems.lithium){{
             oreDefault = false;
             oreThreshold = 0.869f;
             oreScale = 10.580953f;
-            variants = 1;
+            variants = 2;
         }};
         oreTin = new OreBlock(EarthItems.tin){{
             oreDefault = false;
             oreThreshold = 0.879f;
             oreScale = 9.580953f;
-            variants = 1;
+            variants = 2;
         }};
         //turrets
         solo = new ItemTurret("solo"){{
