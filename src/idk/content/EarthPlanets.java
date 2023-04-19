@@ -10,7 +10,7 @@ import mindustry.graphics.g3d.*;
 import mindustry.type.*;
 
 public class EarthPlanets{
-    public static Planet earth, placeholder-moon;
+    public static Planet earth, placeholdermoon;
 
     public static void load(){
         try{
@@ -60,7 +60,7 @@ public class EarthPlanets{
                 defaultCore = Blocks.coreShard;
                 
             }};
-		placeholder-moon = new Planet("placeholdermoon", EarthPlanets.earth, 0.25f, 2) {{
+		placeholdermoon = new Planet("placeholdermoon", EarthPlanets.earth, 0.25f, 2) {{
 		    localizedName = "kansas";
 		    	icon = "router";
 			rotateTime = 1f;
