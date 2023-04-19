@@ -146,7 +146,7 @@ public class EarthBlocks{
                 EarthItems.iron, new BasicBulletType(7f, 9){{
                     width = 9f;
                     height = 12f;
-                    reloadMultiplier = 0.6f;
+                    reloadMultiplier = 0.75f;
                     ammoMultiplier = 4;
                     lifetime = 60f;
                 }}
@@ -159,7 +159,7 @@ public class EarthBlocks{
             }};
             health = 300;
             size = 2;
-            reload = 10f;
+            reload = 30f;
             inaccuracy = 4f;
             shootCone = 30f;
         }};
