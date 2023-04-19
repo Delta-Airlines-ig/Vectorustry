@@ -17,7 +17,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 
-import static mindustry.Vars.*;
+import static idk.Vars.*;
 
 public class placeholdergen extends PlanetGenerator{
     //alternate, less direct generation (wip)
@@ -27,12 +27,12 @@ public class placeholdergen extends PlanetGenerator{
     float scl = 5f;
     float waterOffset = 0.07f;
     boolean genLakes = false;
-
+//top 2 are replaced
     Block[][] arr =
     {
     {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone},
-    {Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone, Blocks.stone},
-    {Blocks.water, Blocks.darksandWater, Blocks.darksand, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.darksandTaintedWater, Blocks.stone, Blocks.stone, Blocks.stone},
+    {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone},
+    {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.salt, Blocks.sand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.Redsand, EarthBlocks.ExposedStone, Blocks.stone, Blocks.stone, Blocks.stone},
     {Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.salt, Blocks.salt, Blocks.sand, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.snow, Blocks.iceSnow, Blocks.ice},
     {Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.salt, Blocks.sand, Blocks.sand, Blocks.basalt, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.snow, Blocks.ice},
     {Blocks.deepwater, Blocks.water, Blocks.sandWater, Blocks.sand, Blocks.sand, Blocks.sand, Blocks.moss, Blocks.iceSnow, Blocks.snow, Blocks.snow, Blocks.ice, Blocks.snow, Blocks.ice},
@@ -85,7 +85,7 @@ public class placeholdergen extends PlanetGenerator{
 
      
 
-        sector.generateEnemyBase = any;
+        sector.generateEnemyBase = true;
     }
 
     @Override
@@ -464,7 +464,7 @@ public class placeholdergen extends PlanetGenerator{
             //random moss
             if(floor == Blocks.sporeMoss){
                 if(Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 65)) > 0.02){
-                    floor = Blocks.moss;
+                    floor = EarthBlocks.RedishStone;
                 }
             }
 
