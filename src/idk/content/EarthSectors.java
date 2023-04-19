@@ -2,7 +2,7 @@ package idk.content;
 import idk.content.*;
 import mindustry.type.SectorPreset;
 
-public class Earthsectors{
+public class EarthSectors{
 	public static SectorPreset Reentry;
 	
 	public static void load(){
