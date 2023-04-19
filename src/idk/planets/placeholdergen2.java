@@ -51,7 +51,7 @@ public class placeholdergen2 extends PlanetGenerator{
         Blocks.stone, Blocks.stone
     );
 
-    float water = 2f / arr[0].length;
+  float water = 2f / arr[0].length;
 
     float rawHeight(Vec3 position){
         position = Tmp.v33.set(position).scl(scl);
@@ -256,7 +256,7 @@ public class placeholdergen2 extends PlanetGenerator{
                 for(int ry = -waterCheckRad; ry <= waterCheckRad; ry++){
                     Tile tile = tiles.get(cx + rx, cy + ry);
                     if(tile == null || tile.floor().liquidDrop != null){
-                        break;
+                        waterTiles ++;
                     }
                 }
             }
@@ -334,11 +334,11 @@ public class placeholdergen2 extends PlanetGenerator{
                 boolean spore = floor != Blocks.sand && floor != Blocks.salt;
                 //do not place rivers on ice, they're frozen
                 //ignore pre-existing liquids
-                if(!(floor == Blocks.stone || floor == Blocks.charr || floor == Blocks.stone || floor.asFloor().isLiquid)){
+                if(!(floor == Blocks.ice || floor == Blocks.iceSnow || floor == Blocks.snow || floor.asFloor().isLiquid)){
                     floor = spore ?
-                        (deep ? Blocks.stone : Blocks.charr) :
-                        (deep ? Blocks.stone :
-                            (floor == Blocks.stone || floor == Blocks.stone ? Blocks.charr : Blocks.charr));
+                        (deep ? Blocks.taintedWater : Blocks.darksandTaintedWater) :
+                        (deep ? Blocks.water :
+                            (floor == Blocks.sand || floor == Blocks.salt ? Blocks.sandWater : Blocks.darksandWater));
                 }
             }
         });
@@ -399,6 +399,10 @@ public class placeholdergen2 extends PlanetGenerator{
         float scl = 1f;
         float addscl = 1.3f;
 
+        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.25f*addscl){
+            ores.add(Blocks.oreCoal);
+        }
+
         if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.5f*addscl){
             ores.add(EarthBlocks.oreLithium);
         }
@@ -414,7 +418,7 @@ public class placeholdergen2 extends PlanetGenerator{
             //ores.add(EarthBlocks.oreUranium);
         //}
 
-        if(rand.chance(0.75)){
+        if(rand.chance(0.5)){
             ores.add(Blocks.oreScrap);
         }
 
@@ -450,11 +454,66 @@ public class placeholdergen2 extends PlanetGenerator{
 
         tech();
 
+        pass((x, y) -> {
+            //random moss
+            if(floor == EarthBlocks.Redsand){
+                if(Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 65)) > 0.02){
+                    floor = EarthBlocks.RedishStone;
+                }
+            }
 
+            //tar
+            if(floor == Blocks.darksand){
+                if(Math.abs(0.5f - noise(x - 40, y, 2, 0.7, 80)) > 0.25f &&
+                Math.abs(0.5f - noise(x, y + sector.id*10, 1, 1, 60)) > 0.41f && !(roomseq.contains(r -> Mathf.within(x, y, r.x, r.y, 15)))){
+                    floor = Blocks.tar;
+                }
+            }
 
-           
+            //hotrock tweaks
+            if(floor == Blocks.stone){
+                if(Math.abs(0.5f - noise(x - 90, y, 4, 0.8, 80)) > 0.045){
+                    floor = EarthBlocks.ExposedStone;
+                }else{
+                    ore = Blocks.air;
+                    boolean all = true;
+                    for(Point2 p : Geometry.d4){
+                        Tile other = tiles.get(x + p.x, y + p.y);
+                        if(other == null || (other.floor() != Blocks.stone && other.floor() != EarthBlocks.RedStone)){
+                            all = false;
+                        }
+                    }
+                    if(all){
+                        floor = EarthBlocks.RedStone;
+                    }
+                }
+            }else if(genLakes && floor != Blocks.basalt && floor != Blocks.ice && floor.asFloor().hasSurface()){
+                float noise = noise(x + 782, y, 5, 0.75f, 260f, 1f);
+                if(noise > 0.67f && !roomseq.contains(e -> Mathf.within(x, y, e.x, e.y, 14))){
+                    if(noise > 0.72f){
+                        floor = noise > 0.78f ? Blocks.taintedWater : (floor == Blocks.sand ? Blocks.sandWater : Blocks.darksandTaintedWater);
+                    }else{
+                        floor = (floor == Blocks.sand ? floor : Blocks.darksand);
+                    }
+                }
+            }
 
-            
+            if(rand.chance(0.0075)){
+                //random spore trees
+                boolean any = false;
+                boolean all = true;
+                for(Point2 p : Geometry.d4){
+                    Tile other = tiles.get(x + p.x, y + p.y);
+                    if(other != null && other.block() == Blocks.air){
+                        any = true;
+                    }else{
+                        all = false;
+                    }
+                }
+                if(any && ((block == Blocks.snowWall || block == Blocks.iceWall) || (all && block == Blocks.air && floor == Blocks.snow && rand.chance(0.03)))){
+                    block = rand.chance(0.5) ? Blocks.whiteTree : Blocks.whiteTreeDead;
+                }
+            }
 
             //random stuff
             dec: {
