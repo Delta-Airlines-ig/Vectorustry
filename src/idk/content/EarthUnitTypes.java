@@ -34,6 +34,7 @@ public class EarthUnitTypes{
 //L = light, M = medium, H = heavy, C = chasis, W = weapon, A = armoured, ex: MCLWA = medium chasis, light weapon, armoured
 //LW = normal cannon, MW = laser cannon, HW = guided missile launcher
 //LCLW = machine gun, MCMW = better cannon, HCHW = dual missiles
+//units are defined in the order below
 //ground
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
 
@@ -102,7 +103,7 @@ public static void load() {
             health = 600;
 	    armor = 3;
             weapons.add(new Weapon("cannon"){{
-                reload = 60f;
+                reload = 30f;
                 x = 6f;
                 y = 2f;
                 top = false;
@@ -121,7 +122,7 @@ public static void load() {
             health = 600;
 	    armor = 6;
             weapons.add(new Weapon("cannon"){{
-                reload = 60f;
+                reload = 30f;
                 x = 6f;
                 y = 2f;
                 top = false;
@@ -140,7 +141,7 @@ public static void load() {
             health = 1000;
 	    armor = 3;
             weapons.add(new Weapon("cannon"){{
-                reload = 60f;
+                reload = 30f;
                 x = 6f;
                 y = 2f;
                 top = false;
@@ -160,7 +161,7 @@ public static void load() {
             health = 1000;
 	    armor = 6;
             weapons.add(new Weapon("cannon"){{
-                reload = 60f;
+                reload = 30f;
                 x = 6f;
                 y = 2f;
                 top = false;
