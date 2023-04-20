@@ -176,119 +176,119 @@ public static void load() {
 	//finish weapons for medium (effects and maybe some other things) and heavy (splash damage, effects, homing if needed, fancy double shot missiles)
 	//medium
 	//done
-	LCMW = new UnitType("LCMW"){{
-            speed = 1f;
-            hitSize = 8f;
-            health = 250;
-	    armor = 3;
-            weapons.add(new Weapon("laser-cannon"){{
-                reload = 40f;
-                x = 4f;
-                y = 2f;
-                top = false;
+//	LCMW = new UnitType("LCMW"){{
+    //        speed = 1f;
+   //         hitSize = 8f;
+   //         health = 250;
+//	    armor = 3;
+   //         weapons.add(new Weapon("laser-cannon"){{
+   //             reload = 40f;
+   //             x = 4f;
+   //             y = 2f;
+   //             top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+   //             bullet = new LaserBoltBulletType(5f, 50){{
+   //                 width = 14f;
+   //                 height = 18f;
+   //                 lifetime = 60f;
+   //             }};
+  //          }});
+ //       }};
 	//done
-	LCMWA = new UnitType("LCMWA"){{
-            speed = 0.95f;
-            hitSize = 8f;
-            health = 250;
-	    armor = 6;
-            weapons.add(new Weapon("laser-cannon"){{
-                reload = 40f;
-                x = 4f;
-                y = 2f;
-                top = false;
+//	LCMWA = new UnitType("LCMWA"){{
+    //        speed = 0.95f;
+    //        hitSize = 8f;
+     //       health = 250;
+	//    armor = 6;
+     //       weapons.add(new Weapon("laser-cannon"){{
+     //           reload = 40f;
+    //            x = 4f;
+    //            y = 2f;
+    //            top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+    //            bullet = new LaserBoltBulletType(5f, 50){{
+    //                width = 14f;
+    //                height = 18f;
+    //                lifetime = 60f;
+   //             }};
+  //          }});
+  //      }};
 	//done
-	MCMW = new UnitType("MCMW"){{
-            speed = 0.8f;
-            hitSize = 8f;
-            health = 600;
-	    armor = 3;
-            weapons.add(new Weapon("fast-laser-cannon"){{
-                reload = 25f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	MCMW = new UnitType("MCMW"){{
+   //         speed = 0.8f;
+   //         hitSize = 8f;
+   //         health = 600;
+//	    armor = 3;
+   //         weapons.add(new Weapon("fast-laser-cannon"){{
+   //             reload = 25f;
+   //             x = 6f;
+   //             y = 2f;
+   //             top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 45){{
-                    width = 14f;
-                    height = 18f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+   //             bullet = new LaserBoltBulletType(5f, 45){{
+  //                  width = 14f;
+  //                  height = 18f;
+  //                  lifetime = 60f;
+  //              }};
+  //          }});
+ //       }};
 	//done
-	MCMWA = new UnitType("MCMWA"){{
-            speed = 0.75f;
-            hitSize = 8f;
-            health = 600;
-	    armor = 6;
-            weapons.add(new Weapon("fast-laser-cannon"){{
-                reload = 25f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	MCMWA = new UnitType("MCMWA"){{
+    //        speed = 0.75f;
+  //          hitSize = 8f;
+   ///         health = 600;
+//	    armor = 6;
+   //         weapons.add(new Weapon("fast-laser-cannon"){{
+   //             reload = 25f;
+  //              x = 6f;
+  //              y = 2f;
+ //               top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 45){{
-                    width = 14f;
-                    height = 18f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+   //             bullet = new LaserBoltBulletType(5f, 45){{
+   //                 width = 14f;
+   //                 height = 18f;
+  //                  lifetime = 60f;
+  //              }};
+  //          }});
+ //       }};
   	//done
-	HCMW = new UnitType("HCMW"){{
-            speed = 0.4f;
-            hitSize = 8f;
-            health = 1000;
-	    armor = 3;
-            weapons.add(new Weapon("laser-cannon"){{
-                reload = 40f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	HCMW = new UnitType("HCMW"){{
+    //        speed = 0.4f;
+    //        hitSize = 8f;
+     //       health = 1000;
+	//    armor = 3;
+    //        weapons.add(new Weapon("laser-cannon"){{
+    //            reload = 40f;
+    //            x = 6f;
+    ///            y = 2f;
+    //            top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+   //             bullet = new LaserBoltBulletType(5f, 50){{
+   //                 width = 14f;
+   //                 height = 18f;
+  //                  lifetime = 60f;
+  //              }};
+ //           }});
+ //       }};
   	//done
-	HCMWA = new UnitType("HCMWA"){{
-            speed = 0.4f;
-            hitSize = 8f;
-            health = 1000;
-	    armor = 6;
-            weapons.add(new Weapon("laser-cannon"){{
-                reload = 40f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	HCMWA = new UnitType("HCMWA"){{
+   //         speed = 0.4f;
+   //         hitSize = 8f;
+  //          health = 1000;
+//	    armor = 6;
+   //         weapons.add(new Weapon("laser-cannon"){{
+   //             reload = 40f;
+   //             x = 6f;
+   //             y = 2f;
+   //             top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+   //             bullet = new LaserBoltBulletType(5f, 50){{
+    //                width = 14f;
+    //                height = 18f;
+     //               lifetime = 60f;
+    //            }};
+    //        }});
+      //  }};
 	//heavy
 	//not done
 //	LCHW = new UnitType("LCHW"){{
