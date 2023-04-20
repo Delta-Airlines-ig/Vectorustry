@@ -32,7 +32,8 @@ import static mindustry.Vars.*;
 public class EarthUnitTypes{
 
 //L = light, M = medium, H = heavy, C = chasis, W = weapon, A = armoured, ex: MCLWA = medium chasis, light weapon, armoured
-
+//LW = normal cannon, MW = laser cannon, HW = guided missile launcher
+//LCLW = machine gun, MCMW = better cannon, HCHW = dual missiles
 //ground
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
 
