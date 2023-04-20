@@ -2,13 +2,15 @@
 A Java Mindustry mod template that works on Android and PC. The Kotlin version of this mod can be seen [here](https://github.com/Anuken/MindustryKotlinModTemplate).
 
 # planned unit table
+L=low M=Medium H=high D=damage S=speed HP=health
+   |||||||||||light chassis    medium chassis    heavy chassis
+light weapons: LD, LHP, HS      LD, MHP, MS       LD, HHP, LS
 
-                light chassis    medium chassis    heavy chassis
-light weapons
+medium weapons: MD, LHP, HS      MD, MHP, MS       MD, HHP, LS
 
-medium weapons 
+heavy weapons:  HD, LHP, HS       HD, MHP, MS       HD, HHP, LS
 
-heavy weapons
+units start with 3 armour and gain 3 if armoured but lose a small amount of speed
   
 
 ## Building for Desktop Testing
