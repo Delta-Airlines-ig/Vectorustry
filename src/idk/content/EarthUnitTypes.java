@@ -56,6 +56,7 @@ public static void load() {
                 }};
             }});
         }};
+	//light
 	//done
 	LCLW = new UnitType("LCLW"){{
             speed = 1f;
@@ -171,6 +172,8 @@ public static void load() {
                 }};
             }});
         }};
+	//finish weapons for medium and heavy (?)
+	//medium
 	//done
 	LCMW = new UnitType("LCMW"){{
             speed = 1f;
@@ -247,25 +250,63 @@ public static void load() {
                 }};
             }});
         }};
-  	// NOT done?
+  	//done
 	HCMW = new UnitType("HCMW"){{
             speed = 0.4f;
             hitSize = 8f;
             health = 1000;
 	    armor = 3;
-            weapons.add(new Weapon("cannon"){{
-                reload = 60f;
+            weapons.add(new Weapon("laser-cannon"){{
+                reload = 40f;
                 x = 6f;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
-                    width = 7f;
-                    height = 9f;
+                bullet = new BasicBulletType(5f, 50){{
+                    width = 14f;
+                    height = 18f;
                     lifetime = 60f;
                 }};
             }});
         }};
-  
+  	//done
+	HCMWA = new UnitType("HCMWA"){{
+            speed = 0.4f;
+            hitSize = 8f;
+            health = 1000;
+	    armor = 6;
+            weapons.add(new Weapon("laser-cannon"){{
+                reload = 40f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(5f, 50){{
+                    width = 14f;
+                    height = 18f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//heavy
+	//not done
+	LCHW = new UnitType("LCHW"){{
+            speed = 1f;
+            hitSize = 8f;
+            health = 250;
+	    armor = 3;
+            weapons.add(new Weapon("guided-missiles"){{
+                reload = 60f;
+                x = 4f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(5f, 25){{
+                    width = 14f;
+                    height = 18f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
 }
 }
