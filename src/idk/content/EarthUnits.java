@@ -62,73 +62,30 @@ import static mindustry.Vars.tilesize;
 public class EarthUnits{
 
 			
-	public static UnitType
-			
-    
-			sharp;
+//mech
+    public static @EntityDef({Unitc.class, Mechc.class}) UnitType dagger2;
 
 
 public static void load() {
   
-sharp = new UnitType("sharp"){{
-			//constructor = EntityMapping.map(3);
+	dagger2 = new UnitType("dagger2"){{
+            speed = 0.5f;
+            hitSize = 8f;
+            health = 150;
+            weapons.add(new Weapon("large-weapon"){{
+                reload = 13f;
+                x = 4f;
+                y = 2f;
+                top = false;
+                ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
 
-			itemCapacity = 15;
-			health = 140;
-			armor = 1;
-			engineOffset = 10F;
-			engineSize = 2.8f;
-			speed = 1.5f;
-			flying = true;
-			accel = 0.08F;
-			drag = 0.02f;
-			baseRotateSpeed = 1.5f;
-			rotateSpeed = 2.5f;
-			hitSize = 10f;
-			singleTarget = true;
-
-			weapons.add(new Weapon(){{
-				top = false;
-				rotate = false;
-				alternate = false;
-				mirror = false;
-				x = 0f;
-				y = 0f;
-				reload = 30f;
-				shoot = new ShootHelix(){{
-					shots = 4;
-					shotDelay = 4f;
-				}};
-				inaccuracy = 5f;
-				ejectEffect = Fx.none;
-				velocityRnd = 0.125f;
-				shake = 2f;
-				maxRange = 140f;
-				bullet = new BasicBulletType(3.5f, 6f){{
-					trailWidth = 1f;
-					trailLength = 10;
-					drawSize = 200f;
-
-					homingPower = 0.1f;
-					homingRange = 120f;
-					width = 5f;
-					height = 25f;
-					keepVelocity = true;
-					knockback = 0.75f;
-					//trailColor = backColor = lightColor = lightningColor = hitColor = "ff0000";
-					frontColor = backColor.cpy().lerp(Color.white, 0.45f);
-					trailChance = 0.1f;
-					trailParam = 1f;
-					//trailEffect = NHFx.trailToGray;
-					//despawnEffect = NHFx.square(backColor, 18f, 2, 12f, 2);
-					//hitEffect = NHFx.lightningHitSmall(backColor);
-					//shootEffect = NHFx.shootLineSmall(backColor);
-					//smokeEffect = Fx.shootBigSmoke2;
-				}};
-				//shootSound = NHSounds.thermoShoot;
-			}});
-		
-}};
   
   
 }
