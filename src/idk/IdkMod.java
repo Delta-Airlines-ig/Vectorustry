@@ -38,7 +38,7 @@ public class IdkMod extends Mod{
        EarthItems.load();
        EarthBlocks.load();
         EarthPlanets.load();
-    //    EarthUnitTypes.load();
+    EarthUnitTypes.load();
      //   EarthSectors.load();
      //   EarthTechTree.load();
         
