@@ -62,7 +62,7 @@ import static mindustry.Vars.tilesize;
 public class EarthUnits{
 
 			
-	public static NHUnitType
+	public static UnitType
 			
     
 			sharp;
@@ -71,7 +71,6 @@ public class EarthUnits{
 public static void load() {
   
 sharp = new UnitType("sharp"){{
-			outlineColor = OColor;
 			constructor = EntityMapping.map(3);
 
 			itemCapacity = 15;
@@ -116,17 +115,17 @@ sharp = new UnitType("sharp"){{
 					height = 25f;
 					keepVelocity = true;
 					knockback = 0.75f;
-					trailColor = backColor = lightColor = lightningColor = hitColor = NHColor.lightSkyBack;
+					trailColor = backColor = lightColor = lightningColor = hitColor = ff0000;
 					frontColor = backColor.cpy().lerp(Color.white, 0.45f);
 					trailChance = 0.1f;
 					trailParam = 1f;
-					trailEffect = NHFx.trailToGray;
-					despawnEffect = NHFx.square(backColor, 18f, 2, 12f, 2);
-					hitEffect = NHFx.lightningHitSmall(backColor);
-					shootEffect = NHFx.shootLineSmall(backColor);
-					smokeEffect = Fx.shootBigSmoke2;
+					//trailEffect = NHFx.trailToGray;
+					//despawnEffect = NHFx.square(backColor, 18f, 2, 12f, 2);
+					//hitEffect = NHFx.lightningHitSmall(backColor);
+					//shootEffect = NHFx.shootLineSmall(backColor);
+					//smokeEffect = Fx.shootBigSmoke2;
 				}};
-				shootSound = NHSounds.thermoShoot;
+				//shootSound = NHSounds.thermoShoot;
 			}});
 		
 }};
