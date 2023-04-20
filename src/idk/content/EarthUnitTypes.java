@@ -18,6 +18,7 @@ import mindustry.entities.pattern.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
+import mindustry.type.UnitType;
 import mindustry.type.ammo.*;
 import mindustry.type.unit.*;
 import mindustry.type.weapons.*;
@@ -40,23 +41,23 @@ public class EarthUnitTypes{
 
 public static void load() {
   
-	dagge = new UnitType("dagge");// {{
-        //    speed = 0.5f;
-           // hitSize = 8f;
-        //    health = 150;
-          //  weapons.add(new Weapon("large-weapon") {{
-          //     reload = 13f;
-           //    x = 4f;
-           //     y = 2f;
-            //    top = false;
-               // ejectEffect = Fx.casing1;
-              // bullet = new BasicBulletType(2.5f, 9); // {{
-                 //   width = 7f;
-                 //   height = 9f;
-                  //  lifetime = 60f;
-	       	// }};
-	    //}});
-     //  }};		      
+	dagge = new UnitType("dagge") {{
+            speed = 0.5f;
+            hitSize = 8f;
+            health = 150;
+            weapons.add(new Weapon("large-weapon") {{
+               reload = 13f;
+               x = 4f;
+                y = 2f;
+               // top = false;
+              //  ejectEffect = Fx.casing1;
+               bullet = new BasicBulletType(2.5f, 9); // {{
+                  width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+	       	 }};
+	    }});
+    }};		      
 	//light
 	//done
 //	LCLW = new UnitType("LCLW"){{
