@@ -44,7 +44,7 @@ public static void load() {
             speed = 0.5f;
             hitSize = 8f;
             health = 150;
-            weapon = new Weapon("large-weapon"){{
+            weapons = new Weapon("large-weapon"){{
                reload = 13f;
                x = 4f;
                 y = 2f;
