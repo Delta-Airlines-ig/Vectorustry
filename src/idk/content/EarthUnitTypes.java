@@ -40,23 +40,23 @@ public class EarthUnitTypes{
 
 public static void load() {
   
-//	dagge = new UnitType("dagge"){{
-   //         speed = 0.5f;
-   //         hitSize = 8f;
-   //         health = 150;
-     //       weapons.add(new Weapon("large-weapon"){{
-     //           reload = 13f;
-    //            x = 4f;
-    //            y = 2f;
-    //            top = false;
+	dagge = new UnitType("dagge"){{
+            speed = 0.5f;
+            hitSize = 8f;
+            health = 150;
+            weapons.add(new Weapon("large-weapon")[
+               reload = 13f;
+               x = 4f;
+                y = 2f;
+                top = false;
                // ejectEffect = Fx.casing1;
-     //           bullet = new BasicBulletType(2.5f, 9){{
-     //               width = 7f;
-     //               height = 9f;
-     //               lifetime = 60f;
-     //           }};
-   //         }});
-   //     }};
+               bullet = new BasicBulletType(2.5f, 9){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            ]);
+       }};
 	//light
 	//done
 //	LCLW = new UnitType("LCLW"){{
