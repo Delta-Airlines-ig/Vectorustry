@@ -172,7 +172,7 @@ public static void load() {
                 }};
             }});
         }};
-	//finish weapons for medium and heavy (?)
+	//finish weapons for medium (effects and maybe some other things) and heavy (splash damage, effects, homing if needed, fancy double shot missiles)
 	//medium
 	//done
 	LCMW = new UnitType("LCMW"){{
@@ -186,7 +186,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 50){{
+                bullet = new LaserBoltBulletType(5f, 50){{
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -205,7 +205,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 50){{
+                bullet = new LaserBoltBulletType(5f, 50){{
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -224,7 +224,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 45){{
+                bullet = new LaserBoltBulletType(5f, 45){{
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -232,7 +232,7 @@ public static void load() {
             }});
         }};
 	//done
-	MCMW = new UnitType("MCMW"){{
+	MCMWA = new UnitType("MCMWA"){{
             speed = 0.75f;
             hitSize = 8f;
             health = 600;
@@ -243,7 +243,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 45){{
+                bullet = new LaserBoltBulletType(5f, 45){{
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -262,7 +262,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 50){{
+                bullet = new LaserBoltBulletType(5f, 50){{
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -281,7 +281,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 50){{
+                bullet = new LaserBoltBulletType(5f, 50){{
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -301,7 +301,8 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 25){{
+                bullet = new MissileBulletType(5f, 25){{
+		    trailChance = 1f;
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -320,7 +321,9 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 25){{
+                bullet = new MissileBulletType(5f, 25){{
+		    trailChance = 1f;
+		    homingPower = 0.1f;
                     width = 14f;
                     height = 18f;
                     lifetime = 60f;
@@ -339,7 +342,9 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
+                bullet = new MissileBulletType(7f, 25){{
+		    trailChance = 1f;
+		    homingPower = 0.1f;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -358,7 +363,9 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
+                bullet = new MissileBulletType(7f, 25){{
+		    trailChance = 1f;
+		    homingPower = 0.1f;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -377,7 +384,9 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
+                bullet = new MissileBulletType(7f, 25){{
+		    trailChance = 1f;
+		    homingPower = 0.1f;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -396,7 +405,9 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
+                bullet = new MissileBulletType(7f, 25){{
+		    trailChance = 1f;
+		    homingPower = 0.1f;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
