@@ -308,5 +308,100 @@ public static void load() {
                 }};
             }});
         }};
+	//not done
+	LCHWA = new UnitType("LCHWA"){{
+            speed = 1f;
+            hitSize = 8f;
+            health = 250;
+	    armor = 6;
+            weapons.add(new Weapon("guided-missiles"){{
+                reload = 60f;
+                x = 4f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(5f, 25){{
+                    width = 14f;
+                    height = 18f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//not done
+	MCHW = new UnitType("MCHW"){{
+            speed = 0.8f;
+            hitSize = 8f;
+            health = 600;
+	    armor = 3;
+            weapons.add(new Weapon("guided-missiles"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(7f, 25){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//not done
+	MCHWA = new UnitType("MCHWA"){{
+            speed = 0.8f;
+            hitSize = 8f;
+            health = 600;
+	    armor = 6;
+            weapons.add(new Weapon("guided-missiles"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(7f, 25){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//not done
+	HCHW = new UnitType("HCHW"){{
+            speed = 0.4f;
+            hitSize = 8f;
+            health = 1000;
+	    armor = 3;
+            weapons.add(new Weapon("dual-guided-missiles"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(7f, 25){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//not done
+	HCHWA = new UnitType("HCHWA"){{
+            speed = 0.4f;
+            hitSize = 8f;
+            health = 1000;
+	    armor = 6;
+            weapons.add(new Weapon("dual-guided-missiles"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(7f, 25){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
 }
 }
