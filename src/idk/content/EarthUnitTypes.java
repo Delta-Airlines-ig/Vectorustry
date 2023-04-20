@@ -60,7 +60,7 @@ public static void load() {
 	LCLW = new UnitType("LCLW"){{
             speed = 1f;
             hitSize = 8f;
-            health = 150;
+            health = 250;
 	    armor = 3;
             weapons.add(new Weapon("machine-gun"){{
                 reload = 2f;
@@ -79,7 +79,7 @@ public static void load() {
 	LCLWA = new UnitType("LCLWA"){{
             speed = 0.95f;
             hitSize = 8f;
-            health = 150;
+            health = 250;
 	    armor = 6;
             weapons.add(new Weapon("machine-gun"){{
                 reload = 2f;
@@ -88,6 +88,63 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new BasicBulletType(5f, 5){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//done almost
+	MCLW = new UnitType("MCLW"){{
+            speed = 0.8f;
+            hitSize = 8f;
+            health = 600;
+	    armor = 3;
+            weapons.add(new Weapon("cannon"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(7f, 25){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//done almost
+	MCLWA = new UnitType("MCLWA"){{
+            speed = 0.75f;
+            hitSize = 8f;
+            health = 600;
+	    armor = 6;
+            weapons.add(new Weapon("laser-cannon"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(7f, 25){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//done almost
+	HCLW = new UnitType("HCLW"){{
+            speed = 0.4f;
+            hitSize = 8f;
+            health = 1000;
+	    armor = 3;
+            weapons.add(new Weapon("guided-missiles"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new MissileBulletType(7f, 25){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
