@@ -55,8 +55,8 @@ public static void load() {
                   width = 7f;
                     height = 9f;
                     lifetime = 60f;
-	       	 }};
-	    }});
+	       	 }});
+	    }};
     }};		      
 	//light
 	//done
@@ -416,5 +416,5 @@ public static void load() {
         //        }};
       //      }});
       //  }};
-}
-}
+
+}}
