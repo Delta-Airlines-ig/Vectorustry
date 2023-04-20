@@ -59,120 +59,120 @@ public static void load() {
         }};
 	//light
 	//done
-	LCLW = new UnitType("LCLW"){{
-            speed = 1f;
-            hitSize = 8f;
-            health = 250;
-	    armor = 3;
-            weapons.add(new Weapon("machine-gun"){{
-                reload = 2f;
-                x = 4f;
-                y = 2f;
-                top = false;
+//	LCLW = new UnitType("LCLW"){{
+//            speed = 1f;
+//            hitSize = 8f;
+//            health = 250;
+//	    armor = 3;
+//            weapons.add(new Weapon("machine-gun"){{
+//                reload = 2f;
+ //               x = 4f;
+ //               y = 2f;
+  //              top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 5){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+  //              bullet = new BasicBulletType(5f, 5){{
+  //                  width = 7f;
+  //                  height = 9f;
+  //                  lifetime = 60f;
+  //              }};
+  //          }});
+ //       }};
 	//done
-	LCLWA = new UnitType("LCLWA"){{
-            speed = 0.95f;
-            hitSize = 8f;
-            health = 250;
-	    armor = 6;
-            weapons.add(new Weapon("machine-gun"){{
-                reload = 2f;
-                x = 4f;
-                y = 2f;
-                top = false;
+//	LCLWA = new UnitType("LCLWA"){{
+//            speed = 0.95f;
+//            hitSize = 8f;
+//            health = 250;
+//	    armor = 6;
+  //          weapons.add(new Weapon("machine-gun"){{
+  //              reload = 2f;
+   //             x = 4f;
+  //              y = 2f;
+  //              top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 5){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+   //             bullet = new BasicBulletType(5f, 5){{
+   //                 width = 7f;
+   //                 height = 9f;
+   //                 lifetime = 60f;
+   //             }};
+   //         }});
+   //     }};
 	//done
-	MCLW = new UnitType("MCLW"){{
-            speed = 0.8f;
-            hitSize = 8f;
-            health = 600;
-	    armor = 3;
-            weapons.add(new Weapon("cannon"){{
-                reload = 30f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	MCLW = new UnitType("MCLW"){{
+  //          speed = 0.8f;
+  //          hitSize = 8f;
+   //         health = 600;
+//	    armor = 3;
+    //        weapons.add(new Weapon("cannon"){{
+     //           reload = 30f;
+     //           x = 6f;
+     //           y = 2f;
+     //           top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+     //           bullet = new BasicBulletType(7f, 25){{
+     //               width = 7f;
+     //               height = 9f;
+      //              lifetime = 60f;
+      //          }};
+ //           }});
+ //       }};
 	//done
-	MCLWA = new UnitType("MCLWA"){{
-            speed = 0.75f;
-            hitSize = 8f;
-            health = 600;
-	    armor = 6;
-            weapons.add(new Weapon("cannon"){{
-                reload = 30f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	MCLWA = new UnitType("MCLWA"){{
+  //          speed = 0.75f;
+  //          hitSize = 8f;
+  //          health = 600;
+//	    armor = 6;
+    //        weapons.add(new Weapon("cannon"){{
+    //            reload = 30f;
+    //            x = 6f;
+    //            y = 2f;
+    //            top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+   //             bullet = new BasicBulletType(7f, 25){{
+   //                 width = 7f;
+ //                   height = 9f;
+ //                   lifetime = 60f;
+ //               }};
+ //           }});
+   //     }};
 	//done
-	HCLW = new UnitType("HCLW"){{
-            speed = 0.4f;
-            hitSize = 8f;
-            health = 1000;
-	    armor = 3;
-            weapons.add(new Weapon("cannon"){{
-                reload = 30f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	HCLW = new UnitType("HCLW"){{
+ //           speed = 0.4f;
+//            hitSize = 8f;
+  //          health = 1000;
+//	    armor = 3;
+  //          weapons.add(new Weapon("cannon"){{
+  //              reload = 30f;
+  //              x = 6f;
+  //              y = 2f;
+  //              top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+ //               bullet = new BasicBulletType(7f, 25){{
+   //                 width = 7f;
+   //                 height = 9f;
+   //                 lifetime = 60f;
+   //             }};
+   //         }});
+   //     }};
 
 	//done
-	HCLWA = new UnitType("HCLWA"){{
-            speed = 0.4f;
-            hitSize = 8f;
-            health = 1000;
-	    armor = 6;
-            weapons.add(new Weapon("cannon"){{
-                reload = 30f;
-                x = 6f;
-                y = 2f;
-                top = false;
+//	HCLWA = new UnitType("HCLWA"){{
+  //          speed = 0.4f;
+  //          hitSize = 8f;
+   //         health = 1000;
+//	    armor = 6;
+    //        weapons.add(new Weapon("cannon"){{
+    //            reload = 30f;
+    //            x = 6f;
+    //            y = 2f;
+     //           top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(7f, 25){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-                }};
-            }});
-        }};
+    //            bullet = new BasicBulletType(7f, 25){{
+    //                width = 7f;
+    //                height = 9f;
+   //                 lifetime = 60f;
+   //             }};
+   //         }});
+  //      }};
 	//finish weapons for medium (effects and maybe some other things) and heavy (splash damage, effects, homing if needed, fancy double shot missiles)
 	//medium
 	//done
