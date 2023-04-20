@@ -56,6 +56,44 @@ public static void load() {
                 }};
             }});
         }};
+	//done
+	LCLW = new UnitType("LCLW"){{
+            speed = 1f;
+            hitSize = 8f;
+            health = 150;
+	    armor = 3;
+            weapons.add(new Weapon("machine-gun"){{
+                reload = 2f;
+                x = 4f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(5f, 5){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	//done
+	LCLWA = new UnitType("LCLWA"){{
+            speed = 0.95f;
+            hitSize = 8f;
+            health = 150;
+	    armor = 6;
+            weapons.add(new Weapon("machine-gun"){{
+                reload = 2f;
+                x = 4f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(5f, 5){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
 
   
   
