@@ -1,6 +1,16 @@
 # Mindustry Java Mod Template
 A Java Mindustry mod template that works on Android and PC. The Kotlin version of this mod can be seen [here](https://github.com/Anuken/MindustryKotlinModTemplate).
 
+# planned unit table
+
+                light chassis    medium chassis    heavy chassis
+light weapons
+
+medium weapons 
+
+heavy weapons
+  
+
 ## Building for Desktop Testing
 
 1. Install JDK **17**.
