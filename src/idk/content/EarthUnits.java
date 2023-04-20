@@ -33,12 +33,12 @@ public class EarthUnits{
 
 			
 //mech
-    public static UnitType dagger2;
+    public static UnitType dagge;
 
 
 public static void load() {
   
-	dagger2 = new UnitType("dagger2"){{
+	dagge = new UnitType("dagge"){{
             speed = 0.5f;
             hitSize = 8f;
             health = 150;
