@@ -33,7 +33,7 @@ public class EarthUnitTypes{
 
 			
 //mech
-    public static UnitType dagge;
+    public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, ;
 
 
 public static void load() {
