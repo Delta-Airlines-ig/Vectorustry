@@ -2,6 +2,7 @@ package idk.content;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
+import arc.func.Prov;
 import arc.math.*;
 import arc.math.geom.*;
 import arc.struct.*;
@@ -41,7 +42,7 @@ public class EarthUnitTypes{
 
 public static void load() {
   
-	//dagge = new UnitType("dagge") {{
+	dagge = new UnitType("dagge") {{
        //     speed = 0.5f;
        //     hitSize = 8f;
        //     health = 150;
@@ -57,7 +58,7 @@ public static void load() {
                //     lifetime = 60f;
 	       	 //}};
 	  //  }});
-   // }};		      
+    }};		      
 	//light
 	//done
 //	LCLW = new UnitType("LCLW"){{
