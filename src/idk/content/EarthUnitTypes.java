@@ -52,11 +52,11 @@ public static void load() {
                // top = false;
               //  ejectEffect = Fx.casing1;
                bullet = new BasicBulletType(2.5f, 9); // {{
-                  width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-	       	 }});
-	    }};
+                  //width = 7f;
+                 //   height = 9f;
+               //     lifetime = 60f;
+	       	 //}};
+	    }});
     }};		      
 	//light
 	//done
@@ -416,5 +416,5 @@ public static void load() {
         //        }};
       //      }});
       //  }};
-
-}}
+}
+}
