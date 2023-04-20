@@ -29,7 +29,7 @@ import static arc.math.Angles.*;
 import static mindustry.Vars.*;
 
 
-public class EarthUnits{
+public class EarthUnitTypes{
 
 			
 //mech
