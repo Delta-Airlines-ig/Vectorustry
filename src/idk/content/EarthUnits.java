@@ -63,7 +63,7 @@ public class EarthUnits{
 
 			
 //mech
-    public static @EntityDef({Unitc.class, Mechc.class}) UnitType dagger2;
+    public static UnitType dagger2;
 
 
 public static void load() {
