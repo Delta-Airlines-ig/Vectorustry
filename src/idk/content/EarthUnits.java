@@ -115,7 +115,7 @@ sharp = new UnitType("sharp"){{
 					height = 25f;
 					keepVelocity = true;
 					knockback = 0.75f;
-					trailColor = backColor = lightColor = lightningColor = hitColor = ff0000;
+					//trailColor = backColor = lightColor = lightningColor = hitColor = "ff0000";
 					frontColor = backColor.cpy().lerp(Color.white, 0.45f);
 					trailChance = 0.1f;
 					trailParam = 1f;
