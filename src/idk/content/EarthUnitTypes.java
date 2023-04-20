@@ -41,10 +41,10 @@ public class EarthUnitTypes{
 
 public static void load() {
   
-	dagge = new UnitType("dagge") {{
-            speed = 0.5f;
-            hitSize = 8f;
-            health = 150;
+	//dagge = new UnitType("dagge") {{
+       //     speed = 0.5f;
+       //     hitSize = 8f;
+       //     health = 150;
           //  weapons.add(new Weapon("large-weapon") {{
             //   reload = 13f;
               // x = 4f;
@@ -57,7 +57,7 @@ public static void load() {
                //     lifetime = 60f;
 	       	 //}};
 	  //  }});
-    }};		      
+   // }};		      
 	//light
 	//done
 //	LCLW = new UnitType("LCLW"){{
