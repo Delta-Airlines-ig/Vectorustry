@@ -71,7 +71,7 @@ public class EarthUnits{
 public static void load() {
   
 sharp = new UnitType("sharp"){{
-			constructor = EntityMapping.map(3);
+			//constructor = EntityMapping.map(3);
 
 			itemCapacity = 15;
 			health = 140;
