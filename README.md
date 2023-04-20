@@ -5,6 +5,7 @@ A Java Mindustry mod template that works on Android and PC. The Kotlin version o
 L=low M=Medium H=high D=damage S=speed HP=health
 
 |||||||||||||||light chassis    medium chassis    heavy chassis
+
 light weapons: LD, LHP, HS      LD, MHP, MS       LD, HHP, LS
 
 medium weapons: MD, LHP, HS      MD, MHP, MS       MD, HHP, LS
