@@ -44,9 +44,7 @@ public static void load() {
             speed = 0.5f;
             hitSize = 8f;
             health = 150;
-            weapons = 
-	    {
-		    new Weapon("large-weapon"){{
+            weapons.add(new Weapon("large-weapon"){{
                reload = 13f;
                x = 4f;
                 y = 2f;
@@ -57,9 +55,8 @@ public static void load() {
                     height = 9f;
                     lifetime = 60f;
 	       }};
-	    }};
-       }};
- }		      
+	    }});
+       }};		      
 	//light
 	//done
 //	LCLW = new UnitType("LCLW"){{
