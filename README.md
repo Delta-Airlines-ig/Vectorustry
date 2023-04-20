@@ -2,6 +2,9 @@
 A Java Mindustry mod template that works on Android and PC. The Kotlin version of this mod can be seen [here](https://github.com/Anuken/MindustryKotlinModTemplate).
 
 # planned unit table
+
+edit this to see it clearly
+
 L=low M=Medium H=high D=damage S=speed HP=health
 
 |||||||||||||||light chassis  |  medium chassis  |  heavy chassis
