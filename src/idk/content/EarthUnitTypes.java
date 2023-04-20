@@ -247,7 +247,25 @@ public static void load() {
                 }};
             }});
         }};
-  
+  	// NOT done?
+	HCMW = new UnitType("HCMW"){{
+            speed = 0.4f;
+            hitSize = 8f;
+            health = 1000;
+	    armor = 3;
+            weapons.add(new Weapon("cannon"){{
+                reload = 60f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(7f, 25){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
   
 }
 }
