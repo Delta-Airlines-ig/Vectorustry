@@ -281,7 +281,7 @@ public class EarthBlocks{
             plans.add(
             new UnitPlan(EarthUnitTypes.lightchasis, 40f, with(Items.copper, 40, Items.silicon, 20, EarthItems.iron, 50)),
             new UnitPlan(EarthUnitTypes.mediumchasis, 60f, with(Items.copper, 50, Items.silicon, 30, EarthItems.iron, 100)),
-            new UnitPlan(EarthUnitTypes.mediumchasis, 80f, with(Items.copper, 60, Items.silicon, 35, EarthItems.iron, 125, EarthItems.steel, 25)),
+            new UnitPlan(EarthUnitTypes.mediumchasis, 80f, with(Items.copper, 60, Items.silicon, 35, EarthItems.iron, 125, EarthItems.steel, 25))
             );
             researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
             regionSuffix = "-dark";
