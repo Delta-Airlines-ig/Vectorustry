@@ -289,16 +289,29 @@ public class EarthBlocks{
             //);
             //areaSize = 5;
             //researchCostMultiplier = 0.4f;
-            //dronesCreated = 8;
-            //consumePower(3f);
-        //}};
-                groundchasisassembler = new UnitFactory("ground-chasis-fabricator"){{
+           // dronesCreated = 8;
+           // consumePower(3f);
+       //}};
+                groundassembler = new UnitFactory("ground-assembler"){{
             requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             plans.add(
             new UnitPlan(EarthUnitTypes.lightchasis, 40f, with(Items.copper, 40, Items.silicon, 20, EarthItems.iron, 50)),
             new UnitPlan(EarthUnitTypes.mediumchasis, 60f, with(Items.copper, 50, Items.silicon, 30, EarthItems.iron, 100)),
             new UnitPlan(EarthUnitTypes.mediumchasis, 80f, with(Items.copper, 60, Items.silicon, 35, EarthItems.iron, 125, EarthItems.steel, 25))
+            );
+            researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
+            regionSuffix = "-dark";
+            //fogRadius = 3;
+            consumePower(2f);
+        }};
+                groundchasisassembler = new UnitFactory("ground-chasis-fabricator"){{
+            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.iron, 150, EarthItems.steel, 75));
+            size = 3;
+            plans.add(
+            new UnitPlan(EarthUnitTypes.LCLW, 40f, PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25))//,
+           // new UnitPlan(EarthUnitTypes.mediumchasis, 60f, with(Items.copper, 50, Items.silicon, 30, EarthItems.iron, 100)),
+          //  new UnitPlan(EarthUnitTypes.mediumchasis, 80f, with(Items.copper, 60, Items.silicon, 35, EarthItems.iron, 125, EarthItems.steel, 25))
             );
             researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
             regionSuffix = "-dark";
