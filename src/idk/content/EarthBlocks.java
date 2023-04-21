@@ -298,8 +298,8 @@ public class EarthBlocks{
                 groundchasisassembler = new UnitFactory("ground-chasis-fabricator"){{
             requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
-            plans = (
-    new UnitPlan(EarthUnitTypes.LCLW, 30f, with(EarthItem.lightchasis, 1, EarthItem.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            plans.add(
+            new UnitPlan(EarthUnitTypes.LCLW, 30f, with(EarthItem.lightchasis, 1, EarthItem.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
             new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItem.lightchasis, 1, EarthItem.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
             new UnitPlan(EarthUnitTypes.LCHW, 40f, with(EarthItem.lightchasis, 1,EarthItem.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.MCLW, 50f, with(EarthItem.mediumchasis, 1, EarthItem.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
