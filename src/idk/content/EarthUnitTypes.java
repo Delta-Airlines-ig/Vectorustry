@@ -43,7 +43,7 @@ public class EarthUnitTypes{
 public static void load() {
   
 	dagge = new UnitType("dagge") {{
-	constructor = MechUnit::new;
+          constructor = UnitEntity::create;
             speed = 0.5f;
             hitSize = 8f;
           health = 150;
