@@ -266,7 +266,7 @@ public class EarthBlocks{
             requirements(Category.units, with(Items.copper, 500, Items.lead, 250, EarthItems.iron, 350, Items.silicon, 150, EarthItems.steel, 250));
             regionSuffix = "-dark";
             size = 3;
-            plans.add(
+            plans(
             new AssemblerUnitPlan(EarthUnitTypes.LCLW, 30f, PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
             new AssemblerUnitPlan(EarthUnitTypes.LCMW, 30f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
             new AssemblerUnitPlan(EarthUnitTypes.LCHW, 40f, PayloadStack.list(EarthUnitTypes.heavychasis, 1,EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
