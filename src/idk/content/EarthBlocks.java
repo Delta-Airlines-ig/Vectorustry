@@ -21,8 +21,10 @@ import mindustry.world.blocks.logic.*;
 import mindustry.world.blocks.payloads.*;
 import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.storage.*;
+import mindustry.world.blocks.units.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
+import idk.content.*;
 
 import static mindustry.type.ItemStack.*;
 
@@ -37,7 +39,9 @@ public class EarthBlocks{
     //drills
     drillMechanised, drillElectric, drillModernised,
     //turrets
-    solo, trio, converge, splice, spear, volley, hurricane, cataclysm,  
+    solo, trio, converge, splice, spear, volley, hurricane, cataclysm, 
+    //cores
+    damagedshard, fortress, stronghold, bunker, 
     //power
     voltitereactor, turbinegenerator, 
     //unit building
@@ -301,15 +305,15 @@ public class EarthBlocks{
         //weapons
                 lightweapons = new Wall("lightweapons"){{
             health = 1;
-            requirements(Category.defense, with(EarthItems.iron, 50, EarthItems.steel, 25));
+            requirements(Category.defense, BuildVisibility.sandboxOnly, with(EarthItems.iron, 50, EarthItems.steel, 25));
         }};
                 mediumweapons = new Wall("mediumweapons"){{
             health = 1;
-            requirements(Category.defense, with(EarthItems.iron, 75, EarthItems.steel, 40, Items.silicon, 25, Items.metaglass, 5));
+            requirements(Category.defense, BuildVisibility.sandboxOnly, with(EarthItems.iron, 75, EarthItems.steel, 40, Items.silicon, 25, Items.metaglass, 5));
         }};
                 heavyweapons = new Wall("heavyweapons"){{
             health = 1;
-            requirements(Category.defense, with(EarthItems.iron, 175, EarthItems.steel, 100, Items.silicon, 30));
+            requirements(Category.defense, BuildVisibility.sandboxOnly, with(EarthItems.iron, 175, EarthItems.steel, 100, Items.silicon, 30));
         }};
         // endgame turrets : ONLY the 5 Disaster Turrets specified in the trello!
       //  tarnation = new PowerTurret("tarnation"){{
