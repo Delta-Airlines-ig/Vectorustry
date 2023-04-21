@@ -41,7 +41,7 @@ public class EarthUnitTypes{
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
 	
 public static void load() {
-  
+  // add constructor = UnitEntity::create; to all units, also uncomment them
 	dagge = new UnitType("dagge") {{
           constructor = UnitEntity::create;
             speed = 0.5f;
