@@ -63,8 +63,8 @@ public static void load() {
 	//light
 	//done
 	LCLW = new UnitType("LCLW"){{
-		type = mech;
 		constructor = UnitEntity::create;
+		mechFrontSway = 0.55f;
            speed = 1f;
             hitSize = 8f;
            health = 250;
