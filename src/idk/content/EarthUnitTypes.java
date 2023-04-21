@@ -38,7 +38,7 @@ public class EarthUnitTypes{
 //LCLW = machine gun, MCMW = better cannon, HCHW = dual missiles
 //units are defined in the order below
 //ground
-    public static UnitType dagge; // LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
+    public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
 	
 public static void load() {
   
@@ -53,33 +53,34 @@ public static void load() {
                y = 2f;
                 top = false;
                 //ejectEffect = Fx.casing1;
-               bullet = new BasicBulletType(2.5f, 9); // {{
-                  //width = 7f;
-                 //   height = 9f;
-               //     lifetime = 60f;
-	       	 //}};
+               bullet = new BasicBulletType(2.5f, 9) {{
+                 width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+	       	 }};
 	    }});
     }};		      
 	//light
 	//done
-//	LCLW = new UnitType("LCLW"){{
-//            speed = 1f;
-//            hitSize = 8f;
-//            health = 250;
-//	    armor = 3;
-//            weapons.add(new Weapon("machine-gun"){{
-//                reload = 2f;
- //               x = 4f;
- //               y = 2f;
-  //              top = false;
+	LCLW = new UnitType("LCLW"){{
+		          constructor = UnitEntity::create;
+           speed = 1f;
+            hitSize = 8f;
+           health = 250;
+	    armor = 3;
+            weapons.add(new Weapon("machine-gun"){{
+                reload = 2f;
+                x = 4f;
+                y = 2f;
+                top = false;
                // ejectEffect = Fx.casing1;
-  //              bullet = new BasicBulletType(5f, 5){{
-  //                  width = 7f;
-  //                  height = 9f;
-  //                  lifetime = 60f;
-  //              }};
-  //          }});
- //       }};
+                bullet = new BasicBulletType(5f, 5){{
+                  width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
 	//done
 //	LCLWA = new UnitType("LCLWA"){{
 //            speed = 0.95f;
