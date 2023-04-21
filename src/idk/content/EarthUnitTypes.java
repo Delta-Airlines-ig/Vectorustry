@@ -40,30 +40,25 @@ public class EarthUnitTypes{
 //ground
     public static UnitType dagge; // LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
 	
-		// Steal from UAW which stole from Progressed Material which stole from Endless Rusting which stole from Progressed Materials in the past which stole from BetaMindy
-	private static final Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new Entry[]{
-		prov(UnitEntity.class, UnitEntity::new),
-	};
-
 public static void load() {
   
 	dagge = new UnitType("dagge") {{
-	constructor = UnitEntity::new;
-       //     speed = 0.5f;
-       //     hitSize = 8f;
-       //     health = 150;
-          //  weapons.add(new Weapon("large-weapon") {{
-            //   reload = 13f;
-              // x = 4f;
-              //  y = 2f;
-               // top = false;
-              //  ejectEffect = Fx.casing1;
-               //bullet = new BasicBulletType(2.5f, 9); // {{
+	constructor = MechUnit::new;
+            speed = 0.5f;
+            hitSize = 8f;
+          health = 150;
+            weapons.add(new Weapon("large-weapon") {{
+               reload = 13f;
+               x = 4f;
+               y = 2f;
+                top = false;
+                ejectEffect = Fx.casing1;
+               bullet = new BasicBulletType(2.5f, 9); // {{
                   //width = 7f;
                  //   height = 9f;
                //     lifetime = 60f;
 	       	 //}};
-	  //  }});
+	    }});
     }};		      
 	//light
 	//done
