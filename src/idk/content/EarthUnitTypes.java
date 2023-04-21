@@ -70,6 +70,7 @@ public static void load() {
            health = 250;
 	    armor = 3;
             weapons.add(new Weapon("ut-machine-gun"){{
+		rotate = true;
                 reload = 2f;
                 x = 4f;
                 y = 2f;
@@ -89,7 +90,8 @@ public static void load() {
             hitSize = 8f;
             health = 250;
 	    armor = 6;
-            weapons.add(new Weapon("UT-machine-gun"){{
+            weapons.add(new Weapon("ut-machine-gun"){{
+		rotate = true;
                 reload = 2f;
                 x = 4f;
                 y = 2f;
@@ -109,7 +111,8 @@ public static void load() {
             hitSize = 8f;
             health = 600;
 	    armor = 3;
-            weapons.add(new Weapon("cannon"){{
+            weapons.add(new Weapon("ut-cannon"){{
+		    rotate = true;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -129,7 +132,8 @@ public static void load() {
             hitSize = 8f;
             health = 600;
 	    armor = 6;
-            weapons.add(new Weapon("cannon"){{
+            weapons.add(new Weapon("ut-cannon"){{
+		    rotate = true;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -149,7 +153,8 @@ public static void load() {
             hitSize = 8f;
             health = 1000;
 	    armor = 3;
-            weapons.add(new Weapon("cannon"){{
+            weapons.add(new Weapon("ut-cannon"){{
+		    rotate = true;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -170,7 +175,8 @@ public static void load() {
             hitSize = 8f;
             health = 1000;
 	    armor = 6;
-            weapons.add(new Weapon("cannon"){{
+            weapons.add(new Weapon("ut-cannon"){{
+		    rotate = true;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -192,7 +198,8 @@ public static void load() {
             hitSize = 8f;
             health = 250;
 	    armor = 3;
-            weapons.add(new Weapon("laser-cannon"){{
+            weapons.add(new Weapon("ut-laser-cannon"){{
+		    rotate = true;
                 reload = 40f;
                 x = 4f;
                 y = 2f;
@@ -212,7 +219,8 @@ public static void load() {
             hitSize = 8f;
             health = 250;
 	    armor = 6;
-            weapons.add(new Weapon("laser-cannon"){{
+            weapons.add(new Weapon("ut-laser-cannon"){{
+		    rotate = true;
                 reload = 40f;
                 x = 4f;
                 y = 2f;
@@ -232,7 +240,8 @@ public static void load() {
             hitSize = 8f;
             health = 600;
 	    armor = 3;
-            weapons.add(new Weapon("fast-laser-cannon"){{
+            weapons.add(new Weapon("ut-fast-laser-cannon"){{
+		    rotate = true;
                 reload = 25f;
                 x = 6f;
                 y = 2f;
@@ -252,7 +261,8 @@ public static void load() {
             hitSize = 8f;
             health = 600;
 	    armor = 6;
-            weapons.add(new Weapon("fast-laser-cannon"){{
+            weapons.add(new Weapon("ut-fast-laser-cannon"){{
+		    rotate = true;
                 reload = 25f;
                 x = 6f;
                 y = 2f;
@@ -272,7 +282,8 @@ public static void load() {
             hitSize = 8f;
             health = 1000;
 	    armor = 3;
-            weapons.add(new Weapon("laser-cannon"){{
+            weapons.add(new Weapon("ut-laser-cannon"){{
+		    rotate = true;
                 reload = 40f;
                 x = 6f;
                 y = 2f;
@@ -292,7 +303,8 @@ public static void load() {
             hitSize = 8f;
             health = 1000;
 	    armor = 6;
-            weapons.add(new Weapon("laser-cannon"){{
+            weapons.add(new Weapon("ut-laser-cannon"){{
+		    rotate = true;
                 reload = 40f;
                 x = 6f;
                 y = 2f;
@@ -313,7 +325,8 @@ public static void load() {
             hitSize = 8f;
             health = 250;
 	    armor = 3;
-            weapons.add(new Weapon("guided-missiles"){{
+            weapons.add(new Weapon("ut-guided-missiles"){{
+		    rotate = true;
                 reload = 50f;
                 x = 4f;
                 y = 2f;
@@ -334,7 +347,8 @@ public static void load() {
             hitSize = 8f;
             health = 250;
 	    armor = 6;
-            weapons.add(new Weapon("guided-missiles"){{
+            weapons.add(new Weapon("ut-guided-missiles"){{
+		    rotate = true;
                 reload = 50f;
                 x = 4f;
                 y = 2f;
@@ -356,7 +370,8 @@ public static void load() {
             hitSize = 8f;
             health = 600;
 	    armor = 3;
-            weapons.add(new Weapon("guided-missiles"){{
+            weapons.add(new Weapon("ut-guided-missiles"){{
+		    rotate = true;
                 reload = 50f;
                 x = 6f;
                 y = 2f;
@@ -378,7 +393,8 @@ public static void load() {
             hitSize = 8f;
             health = 600;
 	    armor = 6;
-            weapons.add(new Weapon("guided-missiles"){{
+            weapons.add(new Weapon("ut-guided-missiles"){{
+		    rotate = true;
                 reload = 50f;
                 x = 6f;
                 y = 2f;
@@ -400,7 +416,8 @@ public static void load() {
             hitSize = 8f;
             health = 1000;
 	    armor = 3;
-            weapons.add(new Weapon("dual-guided-missiles"){{
+            weapons.add(new Weapon("ut-dual-guided-missiles"){{
+		    rotate = true;
                 reload = 50f;
                 x = 6f;
                 y = 2f;
@@ -422,7 +439,8 @@ public static void load() {
             hitSize = 8f;
             health = 1000;
 	    armor = 6;
-            weapons.add(new Weapon("dual-guided-missiles"){{
+            weapons.add(new Weapon("ut-dual-guided-missiles"){{
+		    rotate = true;
                 reload = 50f;
                 x = 6f;
                 y = 2f;
