@@ -307,7 +307,7 @@ public class EarthBlocks{
             new UnitPlan(EarthUnitTypes.MCHW, 60f, with(EarthItem.mediumchasis, 1, EarthItem.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.HCLW, 70f, with(EarthItem.heavychasis, 1, EarthItem.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.HCMW, 70f, with(EarthItem.heavychasis, 1,  EarthItem.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-            new UnitPlan(EarthUnitTypes.HCHW, 80f, with(EarthItem.heavychasis, 1, EarthItem.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25))//,
+            new UnitPlan(EarthUnitTypes.HCHW, 80f, with(EarthItem.heavychasis, 1, EarthItem.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
                 //armour
             new UnitPlan(EarthUnitTypes.LCLWA, 40f, with(EarthItem.lightchasis, 1,  EarthItem.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.LCMWA, 40f, with(EarthItem.lightchasis, 1, EarthItem.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
