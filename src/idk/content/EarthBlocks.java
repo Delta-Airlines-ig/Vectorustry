@@ -42,6 +42,8 @@ public class EarthBlocks{
     voltitereactor, turbinegenerator, 
     //unit building
     groundassembler, airassembler, armourer, groundchasisassembler, weaponfactory, 
+    //weapons (not shown anywhere)
+    lightweapons, mediumweapons, heavyweapons, 
     //crafting
     steelSmelter; 
 
@@ -285,6 +287,11 @@ public class EarthBlocks{
             consumePower(2f);
             size = 3;
             filter = Seq.with(EarthBlocks.lightweapons, EarthBlocks.mediumweapons, EarthBlocks.heavyweapons);
+        }};
+        //weapons
+                lightweapons = new Wall("lightweapons"){{
+            health = 440;
+            requirements(Category.defense, with(EarthItems.iron, 50, EarthItems.steel, 25));
         }};
         // endgame turrets : ONLY the 5 Disaster Turrets specified in the trello!
       //  tarnation = new PowerTurret("tarnation"){{
