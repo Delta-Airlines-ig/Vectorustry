@@ -39,6 +39,7 @@ import mindustry.world.meta.*;
 import mindustry.content.*;
 import idk.content.*;
 
+import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
 
 @SuppressWarnings("deprecation")
@@ -268,9 +269,6 @@ public class EarthBlocks{
             requirements(Category.units, with(Items.copper, 500, Items.lead, 250, EarthItems.iron, 350, Items.silicon, 150, EarthItems.steel, 250));
             regionSuffix = "-dark";
             size = 3;
-            public AssemblerUnitPlan(UnitType unit,
-             float time,
-             Seq<PayloadStack> requirements)
             plans = (
                 new AssemblerUnitPlan(EarthUnitTypes.LCLW, 30f, PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25))//,
         //    new AssemblerUnitPlan(EarthUnitTypes.LCMW, 30f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
