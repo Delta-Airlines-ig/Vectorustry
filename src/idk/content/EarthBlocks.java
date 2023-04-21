@@ -41,7 +41,7 @@ public class EarthBlocks{
     //power
     voltitereactor, turbinegenerator, 
     //unit building
-    groundassembler, airassembler, armourer, groundchasisassembler, weaponfactory, 
+    groundassembler, airassembler, groundchasisassembler, weaponfactory, 
     //weapons (not shown anywhere)
     lightweapons, mediumweapons, heavyweapons, 
     //crafting
@@ -258,7 +258,17 @@ public class EarthBlocks{
             new AssemblerUnitPlan(UnitTypes.MCHW, 60f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
             new AssemblerUnitPlan(UnitTypes.HCLW, 70f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
             new AssemblerUnitPlan(UnitTypes.HCMW, 70f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-            new AssemblerUnitPlan(UnitTypes.HCHW, 80f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25))
+            new AssemblerUnitPlan(UnitTypes.HCHW, 80f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+                //armour
+            new AssemblerUnitPlan(UnitTypes.LCLWA, 40f, PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.LCMWA, 40f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new AssemblerUnitPlan(UnitTypes.LCHWA, 50f, PayloadStack.list(EarthUnitTypes.heavychasis, 1,EarthBlocks.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.MCLWA, 60f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.MCMWA, 60f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new AssemblerUnitPlan(UnitTypes.MCHWA, 70f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.HCLWA, 80f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.HCMWA, 80f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new AssemblerUnitPlan(UnitTypes.HCHWA, 90f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25))
             );
             areaSize = 5;
             researchCostMultiplier = 0.4f;
@@ -290,8 +300,16 @@ public class EarthBlocks{
         }};
         //weapons
                 lightweapons = new Wall("lightweapons"){{
-            health = 440;
+            health = 1;
             requirements(Category.defense, with(EarthItems.iron, 50, EarthItems.steel, 25));
+        }};
+                mediumweapons = new Wall("mediumweapons"){{
+            health = 1;
+            requirements(Category.defense, with(EarthItems.iron, 75, EarthItems.steel, 40, Items.silicon, 25, Items.metaglass, 5));
+        }};
+                heavyweapons = new Wall("heavyweapons"){{
+            health = 1;
+            requirements(Category.defense, with(EarthItems.iron, 175, EarthItems.steel, 100, Items.silicon, 30));
         }};
         // endgame turrets : ONLY the 5 Disaster Turrets specified in the trello!
       //  tarnation = new PowerTurret("tarnation"){{
