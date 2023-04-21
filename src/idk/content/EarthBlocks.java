@@ -41,7 +41,7 @@ public class EarthBlocks{
     //power
     voltitereactor, turbinegenerator, 
     //unit building
-    groundassembler, airassembler, armourer,
+    groundassembler, airassembler, armourer, groundchasisassembler, weaponfactory, 
     //crafting
     steelSmelter; 
 
@@ -244,26 +244,48 @@ public class EarthBlocks{
         }};
 //unit assembly
                 groundassembler = new UnitAssembler("Ground-assembler"){{
-            requirements(Category.units, with(Items.thorium, 500, Items.oxide, 150, Items.carbide, 80, Items.silicon, 500));
+            requirements(Category.units, with(Items.copper, 500, Items.lead, 250, EarthItems.iron, 350, Items.silicon, 150, Earthitems.steel, 250));
             regionSuffix = "-dark";
             size = 3;
             plans.add(
-            new AssemblerUnitPlan(UnitTypes.LCLW, 60f * 50f, PayloadStack.list(UnitTypes.stell, 4,  EarthBlocks.lightweapons, 1))),
-            new AssemblerUnitPlan(UnitTypes.LCMW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.mediumweapons, 1))
-            new AssemblerUnitPlan(UnitTypes.LCHW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6,EarthBlocks.heavyweapons, 1))
-            new AssemblerUnitPlan(UnitTypes.MCLW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.lightweapons, 1))
-            new AssemblerUnitPlan(UnitTypes.MCMW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6,  EarthBlocks.mediumweapons, 1)))
-            new AssemblerUnitPlan(UnitTypes.MCHW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.heavyweapons, 1))
-            new AssemblerUnitPlan(UnitTypes.HCLW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.lightweapons, 1)))
-            new AssemblerUnitPlan(UnitTypes.HCMW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6,  EarthBlocks.mediumweapons, 1)))
-            new AssemblerUnitPlan(UnitTypes.HCHW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.heavyweapons, 1)))
+            new AssemblerUnitPlan(UnitTypes.LCLW, 30f, PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.LCMW, 30f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new AssemblerUnitPlan(UnitTypes.LCHW, 40f, PayloadStack.list(EarthUnitTypes.heavychasis, 1,EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.MCLW, 50f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.MCMW, 50f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new AssemblerUnitPlan(UnitTypes.MCHW, 60f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.HCLW, 70f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new AssemblerUnitPlan(UnitTypes.HCMW, 70f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new AssemblerUnitPlan(UnitTypes.HCHW, 80f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25))
             );
             areaSize = 5;
             researchCostMultiplier = 0.4f;
-
+            dronesCreated = 8;
             consumePower(3f);
         }};
-    
+                groundchasisfabricator = new UnitFactory("ground-chasis-fabricator"){{
+            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.iron, 150, EarthItems.steel, 75));
+            size = 3;
+            plans.add(
+            new UnitPlan(EarthUnitTypes.lightchasis, 40f, with(Items.copper, 40, Items.silicon, 20, EarthItems.iron, 50)),
+            new UnitPlan(EarthUnitTypes.mediumchasis, 60f, with(Items.copper, 50, Items.silicon, 30, EarthItems.iron, 100)),
+            new UnitPlan(EarthUnitTypes.mediumchasis, 80f, with(Items.copper, 60, Items.silicon, 35, EarthItems.iron, 125, EarthItems.steel, 25)),
+            );
+            researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
+            regionSuffix = "-dark";
+            //fogRadius = 3;
+            consumePower(2f);
+        }};
+        //weapon factory
+            weaponfactory = new Constructor("weapon-factory"){{
+            requirements(Category.units, with(Items.silicon, 100, EarthItems.iron, 150, EarthItems.steel, 80));
+            regionSuffix = "-dark";
+            hasPower = true;
+            buildSpeed = 0.6f;
+            consumePower(2f);
+            size = 3;
+            filter = Seq.with(EarthBlocks.lightweapons, EarthBlocks.mediumweapons, EarthBlocks.heavyweapons);
+        }};
         // endgame turrets : ONLY the 5 Disaster Turrets specified in the trello!
       //  tarnation = new PowerTurret("tarnation"){{
       //      requirements(Category.turret, with(Items.lead, 6000, Items.thorium, 5500, Items.silicon, 3950, Items.plastanium, 1800, Items.surgeAlloy, 1024, MindyItems.bittrium, 128));
