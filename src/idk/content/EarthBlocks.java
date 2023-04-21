@@ -333,7 +333,7 @@ public class EarthBlocks{
                 //droneport
             droneport = new DroneCenter("droneport"){{
             requirements(Category.units, with(Items.silicon, 100, EarthItems.iron, 150, EarthItems.steel, 80));
-            regionSuffix = "-dark";
+           // regionSuffix = "-dark";
             hasPower = true;
             unitsSpawned = 8;
             droneType = UnitTypes.mega;
