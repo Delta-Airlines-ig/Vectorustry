@@ -69,7 +69,7 @@ public static void load() {
             hitSize = 8f;
            health = 250;
 	    armor = 3;
-            weapons.add(new Weapon("machine-gun"){{
+            weapons.add(new Weapon("ut-machine-gun"){{
                 reload = 2f;
                 x = 4f;
                 y = 2f;
@@ -89,7 +89,7 @@ public static void load() {
             hitSize = 8f;
             health = 250;
 	    armor = 6;
-            weapons.add(new Weapon("machine-gun"){{
+            weapons.add(new Weapon("UT-machine-gun"){{
                 reload = 2f;
                 x = 4f;
                 y = 2f;
