@@ -198,8 +198,8 @@ public static void load() {
              top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -218,8 +218,8 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -238,8 +238,8 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                bullet = new LaserBoltBulletType(5f, 45){{
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -258,8 +258,8 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBoltBulletType(5f, 45){{
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -278,8 +278,8 @@ public static void load() {
                top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -298,8 +298,8 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBoltBulletType(5f, 50){{
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -313,7 +313,7 @@ public static void load() {
             health = 250;
 	    armor = 3;
             weapons.add(new Weapon("guided-missiles"){{
-                reload = 60f;
+                reload = 50f;
                 x = 4f;
                 y = 2f;
                 top = false;
@@ -334,7 +334,7 @@ public static void load() {
             health = 250;
 	    armor = 6;
             weapons.add(new Weapon("guided-missiles"){{
-                reload = 60f;
+                reload = 50f;
                 x = 4f;
                 y = 2f;
                 top = false;
@@ -356,7 +356,7 @@ public static void load() {
             health = 600;
 	    armor = 3;
             weapons.add(new Weapon("guided-missiles"){{
-                reload = 60f;
+                reload = 50f;
                 x = 6f;
                 y = 2f;
                 top = false;
@@ -378,7 +378,7 @@ public static void load() {
             health = 600;
 	    armor = 6;
             weapons.add(new Weapon("guided-missiles"){{
-                reload = 60f;
+                reload = 50f;
                 x = 6f;
                 y = 2f;
                 top = false;
@@ -400,7 +400,7 @@ public static void load() {
             health = 1000;
 	    armor = 3;
             weapons.add(new Weapon("dual-guided-missiles"){{
-                reload = 60f;
+                reload = 50f;
                 x = 6f;
                 y = 2f;
                 top = false;
@@ -422,7 +422,7 @@ public static void load() {
             health = 1000;
 	    armor = 6;
             weapons.add(new Weapon("dual-guided-missiles"){{
-                reload = 60f;
+                reload = 50f;
                 x = 6f;
                 y = 2f;
                 top = false;
