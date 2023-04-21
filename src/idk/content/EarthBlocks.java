@@ -40,6 +40,8 @@ public class EarthBlocks{
     solo, trio, converge, splice, spear, volley, hurricane, cataclysm,  
     //power
     voltitereactor, turbinegenerator, 
+    //unit building
+    groundassembler, airassembler
     //crafting
     steelSmelter; 
 
