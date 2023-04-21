@@ -254,25 +254,25 @@ public class EarthBlocks{
             regionSuffix = "-dark";
             size = 3;
             plans.add(
-            new AssemblerUnitPlan(UnitTypes.LCLW, 30f, PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.LCMW, 30f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-            new AssemblerUnitPlan(UnitTypes.LCHW, 40f, PayloadStack.list(EarthUnitTypes.heavychasis, 1,EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.MCLW, 50f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.MCMW, 50f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-            new AssemblerUnitPlan(UnitTypes.MCHW, 60f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.HCLW, 70f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.HCMW, 70f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-            new AssemblerUnitPlan(UnitTypes.HCHW, 80f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.LCLW, 30f, with(PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1), EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.LCMW, 30f, with(PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1), EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new AssemblerUnitPlan(EarthUnitTypes.LCHW, 40f, with(PayloadStack.list(EarthUnitTypes.heavychasis, 1,EarthBlocks.heavyweapons, 1), EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.MCLW, 50f, with(PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1), EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.MCMW, 50f, with(PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1), EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new AssemblerUnitPlan(EarthUnitTypes.MCHW, 60f, with(PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1), EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.HCLW, 70f, with(PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1), EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.HCMW, 70f, with(PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1), EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new AssemblerUnitPlan(EarthUnitTypes.HCHW, 80f, with(PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1), EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
                 //armour
-            new AssemblerUnitPlan(UnitTypes.LCLWA, 40f, PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.LCMWA, 40f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-            new AssemblerUnitPlan(UnitTypes.LCHWA, 50f, PayloadStack.list(EarthUnitTypes.heavychasis, 1,EarthBlocks.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.MCLWA, 60f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.MCMWA, 60f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-            new AssemblerUnitPlan(UnitTypes.MCHWA, 70f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.HCLWA, 80f, PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
-            new AssemblerUnitPlan(UnitTypes.HCMWA, 80f, PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-            new AssemblerUnitPlan(UnitTypes.HCHWA, 90f, PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25))
+            new AssemblerUnitPlan(EarthUnitTypes.LCLWA, 40f, with(PayloadStack.list(EarthUnitTypes.lightchasis, 1,  EarthBlocks.lightweapons, 1), EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.LCMWA, 40f, with(PayloadStack.list(EarthUnitTypes.mediumchasis, 1, EarthBlocks.mediumweapons, 1), EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new AssemblerUnitPlan(EarthUnitTypes.LCHWA, 50f, with(PayloadStack.list(EarthUnitTypes.heavychasis, 1,EarthBlocks.heavyweapons, 1), EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.MCLWA, 60f, with(PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1), EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.MCMWA, 60f, with(PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1), EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new AssemblerUnitPlan(EarthUnitTypes.MCHWA, 70f, with(PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1), EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.HCLWA, 80f, with(PayloadStack.list(EarthUnitTypes.lightchasis, 1, EarthBlocks.lightweapons, 1), EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new AssemblerUnitPlan(EarthUnitTypes.HCMWA, 80f, with(PayloadStack.list(EarthUnitTypes.mediumchasis, 1,  EarthBlocks.mediumweapons, 1), EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new AssemblerUnitPlan(EarthUnitTypes.HCHWA, 90f, with(PayloadStack.list(EarthUnitTypes.heavychasis, 1, EarthBlocks.heavyweapons, 1), EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25))
             );
             areaSize = 5;
             researchCostMultiplier = 0.4f;
