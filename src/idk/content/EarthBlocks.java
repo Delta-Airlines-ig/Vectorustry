@@ -41,7 +41,7 @@ public class EarthBlocks{
     //power
     voltitereactor, turbinegenerator, 
     //unit building
-    groundassembler, airassembler
+    groundassembler, airassembler, armourer,
     //crafting
     steelSmelter; 
 
@@ -242,7 +242,27 @@ public class EarthBlocks{
             consumePower(5.6f);
             requirements(Category.production, with(Items.copper, 175, EarthItems.iron, 120, Items.silicon, 100, EarthItems.tin, 45, EarthItems.lithium, 60, EarthItems.steel, 60, EarthItems.voltite, 25));
         }};
+//unit assembly
+                groundassembler = new UnitAssembler("Ground-assembler"){{
+            requirements(Category.units, with(Items.thorium, 500, Items.oxide, 150, Items.carbide, 80, Items.silicon, 500));
+            regionSuffix = "-dark";
+            size = 3;
+            plans.add(
+            new AssemblerUnitPlan(UnitTypes.LCLW, 60f * 50f, PayloadStack.list(UnitTypes.stell, 4,  EarthBlocks.lightweapons, 1))),
+            new AssemblerUnitPlan(UnitTypes.LCMW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.mediumweapons, 1))
+            new AssemblerUnitPlan(UnitTypes.LCHW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6,EarthBlocks.heavyweapons, 1))
+            new AssemblerUnitPlan(UnitTypes.MCLW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.lightweapons, 1))
+            new AssemblerUnitPlan(UnitTypes.MCMW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6,  EarthBlocks.mediumweapons, 1)))
+            new AssemblerUnitPlan(UnitTypes.MCHW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.heavyweapons, 1))
+            new AssemblerUnitPlan(UnitTypes.HCLW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.lightweapons, 1)))
+            new AssemblerUnitPlan(UnitTypes.HCMW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6,  EarthBlocks.mediumweapons, 1)))
+            new AssemblerUnitPlan(UnitTypes.HCHW, 60f * 60f * 3f, PayloadStack.list(UnitTypes.locus, 6, EarthBlocks.heavyweapons, 1)))
+            );
+            areaSize = 5;
+            researchCostMultiplier = 0.4f;
 
+            consumePower(3f);
+        }};
     
         // endgame turrets : ONLY the 5 Disaster Turrets specified in the trello!
       //  tarnation = new PowerTurret("tarnation"){{
