@@ -38,7 +38,7 @@ public class EarthUnitTypes{
 //LCLW = machine gun, MCMW = better cannon, HCHW = dual missiles
 //units are defined in the order below
 //ground
-    public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
+    public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis;
 	
 public static void load() {
   // add constructor = UnitEntity::create; to all units, also uncomment them
@@ -436,6 +436,28 @@ public static void load() {
                     lifetime = 60f;
                }};
             }});
+        }};
+	//chasiss
+		lightchasis = new UnitType("lightchasis"){{
+		constructor = MechUnit::create;
+            speed = 1f;
+            hitSize = 8f;
+            health = 250;
+	    armor = 3;
+        }};
+	mediumchasis = new UnitType("mediumchasis"){{
+		constructor = MechUnit::create;
+            speed = 0.8f;
+            hitSize = 8f;
+            health = 600;
+	    armor = 3;
+        }};
+	heavychasis = new UnitType("heavychasis"){{
+		constructor = MechUnit::create;
+            speed = 0.4f;
+            hitSize = 8f;
+            health = 1000;
+	    armor = 3;
         }};
 }
 }
