@@ -383,7 +383,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-     //           bullet = new MissileBulletType(7f, 25){{
+                bullet = new MissileBulletType(7f, 25){{
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
