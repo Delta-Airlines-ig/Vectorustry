@@ -1,8 +1,8 @@
 
-displayName: "testing java mod"
+displayName: "Uncharted Territories"
 
 #the internal name of your mod
-name: "javamodtesting"
+name: "UT"
 
 #your name
 author: "DeltaV"
@@ -11,7 +11,7 @@ author: "DeltaV"
 main: "idk.IdkMod"
 
 #the mod description as seen in the mod dialog
-description: "A Mindustry Java mod template."
+description: "Serpulo 2:Electric Boogaloo"
 
 #the mod version
 version: 1.0
