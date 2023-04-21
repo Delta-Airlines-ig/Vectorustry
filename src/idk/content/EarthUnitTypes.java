@@ -39,10 +39,16 @@ public class EarthUnitTypes{
 //units are defined in the order below
 //ground
     public static UnitType dagge; // LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA;
+	
+		// Steal from UAW which stole from Progressed Material which stole from Endless Rusting which stole from Progressed Materials in the past which stole from BetaMindy
+	private static final Entry<Class<? extends Entityc>, Prov<? extends Entityc>>[] types = new Entry[]{
+		prov(UnitEntity.class, UnitEntity::new),
+	};
 
 public static void load() {
   
 	dagge = new UnitType("dagge") {{
+	constructor = UnitEntity::new;
        //     speed = 0.5f;
        //     hitSize = 8f;
        //     health = 150;
