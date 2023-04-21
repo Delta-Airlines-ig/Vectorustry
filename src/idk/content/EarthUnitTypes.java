@@ -43,7 +43,7 @@ public class EarthUnitTypes{
 public static void load() {
   // add constructor = UnitEntity::create; to all units, also uncomment them
 	dagge = new UnitType("dagge") {{
-          constructor = UnitEntity::create;
+          constructor = MechUnit::create;
             speed = 0.5f;
             hitSize = 8f;
           health = 150;
@@ -84,7 +84,7 @@ public static void load() {
         }};
 	//done
 	LCLWA = new UnitType("LCLWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.95f;
             hitSize = 8f;
             health = 250;
@@ -104,7 +104,7 @@ public static void load() {
         }};
 	//done
 	MCLW = new UnitType("MCLW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.8f;
             hitSize = 8f;
             health = 600;
@@ -124,7 +124,7 @@ public static void load() {
         }};
 	//done
 	MCLWA = new UnitType("MCLWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.75f;
             hitSize = 8f;
             health = 600;
@@ -144,7 +144,7 @@ public static void load() {
         }};
 	//done
 	HCLW = new UnitType("HCLW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.4f;
             hitSize = 8f;
             health = 1000;
@@ -165,7 +165,7 @@ public static void load() {
 
 	//done
 	HCLWA = new UnitType("HCLWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.4f;
             hitSize = 8f;
             health = 1000;
@@ -187,7 +187,7 @@ public static void load() {
 	//medium
 	//done
 	LCMW = new UnitType("LCMW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 1f;
             hitSize = 8f;
             health = 250;
@@ -207,7 +207,7 @@ public static void load() {
         }};
 	//done
 	LCMWA = new UnitType("LCMWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.95f;
             hitSize = 8f;
             health = 250;
@@ -227,7 +227,7 @@ public static void load() {
         }};
 	//done
 	MCMW = new UnitType("MCMW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.8f;
             hitSize = 8f;
             health = 600;
@@ -247,7 +247,7 @@ public static void load() {
         }};
 	//done
 	MCMWA = new UnitType("MCMWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.75f;
             hitSize = 8f;
             health = 600;
@@ -267,7 +267,7 @@ public static void load() {
         }};
   	//done
 	HCMW = new UnitType("HCMW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.4f;
             hitSize = 8f;
             health = 1000;
@@ -287,7 +287,7 @@ public static void load() {
         }};
   	//done
 	HCMWA = new UnitType("HCMWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.4f;
             hitSize = 8f;
             health = 1000;
@@ -308,7 +308,7 @@ public static void load() {
 	//heavy
 	//not done
 	LCHW = new UnitType("LCHW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 1f;
             hitSize = 8f;
             health = 250;
@@ -329,7 +329,7 @@ public static void load() {
         }};
 	//not done
 	LCHWA = new UnitType("LCHWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 1f;
             hitSize = 8f;
             health = 250;
@@ -351,7 +351,7 @@ public static void load() {
         }};
 	//not done
 	MCHW = new UnitType("MCHW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.8f;
             hitSize = 8f;
             health = 600;
@@ -373,7 +373,7 @@ public static void load() {
         }};
 	//not done
 	MCHWA = new UnitType("MCHWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.8f;
             hitSize = 8f;
             health = 600;
@@ -395,7 +395,7 @@ public static void load() {
         }};
 	//not done
 	HCHW = new UnitType("HCHW"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
             speed = 0.4f;
             hitSize = 8f;
             health = 1000;
@@ -417,7 +417,7 @@ public static void load() {
         }};
 	//not done
 	HCHWA = new UnitType("HCHWA"){{
-		constructor = UnitEntity::create;
+		constructor = MechUnit::create;
           speed = 0.4f;
             hitSize = 8f;
             health = 1000;
