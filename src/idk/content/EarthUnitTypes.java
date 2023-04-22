@@ -359,7 +359,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(1f, 25){{
-			drag = -1f;
+			drag = -0.1f;
 		    trailChance = 1f;
                     width = 7f;
                     height = 9f;
@@ -384,7 +384,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(1f, 25){{
-			drag = -1f;
+			drag = -0.1f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
@@ -410,7 +410,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(1f, 25){{
-			drag = -2f;
+			drag = -0.1f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
@@ -436,7 +436,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(1f, 25){{
-			drag = -1f;
+			drag = -0.1f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
@@ -469,7 +469,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(2f, 25){{
-			drag = -1f;
+			drag = -0.2f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
@@ -502,7 +502,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(1f, 25){{
-			drag = -2f;
+			drag = -0.2f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
