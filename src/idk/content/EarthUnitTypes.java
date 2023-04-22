@@ -70,6 +70,7 @@ public static void load() {
            health = 250;
 	    armor = 3;
             weapons.add(new Weapon("ut-machine-gun"){{
+		    shootSound = Sounds.shootAlt;
 		rotate = true;
 		rotationLimit = 45;
                 reload = 2f;
@@ -92,6 +93,7 @@ public static void load() {
             health = 250;
 	    armor = 6;
             weapons.add(new Weapon("ut-machine-gun"){{
+		    shootSound = Sounds.shootAlt;
 		rotate = true;
 		    rotationLimit = 45;
                 reload = 2f;
@@ -114,6 +116,7 @@ public static void load() {
             health = 600;
 	    armor = 3;
             weapons.add(new Weapon("ut-cannon"){{
+		    shootSound = Sounds.shootBig;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 30f;
@@ -136,6 +139,7 @@ public static void load() {
             health = 600;
 	    armor = 6;
             weapons.add(new Weapon("ut-cannon"){{
+		    shootSound = Sounds.shootBig;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 30f;
@@ -158,6 +162,7 @@ public static void load() {
             health = 1000;
 	    armor = 3;
             weapons.add(new Weapon("ut-cannon"){{
+		    shootSound = Sounds.shootBig;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 30f;
@@ -181,6 +186,7 @@ public static void load() {
             health = 1000;
 	    armor = 6;
             weapons.add(new Weapon("ut-cannon"){{
+		    shootSound = Sounds.shootBig;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 30f;
@@ -205,6 +211,7 @@ public static void load() {
             health = 250;
 	    armor = 3;
             weapons.add(new Weapon("ut-laser-cannon"){{
+		    shootSound = Sounds.railgun;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
@@ -213,6 +220,7 @@ public static void load() {
              top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
+			Color[32a852aa, 2cd45aff, 11f04eff]
                     width = 10f;
                     lifetime = 60f;
                 }};
@@ -226,6 +234,7 @@ public static void load() {
             health = 250;
 	    armor = 6;
             weapons.add(new Weapon("ut-laser-cannon"){{
+		    shootSound = Sounds.railgun;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
@@ -234,6 +243,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
+			Color[32a852aa, 2cd45aff, 11f04eff]
                     width = 10f;
                     lifetime = 60f;
                 }};
@@ -247,6 +257,7 @@ public static void load() {
             health = 600;
 	    armor = 3;
             weapons.add(new Weapon("ut-fast-laser-cannon"){{
+		    shootSound = Sounds.shotgun;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 25f;
@@ -255,6 +266,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                bullet = new LaserBulletType(45f){{
+		       Color[32a863aa, 29cc83ff, 17e398ff]
                     width = 7f;
                     lifetime = 60f;
                 }};
@@ -268,6 +280,7 @@ public static void load() {
             health = 600;
 	    armor = 6;
             weapons.add(new Weapon("ut-fast-laser-cannon"){{
+		    shootSound = Sounds.shotgun;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 25f;
@@ -276,6 +289,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(45f){{
+			Color[32a863aa, 29cc83ff, 17e398ff]
                     width = 7f;
                     lifetime = 60f;
                 }};
@@ -289,6 +303,7 @@ public static void load() {
             health = 1000;
 	    armor = 3;
             weapons.add(new Weapon("ut-laser-cannon"){{
+		    shootSound = Sounds.railgun;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
@@ -297,6 +312,7 @@ public static void load() {
                top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
+			Color[32a852aa, 2cd45aff, 11f04eff]
 			width = 10;
                     lifetime = 60f;
                 }};
@@ -310,6 +326,7 @@ public static void load() {
             health = 1000;
 	    armor = 6;
             weapons.add(new Weapon("ut-laser-cannon"){{
+		    shootSound = Sounds.railgun;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
@@ -318,6 +335,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
+			Color[32a852aa, 2cd45aff, 11f04eff]
 			width = 10;
                     lifetime = 60f;
                 }};
@@ -332,6 +350,7 @@ public static void load() {
             health = 250;
 	    armor = 3;
             weapons.add(new Weapon("ut-guided-missiles"){{
+		    shootSound = Sounds.missileLaunch;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 50f;
@@ -339,10 +358,11 @@ public static void load() {
                 y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new MissileBulletType(5f, 25){{
+                bullet = new MissileBulletType(1f, 25){{
+			drag = -1f;
 		    trailChance = 1f;
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -355,6 +375,7 @@ public static void load() {
             health = 250;
 	    armor = 6;
             weapons.add(new Weapon("ut-guided-missiles"){{
+		    shootSound = Sounds.missileLaunch;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 50f;
@@ -362,11 +383,12 @@ public static void load() {
                 y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new MissileBulletType(5f, 25){{
+                bullet = new MissileBulletType(1f, 25){{
+			drag = -1f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
-                    width = 14f;
-                    height = 18f;
+                    width = 7f;
+                    height = 9f;
                    lifetime = 60f;
                 }};
             }});
@@ -379,6 +401,7 @@ public static void load() {
             health = 600;
 	    armor = 3;
             weapons.add(new Weapon("ut-guided-missiles"){{
+		    shootSound = Sounds.missileLaunch;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 50f;
@@ -386,7 +409,8 @@ public static void load() {
                 y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new MissileBulletType(7f, 25){{
+                bullet = new MissileBulletType(1f, 25){{
+			drag = -2f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
@@ -403,6 +427,7 @@ public static void load() {
             health = 600;
 	    armor = 6;
             weapons.add(new Weapon("ut-guided-missiles"){{
+		    shootSound = Sounds.missileLaunch;
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 50f;
@@ -410,7 +435,8 @@ public static void load() {
                 y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new MissileBulletType(7f, 25){{
+                bullet = new MissileBulletType(1f, 25){{
+			drag = -1f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
@@ -427,11 +453,14 @@ public static void load() {
             health = 1000;
 	    armor = 3;
             weapons.add(new Weapon("ut-dual-guided-missiles"){{
-		    	shoot = new ShootAlternate(){{
+	shootSound = Sounds.missileLaunch;
+		    	shoot = new ShootHelix(){{
                 shots = 2;
-                barrels = 2;
                 spread = 5f;
-                shotDelay = 25f;
+                shotDelay = 0f;
+		mag = 5f;
+		offset = 180f;
+		scl = 1f;
             }};
 		    rotate = true;
 		    rotationLimit = 45;
@@ -440,7 +469,8 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new MissileBulletType(7f, 25){{
+                bullet = new MissileBulletType(2f, 25){{
+			drag = -1f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
@@ -459,18 +489,22 @@ public static void load() {
             weapons.add(new Weapon("ut-dual-guided-missiles"){{
 		    rotate = true;
 		    rotationLimit = 45;
-	shoot = new ShootAlternate(){{
+		    shootSound = Sounds.missileLaunch;
+	shoot = new ShootHelix(){{
                 shots = 2;
-                barrels = 2;
                 spread = 5f;
-                shotDelay = 25f;
+                shotDelay = 0f;
+		mag = 5f;
+		offset = 180f;
+		scl = 1f;
             }};
                 reload = 50f;
                 x = 6f;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new MissileBulletType(7f, 25){{
+                bullet = new MissileBulletType(1f, 25){{
+			drag = -2f;
 		    trailChance = 1f;
 		    homingPower = 0.1f;
                     width = 7f;
