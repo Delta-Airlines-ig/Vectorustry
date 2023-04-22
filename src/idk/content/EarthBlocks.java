@@ -39,7 +39,7 @@ import mindustry.world.meta.*;
 import mindustry.content.*;
 import idk.content.*;
 
-import static idk.content.EarthUnitTypes;
+import static idk.content.EarthUnitTypes.*;
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
 
