@@ -220,7 +220,7 @@ public static void load() {
              top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
-			Color[32a852aa, 2cd45aff, 11f04eff]
+			Color[32a852aa, 2cd45aff, 11f04eff];
                     width = 10f;
                     lifetime = 60f;
                 }};
@@ -243,7 +243,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
-			Color[32a852aa, 2cd45aff, 11f04eff]
+			Color[32a852aa, 2cd45aff, 11f04eff];
                     width = 10f;
                     lifetime = 60f;
                 }};
@@ -266,7 +266,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                bullet = new LaserBulletType(45f){{
-		       Color[32a863aa, 29cc83ff, 17e398ff]
+		       Color[32a863aa, 29cc83ff, 17e398ff];
                     width = 7f;
                     lifetime = 60f;
                 }};
@@ -289,7 +289,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(45f){{
-			Color[32a863aa, 29cc83ff, 17e398ff]
+			Color[32a863aa, 29cc83ff, 17e398ff];
                     width = 7f;
                     lifetime = 60f;
                 }};
@@ -312,7 +312,7 @@ public static void load() {
                top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
-			Color[32a852aa, 2cd45aff, 11f04eff]
+			Color[32a852aa, 2cd45aff, 11f04eff];
 			width = 10;
                     lifetime = 60f;
                 }};
@@ -335,7 +335,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
-			Color[32a852aa, 2cd45aff, 11f04eff]
+			Color[32a852aa, 2cd45aff, 11f04eff];
 			width = 10;
                     lifetime = 60f;
                 }};
