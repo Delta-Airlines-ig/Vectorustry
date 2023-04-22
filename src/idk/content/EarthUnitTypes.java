@@ -208,7 +208,7 @@ public static void load() {
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
-                x = 4f;
+                x = 6f;
                 y = 2f;
              top = false;
                // ejectEffect = Fx.casing1;
@@ -229,7 +229,7 @@ public static void load() {
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
-                x = 4f;
+                x = 6f;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
@@ -292,8 +292,8 @@ public static void load() {
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
-                x = 6f;
-                y = 2f;
+                x = 8f;
+                y = 0f;
                top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
@@ -313,8 +313,8 @@ public static void load() {
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 40f;
-                x = 6f;
-                y = 2f;
+                x = 8f;
+                y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
@@ -335,8 +335,8 @@ public static void load() {
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 50f;
-                x = 4f;
-                y = 2f;
+                x = 6f;
+                y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(5f, 25){{
@@ -358,8 +358,8 @@ public static void load() {
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 50f;
-                x = 4f;
-                y = 2f;
+                x = 6f;
+                y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(5f, 25){{
@@ -383,7 +383,7 @@ public static void load() {
 		    rotationLimit = 45;
                 reload = 50f;
                 x = 6f;
-                y = 2f;
+                y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(7f, 25){{
@@ -407,7 +407,7 @@ public static void load() {
 		    rotationLimit = 45;
                 reload = 50f;
                 x = 6f;
-                y = 2f;
+                y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new MissileBulletType(7f, 25){{
@@ -427,6 +427,12 @@ public static void load() {
             health = 1000;
 	    armor = 3;
             weapons.add(new Weapon("ut-dual-guided-missiles"){{
+		    	shoot = new ShootAlternate(){{
+                shots = 2;
+                barrels = 2;
+                spread = 5f;
+                shotDelay = 25f;
+            }};
 		    rotate = true;
 		    rotationLimit = 45;
                 reload = 50f;
@@ -453,10 +459,10 @@ public static void load() {
             weapons.add(new Weapon("ut-dual-guided-missiles"){{
 		    rotate = true;
 		    rotationLimit = 45;
-		    shoot = new ShootAlternate(){{
-                shots = 1;
+	shoot = new ShootAlternate(){{
+                shots = 2;
                 barrels = 2;
-                spread = 3.5f;
+                spread = 5f;
                 shotDelay = 25f;
             }};
                 reload = 50f;
