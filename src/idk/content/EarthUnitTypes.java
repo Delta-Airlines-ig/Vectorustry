@@ -456,7 +456,6 @@ public static void load() {
 	shootSound = Sounds.missileLaunch;
 		    	shoot = new ShootHelix(){{
                 shots = 2;
-                spread = 5f;
                 shotDelay = 0f;
 		mag = 5f;
 		offset = 180f;
@@ -492,7 +491,6 @@ public static void load() {
 		    shootSound = Sounds.missileLaunch;
 	shoot = new ShootHelix(){{
                 shots = 2;
-                spread = 5f;
                 shotDelay = 0f;
 		mag = 5f;
 		offset = 180f;
