@@ -318,8 +318,8 @@ public class EarthBlocks{
    //         new UnitPlan(EarthUnitTypes.HCMWA, 80f, with(EarthItems.heavychasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
     //        new UnitPlan(EarthUnitTypes.HCHWA, 90f, with(EarthItems.heavychasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25))
           );
-            researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
-            regionSuffix = "-dark";
+         //   researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
+          //  regionSuffix = "-dark";
             //fogRadius = 3;
             consumePower(2f);
         }};
