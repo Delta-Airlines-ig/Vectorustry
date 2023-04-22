@@ -213,9 +213,7 @@ public static void load() {
              top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
-			width = 10;
-                    width = 7f;
-                    height = 9f;
+                    width = 10f;
                     lifetime = 60f;
                 }};
             }});
@@ -236,9 +234,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
-			width = 10;
-                    width = 7f;
-                    height = 9f;
+                    width = 10f;
                     lifetime = 60f;
                 }};
             }});
@@ -259,9 +255,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                bullet = new LaserBulletType(45f){{
-		       width = 7;
                     width = 7f;
-                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -282,9 +276,7 @@ public static void load() {
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(45f){{
-			width = 7;
                     width = 7f;
-                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -306,8 +298,6 @@ public static void load() {
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
 			width = 10;
-                    width = 7f;
-                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
@@ -329,8 +319,6 @@ public static void load() {
                // ejectEffect = Fx.casing1;
                 bullet = new LaserBulletType(50f){{
 			width = 10;
-                    width = 7f;
-                    height = 9f;
                     lifetime = 60f;
                 }};
             }});
