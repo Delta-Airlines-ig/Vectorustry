@@ -71,6 +71,7 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-machine-gun"){{
 		rotate = true;
+		rotationLimit = 45;
                 reload = 2f;
                 x = 4f;
                 y = 2f;
@@ -92,6 +93,7 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-machine-gun"){{
 		rotate = true;
+		    rotationLimit = 45;
                 reload = 2f;
                 x = 4f;
                 y = 2f;
@@ -113,6 +115,7 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -134,6 +137,7 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -155,6 +159,7 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -177,6 +182,7 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -200,12 +206,14 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-laser-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 40f;
                 x = 4f;
                 y = 2f;
              top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
+                bullet = new LaserBulletType(50f){{
+			width = 10;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -221,12 +229,14 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-laser-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 40f;
                 x = 4f;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
+                bullet = new LaserBulletType(50f){{
+			width = 10;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -242,12 +252,14 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-fast-laser-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 25f;
                 x = 6f;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-               bullet = new LaserBoltBulletType(5f, 45){{
+               bullet = new LaserBulletType(45f){{
+		       width = 7;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -263,12 +275,14 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-fast-laser-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 25f;
                 x = 6f;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 45){{
+                bullet = new LaserBulletType(45f){{
+			width = 7;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -284,12 +298,14 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-laser-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 40f;
                 x = 6f;
                 y = 2f;
                top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
+                bullet = new LaserBulletType(50f){{
+			width = 10;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -305,12 +321,14 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-laser-cannon"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 40f;
                 x = 6f;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBoltBulletType(5f, 50){{
+                bullet = new LaserBulletType(50f){{
+			width = 10;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -327,6 +345,7 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-guided-missiles"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 50f;
                 x = 4f;
                 y = 2f;
@@ -349,6 +368,7 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-guided-missiles"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 50f;
                 x = 4f;
                 y = 2f;
@@ -372,6 +392,7 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-guided-missiles"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 50f;
                 x = 6f;
                 y = 2f;
@@ -395,6 +416,7 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-guided-missiles"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 50f;
                 x = 6f;
                 y = 2f;
@@ -418,6 +440,7 @@ public static void load() {
 	    armor = 3;
             weapons.add(new Weapon("ut-dual-guided-missiles"){{
 		    rotate = true;
+		    rotationLimit = 45;
                 reload = 50f;
                 x = 6f;
                 y = 2f;
@@ -441,6 +464,13 @@ public static void load() {
 	    armor = 6;
             weapons.add(new Weapon("ut-dual-guided-missiles"){{
 		    rotate = true;
+		    rotationLimit = 45;
+		    shoot = new ShootAlternate(){{
+                shots = 1;
+                barrels = 2;
+                spread = 3.5f;
+                shotDelay = 25f;
+            }};
                 reload = 50f;
                 x = 6f;
                 y = 2f;
