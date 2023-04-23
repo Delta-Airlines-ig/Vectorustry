@@ -9,7 +9,7 @@ import arc.struct.*;
 import arc.util.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
-import mindustry.annotations.Annotations;
+import java.mindustry.annotations.Annotations;
 import mindustry.entities.*;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
