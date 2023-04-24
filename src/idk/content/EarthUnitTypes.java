@@ -41,7 +41,7 @@ public class EarthUnitTypes{
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis,
 	//air
 	//L M H light medium and heavy, F = fighter(attacks air and can divebomb ground), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
-	LF, MF, HF, LB, MB, HB, LS, MS, HS;
+	LF, MF, HF, LB, MB, HB, LS, MS, HS, smallbuilderdrone;
 	
 public static void load() {
 	dagge = new UnitType("dagge") {{
@@ -828,6 +828,17 @@ public static void load() {
                     frontColor = Color.white;
                 }};
             }});
+        }};
+	smallbuidlerdrone = new UnitType("small construction drone"){{
+		constructor = UnitEntity::create;
+		defaultCommand = UnitCommand.rebuildCommand;
+			targetAir = true;
+		            lowAltitude = true;
+		buildSpeed = 0.15f;
+            speed = 2f;
+            hitSize = 8f;
+            health = 25;
+	    armor = 0;
         }};
 }
 }
