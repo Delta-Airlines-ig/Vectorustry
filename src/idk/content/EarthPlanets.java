@@ -19,13 +19,17 @@ public class EarthPlanets{
 		    localizedName = "ohio";
 		    	icon = "router";
 			iconColor = Color.red;
+		                cloudMeshLoader = () -> new MultiMesh(
+                new HexSkyMesh(this, 2, 0.15f, 0.25f, 7, Color.valueOf("a3a3a3").a(0.75f), 2, 0.42f, 1f, 0.43f),
+                new HexSkyMesh(this, 3, 0.1f, 0.55f, 7, Color.valueOf("5c5c5c").a(0.5f), 2, 0.42f, 1.2f, 0.45f)
+            );
                 bloom = true;
 			visible = true;
 			accessible = true;
 			hasAtmosphere = true;
 			alwaysUnlocked = true;
-                //atmosphereColor = Color.gray.cpy();
-                //landCloudColor = Color.clear.cpy();
+                atmosphereColor = Color.gray.cpy();
+                landCloudColor = Color.valueOf("5c5c5c").a(0.5f);
               //  atmosphereRadOut = 0.5f;
               //  atmosphereRadIn = 0.05f;
                // tidalLock = true;
@@ -76,7 +80,8 @@ public class EarthPlanets{
               //  atmosphereRadOut = 0.5f;
               //  atmosphereRadIn = 0.05f;
                // tidalLock = true;
-               // hasAtmosphere = true;
+                hasAtmosphere = false;
+			orbitRadius = 5;
               //  generator = new idkGenerator();
                 //placeholder
                 ruleSetter = r -> {
