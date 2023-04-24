@@ -299,6 +299,7 @@ public class EarthBlocks{
                groundassembler = new UnitFactory("ground-fabricator"){{
            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
+            localizedName = "ground-fabricator";
             plans = Seq.with(
             new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.lightchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
            new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
