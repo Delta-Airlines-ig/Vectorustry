@@ -4,7 +4,7 @@ import arc.graphics.*;
 import mindustry.type.*;
 
 public class EarthLiquids{
-    public static Liquid oxygen, carbon-dioxide, steam, high-pressure-steam;
+    public static Liquid oxygen, carbondioxide, steam, highpressuresteam;
 
     public static void load(){
 
