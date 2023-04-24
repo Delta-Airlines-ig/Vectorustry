@@ -9,7 +9,7 @@ import arc.struct.*;
 import arc.util.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
-import java.mindustry.annotations.Annotations;
+//import mindustry.annotations;
 import mindustry.entities.*;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
@@ -38,10 +38,9 @@ public class EarthUnitTypes{
 //LCLW = machine gun, MCMW = better cannon, HCHW = dual missiles
 //units are defined in the order below
 //ground
-    public static @EntityDef({Unitc.class, Mechc.class}) UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis;
+    public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis;
 	
 public static void load() {
-  // add constructor = UnitEntity::create; to all units, also uncomment them
 	dagge = new UnitType("dagge") {{
           constructor = MechUnit::create;
             speed = 0.5f;
