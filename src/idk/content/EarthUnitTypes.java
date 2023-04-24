@@ -731,7 +731,7 @@ public static void load() {
                     lifetime = 60f;
                 }};
             }});
-	weapons.add(new Weapon("ut-backgunner){{
+	weapons.add(new Weapon("ut-backgunner"){{
 	shootSound = Sounds.missileLaunch;
 		    rotate = true;
 		rotationLimit = 90;
