@@ -34,7 +34,7 @@ public class IdkMod extends Mod{
     //@Override
     public void loadContent(){
         Log.info("Loading some content i totally made myself.");
-              //  EarthLiquids.load();
+       EarthLiquids.load();
        EarthItems.load();
        EarthUnitTypes.load();
        EarthBlocks.load();
