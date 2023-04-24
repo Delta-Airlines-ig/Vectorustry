@@ -300,7 +300,7 @@ public class EarthBlocks{
            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             plans = Seq.with(
-            new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.lightchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50))//,
+            new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.lightchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
            new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
           new UnitPlan(EarthUnitTypes.LCHW, 40f, with(EarthItems.lightchasis, 1,EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.MCLW, 50f, with(EarthItems.mediumchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
