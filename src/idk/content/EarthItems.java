@@ -15,7 +15,7 @@ public class EarthItems{
         //voltite
         voltite, 
     //other things
-    iron, lithium, tin, steel, stone, aluminum, uranium;
+    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivecompound;
   //add voltite alloys
     public static void load(){
         voltite = new Item("voltite", Color.valueOf("00f0ec")){{
@@ -80,6 +80,25 @@ public class EarthItems{
             hardness = 3;
             radioactivity = 2f;
             flammability = 0f;
+            cost = 1;
+        }};
+                carbon = new Item("carbon", Color.valueOf("ec83af")){{
+            description = "pretty much just very pure coal";
+            localizedName = "carbon";
+            flammability = 0f;
+            cost = 1;
+        }};
+           oxidizer = new Item("oxidizer", Color.valueOf("ec83af")){{
+            description = "used in explosives, very flammable";
+            localizedName = "oxidizer";
+            flammability = 1f;
+            cost = 1;
+        }};
+                   explosivecompound = new Item("explosive compound", Color.valueOf("ec83af")){{
+            description = "a high explosive, contains its own oxidizer";
+            localizedName = "explosive compound";
+            explosiveness = 1f;
+            flammability = 1f;
             cost = 1;
         }};
                 lightchasis = new Item("lightchasis"){{
