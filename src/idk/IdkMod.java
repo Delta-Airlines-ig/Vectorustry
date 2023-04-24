@@ -36,9 +36,9 @@ public class IdkMod extends Mod{
         Log.info("Loading some content i totally made myself.");
               //  EarthLiquids.load();
        EarthItems.load();
+       EarthUnitTypes.load();
        EarthBlocks.load();
         EarthPlanets.load();
-    EarthUnitTypes.load();
      //   EarthSectors.load();
      //   EarthTechTree.load();
         
