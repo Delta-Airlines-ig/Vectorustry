@@ -539,7 +539,7 @@ public static void load() {
 	//fighters
 		//not done
 	LF = new UnitType("LF"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 		circleTarget = true;
 		targetGround = false;
 		flying = true;
@@ -564,7 +564,7 @@ public static void load() {
         }};
 	
 	MF = new UnitType("MF"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 		targetGround = false;
 		circleTarget = true;
 		flying = true;
@@ -603,7 +603,7 @@ public static void load() {
         }};
 	
 		HF = new UnitType("HF"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 			targetGround = false;
 			circleTarget = true;
 		flying = true;
@@ -644,7 +644,7 @@ public static void load() {
         }};
 	//bombers
 			LB = new UnitType("LB"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 			targetAir = false;
 			circleTarget = true;
 		flying = true;
@@ -669,7 +669,7 @@ public static void load() {
         }};
 	
 	MB = new UnitType("MB"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 			targetAir = true;
 			circleTarget = true;
 		flying = true;
@@ -709,7 +709,7 @@ public static void load() {
             }});
         }};
 		    	HB = new UnitType("HB"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 			targetAir = true;
 			circleTarget = true;
 		flying = true;
@@ -750,7 +750,7 @@ public static void load() {
         }};
 		    //support air
 	LS = new UnitType("LS"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 		defaultCommand = UnitCommand.rebuildCommand;
 			targetAir = true;
 		            lowAltitude = true;
@@ -799,7 +799,7 @@ public static void load() {
         }};
 		    //finish
 		    		    	HS = new UnitType("HS"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 		defaultCommand = UnitCommand.rebuildCommand;
 			targetAir = true;
 		            lowAltitude = true;
