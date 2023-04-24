@@ -414,7 +414,7 @@ public class EarthBlocks{
             requirements(Category.units, with(Items.silicon, 100, EarthItems.iron, 150, EarthItems.steel, 80));
            // regionSuffix = "-dark";
             hasPower = true;
-            unitsSpawned = 8;
+            unitsSpawned = 16;
             droneType = EarthUnitTypes.smallbuilderdrone;
             consumePower(2f);
             size = 2;
