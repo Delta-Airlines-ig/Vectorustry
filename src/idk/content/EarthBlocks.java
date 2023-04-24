@@ -388,12 +388,11 @@ public class EarthBlocks{
             new UnitPlan(EarthUnitTypes.LCMWA, 40f, with(EarthItems.iron, 115, EarthItems.steel, 50, Items.silicon, 40, Items.graphite, 35, EarthItems.lithium, 5)),
             new UnitPlan(EarthUnitTypes.LCHWA, 50f, with(EarthItems.iron, 135, EarthItems.steel, 65, Items.silicon, 45, Items.graphite, 40, EarthItems.lithium, 10)),
             new UnitPlan(EarthUnitTypes.MCLWA, 60f, with(EarthItems.iron, 150, EarthItems.steel, 65, Items.silicon, 60, Items.graphite, 40)),
-                //unfinished below here
-            new UnitPlan(EarthUnitTypes.MCMWA, 60f, with(EarthItems.mediumchasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-            new UnitPlan(EarthUnitTypes.MCHWA, 70f, with(EarthItems.mediumchasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
-            new UnitPlan(EarthUnitTypes.HCLWA, 80f, with(EarthItems.heavychasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
-            new UnitPlan(EarthUnitTypes.HCMWA, 80f, with(EarthItems.heavychasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-            new UnitPlan(EarthUnitTypes.HCHWA, 90f, with(EarthItems.heavychasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25))
+            new UnitPlan(EarthUnitTypes.MCMWA, 60f, with(EarthItems.iron, 165, EarthItems.steel, 70, Items.silicon, 70, Items.graphite, 50, EarthItems.lithium, 5)),
+            new UnitPlan(EarthUnitTypes.MCHWA, 70f, with(EarthItems.iron, 185, EarthItems.steel, 85, Items.silicon, 75, Items.graphite, 55, EarthItems.lithium, 10)),
+            new UnitPlan(EarthUnitTypes.HCLWA, 80f, with(EarthItems.iron, 200, EarthItems.steel, 90, Items.silicon, 90, Items.graphite, 55)),
+            new UnitPlan(EarthUnitTypes.HCMWA, 80f, with(EarthItems.iron, 215, EarthItems.steel, 95, Items.silicon, 100, Items.graphite, 65, EarthItems.lithium, 5)),
+            new UnitPlan(EarthUnitTypes.HCHWA, 90f, with(EarthItems.iron, 235, EarthItems.steel, 120, Items.silicon, 105, Items.graphite, 70, EarthItems.lithium, 10))
           );
     //        researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
           //  regionSuffix = "-dark";
@@ -416,9 +415,9 @@ public class EarthBlocks{
            // regionSuffix = "-dark";
             hasPower = true;
             unitsSpawned = 8;
-            droneType = UnitTypes.mega;
+            droneType = EarthUnitTypes.smallbuilderdrone;
             consumePower(2f);
-            size = 3;
+            size = 2;
         }};
         // endgame turrets : ONLY the 5 Disaster Turrets specified in the trello!
       //  tarnation = new PowerTurret("tarnation"){{
