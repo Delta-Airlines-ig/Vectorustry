@@ -767,7 +767,7 @@ public static void load() {
 		
         }};
 		    	MS = new UnitType("MS"){{
-		constructor = UnitType::create;
+		constructor = UnitEntity::create;
 		defaultCommand = UnitCommand.rebuildCommand;
 			targetAir = true;
 		            lowAltitude = true;
