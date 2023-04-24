@@ -66,7 +66,7 @@ public class EarthBlocks{
     //drone port wip
     droneport, 
     //crafting
-    steelSmelter, voltitesynthesizer, carboncatalyst; 
+    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator; 
 
     public static void load() {
         Redsand = new Floor("redsand"){{
@@ -207,6 +207,73 @@ public class EarthBlocks{
             consumePower(1.5f);
             consumeItems(with(Items.coal, 2, EarthItems.iron, 5));
 
+        }};
+                carbonsequestrator = new GenericCrafter("carbon-sequestrator"){{
+            requirements(Category.crafting, with(EarthItems.iron, 60, EarthItems.steel, 180, EarthItems.stone, 150, Items.silicon, 100));
+            size = 3;
+            hasLiquids = true;
+
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(EarthLiquids.carbondioxide, 4.1f), new DrawDefault(), new DrawHeatInput(),
+            new DrawParticles(){{
+                color = Color.valueOf("d4f0ff");
+                alpha = 0.6f;
+                particleSize = 4f;
+                particles = 10;
+                particleRad = 12f;
+                particleLife = 140f;
+            }});
+
+            researchCostMultiplier = 1.1f;
+            liquidCapacity = 40f;
+            consumePower(2f);
+            ambientSound = Sounds.extractLoop;
+            ambientSoundVolume = 0.06f;
+
+            outputLiquid = new LiquidStack(EarthLiquids.carbondioxide, 4f / 60f);
+
+      //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
+        }};
+                carboncatalyst = new GenericCrafter("carbon-catalyst"){{
+            requirements(Category.crafting, with(Items.silicon, 50, Items.graphite, 50, EarthItems.steel, 130, EarthItems.iron, 80, EarthItems.lithium, 20));
+            size = 3;
+
+            researchCostMultiplier = 1.2f;
+            craftTime = 10f;
+            rotate = false;
+            invertFlip = true;
+            group = BlockGroup.liquids;
+
+            liquidCapacity = 50f;
+
+            consumeLiquid(EarthLiquids.carbondioxide, 10f / 60f);
+            consumePower(1f);
+
+            drawer = new DrawMulti(
+                new DrawRegion("-bottom"),
+                new DrawLiquidTile(EarthLiquids.carbondioxide, 2f),
+                new DrawBubbles(Color.valueOf("7693e3")){{
+                    sides = 10;
+                    recurrence = 3f;
+                    spread = 6;
+                    radius = 1.5f;
+                    amount = 20;
+                }},
+                new DrawRegion(),
+                new DrawLiquidOutputs(),
+                new DrawGlowRegion(){{
+                    alpha = 0.7f;
+                    color = Color.valueOf("c4bdf3");
+                    glowIntensity = 0.3f;
+                    glowScale = 6f;
+                }}
+            );
+
+            ambientSound = Sounds.electricHum;
+            ambientSoundVolume = 0.08f;
+
+            regionRotated1 = 3;
+            outputLiquid = new LiquidStack(EarthLiquids.oxygen, 4f / 60f);
+            outputItem = new ItemStack(EarthItems.carbon, 2);
         }};
 //walls
         leadWall = new Wall("lead-wall"){{
