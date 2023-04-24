@@ -296,7 +296,7 @@ public class EarthBlocks{
      //       dronesCreated = 8;
      //       consumePower(3f);
     //   }};
-               groundchasisassembler = new UnitFactory("ground-chasis-fabricator"){{
+               groundassembler = new UnitFactory("ground-fabricator"){{
            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             plans = Seq.with(
