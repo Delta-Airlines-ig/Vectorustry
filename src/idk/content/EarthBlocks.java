@@ -363,21 +363,29 @@ public class EarthBlocks{
      //       dronesCreated = 8;
      //       consumePower(3f);
     //   }};
+        
+        //s=steel, i=iron, si=silicon, g=graphite, l=lithium
+        //light chasis = 10s 50i 25si 10g. medium chasis = 30s 100i 55si 25g. heavy chasis = 55s 150i 85si 40g.
+        //light weapons = 15s 25i 5si 5g. medium weapons = 20s 40i 15si 15g 5l. heavy weapons = 35s 60i 20si 20g 10l
+        //armour costs 20s 25i 10g
+        //base cost is 10s 10i
                groundassembler = new UnitFactory("ground-fabricator"){{
            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             localizedName = "ground-fabricator";
             plans = Seq.with(
-            new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.lightchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-           new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-          new UnitPlan(EarthUnitTypes.LCHW, 40f, with(EarthItems.lightchasis, 1,EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.iron, 85, EarthItems.steel, 35, Items.silicon, 30, Items.graphite, 15)),
+           new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItems.iron, 90, EarthItems.steel, 30, Items.silicon, 40, Items.graphite, 25, EarthItems.lithium, 5)),
+                //unfinished after this
+          new UnitPlan(EarthUnitTypes.LCHW, 40f, with(EarthItems.iron, 85, EarthItems.steel, 35, Items.silicon, 30, Items.graphite, 15)),
             new UnitPlan(EarthUnitTypes.MCLW, 50f, with(EarthItems.mediumchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.MCMW, 50f, with(EarthItems.mediumchasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
             new UnitPlan(EarthUnitTypes.MCHW, 60f, with(EarthItems.mediumchasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.HCLW, 70f, with(EarthItems.heavychasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.HCMW, 70f, with(EarthItems.heavychasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
             new UnitPlan(EarthUnitTypes.HCHW, 80f, with(EarthItems.heavychasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
-            new UnitPlan(EarthUnitTypes.LCLWA, 40f, with(EarthItems.lightchasis, 1,  EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+                //armour
+            new UnitPlan(EarthUnitTypes.LCLWA, 40f, with(EarthItems.iron, 110, EarthItems.steel, 55, Items.silicon, 30, Items.graphite, 25)),
             new UnitPlan(EarthUnitTypes.LCMWA, 40f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
             new UnitPlan(EarthUnitTypes.LCHWA, 50f, with(EarthItems.lightchasis, 1,EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
             new UnitPlan(EarthUnitTypes.MCLWA, 60f, with(EarthItems.mediumchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
