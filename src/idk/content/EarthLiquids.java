@@ -15,7 +15,7 @@ public class EarthLiquids{
             flammability = 1.2f;
         }};
 
-        carbon-dioxide = new Liquid("carbon-dioxide", Color.valueOf("ffa166")){{
+        carbondioxide = new Liquid("carbon-dioxide", Color.valueOf("ffa166")){{
           gas = true;
           coolant = false;
 
@@ -27,7 +27,7 @@ public class EarthLiquids{
             temperature = 0.75f;
         }};
 
-        high-pressure-steam = new Liquid("high-pressure-steam", Color.valueOf("6ecdec")){{
+        highpressuresteam = new Liquid("high-pressure-steam", Color.valueOf("6ecdec")){{
           gas = true;
           coolant = false;
             heatCapacity = 0.9f;
