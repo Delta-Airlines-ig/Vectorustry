@@ -829,7 +829,7 @@ public static void load() {
                 }};
             }});
         }};
-	smallbuidlerdrone = new UnitType("small construction drone"){{
+	smallbuilderdrone = new UnitType("small construction drone"){{
 		constructor = UnitEntity::create;
 		defaultCommand = UnitCommand.rebuildCommand;
 			targetAir = true;
