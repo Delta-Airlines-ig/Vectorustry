@@ -40,7 +40,7 @@ public class EarthUnitTypes{
 //ground
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis,
 	//air
-	//L M H light medium and heavy, F = fighter(only attacks other aircraft), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
+	//L M H light medium and heavy, F = fighter(attacks air and can divebomb ground), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
 	LF, MF, HF, LB, MB, HB, LS, MS, HS;
 	
 public static void load() {
@@ -491,12 +491,12 @@ public static void load() {
 		    rotate = true;
 		    rotationLimit = 45;
 		    shootSound = Sounds.missileLaunch;
-	shoot = new ShootHelix(){{
+	shoot = new ShootPattern(){{
                 shots = 2;
-                shotDelay = 0f;
-		mag = 5f;
-		offset = 180f;
-		scl = 1f;
+                shotDelay = 25f;
+//		mag = 5f;
+//		offset = 180f;
+//		scl = 1f;
             }};
                 reload = 50f;
                 x = 6f;
@@ -540,6 +540,9 @@ public static void load() {
 		//not done
 	LF = new UnitType("LF"){{
 		constructor = UnitType::create;
+		circleTarget = true;
+		targetGround = false;
+		flying = true;
             speed = 2.5f;
             hitSize = 8f;
             health = 150;
@@ -552,10 +555,277 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(9f, 15){{
+                bullet = new BasicBulletType(9f, 10){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	
+	MF = new UnitType("MF"){{
+		constructor = UnitType::create;
+		targetGround = false;
+		circleTarget = true;
+		flying = true;
+            speed = 1.5f;
+            hitSize = 8f;
+            health = 350;
+	    armor = 3;
+            weapons.add(new Weapon("ut-small-air-cannon"){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = false;
+                reload = 15f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(9f, 10){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+		weapons.add(new Weapon("ut-air-cannon"){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = false;
+                reload = 30f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(9f, 30){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	
+		HF = new UnitType("HF"){{
+		constructor = UnitType::create;
+			targetGround = false;
+			circleTarget = true;
+		flying = true;
+            speed = 1f;
+            hitSize = 8f;
+            health = 650;
+	    armor = 3;
+		weapons.add(new Weapon("ut-air-cannon"){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = false;
+                reload = 30f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(9f, 30){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+	weapons.add(new Weapon("ut-small-missile-launcher"){{
+		    rotate = true;
+		    shootSound = Sounds.missileLaunch;
+                reload = 15f;
+                x = 6f;
+                y = 2f;
+                top = true;
+               // ejectEffect = Fx.casing1;
+                bullet = new MissileBulletType(7f, 25){{
+		    trailChance = 1f;
+		    homingPower = 0.2f;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
+               }};
+            }});
+        }};
+	//bombers
+			LB = new UnitType("LB"){{
+		constructor = UnitType::create;
+			targetAir = false;
+			circleTarget = true;
+		flying = true;
+            speed = 2f;
+            hitSize = 8f;
+            health = 250;
+	    armor = 3;
+		weapons.add(new Weapon(){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = false;
+                reload = 10f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BombBulletType(40, 15){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+	
+	MB = new UnitType("MB"){{
+		constructor = UnitType::create;
+			targetAir = true;
+			circleTarget = true;
+		flying = true;
+            speed = 1.3f;
+            hitSize = 8f;
+            health = 650;
+	    armor = 3;
+		weapons.add(new Weapon(){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = false;
+                reload = 8f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BombBulletType(40, 20){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+	weapons.add(new Weapon("ut-backgunner){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = true;
+		rotationLimit = 90;
+		baseRotation = 180;
+                reload = 10f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(9f, 10){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+		    	HB = new UnitType("HB"){{
+		constructor = UnitType::create;
+			targetAir = true;
+			circleTarget = true;
+		flying = true;
+            speed = 0.9f;
+            hitSize = 8f;
+            health = 1050;
+	    armor = 3;
+		weapons.add(new Weapon(){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = false;
+                reload = 5f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BombBulletType(60, 40){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+	weapons.add(new Weapon("ut-backgunner){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = true;
+		rotationLimit = 90;
+		baseRotation = 180;
+                reload = 10f;		
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(9f, 10){{
+                    width = 3f;
+                    height = 5f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+		    //support air
+	LS = new UnitType("LS"){{
+		constructor = UnitType::create;
+		defaultCommand = UnitCommand.rebuildCommand;
+			targetAir = true;
+		            lowAltitude = true;
+		buildSpeed = 0.35f;
+            speed = 3f;
+            hitSize = 8f;
+            health = 100;
+	    armor = 3;
+		
+	    mineTier = 2;
+            mineSpeed = 3.5f;
+		
+		abilities.add(new RepairFieldAbility(5f, 60f * 8, 50f));
+		
+        }};
+		    	MS = new UnitType("MS"){{
+		constructor = UnitType::create;
+		defaultCommand = UnitCommand.rebuildCommand;
+			targetAir = true;
+		            lowAltitude = true;
+		buildSpeed = 0.5f;
+            speed = 2f;
+            hitSize = 8f;
+            health = 400;
+	    armor = 3;
+		
+	    mineTier = 3;
+            mineSpeed = 4f;
+		
+		abilities.add(new RepairFieldAbility(15f, 60f * 4, 50f));
+		
+				weapons.add(new Weapon("heal-weapon-mount"){{
+                shootSound = Sounds.lasershoot;
+                reload = 20f;
+                x = 8f;
+                y = -6f;
+                rotate = true;
+                bullet = new LaserBoltBulletType(5.2f, 10){{
+                    lifetime = 35f;
+                    healPercent = 5f;
+                    collidesTeam = true;
+                    backColor = Pal.heal;
+                    frontColor = Color.white;
+                }};
+            }});
+        }};
+		    //finish
+		    		    	HS = new UnitType("HS"){{
+		constructor = UnitType::create;
+		defaultCommand = UnitCommand.rebuildCommand;
+			targetAir = true;
+		            lowAltitude = true;
+		buildSpeed = 0.5f;
+            speed = 1f;
+            hitSize = 8f;
+            health = 600;
+	    armor = 3;
+		
+	    mineTier = 3;
+            mineSpeed = 4f;
+		
+		abilities.add(new RepairFieldAbility(15f, 60f * 4, 50f));
+		
+				weapons.add(new Weapon("heal-weapon-mount"){{
+                shootSound = Sounds.lasershoot;
+                reload = 20f;
+                x = 8f;
+                y = -6f;
+                rotate = true;
+                bullet = new LaserBoltBulletType(5.2f, 10){{
+                    lifetime = 35f;
+                    healPercent = 5f;
+                    collidesTeam = true;
+                    backColor = Pal.heal;
+                    frontColor = Color.white;
                 }};
             }});
         }};
