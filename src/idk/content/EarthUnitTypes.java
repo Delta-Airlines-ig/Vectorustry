@@ -38,7 +38,10 @@ public class EarthUnitTypes{
 //LCLW = machine gun, MCMW = better cannon, HCHW = dual missiles
 //units are defined in the order below
 //ground
-    public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis;
+    public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis,
+	//air
+	//L M H light medium and heavy, F = fighter(only attacks other aircraft), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
+	LF, MF, HF, LB, MB, HB, LS, MS, HS;
 	
 public static void load() {
 	dagge = new UnitType("dagge") {{
@@ -531,6 +534,30 @@ public static void load() {
             hitSize = 8f;
             health = 1000;
 	    armor = 3;
+        }};
+	//air
+	//fighters
+		//not done
+	LF = new UnitType("LF"){{
+		constructor = UnitType::create;
+            speed = 2.5f;
+            hitSize = 8f;
+            health = 150;
+	    armor = 3;
+            weapons.add(new Weapon("ut-small-air-cannon"){{
+	shootSound = Sounds.missileLaunch;
+		    rotate = false;
+                reload = 15f;
+                x = 6f;
+                y = 2f;
+                top = false;
+               // ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(9f, 15){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
         }};
 }
 }
