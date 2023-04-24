@@ -66,7 +66,7 @@ public class EarthBlocks{
     //drone port wip
     droneport, 
     //crafting
-    steelSmelter, voltitesynthesizer; 
+    steelSmelter, voltitesynthesizer, carbon-catalyst; 
 
     public static void load() {
         Redsand = new Floor("redsand"){{
