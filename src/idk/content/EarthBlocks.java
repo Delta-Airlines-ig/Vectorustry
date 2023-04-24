@@ -296,33 +296,32 @@ public class EarthBlocks{
      //       dronesCreated = 8;
      //       consumePower(3f);
     //   }};
-                groundchasisassembler = new UnitFactory("ground-chasis-fabricator"){{
-            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150));//, EarthItems.iron, 150, EarthItems.steel, 75));
+               groundchasisassembler = new UnitFactory("ground-chasis-fabricator"){{
+           requirements(Category.units, with(Items.silicon, 100, Items.copper, 150));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             plans = Seq.with(
-            new UnitPlan(EarthUnitTypes.dagge, 30f * 1, with(Items.silicon, 50))//,
-           // new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.lightchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50))//,
-       //    new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-        //    new UnitPlan(EarthUnitTypes.LCHW, 40f, with(EarthItems.lightchasis, 1,EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
-        //    new UnitPlan(EarthUnitTypes.MCLW, 50f, with(EarthItems.mediumchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
-      //      new UnitPlan(EarthUnitTypes.MCMW, 50f, with(EarthItems.mediumchasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-     //       new UnitPlan(EarthUnitTypes.MCHW, 60f, with(EarthItems.mediumchasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
-     //       new UnitPlan(EarthUnitTypes.HCLW, 70f, with(EarthItems.heavychasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
-    //        new UnitPlan(EarthUnitTypes.HCMW, 70f, with(EarthItems.heavychasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
-    //        new UnitPlan(EarthUnitTypes.HCHW, 80f, with(EarthItems.heavychasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
-   //         new UnitPlan(EarthUnitTypes.LCLWA, 40f, with(EarthItems.lightchasis, 1,  EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
-   //         new UnitPlan(EarthUnitTypes.LCMWA, 40f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-   //         new UnitPlan(EarthUnitTypes.LCHWA, 50f, with(EarthItems.lightchasis, 1,EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
-   //         new UnitPlan(EarthUnitTypes.MCLWA, 60f, with(EarthItems.mediumchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
-   //         new UnitPlan(EarthUnitTypes.MCMWA, 60f, with(EarthItems.mediumchasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-   //         new UnitPlan(EarthUnitTypes.MCHWA, 70f, with(EarthItems.mediumchasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
-   //         new UnitPlan(EarthUnitTypes.HCLWA, 80f, with(EarthItems.heavychasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
-   //         new UnitPlan(EarthUnitTypes.HCMWA, 80f, with(EarthItems.heavychasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
-    //        new UnitPlan(EarthUnitTypes.HCHWA, 90f, with(EarthItems.heavychasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25))
+            new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.lightchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50))//,
+           new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+          new UnitPlan(EarthUnitTypes.LCHW, 40f, with(EarthItems.lightchasis, 1,EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.MCLW, 50f, with(EarthItems.mediumchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.MCMW, 50f, with(EarthItems.mediumchasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new UnitPlan(EarthUnitTypes.MCHW, 60f, with(EarthItems.mediumchasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.HCLW, 70f, with(EarthItems.heavychasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.HCMW, 70f, with(EarthItems.heavychasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 50, EarthItems.steel, 25, Items.silicon, 50)),
+            new UnitPlan(EarthUnitTypes.HCHW, 80f, with(EarthItems.heavychasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 50, EarthItems.steel, 50, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.LCLWA, 40f, with(EarthItems.lightchasis, 1,  EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.LCMWA, 40f, with(EarthItems.lightchasis, 1, EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new UnitPlan(EarthUnitTypes.LCHWA, 50f, with(EarthItems.lightchasis, 1,EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.MCLWA, 60f, with(EarthItems.mediumchasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.MCMWA, 60f, with(EarthItems.mediumchasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new UnitPlan(EarthUnitTypes.MCHWA, 70f, with(EarthItems.mediumchasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.HCLWA, 80f, with(EarthItems.heavychasis, 1, EarthItems.lightweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 25)),
+            new UnitPlan(EarthUnitTypes.HCMWA, 80f, with(EarthItems.heavychasis, 1,  EarthItems.mediumweapons, 1, EarthItems.iron, 150, EarthItems.steel, 150, Items.silicon, 50)),
+            new UnitPlan(EarthUnitTypes.HCHWA, 90f, with(EarthItems.heavychasis, 1, EarthItems.heavyweapons, 1, EarthItems.iron, 150, EarthItems.steel, 175, Items.silicon, 25))
           );
-         //   researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
+    //        researchCost = with(EarthItems.steel, 50, Items.graphite, 80, Items.silicon, 80);
           //  regionSuffix = "-dark";
-            //fogRadius = 3;
+            fogRadius = 3;
             consumePower(2f);
         }};
         //weapon factory
