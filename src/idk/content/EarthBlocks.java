@@ -659,7 +659,7 @@ public class EarthBlocks{
             range = 100f;
             recoil = 6f;
 
-            shoot = new ShootSpread(6, 40f);
+            shoot = new ShootSpread(6, 20f);
 
             shootCone = 50;
             size = 3;
@@ -1271,12 +1271,12 @@ public class EarthBlocks{
             craftTime = 30f;
             size = 2;
             hasPower = true;
-            hasLiquids = false;
+            hasLiquids = true;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("ffef99")));
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.07f;
 
-            consumeLiquids(with(EarthLiquids.oxygen, 1f, Liquids.hydrogen, 2f));
+            consumeLiquids(LiquidStack(EarthLiquids.oxygen, 1f, Liquids.hydrogen, 2f));
             consumePower(0.50f);
         }};
 //walls
