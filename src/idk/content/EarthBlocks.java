@@ -56,7 +56,7 @@ public class EarthBlocks{
     //turrets
     solo, trio, converge, splice, spear, volley, hurricane, cataclysm, 
     //cores
-    damagedshard, fortress, stronghold, bunker, 
+    damagedshard, fortress, stronghold, bunker, unitcomputer,  
     //power
     voltitereactor, turbinegenerator, 
     //unit building
@@ -64,7 +64,7 @@ public class EarthBlocks{
     //drone port wip
     droneport, 
     //crafting
-    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator; 
+    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator; 
 
     public static void load() {
         Redsand = new Floor("redsand"){{
@@ -75,10 +75,10 @@ public class EarthBlocks{
             albedo = 0.5f;
         }};
         ExposedStone = new Floor("exposed-stone"){{
-            itemDrop = EarthItems.stone; 
-            localizedName = "exposed-stone";
+       //     itemDrop = EarthItems.stone; 
+       //     localizedName = "exposed-stone";
             wall = ExposedStoneWall;
-            playerUnmineable = true;
+           // playerUnmineable = true;
             variants = 0;
             albedo = 0.5f;
         }};
@@ -139,7 +139,7 @@ public class EarthBlocks{
         }};
         //turrets
         solo = new ItemTurret("solo"){{
-            requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
+            requirements(Category.turret, with(Items.copper, 10, EarthItems.iron, 25));
             ammo(
                 Items.copper,  new BasicBulletType(6f, 5){{
                     width = 7f;
@@ -162,7 +162,7 @@ public class EarthBlocks{
             shootCone = 30f;
         }};
         trio = new ItemTurret("trio"){{
-            requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35, Items.silicon, 8));
+            requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
                         ammo(
                 Items.copper,  new BasicBulletType(9f, 7){{
                     width = 7f;
@@ -285,16 +285,16 @@ public class EarthBlocks{
             requirements(Category.defense, with(Items.lead, 24));
         }};
 
-        stoneWall = new Wall("stone-wall"){{
-            health = 380;
-            requirements(Category.defense, with(EarthItems.stone, 6));
-        }};
+       // stoneWall = new Wall("stone-wall"){{
+       //     health = 380;
+       //     requirements(Category.defense, with(EarthItems.stone, 6));
+       // }};
 
-        stoneWallLarge = new Wall("stone-wall-large"){{
-            health = 1520;
-            size = 2;
-            requirements(Category.defense, with(EarthItems.stone, 24));
-        }};
+      //  stoneWallLarge = new Wall("stone-wall-large"){{
+       //     health = 1520;
+       //     size = 2;
+      //      requirements(Category.defense, with(EarthItems.stone, 24));
+      //  }};
 
         ironWall = new Wall("iron-wall"){{
             health = 440;
