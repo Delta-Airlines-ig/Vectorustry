@@ -48,23 +48,23 @@ public class EarthBlocks{
     //environment
     public static Block Redsand, ExposedStone, ExposedStoneWall, RedishStoneWall, RedStonewall, RedStone, RedishStone,
     //ores
-    oreIron, oreAluminum, oreLithium, oreTin, oreUranium, //not done with uranium
+    oreIron, oreAluminum, oreLithium, oreTin, oreUranium, oreGraphite,  //not done with uranium
     //walls
     leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge, 
     //drills
-    drillMechanised, drillElectric, drillModernised,
+    drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
     solo, trio, converge, splice, spear, volley, hurricane, cataclysm, 
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer,  
     //power
-    voltitereactor, turbinegenerator, 
+    voltitereactor, steamgenerator, turbinegenerator, 
     //unit building
     groundassembler, airassembler, groundchasisassembler, 
     //drone port wip
     droneport, 
     //crafting
-    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator; 
+    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator, furnace, oxidationmixer, explosivespacker, boiler, pressurizer; 
 
     public static void load() {
         Redsand = new Floor("redsand"){{
@@ -114,27 +114,33 @@ public class EarthBlocks{
 
         //ores
         oreIron = new OreBlock(EarthItems.iron){{
-            oreDefault = false;
+            oreDefault = true;
             oreThreshold = 0.841f;
             oreScale = 25.580953f;
             variants = 2;
         }};
         oreAluminum = new OreBlock(EarthItems.aluminum){{
-            oreDefault = false;
+            oreDefault = true;
             oreThreshold = 0.849f;
             oreScale = 15.580953f;
             variants = 2;
         }};
         oreLithium = new OreBlock(EarthItems.lithium){{
-            oreDefault = false;
+            oreDefault = true;
             oreThreshold = 0.869f;
             oreScale = 10.580953f;
             variants = 2;
         }};
         oreTin = new OreBlock(EarthItems.tin){{
-            oreDefault = false;
+            oreDefault = true;
             oreThreshold = 0.879f;
             oreScale = 9.580953f;
+            variants = 2;
+        }};
+         oreGraphite = new OreBlock(Items.graphite){{
+            oreDefault = true;
+            oreThreshold = 0.841f;
+            oreScale = 25.580953f;
             variants = 2;
         }};
         //turrets
@@ -192,8 +198,8 @@ public class EarthBlocks{
         }};
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
-            requirements(Category.crafting, with(EarthItems.iron, 65, Items.copper, 40, Items.lead, 60, EarthItems.stone, 50));
-            outputItem = new ItemStack(EarthItems.steel, 1);
+            requirements(Category.crafting, with(EarthItems.iron, 65, Items.copper, 40, Items.lead, 60));
+            outputItem = new ItemStack(EarthItems.steel, 3);
             craftTime = 120f;
             size = 2;
             hasPower = true;
@@ -207,7 +213,7 @@ public class EarthBlocks{
 
         }};
                 carbonsequestrator = new GenericCrafter("carbon-sequestrator"){{
-            requirements(Category.crafting, with(EarthItems.iron, 60, EarthItems.steel, 180, EarthItems.stone, 150, Items.silicon, 100));
+            requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminium, 150));
             size = 3;
             hasLiquids = true;
 
@@ -232,7 +238,7 @@ public class EarthBlocks{
       //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
         }};
                 carboncatalyst = new GenericCrafter("carbon-catalyst"){{
-            requirements(Category.crafting, with(Items.silicon, 50, Items.graphite, 50, EarthItems.steel, 130, EarthItems.iron, 80, EarthItems.lithium, 20));
+            requirements(Category.crafting, with(Items.graphite, 150, EarthItems.iron, 180, EarthItems.lithium, 25, EarthItems.aluminum, 75));
             size = 3;
 
             researchCostMultiplier = 1.2f;
@@ -273,6 +279,79 @@ public class EarthBlocks{
             outputLiquid = new LiquidStack(EarthLiquids.oxygen, 4f / 60f);
             outputItem = new ItemStack(EarthItems.carbon, 2);
         }};
+                siliconblastfurnace = new GenericCrafter("Silicon-Blast-Furnace"){{
+            requirements(Category.crafting, with(Items.copper, 40, Items.lead, 35, EarthItem.iron, 35, EarthItem.aluminum, 25));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(Items.silicon, 2);
+            craftTime = 30f;
+            size = 2;
+            hasPower = true;
+            hasLiquids = false;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("ffef99")));
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.07f;
+
+            consumeItems(with(EarthItems.carbon, 1, Items.sand, 2));
+            consumePower(0.50f);
+        }};
+        furnace = new GenericCrafter("furnace"){{
+            requirements(Category.crafting, with(Items.copper, 60, Items.graphite, 60, Items.lead, 40, EarthItems.iron, 50));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(Items.metaglass, 1);
+            craftTime = 20f;
+            size = 2;
+            hasPower = hasItems = true;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("ffc099")));
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.07f;
+
+            consumeItems(with(Items.lead, 1, Items.sand, 1));
+            consumePower(0.60f);
+        }};
+                phasefabricator = new GenericCrafter("phase-fabricator"){{
+            requirements(Category.crafting, with(Items.silicon, 130, Items.lead, 120, EarthItems.steel, 75, Items.surgeAlloy, 25));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(Items.phaseFabric, 2);
+            craftTime = 110f;
+            size = 2;
+            hasPower = true;
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawWeave(), new DrawDefault());
+            envEnabled |= Env.space;
+
+            ambientSound = Sounds.techloop;
+            ambientSoundVolume = 0.02f;
+
+            consumeItems(with(Items.surgeAlloy, 4, Items.sand, 10));
+            consumePower(6f);
+            itemCapacity = 20;
+        }};
+                surgeblastfurnace = new GenericCrafter("surge-blast-furnace"){{
+            requirements(Category.crafting, with(Items.silicon, 80, Items.lead, 80, EarthItems.steel, 70, Items.metaglass, 50, EarthItems.aluminum, 75));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(Items.surgeAlloy, 2);
+            craftTime = 70f;
+            size = 4;
+            hasPower = true;
+            itemCapacity = 20;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
+
+            consumePower(4f);
+            consumeItems(with(Items.copper, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, Earthitems.lithium, 5));
+        }};
+                        voltitesynthesizer = new GenericCrafter("voltite-synthesizer"){{
+            requirements(Category.crafting, with(Items.silicon, 280, Items.lead, 280, EarthItems.steel, 270, Items.metaglass, 250, EarthItems.aluminum, 275, Items.surgeAlloy, 50));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(EarthItems.voltite, 2);
+            craftTime = 70f;
+            size = 6;
+            hasPower = true;
+            itemCapacity = 20;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
+
+            consumePower(4f);
+            consumeItems(with(Items.surgeAlloy, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, Earthitems.lithium, 5, Items.phaseFabric, 2));
+        }};
+
 //walls
         leadWall = new Wall("lead-wall"){{
             health = 360;
@@ -306,30 +385,33 @@ public class EarthBlocks{
             requirements(Category.defense, with(EarthItems.iron, 24));
         }};
 //drills
-        drillMechanised = new Drill("drill-mechanised"){{
-            itemCapacity = 25;
+        drillMechanical = new Drill("drill-mechanical"){{
+            itemCapacity = 35;
             hasPower = false;
                         drillTime = 500;
           tier = 1;
-            requirements(Category.production, with(Items.copper, 30, EarthItems.iron, 20, EarthItems.stone, 10));
+            requirements(Category.production, with(Items.copper, 10, EarthItems.iron, 20));
+            consumeLiquid(Liquids.water, 0.08f).boost();
         }};
 
-        drillElectric = new Drill("drill-electric"){{
+        drillPneumatic = new Drill("drill-pneumatic"){{
             size = 2;
             itemCapacity = 50;
             drillTime = 300;
             tier = 2;
-            requirements(Category.production, with(Items.copper, 135, EarthItems.iron, 90, Items.silicon, 90, EarthItems.lithium, 45, EarthItems.tin, 15, EarthItems.steel, 30));
+            requirements(Category.production, with(Items.copper, 15, EarthItems.iron, 30, EarthItems.steel, 10));
+            consumeLiquid(Liquids.water, 0.08f).boost();
+            consumeLiquid(EarthLiquids.steam, 0.08f);
         }};
-           drillModernised = new Drill("drill-modernised"){{
-            size = 3;
-            itemCapacity = 50;
-            hasPower = true;
-            drillTime = 150;
-            tier = 3;
-            consumePower(5.6f);
-            requirements(Category.production, with(Items.copper, 175, EarthItems.iron, 120, Items.silicon, 100, EarthItems.tin, 45, EarthItems.lithium, 60, EarthItems.steel, 60, EarthItems.voltite, 25));
-        }};
+     //      drillModernised = new Drill("drill-modernised"){{
+     //       size = 3;
+    //        itemCapacity = 50;
+    //        hasPower = true;
+    //        drillTime = 150;
+    //        tier = 3;
+    //        consumePower(5.6f);
+    //        requirements(Category.production, with(Items.copper, 175, EarthItems.iron, 120, Items.silicon, 100, EarthItems.tin, 45, EarthItems.lithium, 60, EarthItems.steel, 60, EarthItems.voltite, 25));
+    //    }};
 //unit assembly
     //            groundassembler = new UnitAssembler("Ground-assembler"){{
    //         requirements(Category.units, with(Items.copper, 500, Items.lead, 250, EarthItems.iron, 350, Items.silicon, 150, EarthItems.steel, 250));
@@ -368,7 +450,7 @@ public class EarthBlocks{
         //armour costs 20s 25i 10g
         //base cost is 10s 10i
                groundassembler = new UnitFactory("ground-fabricator"){{
-           requirements(Category.units, with(Items.silicon, 100, Items.copper, 150));//, EarthItems.iron, 150, EarthItems.steel, 75));
+           requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.steel, 100, EarthItem.iron, 75));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             localizedName = "ground-fabricator";
             plans = Seq.with(
@@ -396,6 +478,7 @@ public class EarthBlocks{
           //  regionSuffix = "-dark";
             fogRadius = 3;
             consumePower(2f);
+            consumeLiquid(EarthLiquids.oxygen, 9f / 60f);
         }};
         //weapon factory
         //    weaponfactory = new Constructor("weapon-factory"){{
