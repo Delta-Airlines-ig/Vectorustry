@@ -427,7 +427,7 @@ public class EarthBlocks{
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
 
             consumePower(4f);
-            consumeItems(with(Items.surgeAlloy, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, Earthitems.lithium, 5, Items.phaseFabric, 2));
+            consumeItems(with(Items.surgeAlloy, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, EarthItems.lithium, 5, Items.phaseFabric, 2));
         }};
 
 //walls
@@ -528,7 +528,7 @@ public class EarthBlocks{
         //armour costs 20s 25i 10g
         //base cost is 10s 10i
                groundassembler = new UnitFactory("ground-fabricator"){{
-           requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.steel, 100, EarthItem.iron, 75));//, EarthItems.iron, 150, EarthItems.steel, 75));
+           requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.steel, 100, EarthItems.iron, 75));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             localizedName = "ground-fabricator";
             plans = Seq.with(
