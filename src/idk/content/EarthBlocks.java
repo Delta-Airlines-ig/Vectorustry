@@ -39,6 +39,7 @@ import mindustry.world.meta.*;
 import mindustry.content.*;
 import idk.content.*;
 
+import static idk.content.EarthLiquids.*;
 import static idk.content.EarthUnitTypes.*;
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
@@ -46,6 +47,7 @@ import static mindustry.type.ItemStack.*;
 @SuppressWarnings("deprecation")
 public class EarthBlocks{
     //environment
+    
     public static Block Redsand, ExposedStone, ExposedStoneWall, RedishStoneWall, RedStonewall, RedStone, RedishStone,
     //ores
     oreIron, oreAluminum, oreLithium, oreTin, oreUranium, oreGraphite,  //not done with uranium
