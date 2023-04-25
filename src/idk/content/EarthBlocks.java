@@ -200,7 +200,7 @@ public class EarthBlocks{
         }};
         //scatter equivelent
          converge = new ItemTurret("converge"){{
-            requirements(Category.turret, with(Items.copper, 85, Items.lead, 45));
+            requirements(Category.turret, with(Items.copper, 95, Items.lead, 55, EarthItems.iron, 50));
             ammo(
                 EarthItems.iron, new FlakBulletType(4f, 5){{
                     lifetime = 60f;
@@ -273,6 +273,76 @@ public class EarthBlocks{
             researchCostMultiplier = 0.05f;
 
             limitRange(2);
+        }};
+        //scortch equivelent
+        char1 = new ContinuousLiquidTurret("char"){{
+            requirements(Category.turret, with(Items.tungsten, 150, Items.silicon, 200, Items.oxide, 40, Items.beryllium, 400));
+
+       //     drawer = new DrawTurret("reinforced-"){{
+
+      //          Color heatc = Color.valueOf("fa2859");
+      //          heatColor = heatc;
+
+      //          parts.addAll(
+      //          new RegionPart("-back"){{
+      //              progress = PartProgress.warmup;
+      //              mirror = true;
+       //             moveRot = 40f;
+      //              x = 22 / 4f;
+      //              y = -1f / 4f;
+      //              moveY = 6f / 4f;
+      //              under = true;
+       //             heatColor = heatc;
+       //         }},
+        //        new RegionPart("-front"){{
+        //            progress = PartProgress.warmup;
+        //            mirror = true;
+        //            moveRot = 40f;
+         //           x = 20 / 4f;
+         //           y = 17f / 4f;
+         //           moveX = 1f;
+         //           moveY = 1f;
+        //            under = true;
+        //            heatColor = heatc;
+        //        }},
+        //        new RegionPart("-nozzle"){{
+        //            progress = PartProgress.warmup;
+        //            mirror = true;
+       //             moveX = 8f / 4f;
+       //             heatColor = Color.valueOf("f03b0e");
+       //         }});
+       //     }};
+
+            liquidConsumed = 10f / 60f;
+            targetInterval = 5f;
+            targetUnderBlocks = false;
+
+            float r = range = 130f;
+
+            loopSound = Sounds.torch;
+            shootSound = Sounds.none;
+            loopSoundVolume = 1f;
+
+            //TODO balance, set up, where is liquid/sec displayed? status effects maybe?
+            ammo(
+            EarthLiquids.flammablemix, new ContinuousFlameBulletType(){{
+                damage = 30f;
+                length = r;
+                knockback = 1f;
+                pierceCap = 2;
+                buildingDamageMultiplier = 0.3f;
+
+                colors = new Color[]{Color.valueOf("ed752b").a(0.55f), Color.valueOf("ed9f2b").a(0.7f), Color.valueOf("edc32b").a(0.8f), Color.valueOf("f5e322")};
+                flareColor = Color.valueOf("ed752b");
+                lightColor = hitColor = flareColor;
+            }}
+            );
+
+            scaledHealth = 210;
+            shootY = 7f;
+            size = 3;
+
+            researchCost = with(Items.tungsten, 400, Items.silicon, 400, Items.oxide, 80, Items.beryllium, 800);
         }};
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
