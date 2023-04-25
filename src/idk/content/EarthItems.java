@@ -15,7 +15,7 @@ public class EarthItems{
         //voltite
         voltite, 
     //other things
-    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivecompound;
+    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix;
   //add voltite alloys
     public static void load(){
         voltite = new Item("voltite", Color.valueOf("00f0ec")){{
