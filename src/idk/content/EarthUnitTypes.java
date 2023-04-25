@@ -847,7 +847,8 @@ public static void load() {
 	//core units 
         float coreFleeRange = 1000f;
 
-        delta = new ErekirUnitType("delta"){{
+        delta = new UnitType("delta"){{
+	    constructor = UnitEntity::create;
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, coreFleeRange);
             isEnemy = false;
@@ -911,7 +912,8 @@ public static void load() {
             }});
         }};
 
-        theta = new ErekirUnitType("theta"){{
+        theta = new UnitType("theta"){{
+	    constructor = UnitEntity::create;
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, coreFleeRange);
             isEnemy = false;
@@ -988,7 +990,8 @@ public static void load() {
             }});
         }};
 
-        zeta = new ErekirUnitType("zeta"){{
+        zeta = new UnitType("zeta"){{
+	    constructor = UnitEntity::create;
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, coreFleeRange);
             isEnemy = false;
