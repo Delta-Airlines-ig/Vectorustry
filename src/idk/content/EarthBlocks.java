@@ -54,7 +54,7 @@ public class EarthBlocks{
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
-    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, hurricane, anticipate, apparition, cataclysm, limit, 
+    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer,  
     //power
@@ -276,7 +276,7 @@ public class EarthBlocks{
         }};
         //scortch equivelent
         char1 = new ContinuousLiquidTurret("char"){{
-            requirements(Category.turret, with(Items.tungsten, 150, Items.silicon, 200, Items.oxide, 40, Items.beryllium, 400));
+            requirements(Category.turret, with(EarthItems.steel, 20, Items.copper, 150, EarthItems.iron, 140, Items.lead, 200));
 
        //     drawer = new DrawTurret("reinforced-"){{
 
@@ -322,19 +322,23 @@ public class EarthBlocks{
             loopSound = Sounds.torch;
             shootSound = Sounds.none;
             loopSoundVolume = 1f;
+            targetGround = true;
+            targetAir = false;
 
             //TODO balance, set up, where is liquid/sec displayed? status effects maybe?
             ammo(
             EarthLiquids.flammablemix, new ContinuousFlameBulletType(){{
                 damage = 30f;
                 length = r;
-                knockback = 1f;
+                knockback = 3f;
                 pierceCap = 2;
                 buildingDamageMultiplier = 0.3f;
 
                 colors = new Color[]{Color.valueOf("ed752b").a(0.55f), Color.valueOf("ed9f2b").a(0.7f), Color.valueOf("edc32b").a(0.8f), Color.valueOf("f5e322")};
                 flareColor = Color.valueOf("ed752b");
                 lightColor = hitColor = flareColor;
+                flareRotSpeed = 2;
+                rotateFlare = true;
             }}
             );
 
@@ -342,7 +346,727 @@ public class EarthBlocks{
             shootY = 7f;
             size = 3;
 
-            researchCost = with(Items.tungsten, 400, Items.silicon, 400, Items.oxide, 80, Items.beryllium, 800);
+          //  researchCost = with(Items.tungsten, 400, Items.silicon, 400, Items.oxide, 80, Items.beryllium, 800);
+        }};
+        //hail equivelent
+        pelt = new ItemTurret("pelt"){{
+            requirements(Category.turret, with(Items.copper, 60, Items.graphite, 25, EarthItems.iron, 50));
+            ammo(
+                Items.graphite, new ArtilleryBulletType(3f, 10){{
+                    knockback = 1f;
+                    lifetime = 80f;
+                    width = height = 11f;
+                    collidesTiles = false;
+                    splashDamageRadius = 30f * 0.75f;
+                    splashDamage = 50f;
+                }},
+                Items.silicon, new ArtilleryBulletType(3f, 10){{
+                    knockback = 0.8f;
+                    lifetime = 80f;
+                    width = height = 11f;
+                    collidesTiles = false;
+                    splashDamageRadius = 30f * 0.75f;
+                    splashDamage = 60f;
+                    reloadMultiplier = 1.2f;
+                    ammoMultiplier = 3f;
+                    homingPower = 0.08f;
+                    homingRange = 50f;
+                }},
+                EarthItems.explosivemix, new ArtilleryBulletType(3f, 20){{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 0.8f;
+                    lifetime = 80f;
+                    width = height = 13f;
+                    collidesTiles = false;
+                    splashDamageRadius = 35f * 2f;
+                    splashDamage = 180f;
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f * 12f;
+                    frontColor = Pal.lightishOrange;
+                    backColor = Pal.lightOrange;
+                    makeFire = true;
+                    trailEffect = Fx.incendTrail;
+                    ammoMultiplier = 4f;
+                }}
+            );
+            targetAir = false;
+            reload = 60f;
+            recoil = 2f;
+            range = 235f;
+            inaccuracy = 3f;
+            shootCone = 10f;
+            health = 260;
+            shootSound = Sounds.bang;
+            coolant = consumeCoolant(0.1f);
+            limitRange(0f);
+        }};
+//arc equivelent
+        splice = new PowerTurret("splice"){{
+            requirements(Category.turret, with(Items.copper, 75, Items.lead, 50, EarthItems.iron, 50, Items.silicon, 15));
+            shootType = new LightningBulletType(){{
+                damage = 1;
+                lightningLength = 25;
+                collidesAir = false;
+                ammoMultiplier = 1f;
+
+                //for visual stats only.
+                buildingDamageMultiplier = 0.25f;
+
+                lightningType = new BulletType(0.0001f, 0f){{
+                    lifetime = Fx.lightning.lifetime;
+                    hitEffect = Fx.hitLancer;
+                    despawnEffect = Fx.none;
+                    status = StatusEffects.shocked;
+                    statusDuration = 10f;
+                    hittable = false;
+                    lightColor = Color.white;
+                    collidesAir = false;
+                    buildingDamageMultiplier = 0.25f;
+                }};
+            }};
+            reload = 1f;
+            shootCone = 40f;
+            rotateSpeed = 8f;
+            targetAir = false;
+            range = 90f;
+            shootEffect = Fx.lightningShoot;
+            heatColor = Color.red;
+            recoil = 1f;
+            size = 1;
+            health = 260;
+            shootSound = Sounds.spark;
+            consumePower(1.5f);
+            coolant = consumeCoolant(0.1f);
+        }};
+        //lancer equivelent
+          spear = new PowerTurret("spear"){{
+            requirements(Category.turret, with(Items.copper, 60, Items.lead, 70, Items.silicon, 80, EarthItems.steel, 30));
+            range = 200f;
+
+            shoot.firstShotDelay = 10f;
+
+            recoil = 3f;
+            reload = 20f;
+            shake = 2f;
+            shootEffect = Fx.lancerLaserShoot;
+            smokeEffect = Fx.none;
+            heatColor = Color.red;
+            size = 2;
+            scaledHealth = 280;
+            targetAir = false;
+            moveWhileCharging = true;
+            accurateDelay = false;
+            shootSound = Sounds.laser;
+            coolant = consumeCoolant(0.2f);
+
+            consumePower(6f);
+
+            shootType = new LaserBulletType(70){{
+                colors = new Color[]{Pal.lancerLaser.cpy().a(0.4f), Pal.lancerLaser, Color.white};
+                //TODO merge
+                chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
+
+                buildingDamageMultiplier = 0.25f;
+                hitEffect = Fx.hitLancer;
+                hitSize = 4;
+                lifetime = 16f;
+                drawSize = 400f;
+                collidesAir = false;
+                length = 173f;
+                ammoMultiplier = 1f;
+                pierceCap = 4;
+            }};
+        }};
+        //salvo equivelent
+        salvo = new ItemTurret("salvo"){{
+            requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, Items.titanium, 50));
+            ammo(
+                Items.copper,  new BasicBulletType(2.5f, 6){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                    ammoMultiplier = 2;
+                }},
+                EarthItems.iron,  new BasicBulletType(2.2f, 8){{
+                    width = 8f;
+                    height = 10f;
+                    lifetime = 60f;
+                    ammoMultiplier = 2;
+                }},
+                Items.graphite, new BasicBulletType(3.5f, 15){{
+                    width = 9f;
+                    height = 12f;
+                    reloadMultiplier = 0.6f;
+                    ammoMultiplier = 4;
+                    lifetime = 60f;
+                }},
+                EarthItems.explosivemix, new BasicBulletType(3f, 20){{
+                    width = 10f;
+                    height = 12f;
+                    frontColor = Pal.lightishOrange;
+                    backColor = Pal.lightOrange;
+                    status = StatusEffects.blasted;
+                    hitEffect = new MultiEffect(Fx.hitBulletSmall, Fx.fireHit);
+
+                    ammoMultiplier = 5;
+
+                    splashDamage = 22f;
+                    splashDamageRadius = 33f;
+
+                    makeFire = true;
+                    lifetime = 60f;
+                }},
+                Items.silicon, new BasicBulletType(3f, 10, "bullet"){{
+                    width = 7f;
+                    height = 9f;
+                    homingPower = 0.1f;
+                    reloadMultiplier = 1.5f;
+                    ammoMultiplier = 5;
+                    lifetime = 60f;
+                }},
+            );
+
+            size = 2;
+            range = 190f;
+            reload = 25f;
+            consumeAmmoOnce = false;
+            ammoEjectBack = 3f;
+            recoil = 3f;
+            shake = 1f;
+            shoot.shots = 16;
+            shoot.shotDelay = 1.5f;
+
+            ammoUseEffect = Fx.casing2;
+            scaledHealth = 240;
+            shootSound = Sounds.shootBig;
+
+            limitRange();
+            coolant = consumeCoolant(0.2f);
+        }};
+        //ripple equivelent
+         ridge = new ItemTurret("ridge"){{
+            requirements(Category.turret, with(Items.copper, 150, Items.graphite, 235, EarthItems.steel, 60));
+            ammo(
+                Items.graphite, new ArtilleryBulletType(3f, 20){{
+                    knockback = 0.8f;
+                    lifetime = 80f;
+                    width = height = 11f;
+                    collidesTiles = false;
+                    splashDamageRadius = 25f * 0.75f;
+                    splashDamage = 33f;
+                }},
+                Items.silicon, new ArtilleryBulletType(3f, 20){{
+                    knockback = 0.8f;
+                    lifetime = 80f;
+                    width = height = 11f;
+                    collidesTiles = false;
+                    splashDamageRadius = 25f * 0.75f;
+                    splashDamage = 33f;
+                    reloadMultiplier = 1.2f;
+                    ammoMultiplier = 3f;
+                    homingPower = 0.08f;
+                    homingRange = 50f;
+                }},
+                EarthItems.steel, new ArtilleryBulletType(3f, 25){{
+                    knockback = 0.8f;
+                    lifetime = 80f;
+                    width = height = 15f;
+                    collidesTiles = false;
+                    splashDamageRadius = 25f * 0.6f;
+                    splashDamage = 33f;
+                }},
+                EarthItems.explosivemix, new ArtilleryBulletType(2f, 25, "shell"){{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 0.8f;
+                    lifetime = 80f;
+                    width = height = 14f;
+                    collidesTiles = false;
+                    ammoMultiplier = 4f;
+                    splashDamageRadius = 45f * 1.1f;
+                    splashDamage = 60f;
+                    backColor = Pal.missileYellowBack;
+                    frontColor = Pal.missileYellow;
+
+                    status = StatusEffects.blasted;
+                }},
+            );
+
+            targetAir = false;
+            size = 3;
+            shoot.shots = 8;
+            inaccuracy = 15f;
+            reload = 40f;
+            ammoEjectBack = 5f;
+            ammoUseEffect = Fx.casing3Double;
+            ammoPerShot = 2;
+            velocityRnd = 0.4f;
+            recoil = 6f;
+            shake = 2f;
+            range = 290f;
+            minRange = 50f;
+            coolant = consumeCoolant(0.3f);
+
+            scaledHealth = 130;
+            shootSound = Sounds.artillery;
+        }};
+        //fuse equivelent
+                break1 = new ItemTurret("break"){{
+            requirements(Category.turret, with(Items.copper, 225, Items.graphite, 225, EarthItems.steel, 100, Items.surgeAlloy, 25));
+
+            reload = 30f;
+            shake = 4f;
+            range = 100f;
+            recoil = 6f;
+
+            shoot = new ShootSpread(6, 40f);
+
+            shootCone = 50;
+            size = 3;
+            envEnabled |= Env.space;
+
+            scaledHealth = 220;
+            shootSound = Sounds.shotgun;
+            coolant = consumeCoolant(0.3f);
+
+            float brange = range + 10f;
+
+            ammo(
+                EarthItems.steel, new ShrapnelBulletType(){{
+                    length = brange;
+                    damage = 66f;
+                    ammoMultiplier = 4f;
+                    width = 17f;
+                    reloadMultiplier = 1.3f;
+                }},
+                Items.surgeAlloy, new ShrapnelBulletType(){{
+                    length = brange;
+                    damage = 135f;
+                    ammoMultiplier = 5f;
+                    toColor = Pal.thoriumPink;
+                    shootEffect = smokeEffect = Fx.thoriumShoot;
+                }}
+            );
+        }};
+        //cyclone equivelent
+         hurricane = new ItemTurret("hurricane"){{
+            requirements(Category.turret, with(Items.copper, 200, Items.titanium, 125, Items.surgeAlloy, 80, EarthItems.steel, 50));
+            ammo(
+                Items.metaglass, new FlakBulletType(4f, 3){{
+                    ammoMultiplier = 2f;
+                    shootEffect = Fx.shootSmall;
+                    reloadMultiplier = 0.8f;
+                    width = 6f;
+                    height = 8f;
+                    hitEffect = Fx.flakExplosion;
+                    splashDamage = 45f;
+                    splashDamageRadius = 25f;
+                    fragBullet = new BasicBulletType(3f, 1, "bullet"){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                    }};
+                    fragBullets = 8;
+                    explodeRange = 20f;
+                    collidesGround = true;
+                }},
+                EarthItems.explosivemix, new FlakBulletType(4f, 10){{
+                    shootEffect = Fx.shootBig;
+                    ammoMultiplier = 5f;
+                    splashDamage = 45f;
+                    splashDamageRadius = 60f;
+                    collidesGround = true;
+
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
+                }},
+                Items.surgeAlloy, new FlakBulletType(4.5f, 5){{
+                    ammoMultiplier = 5f;
+                    splashDamage = 50f * 1.5f;
+                    splashDamageRadius = 38f;
+                    lightning = 2;
+                    lightningLength = 7;
+                    shootEffect = Fx.shootBig;
+                    collidesGround = true;
+                    explodeRange = 20f;
+                }}
+            );
+            shootY = 8.75f;
+            shoot = new ShootBarrel(){{
+                barrels = new float[]{
+                0f, 1f, 0f,
+                3f, 0f, 0f,
+                -3f, 0f, 0f,
+                };
+            }};
+            reload = 4f;
+            range = 200f;
+            size = 3;
+            recoil = 3f;
+            rotateSpeed = 10f;
+            inaccuracy = 15f;
+            shootCone = 30f;
+            shootSound = Sounds.shootSnap;
+            coolant = consumeCoolant(0.3f);
+
+            scaledHealth = 145;
+            limitRange();
+        }};
+        //foreshadow equivelent
+                anticipate = new ItemTurret("anticipate"){{
+            float brange = range = 800f;
+
+            requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
+            ammo(
+                EarthItems.volitite, new PointBulletType(){{
+                    shootEffect = Fx.instShoot;
+                    hitEffect = Fx.instHit;
+                    smokeEffect = Fx.smokeCloud;
+                    trailEffect = Fx.instTrail;
+                    despawnEffect = Fx.instBomb;
+                    trailSpacing = 10f;
+                    damage = 3550;
+                    buildingDamageMultiplier = 0.75f;
+                    speed = brange;
+                    hitShake = 20f;
+                    ammoMultiplier = 1f;
+                }}
+            );
+
+            maxAmmo = 40;
+            ammoPerShot = 5;
+            rotateSpeed = 2f;
+            reload = 400f;
+            ammoUseEffect = Fx.casing3Double;
+            recoil = 5f;
+            cooldownTime = reload;
+            shake = 4f;
+            size = 4;
+            shootCone = 2f;
+            shootSound = Sounds.railgun;
+            unitSort = UnitSorts.strongest;
+            envEnabled |= Env.space;
+
+            coolantMultiplier = 0.4f;
+            scaledHealth = 150;
+
+            coolant = consumeCoolant(1f);
+            consumePower(10f);
+        }};
+        //spectre equivelent
+        apparition = new ItemTurret("apparition"){{
+            requirements(Category.turret, with(Items.copper, 900, Items.graphite, 300, Items.surgeAlloy, 500, EarthItems.steel, 175));
+            ammo(
+                Items.graphite, new BasicBulletType(7.5f, 50){{
+                    hitSize = 4.8f;
+                    width = 15f;
+                    height = 21f;
+                    shootEffect = Fx.shootBig;
+                    ammoMultiplier = 4;
+                    reloadMultiplier = 1.7f;
+                    knockback = 0.3f;
+                }},
+                EarthItems.steel, new BasicBulletType(8f, 60){{
+                    hitSize = 5;
+                    width = 16f;
+                    height = 23f;
+                    shootEffect = Fx.shootBig;
+                    pierceCap = 2;
+                    pierceBuilding = true;
+                    knockback = 0.7f;
+                }},
+            );
+            reload = 5f;
+            recoilTime = reload * 2f;
+            coolantMultiplier = 0.5f;
+            ammoUseEffect = Fx.casing3;
+            range = 260f;
+            inaccuracy = 3f;
+            recoil = 3f;
+            shoot = new ShootAlternate(8f);
+            shake = 2f;
+            size = 4;
+            shootCone = 24f;
+            shootSound = Sounds.shootBig;
+
+            scaledHealth = 160;
+            coolant = consumeCoolant(1f);
+
+            limitRange();
+        }};
+        //meltdown equivelent
+        cataclysm = new LaserTurret("cataclysm"){{
+            requirements(Category.turret, with(Items.copper, 1200, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 325));
+            shootEffect = Fx.shootBigSmoke2;
+            shootCone = 40f;
+            recoil = 4f;
+            size = 4;
+            shake = 2f;
+            range = 295f;
+            reload = 90f;
+            firingMoveFract = 0.5f;
+            shootDuration = 60f;
+            shootSound = Sounds.laserbig;
+            loopSound = Sounds.beam;
+            loopSoundVolume = 2f;
+            envEnabled |= Env.space;
+
+            shootType = new ContinuousLaserBulletType(90){{
+                length = 400f;
+                hitEffect = Fx.hitMeltdown;
+                hitColor = Pal.meltdownHit;
+                status = StatusEffects.melting;
+                drawSize = 420f;
+
+                incendChance = 0.4f;
+                incendSpread = 5f;
+                incendAmount = 1;
+                ammoMultiplier = 1f;
+            }};
+
+            scaledHealth = 200;
+            coolant = consumeCoolant(0.5f);
+            consumeLiquid(EarthLiquids.oxygen, 10f / 60f);
+            consumePower(17f);
+        }};
+        //sorta like a scathe, but its a surface to air missile
+        limit = new ItemTurret("limit"){{
+            requirements(Category.turret, with(Items.silicon, 450, Items.graphite, 400, EarthItems.steel, 500, Items.surgeAlloy, 300));
+
+            ammo(
+            EarthItems.steel, new BasicBulletType(0f, 1){{
+                shootEffect = Fx.shootBig;
+                smokeEffect = Fx.shootSmokeMissile;
+                ammoMultiplier = 1f;
+
+                spawnUnit = new MissileUnitType("sam-missile"){{
+                    speed = 10.6f;
+                    maxRange = 6f;
+                    lifetime = 60f * 5.5f;
+                    outlineColor = Pal.darkOutline;
+                    engineColor = trailColor = Pal.redLight;
+                    engineLayer = Layer.effect;
+                    engineSize = 3.1f;
+                    engineOffset = 10f;
+                    rotateSpeed = 0.25f;
+                    trailLength = 18;
+                    missileAccelTime = 50f;
+                    lowAltitude = true;
+                    loopSound = Sounds.missileTrail;
+                    loopSoundVolume = 0.6f;
+                    deathSound = Sounds.largeExplosion;
+                    targetAir = true;
+
+                    fogRadius = 6f;
+
+                    health = 210;
+
+                    weapons.add(new Weapon(){{
+                        shootCone = 360f;
+                        mirror = false;
+                        reload = 1f;
+                        deathExplosionEffect = Fx.massiveExplosion;
+                        shootOnDeath = true;
+                        shake = 10f;
+                        bullet = new ExplosionBulletType(640f, 65f){{
+                            hitColor = Pal.redLight;
+                            shootEffect = new MultiEffect(Fx.massiveExplosion, Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
+                                lifetime = 10f;
+                                strokeFrom = 4f;
+                                sizeTo = 130f;
+                            }});
+
+                            collidesAir = true;
+                            buildingDamageMultiplier = 0.3f;
+
+                            ammoMultiplier = 1f;
+                            fragLifeMin = 0.1f;
+                            fragBullets = 7;
+                            fragBullet = new ArtilleryBulletType(3.4f, 32){{
+                                buildingDamageMultiplier = 0.3f;
+                                drag = 0.02f;
+                                hitEffect = Fx.massiveExplosion;
+                                despawnEffect = Fx.scatheSlash;
+                                knockback = 0.8f;
+                                lifetime = 23f;
+                                width = height = 18f;
+                                collidesTiles = false;
+                                splashDamageRadius = 40f;
+                                splashDamage = 80f;
+                                backColor = trailColor = hitColor = Pal.redLight;
+                                frontColor = Color.white;
+                                smokeEffect = Fx.shootBigSmoke2;
+                                despawnShake = 7f;
+                                lightRadius = 30f;
+                                lightColor = Pal.redLight;
+                                lightOpacity = 0.5f;
+
+                                trailLength = 20;
+                                trailWidth = 3.5f;
+                                trailEffect = Fx.none;
+                            }};
+                        }};
+                    }});
+
+                    abilities.add(new MoveEffectAbility(){{
+                        effect = Fx.missileTrailSmoke;
+                        rotation = 180f;
+                        y = -9f;
+                        color = Color.grays(0.6f).lerp(Pal.redLight, 0.5f).a(0.4f);
+                        interval = 4f;
+                    }});
+                }};
+            }}
+            );
+
+            
+            recoil = 0.5f;
+
+            fogRadiusMultiuplier = 0.4f;
+            coolantMultiplier = 6f;
+            shootSound = Sounds.missileLaunch;
+
+            minWarmup = 0.94f;
+            shootWarmupSpeed = 0.03f;
+            targetAir = true;
+            targetGround = false;
+            targetUnderBlocks = false;
+
+            shake = 6f;
+            ammoPerShot = 20;
+            maxAmmo = 30;
+            shootY = -1;
+            outlineColor = Pal.darkOutline;
+            size = 4;
+            envEnabled |= Env.space;
+            reload = 500f;
+            range = 1350;
+            shootCone = 1f;
+            scaledHealth = 220;
+            rotateSpeed = 0.9f;
+
+            coolant = consume(new ConsumeLiquid(Liquids.water, 15f / 60f));
+            limitRange();
+        }};
+//nuclear missile launcher (you should get a limit to counter this) 
+        aperture = new ItemTurret("aperture"){{
+            requirements(Category.turret, with(Items.silicon, 2450, Items.graphite, 1400, EarthItems.steel, 1500, EarthItems.iron, 2300, EarthItems.lithium, 1000, Earthitems.aluminum, 500));
+
+            ammo(
+            EarthItems.uranium, new BasicBulletType(0f, 1){{
+                shootEffect = Fx.shootBig;
+                smokeEffect = Fx.shootSmokeMissile;
+                ammoMultiplier = 1f;
+
+                spawnUnit = new MissileUnitType("Thermonuclear-missile"){{
+                    speed = 6.5f;
+                    maxRange = 6f;
+                    lifetime = 60f * 5.5f;
+                    outlineColor = Pal.darkOutline;
+                    engineColor = trailColor = Pal.redLight;
+                    engineLayer = Layer.effect;
+                    engineSize = 3.1f;
+                    engineOffset = 10f;
+                    rotateSpeed = 0.1f;
+                    trailLength = 18;
+                    missileAccelTime = 50f;
+                    lowAltitude = true;
+                    loopSound = Sounds.missileTrail;
+                    loopSoundVolume = 0.6f;
+                    deathSound = Sounds.largeExplosion;
+                    targetAir = false;
+
+                    fogRadius = 6f;
+
+                    health = 210;
+
+                    weapons.add(new Weapon(){{
+                        shootCone = 360f;
+                        mirror = false;
+                        reload = 1f;
+                        deathExplosionEffect = Fx.impactReactorExplosion;
+                        shootOnDeath = true;
+                        shake = 10f;
+                        bullet = new ExplosionBulletType(15000f, 1650f){{
+                            hitColor = Pal.redLight;
+                            shootEffect = new MultiEffect(Fx.impactReactorExplosion, Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
+                                lifetime = 100f;
+                                strokeFrom = 4f;
+                                sizeTo = 1630f;
+                            }});
+
+                            collidesAir = false;
+                            buildingDamageMultiplier = 0.3f;
+
+                            ammoMultiplier = 1f;
+                            fragLifeMin = 0.1f;
+                            fragBullets = 7;
+                            fragBullet = new ArtilleryBulletType(3.4f, 32){{
+                                buildingDamageMultiplier = 0.3f;
+                                drag = 0.02f;
+                                hitEffect = Fx.massiveExplosion;
+                                despawnEffect = Fx.scatheSlash;
+                                knockback = 0.8f;
+                                lifetime = 23f;
+                                width = height = 18f;
+                                collidesTiles = false;
+                                splashDamageRadius = 40f;
+                                splashDamage = 80f;
+                                backColor = trailColor = hitColor = Pal.redLight;
+                                frontColor = Color.white;
+                                smokeEffect = Fx.shootBigSmoke2;
+                                despawnShake = 7f;
+                                lightRadius = 30f;
+                                lightColor = Pal.redLight;
+                                lightOpacity = 0.5f;
+
+                                trailLength = 20;
+                                trailWidth = 3.5f;
+                                trailEffect = Fx.none;
+                            }};
+                        }};
+                    }});
+
+                    abilities.add(new MoveEffectAbility(){{
+                        effect = Fx.missileTrailSmoke;
+                        rotation = 180f;
+                        y = -9f;
+                        color = Color.grays(0.6f).lerp(Pal.redLight, 0.5f).a(0.4f);
+                        interval = 7f;
+                    }});
+                }};
+            }}
+            );
+
+            recoil = 0.5f;
+
+            fogRadiusMultiuplier = 0.4f;
+            coolantMultiplier = 6f;
+            shootSound = Sounds.missileLaunch;
+
+            minWarmup = 0.94f;
+            shootWarmupSpeed = 0.03f;
+            targetAir = false;
+            targetUnderBlocks = false;
+
+            shake = 6f;
+            ammoPerShot = 20;
+            maxAmmo = 30;
+            shootY = -1;
+            outlineColor = Pal.darkOutline;
+            size = 4;
+            envEnabled |= Env.space;
+            reload = 5600f;
+            range = 10350;
+            shootCone = 1f;
+            scaledHealth = 220;
+            rotateSpeed = 0.9f;
+
+            coolant = consume(new ConsumeLiquid(Liquids.water, 15f / 60f));
+            limitRange();
         }};
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
