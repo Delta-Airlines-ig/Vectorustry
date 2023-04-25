@@ -43,7 +43,6 @@ import static idk.content.EarthLiquids.*;
 import static idk.content.EarthUnitTypes.*;
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
-import static mindustry.type.LiquidStack.*;
 
 @SuppressWarnings("deprecation")
 public class EarthBlocks{
@@ -1277,7 +1276,7 @@ public class EarthBlocks{
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.07f;
 
-            consumeLiquids(LiquidStack(EarthLiquids.oxygen, 1f, Liquids.hydrogen, 2f));
+            consumeLiquids(LiquidStack.with(EarthLiquids.oxygen, 20f / 60f, Liquids.hydrogen, 40f / 60f));
             consumePower(0.50f);
         }};
 //walls
