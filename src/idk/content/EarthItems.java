@@ -94,7 +94,7 @@ public class EarthItems{
             flammability = 1f;
             cost = 1;
         }};
-                   explosivecompound = new Item("explosive compound", Color.valueOf("ec83af")){{
+                   explosivemix = new Item("explosive-compound", Color.valueOf("ec83af")){{
             description = "a high explosive, contains its own oxidizer";
             localizedName = "explosive compound";
             explosiveness = 1f;
