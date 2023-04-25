@@ -149,7 +149,7 @@ public class EarthBlocks{
             alwaysUnlocked = true;
 
             isFirstTier = true;
-            unitType = UnitTypes.delta;
+            unitType = EarthUnitTypes.delta;
             health = 3100;
             itemCapacity = 8000;
             size = 3;
@@ -160,7 +160,7 @@ public class EarthBlocks{
         stronghold = new CoreBlock("core-stronghold"){{
             requirements(Category.effect, with(Items.copper, 3000, Items.lead, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
 
-            unitType = UnitTypes.theta;
+            unitType = EarthUnitTypes.theta;
             health = 8500;
             itemCapacity = 16000;
             size = 4;
@@ -173,7 +173,7 @@ public class EarthBlocks{
         bunker = new CoreBlock("core-bunker"){{
             requirements(Category.effect, with(Items.copper, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
-            unitType = UnitTypes.zeta;
+            unitType = EarthUnitTypes.zeta;
             health = 10000;
             itemCapacity = 32000;
             size = 5;
