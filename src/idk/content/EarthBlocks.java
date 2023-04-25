@@ -414,7 +414,7 @@ public class EarthBlocks{
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
 
             consumePower(4f);
-            consumeItems(with(Items.copper, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, Earthitems.lithium, 5));
+            consumeItems(with(Items.copper, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, EarthItems.lithium, 5));
         }};
                         voltitesynthesizer = new GenericCrafter("voltite-synthesizer"){{
             requirements(Category.crafting, with(Items.silicon, 280, Items.lead, 280, EarthItems.steel, 270, Items.metaglass, 250, EarthItems.aluminum, 275, Items.surgeAlloy, 50));
