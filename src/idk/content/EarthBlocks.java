@@ -66,7 +66,7 @@ public class EarthBlocks{
     //drone port wip
     droneport, 
     //crafting
-    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator, furnace, oxidationmixer, explosivespacker, boiler, pressurizer; 
+    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator, furnace, oxidationmixer, explosivespacker, boiler, pressurizer, flamemixer; 
 
     public static void load() {
         Redsand = new Floor("redsand"){{
@@ -1264,7 +1264,21 @@ public class EarthBlocks{
             consumePower(4f);
             consumeItems(with(Items.surgeAlloy, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, EarthItems.lithium, 5, Items.phaseFabric, 2));
         }};
+                flamemixer = new GenericCrafter("flame-mixer"){{
+            requirements(Category.crafting, with(Items.copper, 40, Items.lead, 35, EarthItems.iron, 35, EarthItems.aluminum, 25));
+            craftEffect = Fx.smeltsmoke;
+            outputLiquid = new LiquidStack(EarthLiquids.flammablemix, 2f);
+            craftTime = 30f;
+            size = 2;
+            hasPower = true;
+            hasLiquids = false;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("ffef99")));
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.07f;
 
+            consumeLiquids(with(EarthLiquids.oxygen, 1f, Liquids.hydrogen, 2f));
+            consumePower(0.50f);
+        }};
 //walls
         leadWall = new Wall("lead-wall"){{
             health = 360;
