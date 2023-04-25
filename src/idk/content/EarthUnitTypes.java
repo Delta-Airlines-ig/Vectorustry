@@ -900,7 +900,7 @@ public static void load() {
 
                 targetUnits = false;
                 targetBuildings = true;
-                autoTarget = false;
+                autoTarget = true;
                 controllable = true;
                 laserColor = Pal.accent;
                 healColor = Pal.accent;
@@ -920,7 +920,7 @@ public static void load() {
             targetPriority = -2;
             lowAltitude = false;
             mineWalls = true;
-            mineFloor = false;
+            mineFloor = true;
             mineHardnessScaling = false;
             flying = true;
             mineSpeed = 8f;
@@ -966,7 +966,7 @@ public static void load() {
 
                 targetUnits = false;
                 targetBuildings = true;
-                autoTarget = false;
+                autoTarget = true;
                 controllable = true;
                 laserColor = Pal.accent;
                 healColor = Pal.accent;
@@ -997,7 +997,7 @@ public static void load() {
             targetPriority = -2;
             lowAltitude = false;
             mineWalls = true;
-            mineFloor = false;
+            mineFloor = true;
             mineHardnessScaling = false;
             flying = true;
             mineSpeed = 9f;
@@ -1007,7 +1007,7 @@ public static void load() {
             speed = 7.5f;
             rotateSpeed = 8f;
             accel = 0.08f;
-            itemCapacity = 110;
+            itemCapacity = 220;
             health = 700f;
             armor = 3f;
             hitSize = 12f;
@@ -1045,7 +1045,7 @@ public static void load() {
 
                 targetUnits = false;
                 targetBuildings = true;
-                autoTarget = false;
+                autoTarget = true;
                 controllable = true;
                 laserColor = Pal.accent;
                 healColor = Pal.accent;
