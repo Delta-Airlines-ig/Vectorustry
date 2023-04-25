@@ -41,7 +41,11 @@ public class EarthUnitTypes{
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis,
 	//air
 	//L M H light medium and heavy, F = fighter(attacks air and can divebomb ground), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
-	LF, MF, HF, LB, MB, HB, LS, MS, HS, smallbuilderdrone;
+	LF, MF, HF, LB, MB, HB, LS, MS, HS, smallbuilderdrone
+	//core units
+	delta, theta, zeta;
+	//boss units coming soon?
+		
 	
 public static void load() {
 	dagge = new UnitType("dagge") {{
@@ -840,5 +844,217 @@ public static void load() {
             health = 25;
 	    armor = 0;
         }};
+	//core units 
+        float coreFleeRange = 1000f;
+
+        delta = new ErekirUnitType("delta"){{
+            coreUnitDock = true;
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            isEnemy = false;
+            envDisabled = 0;
+
+            targetPriority = -2;
+            lowAltitude = false;
+            mineWalls = true;
+            mineFloor = true;
+            mineHardnessScaling = false;
+            flying = true;
+            mineSpeed = 6f;
+            mineTier = 3;
+            buildSpeed = 1.5f;
+            drag = 0.08f;
+            speed = 5.6f;
+            rotateSpeed = 7f;
+            accel = 0.09f;
+            itemCapacity = 120;
+            health = 300f;
+            armor = 1f;
+            hitSize = 9f;
+            engineSize = 0;
+            payloadCapacity = 2f * 2f * tilesize * tilesize;
+            pickupUnits = false;
+            vulnerableWithPayloads = true;
+
+            fogRadius = 0f;
+            targetable = false;
+            hittable = false;
+
+            setEnginesMirror(
+            new UnitEngine(21 / 4f, 19 / 4f, 2.2f, 45f),
+            new UnitEngine(23 / 4f, -22 / 4f, 2.2f, 315f)
+            );
+
+            weapons.add(new RepairBeamWeapon(){{
+                widthSinMag = 0.11f;
+                reload = 20f;
+                x = 0f;
+                y = 6.5f;
+                rotate = false;
+                shootY = 0f;
+                beamWidth = 0.7f;
+                repairSpeed = 3.5f;
+                fractionRepairSpeed = 0.1f;
+                aimDst = 0f;
+                shootCone = 15f;
+                mirror = false;
+
+                targetUnits = false;
+                targetBuildings = true;
+                autoTarget = false;
+                controllable = true;
+                laserColor = Pal.accent;
+                healColor = Pal.accent;
+
+                bullet = new BulletType(){{
+                    maxRange = 60f;
+                }};
+            }});
+        }};
+
+        theta = new ErekirUnitType("theta"){{
+            coreUnitDock = true;
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            isEnemy = false;
+            envDisabled = 0;
+
+            targetPriority = -2;
+            lowAltitude = false;
+            mineWalls = true;
+            mineFloor = false;
+            mineHardnessScaling = false;
+            flying = true;
+            mineSpeed = 8f;
+            mineTier = 3;
+            buildSpeed = 1.4f;
+            drag = 0.08f;
+            speed = 7f;
+            rotateSpeed = 8f;
+            accel = 0.09f;
+            itemCapacity = 180;
+            health = 500f;
+            armor = 2f;
+            hitSize = 11f;
+            payloadCapacity = 2f * 2f * tilesize * tilesize;
+            pickupUnits = false;
+            vulnerableWithPayloads = true;
+
+            fogRadius = 0f;
+            targetable = false;
+            hittable = false;
+
+            engineOffset = 7.2f;
+            engineSize = 3.1f;
+
+            setEnginesMirror(
+            new UnitEngine(25 / 4f, -1 / 4f, 2.4f, 300f)
+            );
+
+            weapons.add(new RepairBeamWeapon(){{
+                widthSinMag = 0.11f;
+                reload = 20f;
+                x = 0f;
+                y = 7.5f;
+                rotate = false;
+                shootY = 0f;
+                beamWidth = 0.7f;
+                aimDst = 0f;
+                shootCone = 15f;
+                mirror = false;
+
+                repairSpeed = 3.9f;
+                fractionRepairSpeed = 0.1f;
+
+                targetUnits = false;
+                targetBuildings = true;
+                autoTarget = false;
+                controllable = true;
+                laserColor = Pal.accent;
+                healColor = Pal.accent;
+
+                bullet = new BulletType(){{
+                    maxRange = 60f;
+                }};
+            }});
+
+            drawBuildBeam = false;
+
+            weapons.add(new BuildWeapon("build-weapon"){{
+                rotate = true;
+                rotateSpeed = 7f;
+                x = 14/4f;
+                y = 15/4f;
+                layerOffset = -0.001f;
+                shootY = 3f;
+            }});
+        }};
+
+        emanate = new ErekirUnitType("emanate"){{
+            coreUnitDock = true;
+            controller = u -> new BuilderAI(true, coreFleeRange);
+            isEnemy = false;
+            envDisabled = 0;
+
+            targetPriority = -2;
+            lowAltitude = false;
+            mineWalls = true;
+            mineFloor = false;
+            mineHardnessScaling = false;
+            flying = true;
+            mineSpeed = 9f;
+            mineTier = 3;
+            buildSpeed = 1.5f;
+            drag = 0.08f;
+            speed = 7.5f;
+            rotateSpeed = 8f;
+            accel = 0.08f;
+            itemCapacity = 110;
+            health = 700f;
+            armor = 3f;
+            hitSize = 12f;
+            buildBeamOffset = 8f;
+            payloadCapacity = 2f * 2f * tilesize * tilesize;
+            pickupUnits = false;
+            vulnerableWithPayloads = true;
+
+            fogRadius = 0f;
+            targetable = false;
+            hittable = false;
+
+            engineOffset = 7.5f;
+            engineSize = 3.4f;
+
+            setEnginesMirror(
+            new UnitEngine(35 / 4f, -13 / 4f, 2.7f, 315f),
+            new UnitEngine(28 / 4f, -35 / 4f, 2.7f, 315f)
+            );
+
+            weapons.add(new RepairBeamWeapon(){{
+                widthSinMag = 0.11f;
+                reload = 20f;
+                x = 19f/4f;
+                y = 19f/4f;
+                rotate = false;
+                shootY = 0f;
+                beamWidth = 0.7f;
+                aimDst = 0f;
+                shootCone = 40f;
+                mirror = true;
+
+                repairSpeed = 3.6f / 2f;
+                fractionRepairSpeed = 0.03f;
+
+                targetUnits = false;
+                targetBuildings = true;
+                autoTarget = false;
+                controllable = true;
+                laserColor = Pal.accent;
+                healColor = Pal.accent;
+
+                bullet = new BulletType(){{
+                    maxRange = 65f;
+                }};
+            }});
+        }};
+
 }
 }
