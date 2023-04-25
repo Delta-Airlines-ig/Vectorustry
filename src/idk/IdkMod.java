@@ -14,7 +14,7 @@ import mindustry.ui.dialogs.*;
 public class IdkMod extends Mod{
 
     public IdkMod(){
-        Log.info("Loaded ExampleJavaMod constructor.");
+        Log.info("loading things");
 
         //listen for game load event
         Events.on(ClientLoadEvent.class, e -> {
@@ -23,7 +23,7 @@ public class IdkMod extends Mod{
                 BaseDialog dialog = new BaseDialog("shit");
                 dialog.cont.add("Ah shit").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("example-java-mod-GTA.png")).pad(20f).row();
+                dialog.cont.image(Core.atlas.find("ut-GTA.png")).pad(20f).row();
                 dialog.cont.button("Here we go again", dialog::hide).size(150f, 60f);
                 dialog.show();
             });
@@ -33,7 +33,7 @@ public class IdkMod extends Mod{
 //here?
     //@Override
     public void loadContent(){
-        Log.info("Loading some content i totally made myself.");
+        Log.info("ok i think everything works?");
        EarthLiquids.load();
        EarthItems.load();
        EarthUnitTypes.load();
