@@ -562,7 +562,7 @@ public class EarthBlocks{
                     reloadMultiplier = 1.5f;
                     ammoMultiplier = 5;
                     lifetime = 60f;
-                }},
+                }}
             );
 
             size = 2;
@@ -627,7 +627,7 @@ public class EarthBlocks{
                     frontColor = Pal.missileYellow;
 
                     status = StatusEffects.blasted;
-                }},
+                }}
             );
 
             targetAir = false;
@@ -816,7 +816,7 @@ public class EarthBlocks{
                     pierceCap = 2;
                     pierceBuilding = true;
                     knockback = 0.7f;
-                }},
+                }}
             );
             reload = 5f;
             recoilTime = reload * 2f;
