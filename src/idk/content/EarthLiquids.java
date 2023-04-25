@@ -4,7 +4,7 @@ import arc.graphics.*;
 import mindustry.type.*;
 
 public class EarthLiquids{
-    public static Liquid oxygen, carbondioxide, steam, highpressuresteam;
+    public static Liquid oxygen, carbondioxide, steam, highpressuresteam, flammablemix;
 
     public static void load(){
 
@@ -13,6 +13,14 @@ public class EarthLiquids{
           coolant = false;
             heatCapacity = 0.4f;
             flammability = 1.2f;
+        }};
+        
+        flammablemix = new Liquid("flammable-mix", Color.valueOf("596ab8")){{
+          gas = true;
+          coolant = false;
+            heatCapacity = 0.4f;
+            flammability = 2f;
+            explosiveness = 1;
         }};
 
         carbondioxide = new Liquid("carbon-dioxide", Color.valueOf("ffa166")){{
