@@ -43,6 +43,7 @@ import static idk.content.EarthLiquids.*;
 import static idk.content.EarthUnitTypes.*;
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
+import static mindustry.type.LiquidStack.*;
 
 @SuppressWarnings("deprecation")
 public class EarthBlocks{
@@ -659,7 +660,7 @@ public class EarthBlocks{
             range = 100f;
             recoil = 6f;
 
-            shoot = new ShootSpread(6, 20f);
+            shoot = new ShootSpread(6, 15f);
 
             shootCone = 50;
             size = 3;
