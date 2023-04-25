@@ -143,6 +143,45 @@ public class EarthBlocks{
             oreScale = 25.580953f;
             variants = 2;
         }};
+        //cores and stuff
+        fortress = new CoreBlock("core-fortress"){{
+            requirements(Category.effect, BuildVisibility.editorOnly, with(Items.copper, 1000, Items.lead, 800));
+            alwaysUnlocked = true;
+
+            isFirstTier = true;
+            unitType = UnitTypes.delta;
+            health = 3100;
+            itemCapacity = 8000;
+            size = 3;
+
+            unitCapModifier = 16;
+        }};
+
+        stronghold = new CoreBlock("core-stronghold"){{
+            requirements(Category.effect, with(Items.copper, 3000, Items.lead, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
+
+            unitType = UnitTypes.theta;
+            health = 8500;
+            itemCapacity = 16000;
+            size = 4;
+            thrusterLength = 44/4f;
+
+            unitCapModifier = 24;
+            researchCostMultiplier = 0.07f;
+        }};
+
+        bunker = new CoreBlock("core-bunker"){{
+            requirements(Category.effect, with(Items.copper, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItem.iron, 5000));
+
+            unitType = UnitTypes.zeta;
+            health = 10000;
+            itemCapacity = 32000;
+            size = 5;
+            thrusterLength = 60/4f;
+
+            unitCapModifier = 32;
+            researchCostMultiplier = 0.11f;
+        }};
         //turrets
         solo = new ItemTurret("solo"){{
             requirements(Category.turret, with(Items.copper, 10, EarthItems.iron, 25));
