@@ -50,7 +50,7 @@ public class EarthBlocks{
     //ores
     oreIron, oreAluminum, oreLithium, oreTin, oreUranium, //not done with uranium
     //walls
-    leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge,
+    leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge, 
     //drills
     drillMechanised, drillElectric, drillModernised,
     //turrets
@@ -60,9 +60,7 @@ public class EarthBlocks{
     //power
     voltitereactor, turbinegenerator, 
     //unit building
-    groundassembler, airassembler, groundchasisassembler, weaponfactory, 
-    //weapons (not shown anywhere)
-    lightweapons, mediumweapons, heavyweapons, 
+    groundassembler, airassembler, groundchasisassembler, 
     //drone port wip
     droneport, 
     //crafting
