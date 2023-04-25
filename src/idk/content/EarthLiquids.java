@@ -1,4 +1,4 @@
-package mindustry.content;
+package idk.content;
 
 import arc.graphics.*;
 import mindustry.type.*;
