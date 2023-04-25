@@ -41,7 +41,7 @@ public class EarthUnitTypes{
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis,
 	//air
 	//L M H light medium and heavy, F = fighter(attacks air and can divebomb ground), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
-	LF, MF, HF, LB, MB, HB, LS, MS, HS, smallbuilderdrone
+	LF, MF, HF, LB, MB, HB, LS, MS, HS, smallbuilderdrone,
 	//core units
 	delta, theta, zeta;
 	//boss units coming soon?
