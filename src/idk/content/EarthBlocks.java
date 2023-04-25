@@ -291,7 +291,7 @@ public class EarthBlocks{
 
         }};
                 carbonsequestrator = new GenericCrafter("carbon-sequestrator"){{
-            requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminium, 150));
+            requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminum, 150));
             size = 3;
             hasLiquids = true;
 
@@ -358,7 +358,7 @@ public class EarthBlocks{
             outputItem = new ItemStack(EarthItems.carbon, 2);
         }};
                 siliconblastfurnace = new GenericCrafter("Silicon-Blast-Furnace"){{
-            requirements(Category.crafting, with(Items.copper, 40, Items.lead, 35, EarthItem.iron, 35, EarthItem.aluminum, 25));
+            requirements(Category.crafting, with(Items.copper, 40, Items.lead, 35, EarthItems.iron, 35, EarthItems.aluminum, 25));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.silicon, 2);
             craftTime = 30f;
