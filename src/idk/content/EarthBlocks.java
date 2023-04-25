@@ -171,7 +171,7 @@ public class EarthBlocks{
         }};
 
         bunker = new CoreBlock("core-bunker"){{
-            requirements(Category.effect, with(Items.copper, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItem.iron, 5000));
+            requirements(Category.effect, with(Items.copper, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
             unitType = UnitTypes.zeta;
             health = 10000;
@@ -517,7 +517,7 @@ public class EarthBlocks{
             }};
         }};
         //salvo equivelent
-        salvo = new ItemTurret("salvo"){{
+        volley = new ItemTurret("volley"){{
             requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, Items.titanium, 50));
             ammo(
                 Items.copper,  new BasicBulletType(2.5f, 6){{
@@ -760,7 +760,7 @@ public class EarthBlocks{
 
             requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
             ammo(
-                EarthItems.volitite, new PointBulletType(){{
+                EarthItems.voltite, new PointBulletType(){{
                     shootEffect = Fx.instShoot;
                     hitEffect = Fx.instHit;
                     smokeEffect = Fx.smokeCloud;
@@ -992,7 +992,7 @@ public class EarthBlocks{
         }};
 //nuclear missile launcher (you should get a limit to counter this) 
         aperture = new ItemTurret("aperture"){{
-            requirements(Category.turret, with(Items.silicon, 2450, Items.graphite, 1400, EarthItems.steel, 1500, EarthItems.iron, 2300, EarthItems.lithium, 1000, Earthitems.aluminum, 500));
+            requirements(Category.turret, with(Items.silicon, 2450, Items.graphite, 1400, EarthItems.steel, 1500, EarthItems.iron, 2300, EarthItems.lithium, 1000, EarthItems.aluminum, 500));
 
             ammo(
             EarthItems.uranium, new BasicBulletType(0f, 1){{
