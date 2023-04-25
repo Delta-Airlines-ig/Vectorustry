@@ -988,7 +988,7 @@ public static void load() {
             }});
         }};
 
-        emanate = new ErekirUnitType("emanate"){{
+        zeta = new ErekirUnitType("zeta"){{
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, coreFleeRange);
             isEnemy = false;
