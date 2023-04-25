@@ -54,7 +54,7 @@ public class EarthBlocks{
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
-    solo, trio, converge, splice, spear, volley, hurricane, cataclysm, 
+    solo, trio, converge, char, pelt, splice, spear, volley, ridge, hurricane, anticipate, apparition, cataclysm, 
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer,  
     //power
@@ -166,6 +166,7 @@ public class EarthBlocks{
             reload = 30f;
             inaccuracy = 1.5f;
             shootCone = 30f;
+            range = 100;
         }};
         trio = new ItemTurret("trio"){{
             requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
@@ -195,6 +196,83 @@ public class EarthBlocks{
             reload = 30f;
             inaccuracy = 4f;
             shootCone = 30f;
+            range = 150;
+        }};
+        //scatter equivelent
+         converge = new ItemTurret("converge"){{
+            requirements(Category.turret, with(Items.copper, 85, Items.lead, 45));
+            ammo(
+                EarthItems.iron, new FlakBulletType(4f, 5){{
+                    lifetime = 60f;
+                    ammoMultiplier = 5f;
+                    shootEffect = Fx.shootSmall;
+                    reloadMultiplier = 0.75f;
+                    width = 6f;
+                    height = 8f;
+                    hitEffect = Fx.flakExplosion;
+                    splashDamage = 25f * 1.5f;
+                    splashDamageRadius = 24f;
+                }},
+                EarthItems.aluminum, new BasicBulletType(6f, 1){{
+                    lifetime = 60f;
+                    ammoMultiplier = 5f;
+                    shootEffect = Fx.shootSmall;
+                    reloadMultiplier = 2f;
+                    width = 4f;
+                    height = 8f;
+                }},
+                Items.lead, new FlakBulletType(4.2f, 3){{
+                    lifetime = 60f;
+                    ammoMultiplier = 4f;
+                    shootEffect = Fx.shootSmall;
+                    width = 6f;
+                    height = 8f;
+                    hitEffect = Fx.flakExplosion;
+                    splashDamage = 27f * 1.5f;
+                    splashDamageRadius = 15f;
+                }},
+                Items.metaglass, new FlakBulletType(4f, 3){{
+                    lifetime = 60f;
+                    ammoMultiplier = 5f;
+                    shootEffect = Fx.shootSmall;
+                    reloadMultiplier = 0.8f;
+                    width = 6f;
+                    height = 8f;
+                    hitEffect = Fx.flakExplosion;
+                    splashDamage = 30f * 1.5f;
+                    splashDamageRadius = 20f;
+                    fragBullets = 6;
+                    fragBullet = new BasicBulletType(3f, 5){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = false;
+                    }};
+                }}
+            );
+            reload = 15f;
+            range = 220f;
+            size = 2;
+            targetGround = false;
+
+            shoot.shotDelay = 0f;
+            shoot.shots = 5;
+
+            recoil = 2f;
+            rotateSpeed = 15f;
+            inaccuracy = 20f;
+            shootCone = 35f;
+
+            scaledHealth = 200;
+            shootSound = Sounds.shootSnap;
+            coolant = consumeCoolant(0.2f);
+            researchCostMultiplier = 0.05f;
+
+            limitRange(2);
         }};
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
