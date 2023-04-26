@@ -99,6 +99,6 @@ public class EarthItems{
             flammability = 1f;
             cost = 1;
         }};
-        Planets.serpulo.hiddenItems.addAll(voltite, iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix)
+        Planets.serpulo.hiddenItems.addAll(voltite, iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix);
     }
 }
