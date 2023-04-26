@@ -27,7 +27,7 @@ public class idkMenuRenderer{
     private FrameBuffer shadows;
     private CacheBatch batch;
     private float time = 0f;
-    private float flyerRot = Math.random() * 10f + 40f;
+    private float flyerRot = Mathf.random() * 10f + 40f;
     private int flyers = Mathf.chance(0.75) ? Mathf.random(35) : Mathf.random(15);
     //no longer random or "dynamic", mod units in the menu look jarring, and it's not worth the configuration effort
     private UnitType flyerType = Seq.with(UnitTypes.flare, UnitTypes.horizon, UnitTypes.zenith, UnitTypes.mono, UnitTypes.poly, UnitTypes.mega, UnitTypes.alpha, UnitTypes.beta, UnitTypes.gamma).random();
@@ -250,7 +250,7 @@ public class idkMenuRenderer{
         flyers((x, y) -> {
             float engineOffset = flyerType.engineOffset, engineSize = flyerType.engineSize, rotation = flyerRot;
 
-            Draw.color(Pal.engine);
+            Draw.color(Color.valueOf("ffbb64"));
             Fill.circle(x + Angles.trnsx(rotation + 180, engineOffset), y + Angles.trnsy(rotation + 180, engineOffset),
             engineSize + Mathf.absin(Time.time, 2f, engineSize / 4f));
 
