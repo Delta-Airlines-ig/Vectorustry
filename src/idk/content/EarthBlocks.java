@@ -824,14 +824,15 @@ public class EarthBlocks{
         });
     });
                     smokeEffect = Fx.smokeCloud;
-                    trailEffect = new MultiEffect(Fx.scatheLight, new ParticleEffect(){{
+                    trailEffect = new ParticleEffect(){{
                                 particles = 2;
                                 colorFrom = Color.valueOf("c7fff9");
                                 colorTo = Color.valueOf("02a6f2");
                                 lifetime = 100f;
                                 strokeFrom = 4f;
-                                sizeTo = 1630f;
-                            }});
+                                sizeFrom = 5f;
+                                sizeTo = 0f;
+                            }};
                     despawnEffect = new Effect(15f, 100f, e -> {
         color(Color.valueOf("5fb6de"));
         stroke(e.fout() * 4f);
