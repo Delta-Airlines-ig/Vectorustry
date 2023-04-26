@@ -2,10 +2,11 @@ package idk.content;
 
 
 import arc.graphics.*;
-import static arc.graphics.g2d.Draw.rect;
-import static arc.graphics.g2d.Draw.*;
-import static arc.graphics.g2d.Lines.*;
-import static arc.math.Angles.*;
+import arc.*;
+import arc.graphics.g2d.*;
+import arc.math.geom.*;
+import arc.struct.*;
+import arc.util.*;
 import arc.math.*;
 import arc.struct.*;
 import mindustry.*;
@@ -48,6 +49,10 @@ import static idk.content.EarthLiquids.*;
 import static idk.content.EarthUnitTypes.*;
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
+import static arc.graphics.g2d.Draw.rect;
+import static arc.graphics.g2d.Draw.*;
+import static arc.graphics.g2d.Lines.*;
+import static arc.math.Angles.*;
 
 @SuppressWarnings("deprecation")
 public class EarthBlocks{
