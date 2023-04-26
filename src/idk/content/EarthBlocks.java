@@ -38,6 +38,7 @@ import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 import mindustry.content.*;
 import idk.content.*;
+import idk.world.blocks.storage.*;
 
 import static idk.content.EarthLiquids.*;
 import static idk.content.EarthUnitTypes.*;
@@ -146,7 +147,7 @@ public class EarthBlocks{
             variants = 2;
         }};
         //cores and stuff
-        fortress = new CoreBlock("core-fortress"){{
+        fortress = new DropCoreBlock("core-fortress"){{
             requirements(Category.effect, BuildVisibility.editorOnly, with(Items.copper, 1000, Items.lead, 800));
             alwaysUnlocked = true;
 
@@ -159,7 +160,7 @@ public class EarthBlocks{
             unitCapModifier = 16;
         }};
 
-        stronghold = new CoreBlock("core-stronghold"){{
+        stronghold = new DropCoreBlock("core-stronghold"){{
             requirements(Category.effect, with(Items.copper, 3000, Items.lead, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
 
             unitType = EarthUnitTypes.theta;
@@ -172,7 +173,7 @@ public class EarthBlocks{
             researchCostMultiplier = 0.07f;
         }};
 
-        bunker = new CoreBlock("core-bunker"){{
+        bunker = new DropCoreBlock("core-bunker"){{
             requirements(Category.effect, with(Items.copper, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
             unitType = EarthUnitTypes.zeta;
