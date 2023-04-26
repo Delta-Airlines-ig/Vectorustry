@@ -901,6 +901,8 @@ public class EarthBlocks{
             rotateSpeed = 2f;
             reload = 400f;
             ammoUseEffect = Fx.casing3Double;
+            moveWhileCharging = false;
+            accurateDelay = true;
             recoil = 5f;
             cooldownTime = reload;
             shake = 4f;
