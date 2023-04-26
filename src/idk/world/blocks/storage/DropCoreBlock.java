@@ -10,8 +10,9 @@ import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.*;
 import mindustry.*;
-import mindustry.annotations.Annotations.*;
+//import mindustry.annotations.Annotations.*;
 import mindustry.content.*;
+import mindustry.world.blocks.storage.*;
 import mindustry.core.*;
 import mindustry.ctype.*;
 import mindustry.entities.*;
@@ -33,8 +34,8 @@ public class DropCoreBlock extends CoreBlock{
     private static ItemModule nextItems;
     protected static final float[] thrusterSizes = {0f, 0f, 0f, 0f, 0.3f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 0f};
 
-    public @Load(value = "@-thruster1", fallback = "clear-effect") TextureRegion thruster1; //top right
-    public @Load(value = "@-thruster2", fallback = "clear-effect") TextureRegion thruster2; //bot left
+    //public @Load(value = "@-thruster1", fallback = "clear-effect") TextureRegion thruster1; //top right
+   // public @Load(value = "@-thruster2", fallback = "clear-effect") TextureRegion thruster2; //bot left
     public float thrusterLength = 14f/4f;
     public boolean isFirstTier;
     public boolean incinerateNonBuildable = false;
