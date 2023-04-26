@@ -846,8 +846,8 @@ public class EarthBlocks{
                                 strokeFrom = 0f;
                                 sizeFrom = 5f;
                                 sizeTo = 0f;
-                                offsetX = 0;
-                                offsetY = -30;
+                                offsetX = -10;
+                                offsetY = 0;
                             }},
                                                    new ParticleEffect(){{
                                 rotWithParent = true;
@@ -858,8 +858,8 @@ public class EarthBlocks{
                                 strokeFrom = 0f;
                                 sizeFrom = 5f;
                                 sizeTo = 0f;
-                                offsetX = 0;
-                                offsetY = -60;
+                                offsetX = -20;
+                                offsetY = 0;
                             }});
                     smokeEffect = Fx.smokeCloud;
                     trailEffect = new ParticleEffect(){{
