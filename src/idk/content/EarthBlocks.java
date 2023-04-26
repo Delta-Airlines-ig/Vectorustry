@@ -904,7 +904,7 @@ public class EarthBlocks{
             recoilTime = reload * 2f;
             coolantMultiplier = 0.5f;
             ammoUseEffect = Fx.casing3;
-            shoot.shots = 30f;
+            shoot.shots = 30;
             shoot.shotDelay = 1f;
             range = 260f;
             inaccuracy = 3f;
