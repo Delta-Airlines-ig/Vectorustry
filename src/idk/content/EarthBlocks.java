@@ -586,7 +586,7 @@ public class EarthBlocks{
             ammoEjectBack = 3f;
             recoil = 3f;
             shake = 1f;
-            inaccuracy = 2f;
+            inaccuracy = 5f;
             shoot.shots = 16;
             shoot.shotDelay = 0.5f;
 
@@ -902,7 +902,7 @@ public class EarthBlocks{
             reload = 400f;
             ammoUseEffect = Fx.casing3Double;
             moveWhileCharging = false;
-            accurateDelay = true;
+            accurateDelay = false;
             recoil = 5f;
             cooldownTime = reload;
             shake = 4f;
@@ -1015,14 +1015,15 @@ public class EarthBlocks{
                     engineLayer = Layer.effect;
                     engineSize = 3.1f;
                     engineOffset = 10f;
-                    rotateSpeed = 2f;
+                    rotateSpeed = 8f;
                     trailLength = 18;
                     missileAccelTime = 50f;
-                    lowAltitude = true;
+                    lowAltitude = false;
                     loopSound = Sounds.missileTrail;
                     loopSoundVolume = 0.6f;
                     deathSound = Sounds.largeExplosion;
                     targetAir = true;
+                    targetGround = false;
 
                     fogRadius = 6f;
 
