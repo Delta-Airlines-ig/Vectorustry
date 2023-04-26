@@ -65,7 +65,7 @@ public class DropCoreBlock extends CoreBlock{
         //rebuildable = false;
     }
 
-    @Remote(called = Loc.server)
+   // @Remote(called = Loc.server)
     public static void playerSpawn(Tile tile, Player player){
         if(player == null || tile == null || !(tile.build instanceof CoreBuild core)) return;
 
