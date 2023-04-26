@@ -16,7 +16,7 @@ public class EarthItems{
     iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix;
   //add voltite alloys
     
-    public static final Seq<Item> idkItems = new Seq<>();
+    public static final idkItems = new Seq<>();
         
     public static void load(){
         voltite = new Item("voltite", Color.valueOf("00f0ec")){{
