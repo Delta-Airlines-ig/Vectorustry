@@ -240,7 +240,7 @@ public class EarthBlocks{
                 shots = 3;
                 barrels = 3;
                 spread = 3.5f;
-                shotDelay = 5f;
+                shotDelay = 10f;
             }};
             health = 300;
             size = 2;
