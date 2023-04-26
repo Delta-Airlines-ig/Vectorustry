@@ -158,9 +158,7 @@ public class EarthBlocks{
             size = 3;
 
             unitCapModifier = 16;
-            CoreBuild(
-                thrusterTime = 0f;
-            );
+            CoreBuild(thrusterTime = 0f);
         }};
 
         stronghold = new CoreBlock("core-stronghold"){{
@@ -174,9 +172,7 @@ public class EarthBlocks{
 
             unitCapModifier = 24;
             researchCostMultiplier = 0.07f;
-            CoreBuild(
-                thrusterTime = 0f;
-            );
+            CoreBuild(thrusterTime = 0f);
         }};
 
         bunker = new CoreBlock("core-bunker"){{
@@ -190,9 +186,7 @@ public class EarthBlocks{
 
             unitCapModifier = 32;
             researchCostMultiplier = 0.11f;
-            CoreBuild(
-                thrusterTime = 0f;
-            );
+            CoreBuild(thrusterTime = 0f);
         }};
         //turrets
         solo = new ItemTurret("solo"){{
