@@ -279,9 +279,5 @@ public class idkMenuRenderer{
         }
     }
 
-    @Override
-    public void dispose(){
-        batch.dispose();
-        shadows.dispose();
-    }
+   
 }
