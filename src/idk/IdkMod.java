@@ -14,7 +14,7 @@ import mindustry.ui.dialogs.*;
 public class IdkMod extends Mod{
 
     public IdkMod(){
-        Log.info("loading things");
+        Log.info("Loading the funny ui thing");
 
         //listen for game load event
         Events.on(ClientLoadEvent.class, e -> {
@@ -23,7 +23,7 @@ public class IdkMod extends Mod{
                 BaseDialog dialog = new BaseDialog("shit");
                 dialog.cont.add("Ah shit").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("ut-GTA.png")).pad(20f).row();
+                dialog.cont.image(Core.atlas.find("ut-GTA")).pad(20f).row();
                 dialog.cont.button("Here we go again", dialog::hide).size(150f, 60f);
                 dialog.show();
             });
@@ -33,15 +33,21 @@ public class IdkMod extends Mod{
 //here?
     //@Override
     public void loadContent(){
-        Log.info("ok i think everything works?");
+        Log.info("Hopefully everything works.");
        EarthLiquids.load();
+        Log.info("Liquids loaded.");
        EarthItems.load();
+        Log.info("Items loaded.");
        EarthUnitTypes.load();
+        Log.info("Units loaded.");
        EarthBlocks.load();
+        Log.info("Blocks loaded.");
         EarthPlanets.load();
+        Log.info("Planets loaded.");
+        
      //   EarthSectors.load();
      //   EarthTechTree.load();
-        
+        Log.info("Everything is loaded.");
     }
 }
 //i have no clue what im doing i just stole this from some other mods
