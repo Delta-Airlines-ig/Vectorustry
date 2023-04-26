@@ -975,7 +975,7 @@ public class EarthBlocks{
                     engineLayer = Layer.effect;
                     engineSize = 3.1f;
                     engineOffset = 10f;
-                    rotateSpeed = 0.25f;
+                    rotateSpeed = 2f;
                     trailLength = 18;
                     missileAccelTime = 50f;
                     lowAltitude = true;
@@ -1067,7 +1067,7 @@ public class EarthBlocks{
             size = 4;
             envEnabled |= Env.space;
             reload = 500f;
-            range = 1350;
+            range = 2350;
             shootCone = 1f;
             scaledHealth = 220;
             rotateSpeed = 0.9f;
