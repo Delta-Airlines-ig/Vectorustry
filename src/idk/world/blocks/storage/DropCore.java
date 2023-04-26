@@ -43,7 +43,7 @@ public class DropCoreBlock extends StorageBlock{
 
     public float captureInvicibility = 60f * 15f;
 
-    public CoreBlock(String name){
+    public DropCoreBlock(String name){
         super(name);
 
         solid = true;
@@ -68,7 +68,7 @@ public class DropCoreBlock extends StorageBlock{
     public static void playerSpawn(Tile tile, Player player){
         if(player == null || tile == null || !(tile.build instanceof CoreBuild core)) return;
 
-        UnitType spawnType = ((CoreBlock)core.block).unitType;
+        UnitType spawnType = ((DropCoreBlock)core.block).unitType;
         if(core.wasVisible){
             Fx.spawn.at(core);
         }
@@ -126,7 +126,7 @@ public class DropCoreBlock extends StorageBlock{
     @Override
     public boolean canReplace(Block other){
         //coreblocks can upgrade smaller cores
-        return super.canReplace(other) || (other instanceof CoreBlock && size >= other.size && other != this);
+        return super.canReplace(other) || (other instanceof DropCoreBlock && size >= other.size && other != this);
     }
 
     @Override
@@ -139,20 +139,20 @@ public class DropCoreBlock extends StorageBlock{
 
         //special floor upon which cores can be placed
         tile.getLinkedTilesAs(this, tempTiles);
-        if(!tempTiles.contains(o -> !o.floor().allowCorePlacement || o.block() instanceof CoreBlock)){
+        if(!tempTiles.contains(o -> !o.floor().allowCorePlacement || o.block() instanceof DropCoreBlock)){
             return true;
         }
 
         //must have all requirements
         if(core == null || (!state.rules.infiniteResources && !core.items.has(requirements, state.rules.buildCostMultiplier))) return false;
 
-        return tile.block() instanceof CoreBlock && size > tile.block().size;
+        return tile.block() instanceof DropCoreBlock && size > tile.block().size;
     }
 
     @Override
     public void placeBegan(Tile tile, Block previous){
         //finish placement immediately when a block is replaced.
-        if(previous instanceof CoreBlock){
+        if(previous instanceof DropCoreBlock){
             tile.setBlock(this, tile.team());
             tile.block().placeEffect.at(tile, tile.block().size);
             Fx.upgradeCore.at(tile.drawx(), tile.drawy(), 0f, tile.block());
