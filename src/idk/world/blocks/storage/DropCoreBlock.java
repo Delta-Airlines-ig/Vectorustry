@@ -67,7 +67,7 @@ public class DropCoreBlock extends CoreBlock{
 
    // @Remote(called = Loc.server)
     public static void playerSpawn(Tile tile, Player player){
-        if(player == null || tile == null || !(tile.build instanceof CoreBuild core)) return;
+        if(player == null || tile == null || !(tile.build instanceof DropCoreBuild core)) return;
 
         UnitType spawnType = ((DropCoreBlock)core.block).unitType;
         if(core.wasVisible){
@@ -102,7 +102,7 @@ public class DropCoreBlock extends CoreBlock{
     public void setBars(){
         super.setBars();
 
-        addBar("capacity", (CoreBuild e) -> new Bar(
+        addBar("capacity", (DropCoreBuild e) -> new Bar(
             () -> Core.bundle.format("bar.capacity", UI.formatAmount(e.storageCapacity)),
             () -> Pal.items,
             () -> e.items.total() / ((float)e.storageCapacity * content.items().count(UnlockableContent::unlockedNow))
@@ -136,7 +136,7 @@ public class DropCoreBlock extends CoreBlock{
         //in the editor, you can place them anywhere for convenience
         if(state.isEditor()) return true;
 
-        CoreBuild core = team.core();
+        DropCoreBuild core = team.core();
 
         //special floor upon which cores can be placed
         tile.getLinkedTilesAs(this, tempTiles);
@@ -173,7 +173,7 @@ public class DropCoreBlock extends CoreBlock{
 
     @Override
     public void beforePlaceBegan(Tile tile, Block previous){
-        if(tile.build instanceof CoreBuild){
+        if(tile.build instanceof DropCoreBuild){
             //right before placing, create a "destination" item array which is all the previous items minus core requirements
             ItemModule items = tile.build.items.copy();
             if(!state.rules.infiniteResources){
@@ -201,7 +201,7 @@ public class DropCoreBlock extends CoreBlock{
         }
     }
 
-    public void drawLanding(CoreBuild build, float x, float y){
+    public void drawLanding(DropCoreBuild build, float x, float y){
         float fout = renderer.getLandTime() / coreLandDuration;
 
         if(renderer.isLaunching()) fout = 1f - fout;
@@ -290,7 +290,7 @@ public class DropCoreBlock extends CoreBlock{
         Draw.alpha(1f);
     }
 
-    public class CoreBuild extends Building{
+    public class DropCoreBuild extends Building{
         public int storageCapacity;
         public boolean noEffect = false;
         public Team lastDamage = Team.derelict;
@@ -446,7 +446,7 @@ public class DropCoreBlock extends CoreBlock{
                 //building does not exist on client yet
                 if(!net.client()){
                     //core is invincible for several seconds to prevent recapture
-                    ((CoreBuild)tile.build).iframes = captureInvicibility;
+                    ((DropCoreBuild)tile.build).iframes = captureInvicibility;
                 }
             }
         }
@@ -495,7 +495,7 @@ public class DropCoreBlock extends CoreBlock{
                 }
             }
 
-            for(CoreBuild other : state.teams.cores(team)){
+            for(DropCoreBuild other : state.teams.cores(team)){
                 other.storageCapacity = storageCapacity;
             }
         }
@@ -585,7 +585,7 @@ public class DropCoreBlock extends CoreBlock{
                 items.set(item, Math.min(items.get(item), max));
             }
 
-            for(CoreBuild other : state.teams.cores(team)){
+            for(DropCoreBuild other : state.teams.cores(team)){
                 other.onProximityUpdate();
             }
         }
