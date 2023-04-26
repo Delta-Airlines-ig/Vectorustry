@@ -900,10 +900,12 @@ public class EarthBlocks{
                     knockback = 0.7f;
                 }}
             );
-            reload = 5f;
+            reload = 60f;
             recoilTime = reload * 2f;
             coolantMultiplier = 0.5f;
             ammoUseEffect = Fx.casing3;
+            shoot.shots = 30f;
+            shoot.shotDelay = 1f;
             range = 260f;
             inaccuracy = 3f;
             recoil = 3f;
@@ -927,9 +929,9 @@ public class EarthBlocks{
             size = 4;
             shake = 2f;
             range = 295f;
-            reload = 90f;
+            reload = 60f;
             firingMoveFract = 0.5f;
-            shootDuration = 60f;
+            shootDuration = 10f;
             shootSound = Sounds.laserbig;
             loopSound = Sounds.beam;
             loopSoundVolume = 2f;
