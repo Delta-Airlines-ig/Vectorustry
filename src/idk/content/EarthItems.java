@@ -15,6 +15,9 @@ public class EarthItems{
     //other things
     iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix;
   //add voltite alloys
+    
+    public static final Seq<Item> idkItems = new Seq<>()
+        
     public static void load(){
         voltite = new Item("voltite", Color.valueOf("00f0ec")){{
             localizedName = "voltite";
@@ -99,6 +102,6 @@ public class EarthItems{
             flammability = 1f;
             cost = 1;
         }};
-        Planets.serpulo.hiddenItems.addAll(voltite, iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix);
+        idkItems.addAll(voltite, iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix);
     }
 }
