@@ -775,7 +775,7 @@ public class EarthBlocks{
                 anticipate = new ItemTurret("anticipate"){{
             float brange = range = 800f;
                     
-            shoot.firstShotDelay = 125f;
+            shoot.firstShotDelay = 25f;
                     
             requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
             ammo(
