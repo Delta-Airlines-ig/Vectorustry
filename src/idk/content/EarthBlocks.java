@@ -813,7 +813,7 @@ public class EarthBlocks{
                 Fill.square(e.x + x, e.y + y, c.fout() * 3f, 45f);
             });
         });
-    })
+    });
                     smokeEffect = Fx.smokeCloud;
                     trailEffect = new MultiEffect(Fx.scatheLight, new ParticleEffect(){{
                                 particles = 2;
