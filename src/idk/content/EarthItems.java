@@ -10,8 +10,6 @@ import mindustry.ctype.UnlockableContent;
 
 public class EarthItems{
     public static Item 
-        //unit stuff
-        lightchasis, mediumchasis, heavychasis, lightweapons, mediumweapons, heavyweapons, 
         //voltite
         voltite, 
     //other things
@@ -101,47 +99,6 @@ public class EarthItems{
             flammability = 1f;
             cost = 1;
         }};
-                lightchasis = new Item("lightchasis"){{
-            localizedName = "lightchasis";
-            description = "iron, sort of like copper, used in many buildings";
-            flammability = 0f;
-            explosiveness = 0f;
-            hardness = 0;
-        }};
-                        mediumchasis = new Item("mediumchasis"){{
-            localizedName = "mediumchasis";
-            description = "iron, sort of like copper, used in many buildings";
-            flammability = 0f;
-            explosiveness = 0f;
-            hardness = 0;
-        }};
-                        heavychasis = new Item("heavychasis"){{
-            localizedName = "heavychasis";
-            description = "iron, sort of like copper, used in many buildings";
-            flammability = 0f;
-            explosiveness = 0f;
-            hardness = 0;
-        }};
-                lightweapons = new Item("lightweapons"){{
-            localizedName = "lightweapons";
-            description = "iron, sort of like copper, used in many buildings";
-            flammability = 0f;
-            explosiveness = 0f;
-            hardness = 0;
-        }};
-                mediumweapons = new Item("mediumweapons"){{
-            localizedName = "mediumweapons";
-            description = "iron, sort of like copper, used in many buildings";
-            flammability = 0f;
-            explosiveness = 0f;
-            hardness = 0;
-        }};        
-                heavyweapons = new Item("heavyweapons"){{
-            localizedName = "heavyweapons";
-            description = "iron, sort of like copper, used in many buildings";
-            flammability = 0f;
-            explosiveness = 0f;
-            hardness = 0;
-        }};        
+        Planets.serpulo.hiddenItems.addAll(voltite, iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix)
     }
 }
