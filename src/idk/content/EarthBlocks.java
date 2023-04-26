@@ -38,7 +38,7 @@ import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 import mindustry.content.*;
 import idk.content.*;
-import idk.world.blocks.storage.*;
+//import idk.world.blocks.storage.*;
 
 import static idk.content.EarthLiquids.*;
 import static idk.content.EarthUnitTypes.*;
