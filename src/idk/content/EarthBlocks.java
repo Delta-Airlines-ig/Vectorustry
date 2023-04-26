@@ -775,7 +775,7 @@ public class EarthBlocks{
                 anticipate = new ItemTurret("anticipate"){{
             float brange = range = 800f;
                     
-            shoot.firstShotDelay = 25f;
+            shoot.firstShotDelay = 125f;
                     
             requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
             ammo(
@@ -830,7 +830,7 @@ public class EarthBlocks{
                                 particles = 2;
                                 colorFrom = Color.valueOf("c7fff9");
                                 colorTo = Color.valueOf("02a6f2");
-                                lifetime = 100f;
+                                lifetime = 500f;
                                 strokeFrom = 0f;
                                 sizeFrom = 5f;
                                 sizeTo = 0f;
@@ -840,26 +840,26 @@ public class EarthBlocks{
                                                    new ParticleEffect(){{
                                 rotWithParent = true;
                                 particles = 2;
-                                colorFrom = Color.valueOf("c7fff9");
-                                colorTo = Color.valueOf("02a6f2");
-                                lifetime = 100f;
+                                colorFrom = Color.valueOf("80d0e0");
+                                colorTo = Color.valueOf("8088e0");
+                                lifetime = 500f;
                                 strokeFrom = 0f;
                                 sizeFrom = 5f;
                                 sizeTo = 0f;
                                 offsetX = 0;
-                                offsetY = 3;
+                                offsetY = -30;
                             }},
                                                    new ParticleEffect(){{
                                 rotWithParent = true;
                                 particles = 2;
-                                colorFrom = Color.valueOf("c7fff9");
-                                colorTo = Color.valueOf("02a6f2");
-                                lifetime = 100f;
+                                colorFrom = Color.valueOf("65a9d6");
+                                colorTo = Color.valueOf("656dd6");
+                                lifetime = 500f;
                                 strokeFrom = 0f;
                                 sizeFrom = 5f;
                                 sizeTo = 0f;
                                 offsetX = 0;
-                                offsetY = 6;
+                                offsetY = -60;
                             }});
                     smokeEffect = Fx.smokeCloud;
                     trailEffect = new ParticleEffect(){{
