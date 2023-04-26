@@ -379,7 +379,7 @@ public class EarthBlocks{
                 colors = new Color[]{Color.valueOf("ed752b").a(0.55f), Color.valueOf("ed9f2b").a(0.7f), Color.valueOf("edc32b").a(0.8f), Color.valueOf("f5e322")};
                 flareColor = Color.valueOf("ed752b");
                 lightColor = hitColor = flareColor;
-                flareRotSpeed = 2;
+                flareRotSpeed = 4;
                 rotateFlare = true;
             }}
             );
@@ -432,8 +432,9 @@ public class EarthBlocks{
                 }}
             );
             targetAir = false;
-            reload = 60f;
+            reload = 30f;
             recoil = 2f;
+            shoot.shots = 2;
             range = 235f;
             inaccuracy = 3f;
             shootCone = 10f;
@@ -446,7 +447,7 @@ public class EarthBlocks{
         splice = new PowerTurret("splice"){{
             requirements(Category.turret, with(Items.copper, 75, Items.lead, 50, EarthItems.iron, 50, Items.silicon, 15));
             shootType = new LightningBulletType(){{
-                damage = 1;
+                damage = 5;
                 lightningLength = 25;
                 collidesAir = false;
                 ammoMultiplier = 1f;
@@ -466,11 +467,12 @@ public class EarthBlocks{
                     buildingDamageMultiplier = 0.25f;
                 }};
             }};
-            reload = 1f;
+            reload = 15f;
             shootCone = 40f;
             rotateSpeed = 8f;
             targetAir = false;
             range = 90f;
+            shoot.shots = 20;
             shootEffect = Fx.lightningShoot;
             heatColor = Color.red;
             recoil = 1f;
@@ -484,8 +486,8 @@ public class EarthBlocks{
           spear = new PowerTurret("spear"){{
             requirements(Category.turret, with(Items.copper, 60, Items.lead, 70, Items.silicon, 80, EarthItems.steel, 30));
             range = 200f;
-
-            shoot.firstShotDelay = 10f;
+            shoot = new ShootSpread(3, 15f);
+            shoot.firstShotDelay = 20f;
 
             recoil = 3f;
             reload = 20f;
@@ -494,10 +496,10 @@ public class EarthBlocks{
             smokeEffect = Fx.none;
             heatColor = Color.red;
             size = 2;
-            scaledHealth = 280;
+            scaledHealth = 380;
             targetAir = false;
             moveWhileCharging = true;
-            accurateDelay = false;
+            accurateDelay = true;
             shootSound = Sounds.laser;
             coolant = consumeCoolant(0.2f);
 
@@ -575,8 +577,9 @@ public class EarthBlocks{
             ammoEjectBack = 3f;
             recoil = 3f;
             shake = 1f;
+            inaccuracy = 2f;
             shoot.shots = 16;
-            shoot.shotDelay = 1.5f;
+            shoot.shotDelay = 0.5f;
 
             ammoUseEffect = Fx.casing2;
             scaledHealth = 240;
@@ -635,13 +638,13 @@ public class EarthBlocks{
 
             targetAir = false;
             size = 3;
-            shoot.shots = 8;
-            inaccuracy = 15f;
-            reload = 40f;
+            shoot.shots = 32;
+            inaccuracy = 25f;
+            reload = 80f;
             ammoEjectBack = 5f;
             ammoUseEffect = Fx.casing3Double;
             ammoPerShot = 2;
-            velocityRnd = 0.4f;
+            velocityRnd = 0.7f;
             recoil = 6f;
             shake = 2f;
             range = 290f;
@@ -678,13 +681,14 @@ public class EarthBlocks{
                     damage = 66f;
                     ammoMultiplier = 4f;
                     width = 17f;
+                    toColor = Color.valueOf("92b0ad");
                     reloadMultiplier = 1.3f;
                 }},
                 Items.surgeAlloy, new ShrapnelBulletType(){{
                     length = brange;
                     damage = 135f;
                     ammoMultiplier = 5f;
-                    toColor = Pal.thoriumPink;
+                    toColor = Color.valueOf("f5ec42");
                     shootEffect = smokeEffect = Fx.thoriumShoot;
                 }}
             );
@@ -744,6 +748,7 @@ public class EarthBlocks{
                 -3f, 0f, 0f,
                 };
             }};
+            shoot.shots = 2; 
             reload = 4f;
             range = 200f;
             size = 3;
@@ -764,12 +769,77 @@ public class EarthBlocks{
             requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
             ammo(
                 EarthItems.voltite, new PointBulletType(){{
-                    shootEffect = Fx.instShoot;
-                    hitEffect = Fx.instHit;
+                    shootEffect = new Effect(24f, e -> {
+                                         e.scaled(10f, b -> {
+                                         color(Color.valueOf("96c4d9"), Color.valueOf("5fb6de"), b.fin());
+                                         stroke(b.fout() * 3f + 0.2f);
+                                         Lines.circle(b.x, b.y, b.fin() * 50f);
+                                         });
+
+                                          Color.valueOf("5fb6de");
+
+                                        for(int i : Mathf.signs){
+                                        Drawf.tri(e.x, e.y, 13f * e.fout(), 85f, e.rotation + 90f * i);
+                                        Drawf.tri(e.x, e.y, 13f * e.fout(), 50f, e.rotation + 20f * i);
+                                         }                           
+
+                                         Drawf.light(e.x, e.y, 180f, Color.valueOf("5fb6de"), 0.9f * e.fout());
+                                          });
+                    hitEffect = new Effect(20f, 200f, e -> {
+                                             color(Color.valueOf("5fb6de"));
+
+                                                for(int i = 0; i < 2; i++){
+                                                  color(i == 0 ? Color.valueOf("5fb6de") : Color.valueOf("79ccf2"));
+//i give up with this indentation you just gotta deal w/ it
+            float m = i == 0 ? 1f : 0.5f;
+
+            for(int j = 0; j < 5; j++){
+                float rot = e.rotation + Mathf.randomSeedRange(e.id + j, 50f);
+                float w = 23f * e.fout() * m;
+                Drawf.tri(e.x, e.y, w, (80f + Mathf.randomSeedRange(e.id + j, 40f)) * m, rot);
+                Drawf.tri(e.x, e.y, w, 20f * m, rot + 180f);
+            }
+        }
+
+        e.scaled(10f, c -> {
+            color(Color.valueOf("79ccf2"));
+            stroke(c.fout() * 2f + 0.2f);
+            Lines.circle(e.x, e.y, c.fin() * 30f);
+        });
+
+        e.scaled(12f, c -> {
+            color(Color.valueOf("5fb6de"));
+            randLenVectors(e.id, 25, 5f + e.fin() * 80f, e.rotation, 60f, (x, y) -> {
+                Fill.square(e.x + x, e.y + y, c.fout() * 3f, 45f);
+            });
+        });
+    })
                     smokeEffect = Fx.smokeCloud;
-                    trailEffect = Fx.instTrail;
-                    despawnEffect = Fx.instBomb;
-                    trailSpacing = 10f;
+                    trailEffect = new MultiEffect(Fx.scatheLight, new ParticleEffect(){{
+                                particles = 2;
+                                colorFrom = Color.valueOf("c7fff9");
+                                colorTo = Color.valueOf("02a6f2");
+                                lifetime = 100f;
+                                strokeFrom = 4f;
+                                sizeTo = 1630f;
+                            }});
+                    despawnEffect = new Effect(15f, 100f, e -> {
+        color(Color.valueOf("5fb6de"));
+        stroke(e.fout() * 4f);
+        Lines.circle(e.x, e.y, 4f + e.finpow() * 20f);
+
+        for(int i = 0; i < 4; i++){
+            Drawf.tri(e.x, e.y, 6f, 80f * e.fout(), i*90 + 45);
+        }
+
+        color();
+        for(int i = 0; i < 4; i++){
+            Drawf.tri(e.x, e.y, 3f, 30f * e.fout(), i*90 + 45);
+        }
+
+        Drawf.light(e.x, e.y, 150f, Color.valueOf("5fb6de"), 0.9f * e.fout());
+    });
+                    trailSpacing = 3f;
                     damage = 3550;
                     buildingDamageMultiplier = 0.75f;
                     speed = brange;
