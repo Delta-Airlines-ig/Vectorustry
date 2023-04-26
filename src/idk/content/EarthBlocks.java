@@ -1007,16 +1007,16 @@ public class EarthBlocks{
                 ammoMultiplier = 1f;
 
                 spawnUnit = new MissileUnitType("sam-missile"){{
-                    speed = 10.6f;
-                    maxRange = 6f;
+                    speed = 20.6f;
+                    maxRange = 12f;
                     lifetime = 60f * 5.5f;
                     outlineColor = Pal.darkOutline;
                     engineColor = trailColor = Pal.redLight;
                     engineLayer = Layer.effect;
                     engineSize = 3.1f;
                     engineOffset = 10f;
-                    rotateSpeed = 8f;
-                    trailLength = 18;
+                    rotateSpeed = 25f;
+                    trailLength = 28;
                     missileAccelTime = 50f;
                     lowAltitude = false;
                     loopSound = Sounds.missileTrail;
@@ -1153,7 +1153,7 @@ public class EarthBlocks{
                         mirror = false;
                         reload = 1f;
                         deathExplosionEffect = Fx.impactReactorExplosion;
-                        shootOnDeath = true;
+                        shootOnDeath = false;
                         shake = 10f;
                         bullet = new ExplosionBulletType(15000f, 1650f){{
                             hitColor = Pal.redLight;
@@ -1165,6 +1165,7 @@ public class EarthBlocks{
 
                             collidesAir = false;
                             buildingDamageMultiplier = 0.3f;
+                            killShooter = true;
 
                             ammoMultiplier = 1f;
                             fragLifeMin = 0.1f;
