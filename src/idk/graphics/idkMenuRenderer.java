@@ -31,7 +31,7 @@ public class idkMenuRenderer{
     //no longer random or "dynamic", mod units in the menu look jarring, and it's not worth the configuration effort
     private UnitType flyerType = Seq.with(UnitTypes.flare, UnitTypes.horizon, UnitTypes.zenith, UnitTypes.mono, UnitTypes.poly, UnitTypes.mega, UnitTypes.alpha, UnitTypes.beta, UnitTypes.gamma).random();
 
-    public MenuRenderer(){
+    public idkMenuRenderer(){
         Time.mark();
         generate();
         cache();
