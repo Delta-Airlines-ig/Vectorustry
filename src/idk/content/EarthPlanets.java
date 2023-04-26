@@ -20,9 +20,9 @@ public class EarthPlanets{
 		    	icon = "router";
 			iconColor = Color.red;
 		                cloudMeshLoader = () -> new MultiMesh(
-                new HexSkyMesh(this, 2, 0.15f, 0.1f, 5, Color.valueOf("a3a3a3").a(0.75f), 2, 0.42f, 1f, 0.43f),
-                new HexSkyMesh(this, 3, 0.1f, 0.08f, 5, Color.valueOf("5c5c5c").a(0.75f), 2, 0.42f, 1.2f, 0.45f),
-		new HexSkyMesh(this, 3, 0.05f, 0.05f, 5, Color.valueOf("2b2b2b").a(0.75f), 2, 0.42f, 1.2f, 0.45f)
+                new HexSkyMesh(this, 2, 0.4f, 0.1f, 5, Color.valueOf("a3a3a3").a(0.75f), 2, 0.42f, 1f, 0.43f),
+                new HexSkyMesh(this, 3, 0.3f, 0.08f, 5, Color.valueOf("5c5c5c").a(0.75f), 2, 0.42f, 1.2f, 0.45f),
+		new HexSkyMesh(this, 1, 0.2f, 0.05f, 5, Color.valueOf("2b2b2b").a(0.75f), 2, 0.42f, 1.2f, 0.45f)
             );
                 bloom = true;
 			visible = true;
@@ -62,7 +62,7 @@ public class EarthPlanets{
                 startSector = 1;
                 sectorSeed = -1;
                 //defaultCore = fortress;
-                defaultCore = Blocks.coreShard;
+                defaultCore = EarthBlocks.fortress;
                 
             }};
 		placeholdermoon = new Planet("placeholdermoon", EarthPlanets.earth, 0.25f, 1) {{
