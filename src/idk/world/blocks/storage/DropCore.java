@@ -28,7 +28,7 @@ import mindustry.world.modules.*;
 
 import static idk.Vars.*;
 
-public class DropCoreBlock extends StorageBlock{
+public class DropCoreBlock extends CoreBlock{
     //hacky way to pass item modules between methods
     private static ItemModule nextItems;
     protected static final float[] thrusterSizes = {0f, 0f, 0f, 0f, 0.3f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 0f};
