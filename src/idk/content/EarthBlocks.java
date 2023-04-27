@@ -1232,7 +1232,7 @@ public class EarthBlocks{
                 Drawf.light(e.x + x, e.y + y, (out * 4 * (3f + intensity)) * 3.5f, Draw.getColor(), 0.8f);
             });
         });
-    })));
+    }));
 
                             collidesAir = false;
                             buildingDamageMultiplier = 2f;
