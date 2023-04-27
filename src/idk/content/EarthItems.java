@@ -19,7 +19,8 @@ public class EarthItems{
     iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix;
   //add voltite alloys
     
-   public static final Seq<Item> EarthItems = new Seq<>();    
+   public static final Seq<Item> EarthItems = new Seq<>();
+    public static final Seq<Item> Begone = new Seq<>();
     
     public static void load(){
         voltite = new Item("voltite", Color.valueOf("00f0ec")){{
@@ -107,6 +108,9 @@ public class EarthItems{
         }};
                 EarthItems.addAll(
                 voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, metaglass, copper, lead, sand, surgeAlloy, phaseFabric, graphite
+        );
+                        Begone.addAll(
+                thorium, beryllium, tungsten, oxide, carbide, fissileMatter, dormantCyst, scrap, coal, titanium, plastanium, sporePod, blastCompound, pyratite
         );
     }
 }
