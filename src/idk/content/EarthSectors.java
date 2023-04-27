@@ -16,7 +16,7 @@ public class EarthSectors{
 			//	r.winWave = captureWave;
 			//};
 		//}};
-				placeholdersector = new SectorPreset("placeholdersector", EarthPlanets.earth, 1){{
+				placeholdersector = new SectorPreset("placeholdersector", EarthPlanets.earth?, 1){{
 			captureWave = 40;
 			difficulty = 5;
 			
