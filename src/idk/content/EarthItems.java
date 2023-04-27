@@ -2,11 +2,14 @@ package idk.content;
 
 import arc.*;
 import arc.graphics.*;
+import arc.struct.*;
 import mindustry.*;
 import mindustry.game.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.ctype.UnlockableContent;
+
+import static mindustry.content.Items.*;
 
 public class EarthItems{
     public static Item 
@@ -16,7 +19,8 @@ public class EarthItems{
     iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix;
   //add voltite alloys
     
-        
+   public static final Seq<Item> EarthItems = new Seq<>();    
+    
     public static void load(){
         voltite = new Item("voltite", Color.valueOf("00f0ec")){{
             localizedName = "voltite";
@@ -101,5 +105,8 @@ public class EarthItems{
             flammability = 1f;
             cost = 1;
         }};
+                EarthItems.addAll(
+                voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, metaglass, copper, lead, sand, surgeAlloy, phaseFabric, graphite
+        );
     }
 }
