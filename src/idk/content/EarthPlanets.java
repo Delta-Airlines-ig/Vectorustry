@@ -6,6 +6,7 @@ import idk.planets.*;
 import mindustry.maps.generators.PlanetGenerator;
 import mindustry.game.*;
 import mindustry.content.*;
+import idk.content.*;
 import mindustry.graphics.g3d.*;
 import mindustry.type.*;
 
@@ -63,6 +64,10 @@ public class EarthPlanets{
                 sectorSeed = -1;
                 //defaultCore = fortress;
                 defaultCore = EarthBlocks.fortress;
+		    
+		hiddenItems.addAll(Vars.content.items()).removeAll(EarthItems.EarthItems);
+
+            	unlockedOnLand.add(EarthBlocks.fortress);
                 
             }};
 		placeholdermoon = new Planet("placeholdermoon", EarthPlanets.earth, 0.25f, 1) {{
@@ -118,6 +123,7 @@ public class EarthPlanets{
             Log.info("the planet broke??");
             Log.err(e);
         }
-
+        Planets.serpulo.hiddenItems.addAll(EarthItems.EarthItems).removeAll(Items.serpuloItems);
+        Planets.erekir.hiddenItems.addAll(EarthItems.EarthItems).removeAll(Items.erekirItems);
     }
 }
