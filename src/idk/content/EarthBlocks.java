@@ -62,7 +62,9 @@ public class EarthBlocks{
     //ores
     oreIron, oreAluminum, oreLithium, oreTin, oreUranium, oreGraphite,  //not done with uranium
     //walls
-    leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge, 
+    leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge,
+    //transport
+    copperpipe, bronzepipe, ironconveyor, steelconveyor, allocator, allotor, interchange, span, surplussorter, shortagesorter, sorter, reversesorter
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
@@ -532,7 +534,7 @@ public class EarthBlocks{
         }};
         //salvo equivelent
         volley = new ItemTurret("volley"){{
-            requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, Items.titanium, 50));
+            requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, EarthItems.steel, 70, EarthItems.aluminum, 50));
             ammo(
                 Items.copper,  new BasicBulletType(2.5f, 6){{
                     width = 7f;
@@ -599,7 +601,7 @@ public class EarthBlocks{
         }};
         //ripple equivelent
          ridge = new ItemTurret("ridge"){{
-            requirements(Category.turret, with(Items.copper, 150, Items.graphite, 235, EarthItems.steel, 60));
+            requirements(Category.turret, with(Items.copper, 150, Items.graphite, 235, EarthItems.steel, 60, EarthItems.aluminum, 50));
             ammo(
                 Items.graphite, new ArtilleryBulletType(3f, 20){{
                     knockback = 0.8f;
@@ -945,12 +947,12 @@ public class EarthBlocks{
             recoilTime = reload * 2f;
             coolantMultiplier = 0.5f;
             ammoUseEffect = Fx.casing3;
-            shoot.shots = 30;
-            shoot.shotDelay = 1f;
             range = 260f;
             inaccuracy = 3f;
             recoil = 3f;
             shoot = new ShootAlternate(8f);
+            shoot.shots = 30;
+            shoot.shotDelay = 1f;
             shake = 2f;
             size = 4;
             shootCone = 24f;
@@ -963,7 +965,7 @@ public class EarthBlocks{
         }};
         //meltdown equivelent
         cataclysm = new LaserTurret("cataclysm"){{
-            requirements(Category.turret, with(Items.copper, 1200, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 325));
+            requirements(Category.turret, with(Items.copper, 1200, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 225, EarthItems.steel, 275, EarthItems.aluminum, 300));
             shootEffect = Fx.shootBigSmoke2;
             shootCone = 40f;
             recoil = 4f;
@@ -1152,19 +1154,39 @@ public class EarthBlocks{
                         shootCone = 360f;
                         mirror = false;
                         reload = 1f;
-                        deathExplosionEffect = Fx.impactReactorExplosion;
+                        deathExplosionEffect = new MultiEffect(new Effect(15f, 100f, e -> {
+                                    color(Color.valueOf("858281"));
+                                    stroke(e.fout() * 4f);
+                                    Lines.circle(e.x, e.y, 4f + e.finpow() * 20f);
+
+                                    for(int i = 0; i < 10; i++){
+                                    Drawf.tri(e.x, e.y, 6f, 80f * e.fout(), i*90 + 45);
+                                    }
+
+                                    color();
+                                    for(int i = 0; i < 4; i++){
+                                    Drawf.tri(e.x, e.y, 3f, 30f * e.fout(), i*90 + 45);
+                                    }
+
+                                    Drawf.light(e.x, e.y, 150f, Color.valueOf("e66317"), 0.9f * e.fout());
+                                    }, Fx.scatheLight);
                         shootOnDeath = false;
                         shake = 10f;
                         bullet = new ExplosionBulletType(15000f, 1650f){{
                             hitColor = Pal.redLight;
                             shootEffect = new MultiEffect(Fx.impactReactorExplosion, Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
-                                lifetime = 100f;
-                                strokeFrom = 4f;
+                                lifetime = 25f;
+                                strokeFrom = 16f;
                                 sizeTo = 1630f;
-                            }});
+                            }}, new Effect(250f, 160f, e -> {
+        float circleRad = 600f;
+
+        color(Color.valueOf("fff7b0"));
+        Fill.circle(e.x, e.y, circleRad);
+    }).layer(Layer.bullet + 2f),);
 
                             collidesAir = false;
-                            buildingDamageMultiplier = 0.3f;
+                            buildingDamageMultiplier = 2f;
                             killShooter = true;
 
                             ammoMultiplier = 1f;
