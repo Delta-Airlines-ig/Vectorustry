@@ -65,7 +65,7 @@ public class EarthPlanets{
                 //defaultCore = fortress;
                 defaultCore = EarthBlocks.fortress;
 		    
-		hiddenItems.addAll(Items.erekirItems, Items.serpuloItems).removeAll(EarthItems.EarthItems);
+		hiddenItems.addAll(EarthItems.Begone).removeAll(EarthItems.EarthItems);
 
             	unlockedOnLand.add(EarthBlocks.fortress);
                 
