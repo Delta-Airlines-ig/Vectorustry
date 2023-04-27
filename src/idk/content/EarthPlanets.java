@@ -65,7 +65,7 @@ public class EarthPlanets{
                 //defaultCore = fortress;
                 defaultCore = EarthBlocks.fortress;
 		    
-		hiddenItems.addAll(Vars.content.items()).removeAll(EarthItems.EarthItems);
+		hiddenItems.addAll(mindustry.content.items()).removeAll(EarthItems.EarthItems);
 
             	unlockedOnLand.add(EarthBlocks.fortress);
                 
