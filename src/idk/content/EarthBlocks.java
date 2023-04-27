@@ -64,7 +64,7 @@ public class EarthBlocks{
     //walls
     leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge,
     //transport
-    copperpipe, bronzepipe, ironconveyor, steelconveyor, allocator, allotor, interchange, span, surplussorter, shortagesorter, sorter, reversesorter
+    copperpipe, bronzepipe, ironconveyor, steelconveyor, allocator, allotor, interchange, span, surplussorter, shortagesorter, sorter, reversesorter, 
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
@@ -1169,7 +1169,7 @@ public class EarthBlocks{
                                     }
 
                                     Drawf.light(e.x, e.y, 150f, Color.valueOf("e66317"), 0.9f * e.fout());
-                                    }, Fx.scatheLight);
+                                    }), Fx.scatheLight);
                         shootOnDeath = false;
                         shake = 10f;
                         bullet = new ExplosionBulletType(15000f, 1650f){{
@@ -1183,7 +1183,7 @@ public class EarthBlocks{
 
         color(Color.valueOf("fff7b0"));
         Fill.circle(e.x, e.y, circleRad);
-    }).layer(Layer.bullet + 2f),);
+    }).layer(Layer.bullet + 2f));
 
                             collidesAir = false;
                             buildingDamageMultiplier = 2f;
