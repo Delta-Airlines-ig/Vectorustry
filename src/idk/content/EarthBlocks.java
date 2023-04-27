@@ -65,6 +65,8 @@ public class EarthBlocks{
     leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge,
     //transport
     copperpipe, bronzepipe, ironconveyor, steelconveyor, allocator, allotor, interchange, span, surplussorter, shortagesorter, sorter, reversesorter, 
+    //storage
+    smalltank, largetank, smallsilo, largesilo, 
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
@@ -72,7 +74,7 @@ public class EarthBlocks{
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer,  
     //power
-    voltitereactor, steamgenerator, turbinegenerator, 
+    voltitereactor, steamgenerator, turbinegenerator, nuclearreactor, fusionreactor,  
     //unit building
     groundassembler, airassembler, groundchasisassembler, 
     //drone port wip
@@ -154,6 +156,12 @@ public class EarthBlocks{
          oreGraphite = new OreBlock(Items.graphite){{
             oreDefault = true;
             oreThreshold = 0.841f;
+            oreScale = 25.580953f;
+            variants = 2;
+        }};
+          oreUranium = new OreBlock(EarthItems.uranium){{
+            oreDefault = true;
+            oreThreshold = 0.889f;
             oreScale = 25.580953f;
             variants = 2;
         }};
