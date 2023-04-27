@@ -1193,7 +1193,7 @@ public class EarthBlocks{
 
         color(Color.valueOf("fff7b0"));
         Fill.circle(e.x, e.y, circleRad);
-    });
+    }));
 
                             collidesAir = false;
                             buildingDamageMultiplier = 2f;
