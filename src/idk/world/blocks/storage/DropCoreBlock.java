@@ -48,7 +48,7 @@ public class DropCoreBlock extends CoreBlock{
 
    // @Remote(called = Loc.server)
 
-    public void drawLanding(DropCoreBuild build, float x, float y){
+    public void drawLanding(CoreBuild build, float x, float y){
         float fout = renderer.getLandTime() / coreLandDuration;
 
         if(renderer.isLaunching()) fout = 1f - fout;
