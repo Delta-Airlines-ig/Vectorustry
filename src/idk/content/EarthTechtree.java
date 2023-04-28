@@ -168,7 +168,7 @@ public class EarthTechtree{
                 });
 
 
-                node(combustionGenerator, Seq.with(new Research(Items.coal)), () -> {
+                node(combustionGenerator, () -> {
                     node(powerNode, () -> {
                         node(powerNodeLarge, () -> {
                             node(diode, () -> {
@@ -186,9 +186,9 @@ public class EarthTechtree{
 
                         node(mender, () -> {
                             node(mendProjector, () -> {
-                                node(forceProjector, Seq.with(new SectorComplete(impact0078)), () -> {
-                                    node(overdriveProjector, Seq.with(new SectorComplete(impact0078)), () -> {
-                                        node(overdriveDome, Seq.with(new SectorComplete(impact0078)), () -> {
+                                node(forceProjector, () -> {
+                                    node(overdriveProjector, () -> {
+                                        node(overdriveDome, () -> {
 
                                         });
                                     });
@@ -202,10 +202,10 @@ public class EarthTechtree{
                             });
                         });
 
-                        node(steamGenerator, Seq.with(new SectorComplete(craters)), () -> {
+                        node(steamGenerator, () -> {
                             node(thermalGenerator, () -> {
                                 node(differentialGenerator, () -> {
-                                    node(thoriumReactor, Seq.with(new Research(Liquids.cryofluid)), () -> {
+                                    node(thoriumReactor, () -> {
                                         node(impactReactor, () -> {
 
                                         });
@@ -255,11 +255,11 @@ public class EarthTechtree{
                 });
 node(trio, () -> {
                 node(scatter, () -> {
-                    node(hail, Seq.with(new SectorComplete(craters)), () -> {
+                    node(hail, () -> {
                         node(salvo, () -> {
                             node(swarmer, () -> {
                                 node(cyclone, () -> {
-                                    node(spectre, Seq.with(new SectorComplete(nuclearComplex)), () -> {
+                                    node(spectre, () -> {
 
                                     });
                                 });
@@ -369,9 +369,9 @@ node(trio, () -> {
 
                     
 
-                node(additiveReconstructor, Seq.with(new SectorComplete(biomassFacility)), () -> {
+                node(additiveReconstructor, () -> {
                     node(multiplicativeReconstructor, () -> {
-                        node(exponentialReconstructor, Seq.with(new SectorComplete(overgrowth)), () -> {
+                        node(exponentialReconstructor, () -> {
                             node(tetrativeReconstructor, () -> {
 
                             });
