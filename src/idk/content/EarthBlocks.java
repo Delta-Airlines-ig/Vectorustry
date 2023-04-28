@@ -76,7 +76,7 @@ public class EarthBlocks{
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer,  
     //power
-    voltitereactor, steamgenerator, turbinegenerator, nuclearreactor, fusionreactor, solarpanel, solarcollector, powerline, powerpylon, smallbattery, largebattery,    
+    voltitereactor, steamgenerator, turbinegenerator, nuclearreactor, fusionreactor, solarpanel, solarcollector, windturbine, powerline, powerpylon, smallbattery, largebattery,    
     //unit building
     groundassembler, airassembler, groundchasisassembler, 
     //drone port wip
