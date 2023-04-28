@@ -23,12 +23,6 @@ import mindustry.world.modules.*;
 import static mindustry.Vars.*;
 
 public class PowerLine extends PowerNode{
-    protected static BuildPlan otherReq;
-    protected static int returnInt = 0;
-    protected final static ObjectSet<PowerGraph> graphs = new ObjectSet<>();
-    /** The maximum range of all power nodes on the map */
-    protected static float maxRange;
-
     public (value = "@-wire", fallback = "wire") TextureRegion laser;
     public (value = "@-wire-end", fallback = "wire-end") TextureRegion laserEnd;
     public float laserRange = 6;
