@@ -327,7 +327,7 @@ public class placeholdergen extends PlanetGenerator{
         }
 
         distort(10f, 6f);
-);
+
 
         //shoreline setup
         pass((x, y) -> {
