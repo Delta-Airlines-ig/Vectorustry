@@ -64,9 +64,11 @@ public class EarthBlocks{
     //walls
     leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge,
     //transport
-    copperpipe, bronzepipe, ironconveyor, steelconveyor, allocator, allotor, interchange, span, surplussorter, shortagesorter, sorter, reversesorter, 
+    copperpipe, bronzepipe, ironconveyor, steelconveyor, allocator, allotor, interchange, span, surplussorter, shortagesorter, sorter, reversesorter, pipeinterchange, pipeallocator, pipespan, 
     //storage
     smalltank, largetank, smallsilo, largesilo, 
+    //water drills
+    well, 
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
@@ -167,6 +169,7 @@ public class EarthBlocks{
         }};
         //cores and stuff
         fortress = new CoreBlock("core-fortress"){{
+            localizedName = "Fortress";
             requirements(Category.effect, BuildVisibility.editorOnly, with(Items.copper, 1000, Items.lead, 800));
             alwaysUnlocked = true;
 
@@ -180,6 +183,7 @@ public class EarthBlocks{
         }};
 
         stronghold = new CoreBlock("core-stronghold"){{
+            localizedName = "Stronghold";
             requirements(Category.effect, with(Items.copper, 3000, Items.lead, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
 
             unitType = EarthUnitTypes.theta;
@@ -193,6 +197,7 @@ public class EarthBlocks{
         }};
 
         bunker = new CoreBlock("core-bunker"){{
+            localizedName = "Bunker";
             requirements(Category.effect, with(Items.copper, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
             unitType = EarthUnitTypes.zeta;
@@ -204,8 +209,112 @@ public class EarthBlocks{
             unitCapModifier = 32;
             researchCostMultiplier = 0.11f;
         }};
+        //transport
+                ironconveyor = new Conveyor("iron-conveyor"){{
+            requirements(Category.distribution, with(EarthItems.iron, 1));
+            health = 50;
+            speed = 0.035f;
+            displayedSpeed = 4.4f;
+            buildCostMultiplier = 2f;
+            researchCost = with(Items.iron, 5);
+        }};
+                steelConveyor = new Conveyor("steel-conveyor"){{
+            requirements(Category.distribution, with(Items.copper, 1, EarthItems.iron, 1, EarthItems.steel, 1));
+            health = 75;
+            speed = 0.09f;
+            displayedSpeed = 12f;
+        }};
+                allotor = new Router("allotor"){{
+            requirements(Category.distribution, with(EarthItems.iron, 3));
+            buildCostMultiplier = 4f;
+        }};
+                allocator = new Router("allocator"){{
+            requirements(Category.distribution, with(Items.lead, 2, EarthItems.iron, 6));
+            buildCostMultiplier = 3f;
+            size = 2;
+        }};
+                span = new BufferedItemBridge("span"){{
+            requirements(Category.distribution, with(Items.lead, 2, EarthItems.iron, 10));
+            fadeIn = moveArrows = false;
+            range = 5;
+            speed = 76f;
+            arrowSpacing = 4f;
+            bufferCapacity = 28;
+        }};
+                interchange = new Junction("interchange"){{
+            requirements(Category.distribution, with(EarthItems.iron, 2));
+            speed = 30;
+            capacity = 12;
+            health = 40;
+            buildCostMultiplier = 6f;
+        }};
+                surplussorter = new OverflowGate("surplus-sorter"){{
+            requirements(Category.distribution, with(EarthItems.iron, 6));
+            buildCostMultiplier = 3f;
+        }};
+                shortagesorter = new OverflowGate("shortage-sorter"){{
+            requirements(Category.distribution, with(EarthItems.iron, 6));
+            buildCostMultiplier = 3f;
+            invert = true;
+        }};
+        //transport liquid
+                copperpipe = new Conduit("copper-pipe"){{
+            requirements(Category.liquid, with(Items.copper, 5));
+            health = 50;
+        }};
+        bronzepipe = new Conduit("bronze-pipe"){{
+            requirements(Category.liquid, with(EarthItems.bronze, 2, Items.copper, 1));
+            liquidCapacity = 16f;
+            liquidPressure = 1.025f;
+            health = 100;
+        }};
+                pipeallocator = new LiquidRouter("pipe-allocator"){{
+            requirements(Category.liquid, with(Items.copper, 6));
+            liquidCapacity = 20f;
+            underBullets = true;
+            solid = false;
+        }};
+               pipeinterchange = new LiquidJunction("pipe-interchange"){{
+            requirements(Category.liquid, with(Items.copper, 18));
+            solid = false;
+        }};
+                pipespan = new LiquidBridge("pipe-span"){{
+            requirements(Category.liquid, with(Items.copper, 18));
+            fadeIn = moveArrows = false;
+            arrowSpacing = 6f;
+            range = 4;
+            hasPower = false;
+        }};
+        //liquid storage
+                smalltank = new LiquidRouter("small-tank"){{
+            requirements(Category.liquid, with(Items.copper, 10, EarthItems.bronze, 15));
+            liquidCapacity = 700f;
+            size = 2;
+            solid = true;
+        }};
+                largetank = new LiquidRouter("large-tank"){{
+            requirements(Category.liquid, with(Items.copper, 30, Items.bronze, 40));
+            size = 3;
+            solid = true;
+            liquidCapacity = 1800f;
+            health = 500;
+        }};
+        
+        well = new SolidPump("well"){{
+            requirements(Category.production, with(EarthItems.bronze, 30, Items.graphite, 30, Items.copper, 30, EarthItems.iron, 30));
+            result = Liquids.water;
+            pumpAmount = 0.16f;
+            size = 2;
+            liquidCapacity = 30f;
+            rotateSpeed = 3f;
+            attribute = Attribute.water;
+
+            consumePower(1.3f);
+        }};
+
         //turrets
         solo = new ItemTurret("solo"){{
+            localizedName = "Solo";
             requirements(Category.turret, with(Items.copper, 10, EarthItems.iron, 25));
             ammo(
                 Items.copper,  new BasicBulletType(6f, 5){{
@@ -230,6 +339,7 @@ public class EarthBlocks{
             range = 100;
         }};
         trio = new ItemTurret("trio"){{
+            localizedName = "Trio";
             requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
                         ammo(
                 Items.copper,  new BasicBulletType(9f, 7){{
@@ -261,6 +371,7 @@ public class EarthBlocks{
         }};
         //scatter equivelent
          converge = new ItemTurret("converge"){{
+             localizedName = "Converge";
             requirements(Category.turret, with(Items.copper, 95, Items.lead, 55, EarthItems.iron, 50));
             ammo(
                 EarthItems.iron, new FlakBulletType(4f, 5){{
@@ -337,6 +448,7 @@ public class EarthBlocks{
         }};
         //scortch equivelent
         char1 = new ContinuousLiquidTurret("char"){{
+            localizedName = "Char";
             requirements(Category.turret, with(EarthItems.steel, 20, Items.copper, 150, EarthItems.iron, 140, Items.lead, 200));
 
        //     drawer = new DrawTurret("reinforced-"){{
@@ -411,6 +523,7 @@ public class EarthBlocks{
         }};
         //hail equivelent
         pelt = new ItemTurret("pelt"){{
+            localizedName = "pelt";
             requirements(Category.turret, with(Items.copper, 60, Items.graphite, 25, EarthItems.iron, 50));
             ammo(
                 Items.graphite, new ArtilleryBulletType(3f, 10){{
@@ -464,6 +577,7 @@ public class EarthBlocks{
         }};
 //arc equivelent
         splice = new PowerTurret("splice"){{
+            localizedName = "Splice";
             requirements(Category.turret, with(Items.copper, 75, Items.lead, 50, EarthItems.iron, 50, Items.silicon, 15));
             shootType = new LightningBulletType(){{
                 damage = 5;
@@ -486,7 +600,7 @@ public class EarthBlocks{
                     buildingDamageMultiplier = 0.25f;
                 }};
             }};
-            reload = 15f;
+            reload = 25f;
             shootCone = 40f;
             rotateSpeed = 8f;
             targetAir = false;
@@ -503,6 +617,7 @@ public class EarthBlocks{
         }};
         //lancer equivelent
           spear = new PowerTurret("spear"){{
+            localizedName = "Spear";
             requirements(Category.turret, with(Items.copper, 60, Items.lead, 70, Items.silicon, 80, EarthItems.steel, 30));
             range = 200f;
             shoot = new ShootSpread(3, 15f);
@@ -542,6 +657,7 @@ public class EarthBlocks{
         }};
         //salvo equivelent
         volley = new ItemTurret("volley"){{
+            localizedName = "Volley";
             requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, EarthItems.steel, 70, EarthItems.aluminum, 50));
             ammo(
                 Items.copper,  new BasicBulletType(2.5f, 6){{
@@ -609,6 +725,7 @@ public class EarthBlocks{
         }};
         //ripple equivelent
          ridge = new ItemTurret("ridge"){{
+             localizedName = "Ridge";
             requirements(Category.turret, with(Items.copper, 150, Items.graphite, 235, EarthItems.steel, 60, EarthItems.aluminum, 50));
             ammo(
                 Items.graphite, new ArtilleryBulletType(3f, 20){{
@@ -675,6 +792,7 @@ public class EarthBlocks{
         }};
         //fuse equivelent
                 break1 = new ItemTurret("break"){{
+                    localizedName = "Break";
             requirements(Category.turret, with(Items.copper, 225, Items.graphite, 225, EarthItems.steel, 100, Items.surgeAlloy, 25));
 
             reload = 30f;
@@ -714,6 +832,7 @@ public class EarthBlocks{
         }};
         //cyclone equivelent
          hurricane = new ItemTurret("hurricane"){{
+             localizedName = "Hurricane";
             requirements(Category.turret, with(Items.copper, 200, Items.titanium, 125, Items.surgeAlloy, 80, EarthItems.steel, 50));
             ammo(
                 Items.metaglass, new FlakBulletType(4f, 3){{
@@ -783,6 +902,7 @@ public class EarthBlocks{
         }};
         //foreshadow equivelent
                 anticipate = new ItemTurret("anticipate"){{
+                    localizedName = "Anticipate";
             float brange = range = 800f;
                     
             shoot.firstShotDelay = 125f;
@@ -973,6 +1093,7 @@ public class EarthBlocks{
         }};
         //meltdown equivelent
         cataclysm = new LaserTurret("cataclysm"){{
+            localizedName = "Cataclysm";
             requirements(Category.turret, with(Items.copper, 1200, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 225, EarthItems.steel, 275, EarthItems.aluminum, 300));
             shootEffect = Fx.shootBigSmoke2;
             shootCone = 40f;
@@ -1008,6 +1129,7 @@ public class EarthBlocks{
         }};
         //sorta like a scathe, but its a surface to air missile
         limit = new ItemTurret("limit"){{
+            localizedName = "Limit";
             requirements(Category.turret, with(Items.silicon, 450, Items.graphite, 400, EarthItems.steel, 500, Items.surgeAlloy, 300));
 
             ammo(
@@ -1130,6 +1252,7 @@ public class EarthBlocks{
         }};
 //nuclear missile launcher (you should get a limit to counter this) 
         aperture = new ItemTurret("aperture"){{
+            localizedName = "Aperture";
             requirements(Category.turret, with(Items.silicon, 2450, Items.graphite, 1400, EarthItems.steel, 1500, EarthItems.iron, 2300, EarthItems.lithium, 1000, EarthItems.aluminum, 500));
 
             ammo(
@@ -1268,6 +1391,7 @@ public class EarthBlocks{
         }};
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
+            localizedName = "Steel smelter";
             requirements(Category.crafting, with(EarthItems.iron, 65, Items.copper, 40, Items.lead, 60));
             outputItem = new ItemStack(EarthItems.steel, 3);
             craftTime = 120f;
@@ -1283,6 +1407,7 @@ public class EarthBlocks{
 
         }};
                 carbonsequestrator = new GenericCrafter("carbon-sequestrator"){{
+                    localizedName = "Carbon sequestrator";
             requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminum, 150));
             size = 3;
             hasLiquids = true;
@@ -1308,11 +1433,12 @@ public class EarthBlocks{
       //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
         }};
                 carboncatalyst = new GenericCrafter("carbon-catalyst"){{
+                    localizedName = "Carbon catalyst";
             requirements(Category.crafting, with(Items.graphite, 150, EarthItems.iron, 180, EarthItems.lithium, 25, EarthItems.aluminum, 75));
             size = 3;
 
             researchCostMultiplier = 1.2f;
-            craftTime = 10f;
+            craftTime = 20f;
             rotate = false;
             invertFlip = true;
             group = BlockGroup.liquids;
@@ -1438,11 +1564,13 @@ public class EarthBlocks{
         }};
 //walls
         leadWall = new Wall("lead-wall"){{
+            localizedName = "Lead wall";
             health = 360;
             requirements(Category.defense, with(Items.lead, 6));
         }};
 
         leadWallLarge = new Wall("lead-wall-large"){{
+            localizedName = "Large Lead wall";
             health = 1440;
             size = 2;
             requirements(Category.defense, with(Items.lead, 24));
@@ -1460,16 +1588,19 @@ public class EarthBlocks{
       //  }};
 
         ironWall = new Wall("iron-wall"){{
+            localizedName = "Iron wall";
             health = 440;
             requirements(Category.defense, with(EarthItems.iron, 6));
         }};
         ironWallLarge = new Wall("iron-wall-large"){{
+            localizedName = "Large Iron wall";
             health = 1760;
             size = 2;
             requirements(Category.defense, with(EarthItems.iron, 24));
         }};
 //drills
         drillMechanical = new Drill("drill-mechanical"){{
+            localizedName = "Mechanical drill";
             itemCapacity = 35;
             hasPower = false;
                         drillTime = 500;
@@ -1479,6 +1610,7 @@ public class EarthBlocks{
         }};
 
         drillPneumatic = new Drill("drill-pneumatic"){{
+            localizedName = "Steam drill";
             size = 2;
             itemCapacity = 50;
             drillTime = 300;
@@ -1536,7 +1668,7 @@ public class EarthBlocks{
                groundassembler = new UnitFactory("ground-fabricator"){{
            requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.steel, 100, EarthItems.iron, 75));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
-            localizedName = "ground-fabricator";
+            localizedName = "Ground fabricator";
             plans = Seq.with(
             new UnitPlan(EarthUnitTypes.LCLW, 30f * 1, with(EarthItems.iron, 85, EarthItems.steel, 35, Items.silicon, 30, Items.graphite, 15)),
            new UnitPlan(EarthUnitTypes.LCMW, 30f, with(EarthItems.iron, 90, EarthItems.steel, 30, Items.silicon, 40, Items.graphite, 25, EarthItems.lithium, 5)),
@@ -1576,6 +1708,7 @@ public class EarthBlocks{
     //    }};
                 //droneport
             droneport = new DroneCenter("droneport"){{
+                localizedName = "Droneport";
             requirements(Category.units, with(Items.silicon, 100, EarthItems.iron, 150, EarthItems.steel, 80));
            // regionSuffix = "-dark";
             hasPower = true;
