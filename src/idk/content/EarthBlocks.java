@@ -426,16 +426,15 @@ public class EarthBlocks{
             consumeItem(EarthItems.voltite);
             consumeLiquid(Liquids.water, 25f);
         }};
-        //finish
-        solar  l = new SolarGenerator("solar-panel"){{
-            requirements(Category.power, with(Items.lead, 10, Items.silicon, 15));
-            powerProduction = 0.1f;
+        solarpanel = new SolarGenerator("solar-panel"){{
+            requirements(Category.power, with(Items.copper, 10, EarthItems.iron, 15));
+            powerProduction = 0.3f;
         }};
 
-        largeSolarPanel = new SolarGenerator("solar-panel-large"){{
-            requirements(Category.power, with(Items.lead, 80, Items.silicon, 110, Items.phaseFabric, 15));
+        solarcollector = new SolarGenerator("solar-collector"){{
+            requirements(Category.power, with(Items.copper, 80, EarthItems.iron, 110, EarthItems.steel, 15));
             size = 3;
-            powerProduction = 1.3f;
+            powerProduction = 1.5f;
         }};
 
         //turrets
