@@ -327,28 +327,7 @@ public class placeholdergen extends PlanetGenerator{
         }
 
         distort(10f, 6f);
-
-        //rivers
-        pass((x, y) -> {
-            if(block.solid) return;
-
-            Vec3 v = sector.rect.project(x, y);
-
-            float rr = Simplex.noise2d(sector.id, (float)2, 0.6f, 1f / 7f, x, y) * 0.1f;
-            float value = Ridged.noise3d(2, v.x, v.y, v.z, 1, 1f / 55f) + rr - rawHeight(v) * 0f;
-            float rrscl = rr * 44 - 2;
-
-            if(value > 0.17f && !Mathf.within(x, y, fspawn.x, fspawn.y, 12 + rrscl)){
-                boolean deep = value > 0.17f + 0.1f && !Mathf.within(x, y, fspawn.x, fspawn.y, 15 + rrscl);
-                boolean spore = floor != Blocks.sand && floor != Blocks.salt;
-                //do not place rivers on ice, they're frozen
-                //ignore pre-existing liquids
-                if(!(floor == Blocks.ice || floor == Blocks.iceSnow || floor == Blocks.snow || floor.asFloor().isLiquid)){
-                    floor = spore ?
-                        (EarthBlocks.Redsand);
-                }
-            }
-        });
+);
 
         //shoreline setup
         pass((x, y) -> {
