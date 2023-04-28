@@ -345,9 +345,9 @@ public class placeholdergen extends PlanetGenerator{
                 //ignore pre-existing liquids
                 if(!(floor == Blocks.ice || floor == Blocks.iceSnow || floor == Blocks.snow || floor.asFloor().isLiquid)){
                     floor = spore ?
-                        (deep ? Blocks.taintedWater : Blocks.darksandTaintedWater) :
-                        (deep ? Blocks.water :
-                            (floor == Blocks.sand || floor == Blocks.salt ? Blocks.sandWater : Blocks.darksandWater));
+                        (EarthBlocks.Redsand : EarthBlocks.Redsand) :
+                        (EarthBlocks.Redsand :
+                            (floor == EarthBlocks.Redsand || floor == EarthBlocks.Redsand ? EarthBlocks.Redsand : EarthBlocks.Redsand));
                 }
             }
         });
@@ -372,7 +372,7 @@ public class placeholdergen extends PlanetGenerator{
                     }
                 }
 
-                floor = floor == Blocks.darksandTaintedWater ? Blocks.taintedWater : Blocks.water;
+                floor = floor == EarthBlocks.Redsand ? EarthBlocks.Redsand : EarthBlocks.Redsand;
             }
         });
 
@@ -397,35 +397,16 @@ public class placeholdergen extends PlanetGenerator{
                         }
                     }
 
-                    floor = floor == Blocks.water ? Blocks.deepwater : Blocks.taintedWater;
+                    floor = floor == EarthBlocks.Redsand ? EarthBlocks.Redsand : EarthBlocks.Redsand;
                 }
             });
         }
 
-        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, EarthBlocks.oreIron);
+        Seq<Block> ores = Seq.with(Blocks.oreCopper, Blocks.oreLead, EarthBlocks.oreIron, EarthBlocks.oreLithium, EarthBlocks.oreTin, EarthBlocks.oreAluminum, EarthBlocks.oreUranium);
         float poles = Math.abs(sector.tile.v.y);
         float nmag = 0.5f;
         float scl = 1f;
         float addscl = 1.3f;
-
-        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.25f*addscl){
-            ores.add(Blocks.oreCoal);
-        }
-
-        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.5f*addscl){
-            ores.add(EarthBlocks.oreLithium);
-        }
-        
-        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.5f*addscl){
-            ores.add(EarthBlocks.oreTin);
-        }
-        
-        if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 1, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.5f*addscl){
-            ores.add(EarthBlocks.oreAluminum);
-        }
-       // if(Simplex.noise3d(seed, 2, 0.5, scl, sector.tile.v.x + 2, sector.tile.v.y, sector.tile.v.z)*nmag + poles > 0.7f*addscl){
-            //ores.add(EarthBlocks.oreUranium);
-        //}
 
         if(rand.chance(0.5)){
             ores.add(Blocks.oreScrap);
