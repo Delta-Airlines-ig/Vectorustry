@@ -61,7 +61,7 @@ public class EarthPlanets{
                  generator = new placeholdergen();
                 meshLoader = () -> new HexMesh(this, 4);
                 startSector = 1;
-                sectorSeed = -1;
+                sectorSeed = 1;
                 //defaultCore = fortress;
                 defaultCore = EarthBlocks.fortress;
 		    
