@@ -15,6 +15,6 @@ public class EarthTechtree{
         Planets.earth.techTree = nodeRoot("earth", fortress, () -> {
             node(drillMechanical);
             
-        }
+        });
  }
   }
