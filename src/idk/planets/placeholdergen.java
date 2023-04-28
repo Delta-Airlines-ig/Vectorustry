@@ -17,6 +17,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 
+import static mindustry.Vars.*;
 import static idk.Vars.*;
 
 public class placeholdergen extends PlanetGenerator{
