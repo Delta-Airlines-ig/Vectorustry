@@ -47,7 +47,7 @@ public class IdkMod extends Mod{
         
         EarthSectors.load();
         Log.info("Sectors loaded.");
-       EarthTechTree.load();
+       EarthTechtree.load();
         Log.info("Techtree for earth(?) loaded.");
         Log.info("Everything is loaded.");
     }
