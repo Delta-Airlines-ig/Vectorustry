@@ -17,7 +17,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 
-import static idk.Vars.*;
+import static idk.Vars2.*;
 
 public class placeholdergen2 extends PlanetGenerator{
     //alternate, less direct generation (wip)
