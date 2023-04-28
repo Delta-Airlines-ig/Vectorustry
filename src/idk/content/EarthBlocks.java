@@ -76,7 +76,7 @@ public class EarthBlocks{
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer,  
     //power
-    voltitereactor, steamgenerator, turbinegenerator, nuclearreactor, fusionreactor, solarpanel, solarcollector,  
+    voltitereactor, steamgenerator, turbinegenerator, nuclearreactor, fusionreactor, solarpanel, solarcollector, powerline, powerpylon, smallbattery, largebattery,    
     //unit building
     groundassembler, airassembler, groundchasisassembler, 
     //drone port wip
@@ -311,7 +311,96 @@ public class EarthBlocks{
 
             consumePower(1.3f);
         }};
+//powerrrrrr
+                powerline = new PowerNode("power-line"){{
+            requirements(Category.power, with(Items.copper, 1, EarthItems.iron, 3, EarthItems.lithium, 5));
+            maxNodes = 10;
+            laserRange = 6;
+        }};
 
+        powerpylon = new PowerNode("power-pylon"){{
+            requirements(Category.power, with(EarthItems.steel, 5, EarthItems.aluminum, 10, Items.copper, 3, EarthItems.lithium, 5));
+            size = 2;
+            maxNodes = 15;
+            laserRange = 15f;
+        }};
+                smallbattery = new Battery("small-battery"){{
+            requirements(Category.power, with(Items.copper, 5, EarthItems.lithium, 20));
+            consumePowerBuffered(10000f);
+            baseExplosiveness = 3f;
+        }};
+
+        largebattery = new Battery("large-battery"){{
+            requirements(Category.power, with(EarthItems.iron, 20, Items.lead, 50, EarthItems.lithium, 30));
+            size = 3;
+            consumePowerBuffered(70000f);
+            baseExplosiveness = 7f;
+        }};
+                steamgenerator = new ConsumeGenerator("steam-generator"){{
+            requirements(Category.power, with(Items.copper, 75, Items.graphite, 35, EarthItems.bronze, 20, EarthItems.lithium, 30));
+            powerProduction = 5.5f;
+            consumeLiquid(EarthLiquids.steam, 0.2f);
+            hasLiquids = true;
+            size = 2;
+            generateEffect = Fx.generatespark;
+
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.06f;
+
+            drawer = new DrawMulti(
+            new DrawDefault(),
+            new DrawWarmupRegion(),
+            new DrawRegion("-turbine"){{
+                rotateSpeed = 5f;
+            }},
+            new DrawRegion("-turbine"){{
+                rotateSpeed = -5f;
+                rotation = 45f;
+            }},
+            new DrawRegion("-cap"),
+            new DrawLiquidRegion()
+            );
+        }};
+        
+                        turbinegenerator = new ConsumeGenerator("turbine-generator"){{
+            requirements(Category.power, with(Items.copper, 175, Items.graphite, 35, EarthItems.bronze, 30, EarthItems.lithium, 50));
+            powerProduction = 8.5f;
+            consumeLiquid(EarthLiquids.highpressuresteam, 0.3f);
+            hasLiquids = true;
+            size = 3;
+            generateEffect = Fx.generatespark;
+
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.06f;
+
+            drawer = new DrawMulti(
+            new DrawDefault(),
+            new DrawWarmupRegion(),
+            new DrawRegion("-turbine"){{
+                rotateSpeed = 15f;
+            }},
+            new DrawRegion("-turbine"){{
+                rotateSpeed = -15f;
+                rotation = 45f;
+            }},
+            new DrawRegion("-cap"),
+            new DrawLiquidRegion()
+            );
+        }};
+        //finish this
+                nuclearreactor = new NuclearReactor("nuclear-reactor"){{
+            requirements(Category.power, with(Items.lead, 300, Items.silicon, 200, Items.graphite, 150, Items.thorium, 150, Items.metaglass, 50));
+            ambientSound = Sounds.hum;
+            ambientSoundVolume = 0.24f;
+            size = 3;
+            health = 700;
+            itemDuration = 360f;
+            powerProduction = 15f;
+            heating = 0.02f;
+
+            consumeItem(Items.thorium);
+            consumeLiquid(Liquids.cryofluid, heating / coolantPower).update(false);
+        }};
         //turrets
         solo = new ItemTurret("solo"){{
             localizedName = "Solo";
