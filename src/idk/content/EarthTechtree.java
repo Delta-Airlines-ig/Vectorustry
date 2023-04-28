@@ -12,8 +12,8 @@ import static mindustry.content.TechTree.*;
 public class EarthTechtree{
 
     public static void load(){
-        EarthPlanets.earth.techTree = nodeRoot("earth", fortress, () -> {
-            node(drillMechanical);
+        EarthPlanets.earth.techTree = nodeRoot("earth", EarthBlocks.fortress, () -> {
+            node(EarthBlocks.drillMechanical);
             
         });
  }
