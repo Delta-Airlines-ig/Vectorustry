@@ -387,20 +387,57 @@ public class EarthBlocks{
             new DrawLiquidRegion()
             );
         }};
-        //finish this
+        
                 nuclearreactor = new NuclearReactor("nuclear-reactor"){{
-            requirements(Category.power, with(Items.lead, 300, Items.silicon, 200, Items.graphite, 150, Items.thorium, 150, Items.metaglass, 50));
+            requirements(Category.power, with(Items.lead, 300, Items.silicon, 200, EarthItems.steel, 150, EarthItems.uranium, 150, EarthItems.lithium, 50));
             ambientSound = Sounds.hum;
             ambientSoundVolume = 0.24f;
             size = 3;
             health = 700;
             itemDuration = 360f;
-            powerProduction = 15f;
-            heating = 0.02f;
+            powerProduction = 16f;
+            heating = 0.03f;
 
-            consumeItem(Items.thorium);
-            consumeLiquid(Liquids.cryofluid, heating / coolantPower).update(false);
+            consumeItem(EarthItems.uranium);
+            consumeLiquid(Liquids.water, heating / coolantPower).update(false);
         }};
+        
+        fusionreactor = new ImpactReactor("fusion-reactor"){{
+            requirements(Category.power, with(Items.lead, 500, Items.silicon, 300, EarthItems.steel, 400, EarthItems.uranium, 100, Items.surgeAlloy, 250, EarthItems.lithium, 250));
+            size = 4;
+            health = 1000;
+            powerProduction = 150f;
+            ambientSound = Sounds.pulse;
+            ambientSoundVolume = 0.07f;
+
+            consumePower(40f);
+            consumeLiquid(Liquids.hydrogen, 0.25f);
+        }};
+                voltitereactor = new ImpactReactor("voltite-reactor"){{
+            requirements(Category.power, with(Items.lead, 700, Items.silicon, 600, EarthItems.steel, 600, EarthItems.uranium, 200, Items.surgeAlloy, 350, EarthItems.lithium, 450, EarthItems.voltite, 150));
+            size = 4;
+            health = 1500
+            powerProduction = 230f;
+            itemDuration = 140f;
+            ambientSound = Sounds.pulse;
+            ambientSoundVolume = 0.09f;
+
+            consumePower(30f);
+            consumeItem(EarthItems.voltite);
+            consumeLiquid(Liquids.water, 25f);
+        }};
+        //finish
+        solar  l = new SolarGenerator("solar-panel"){{
+            requirements(Category.power, with(Items.lead, 10, Items.silicon, 15));
+            powerProduction = 0.1f;
+        }};
+
+        largeSolarPanel = new SolarGenerator("solar-panel-large"){{
+            requirements(Category.power, with(Items.lead, 80, Items.silicon, 110, Items.phaseFabric, 15));
+            size = 3;
+            powerProduction = 1.3f;
+        }};
+
         //turrets
         solo = new ItemTurret("solo"){{
             localizedName = "Solo";
