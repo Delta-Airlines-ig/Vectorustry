@@ -3,11 +3,11 @@ package idk.content;
 import arc.struct.*;
 import mindustry.game.Objectives.*;
 
-import static idk.content.*;
-import static mindustry.content.*;
-import static mindustry.content.SectorPresets.*;
+import idk.content.*;
+//import static mindustry.content.*;
+//import static mindustry.content.SectorPresets.*;
 import static mindustry.content.TechTree.*;
-import static mindustry.content.UnitTypes.*;
+//import static mindustry.content.UnitTypes.*;
 
 public class EarthTechtree{
 
