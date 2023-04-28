@@ -16,7 +16,7 @@ public class EarthItems{
         //voltite
         voltite, 
     //other things
-    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix;
+    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix, bronze;
   //add voltite alloys
     
    public static final Seq<Item> EarthItems = new Seq<>();
@@ -69,6 +69,12 @@ public class EarthItems{
         steel = new Item("steel", Color.valueOf("ec83af")){{
             description = "stronger than iron, steel is used in many advanced machines";
             localizedName = "steel";
+            flammability = 0f;
+            cost = 2;
+        }};
+                bronze = new Item("bronze", Color.valueOf("ec83af")){{
+            description = "used in piping and liquid things";
+            localizedName = "bronze";
             flammability = 0f;
             cost = 2;
         }};
