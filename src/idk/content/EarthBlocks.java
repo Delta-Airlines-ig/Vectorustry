@@ -82,7 +82,7 @@ public class EarthBlocks{
     //drone port wip
     droneport, 
     //crafting
-    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator, furnace, oxidationmixer, explosivespacker, boiler, pressurizer, flamemixer; 
+    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator, furnace, oxidationmixer, explosivespacker, boiler, pressurizer, flamemixer, bronzefurnace; 
 
     public static void load() {
         Redsand = new Floor("redsand"){{
@@ -1394,7 +1394,7 @@ public class EarthBlocks{
             localizedName = "Steel smelter";
             requirements(Category.crafting, with(EarthItems.iron, 65, Items.copper, 40, Items.lead, 60));
             outputItem = new ItemStack(EarthItems.steel, 3);
-            craftTime = 120f;
+            craftTime = 60f;
             size = 2;
             hasPower = true;
             hasItems = true;
@@ -1404,6 +1404,22 @@ public class EarthBlocks{
 
             consumePower(1.5f);
             consumeItems(with(Items.coal, 2, EarthItems.iron, 5));
+
+        }};
+                bronzefurnace = new GenericCrafter("bronze-furnace"){{
+            localizedName = "Bronze furnace";
+            requirements(Category.crafting, with(EarthItems.iron, 95, Items.copper, 60, Items.lead, 80, EarthItems.steel, 25));
+            outputItem = new ItemStack(EarthItems.bronze, 2);
+            craftTime = 60f;
+            size = 2;
+            hasPower = true;
+            hasItems = true;
+            hasLiquids = true;
+            rotate = false;
+            solid = true;
+
+            consumePower(1.5f);
+            consumeItems(with(Items.copper, 3, EarthItems.tin, 1));
 
         }};
                 carbonsequestrator = new GenericCrafter("carbon-sequestrator"){{
