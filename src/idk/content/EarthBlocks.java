@@ -416,7 +416,7 @@ public class EarthBlocks{
                 voltitereactor = new ImpactReactor("voltite-reactor"){{
             requirements(Category.power, with(Items.lead, 700, Items.silicon, 600, EarthItems.steel, 600, EarthItems.uranium, 200, Items.surgeAlloy, 350, EarthItems.lithium, 450, EarthItems.voltite, 150));
             size = 4;
-            health = 1500
+            health = 1500;
             powerProduction = 230f;
             itemDuration = 140f;
             ambientSound = Sounds.pulse;
