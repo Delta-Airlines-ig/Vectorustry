@@ -346,7 +346,6 @@ public class placeholdergen extends PlanetGenerator{
                 if(!(floor == Blocks.ice || floor == Blocks.iceSnow || floor == Blocks.snow || floor.asFloor().isLiquid)){
                     floor = spore ?
                         (EarthBlocks.Redsand);
-                            (floor == EarthBlocks.Redsand));
                 }
             }
         });
