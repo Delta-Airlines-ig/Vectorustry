@@ -12,7 +12,7 @@ import static mindustry.content.UnitTypes.*;
 public class EarthTechtree{
 
     public static void load(){
-        Planets.earth.techTree = nodeRoot("earth", fortress, () -> {
+        EarthPlanets.earth.techTree = nodeRoot("earth", fortress, () -> {
             node(drillMechanical);
             
         });
