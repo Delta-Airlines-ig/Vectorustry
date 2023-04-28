@@ -216,9 +216,9 @@ public class EarthBlocks{
             speed = 0.035f;
             displayedSpeed = 4.4f;
             buildCostMultiplier = 2f;
-            researchCost = with(Items.iron, 5);
+            researchCost = with(EarthItems.iron, 5);
         }};
-                steelConveyor = new Conveyor("steel-conveyor"){{
+                steelconveyor = new Conveyor("steel-conveyor"){{
             requirements(Category.distribution, with(Items.copper, 1, EarthItems.iron, 1, EarthItems.steel, 1));
             health = 75;
             speed = 0.09f;
@@ -293,7 +293,7 @@ public class EarthBlocks{
             solid = true;
         }};
                 largetank = new LiquidRouter("large-tank"){{
-            requirements(Category.liquid, with(Items.copper, 30, Items.bronze, 40));
+            requirements(Category.liquid, with(Items.copper, 30, EarthItems.bronze, 40));
             size = 3;
             solid = true;
             liquidCapacity = 1800f;
