@@ -9,7 +9,7 @@ import static mindustry.content.SectorPresets.*;
 import static mindustry.content.TechTree.*;
 import static mindustry.content.UnitTypes.*;
 
-public class SerpuloTechTree{
+public class EarthTechtree{
 
     public static void load(){
         Planets.earth.techTree = nodeRoot("earth", fortress, () -> {
