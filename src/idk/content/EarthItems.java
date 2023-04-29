@@ -16,7 +16,7 @@ public class EarthItems{
         //voltite
         voltite, 
     //other things
-    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix, bronze;
+    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix, bronze, lead2, copper2;
   //add voltite alloys
     
    public static final Seq<Item> EarthItems = new Seq<>();
@@ -33,6 +33,19 @@ public class EarthItems{
                 cost = 0.1f;
                 //hardness = 15;
        }};
+        copper2 = new Item("copper2", Color.valueOf("d99d73")){{
+            localizedName = "copper";
+            hardness = 1;
+            cost = 0.5f;
+            alwaysUnlocked = true;
+        }};
+
+        lead2 = new Item("lead2", Color.valueOf("8c7fa9")){{
+            localizedName = "lead";
+            hardness = 1;
+            cost = 0.7f;
+        }};
+
 
 
       
@@ -113,10 +126,10 @@ public class EarthItems{
             cost = 1;
         }};
                 EarthItems.addAll(
-                voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, metaglass, copper, lead, sand, surgeAlloy, phaseFabric, graphite
+                voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, metaglass, copper2, lead2, sand, surgeAlloy, phaseFabric, graphite
         );
                         Begone.addAll(
-                thorium, beryllium, tungsten, oxide, carbide, fissileMatter, dormantCyst, scrap, coal, titanium, plastanium, sporePod, blastCompound, pyratite
+                thorium, beryllium, tungsten, oxide, carbide, fissileMatter, dormantCyst, scrap, coal, titanium, plastanium, sporePod, blastCompound, pyratite, lead, copper
         );
     }
 }
