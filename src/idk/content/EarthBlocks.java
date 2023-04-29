@@ -60,7 +60,7 @@ public class EarthBlocks{
     
     public static Block Redsand, ExposedStone, ExposedStoneWall, RedishStoneWall, RedStonewall, RedStone, RedishStone,
     //ores
-    oreIron, oreAluminum, oreLithium, oreTin, oreUranium, oreGraphite,  //not done with uranium
+    oreIron, oreAluminum, oreLithium, oreTin, oreUranium, oreGraphite, oreCopper2,   //not done with uranium
     //walls
     leadWall, leadWallLarge, stoneWall, stoneWallLarge, ironWall, ironWallLarge, steelWall, steelWallLarge,
     //transport
@@ -137,6 +137,12 @@ public class EarthBlocks{
             oreScale = 25.580953f;
             variants = 2;
         }};
+                oreCopper2 = new OreBlock(EarthItems.copper2){{
+            oreDefault = true;
+            oreThreshold = 0.841f;
+            oreScale = 25.580953f;
+            variants = 2;
+        }};
         oreAluminum = new OreBlock(EarthItems.aluminum){{
             oreDefault = true;
             oreThreshold = 0.849f;
@@ -170,7 +176,7 @@ public class EarthBlocks{
         //cores and stuff
         fortress = new CoreBlock("core-fortress"){{
             localizedName = "Fortress";
-            requirements(Category.effect, BuildVisibility.editorOnly, with(Items.copper, 1000, Items.lead, 800));
+            requirements(Category.effect, BuildVisibility.editorOnly, with(EarthItems.copper2, 1000, Items.lead, 800));
             alwaysUnlocked = true;
 
             isFirstTier = true;
@@ -184,7 +190,7 @@ public class EarthBlocks{
 
         stronghold = new CoreBlock("core-stronghold"){{
             localizedName = "Stronghold";
-            requirements(Category.effect, with(Items.copper, 3000, Items.lead, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
+            requirements(Category.effect, with(EarthItems.copper2, 3000, Items.lead, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
 
             unitType = EarthUnitTypes.theta;
             health = 8500;
@@ -198,7 +204,7 @@ public class EarthBlocks{
 
         bunker = new CoreBlock("core-bunker"){{
             localizedName = "Bunker";
-            requirements(Category.effect, with(Items.copper, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
+            requirements(Category.effect, with(EarthItems.copper2, 8000, Items.lead, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
             unitType = EarthUnitTypes.zeta;
             health = 10000;
@@ -219,7 +225,7 @@ public class EarthBlocks{
             researchCost = with(EarthItems.iron, 5);
         }};
                 steelconveyor = new Conveyor("steel-conveyor"){{
-            requirements(Category.distribution, with(Items.copper, 1, EarthItems.iron, 1, EarthItems.steel, 1));
+            requirements(Category.distribution, with(EarthItems.copper2, 1, EarthItems.iron, 1, EarthItems.steel, 1));
             health = 75;
             speed = 0.09f;
             displayedSpeed = 12f;
@@ -259,27 +265,27 @@ public class EarthBlocks{
         }};
         //transport liquid
                 copperpipe = new Conduit("copper-pipe"){{
-            requirements(Category.liquid, with(Items.copper, 5));
+            requirements(Category.liquid, with(EarthItems.copper2, 5));
             health = 50;
         }};
         bronzepipe = new Conduit("bronze-pipe"){{
-            requirements(Category.liquid, with(EarthItems.bronze, 2, Items.copper, 1));
+            requirements(Category.liquid, with(EarthItems.bronze, 2, EarthItems.copper2, 1));
             liquidCapacity = 16f;
             liquidPressure = 1.025f;
             health = 100;
         }};
                 pipeallocator = new LiquidRouter("pipe-allocator"){{
-            requirements(Category.liquid, with(Items.copper, 6));
+            requirements(Category.liquid, with(EarthItems.copper2, 6));
             liquidCapacity = 20f;
             underBullets = true;
             solid = false;
         }};
                pipeinterchange = new LiquidJunction("pipe-interchange"){{
-            requirements(Category.liquid, with(Items.copper, 18));
+            requirements(Category.liquid, with(EarthItems.copper2, 18));
             solid = false;
         }};
                 pipespan = new LiquidBridge("pipe-span"){{
-            requirements(Category.liquid, with(Items.copper, 18));
+            requirements(Category.liquid, with(EarthItems.copper2, 18));
             fadeIn = moveArrows = false;
             arrowSpacing = 6f;
             range = 4;
@@ -287,13 +293,13 @@ public class EarthBlocks{
         }};
         //liquid storage
                 smalltank = new LiquidRouter("small-tank"){{
-            requirements(Category.liquid, with(Items.copper, 10, EarthItems.bronze, 15));
+            requirements(Category.liquid, with(EarthItems.copper2, 10, EarthItems.bronze, 15));
             liquidCapacity = 700f;
             size = 2;
             solid = true;
         }};
                 largetank = new LiquidRouter("large-tank"){{
-            requirements(Category.liquid, with(Items.copper, 30, EarthItems.bronze, 40));
+            requirements(Category.liquid, with(EarthItems.copper2, 30, EarthItems.bronze, 40));
             size = 3;
             solid = true;
             liquidCapacity = 1800f;
@@ -301,7 +307,7 @@ public class EarthBlocks{
         }};
         
         well = new SolidPump("well"){{
-            requirements(Category.production, with(EarthItems.bronze, 30, Items.graphite, 30, Items.copper, 30, EarthItems.iron, 30));
+            requirements(Category.production, with(EarthItems.bronze, 30, Items.graphite, 30, EarthItems.copper2, 30, EarthItems.iron, 30));
             result = Liquids.water;
             pumpAmount = 0.16f;
             size = 2;
@@ -313,19 +319,19 @@ public class EarthBlocks{
         }};
 //powerrrrrr
                 powerline = new PowerNode("power-line"){{
-            requirements(Category.power, with(Items.copper, 1, EarthItems.iron, 3, EarthItems.lithium, 5));
+            requirements(Category.power, with(EarthItems.copper2, 1, EarthItems.iron, 3, EarthItems.lithium, 5));
             maxNodes = 10;
             laserRange = 6;
         }};
 
         powerpylon = new PowerNode("power-pylon"){{
-            requirements(Category.power, with(EarthItems.steel, 5, EarthItems.aluminum, 10, Items.copper, 3, EarthItems.lithium, 5));
+            requirements(Category.power, with(EarthItems.steel, 5, EarthItems.aluminum, 10, EarthItems.copper2, 3, EarthItems.lithium, 5));
             size = 2;
             maxNodes = 15;
             laserRange = 15f;
         }};
                 smallbattery = new Battery("small-battery"){{
-            requirements(Category.power, with(Items.copper, 5, EarthItems.lithium, 20));
+            requirements(Category.power, with(EarthItems.copper2, 5, EarthItems.lithium, 20));
             consumePowerBuffered(10000f);
             baseExplosiveness = 3f;
         }};
@@ -337,7 +343,7 @@ public class EarthBlocks{
             baseExplosiveness = 7f;
         }};
                 steamgenerator = new ConsumeGenerator("steam-generator"){{
-            requirements(Category.power, with(Items.copper, 75, Items.graphite, 35, EarthItems.bronze, 20, EarthItems.lithium, 30));
+            requirements(Category.power, with(EarthItems.copper2, 75, Items.graphite, 35, EarthItems.bronze, 20, EarthItems.lithium, 30));
             powerProduction = 5.5f;
             consumeLiquid(EarthLiquids.steam, 0.2f);
             hasLiquids = true;
@@ -363,7 +369,7 @@ public class EarthBlocks{
         }};
         
                         turbinegenerator = new ConsumeGenerator("turbine-generator"){{
-            requirements(Category.power, with(Items.copper, 175, Items.graphite, 35, EarthItems.bronze, 30, EarthItems.lithium, 50));
+            requirements(Category.power, with(EarthItems.copper2, 175, Items.graphite, 35, EarthItems.bronze, 30, EarthItems.lithium, 50));
             powerProduction = 8.5f;
             consumeLiquid(EarthLiquids.highpressuresteam, 0.3f);
             hasLiquids = true;
@@ -427,12 +433,12 @@ public class EarthBlocks{
             consumeLiquid(Liquids.water, 25f);
         }};
         solarpanel = new SolarGenerator("solar-panel"){{
-            requirements(Category.power, with(Items.copper, 10, EarthItems.iron, 15));
+            requirements(Category.power, with(EarthItems.copper2, 10, EarthItems.iron, 15));
             powerProduction = 0.3f;
         }};
 
         solarcollector = new SolarGenerator("solar-collector"){{
-            requirements(Category.power, with(Items.copper, 80, EarthItems.iron, 110, EarthItems.steel, 15));
+            requirements(Category.power, with(EarthItems.copper2, 80, EarthItems.iron, 110, EarthItems.steel, 15));
             size = 3;
             powerProduction = 1.5f;
         }};
@@ -440,9 +446,9 @@ public class EarthBlocks{
         //turrets
         solo = new ItemTurret("solo"){{
             localizedName = "Solo";
-            requirements(Category.turret, with(Items.copper, 10, EarthItems.iron, 25));
+            requirements(Category.turret, with(EarthItems.copper2, 10, EarthItems.iron, 25));
             ammo(
-                Items.copper,  new BasicBulletType(6f, 5){{
+                EarthItems.copper2,  new BasicBulletType(6f, 5){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -465,9 +471,9 @@ public class EarthBlocks{
         }};
         trio = new ItemTurret("trio"){{
             localizedName = "Trio";
-            requirements(Category.turret, with(Items.copper, 30, EarthItems.iron, 35));
+            requirements(Category.turret, with(EarthItems.copper2, 30, EarthItems.iron, 35));
                         ammo(
-                Items.copper,  new BasicBulletType(9f, 7){{
+                EarthItems.copper2,  new BasicBulletType(9f, 7){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -497,7 +503,7 @@ public class EarthBlocks{
         //scatter equivelent
          converge = new ItemTurret("converge"){{
              localizedName = "Converge";
-            requirements(Category.turret, with(Items.copper, 95, Items.lead, 55, EarthItems.iron, 50));
+            requirements(Category.turret, with(EarthItems.copper2, 95, Items.lead, 55, EarthItems.iron, 50));
             ammo(
                 EarthItems.iron, new FlakBulletType(4f, 5){{
                     lifetime = 60f;
@@ -574,7 +580,7 @@ public class EarthBlocks{
         //scortch equivelent
         char1 = new ContinuousLiquidTurret("char"){{
             localizedName = "Char";
-            requirements(Category.turret, with(EarthItems.steel, 20, Items.copper, 150, EarthItems.iron, 140, Items.lead, 200));
+            requirements(Category.turret, with(EarthItems.steel, 20, EarthItems.copper2, 150, EarthItems.iron, 140, Items.lead, 200));
 
        //     drawer = new DrawTurret("reinforced-"){{
 
@@ -649,7 +655,7 @@ public class EarthBlocks{
         //hail equivelent
         pelt = new ItemTurret("pelt"){{
             localizedName = "pelt";
-            requirements(Category.turret, with(Items.copper, 60, Items.graphite, 25, EarthItems.iron, 50));
+            requirements(Category.turret, with(EarthItems.copper2, 60, Items.graphite, 25, EarthItems.iron, 50));
             ammo(
                 Items.graphite, new ArtilleryBulletType(3f, 10){{
                     knockback = 1f;
@@ -703,7 +709,7 @@ public class EarthBlocks{
 //arc equivelent
         splice = new PowerTurret("splice"){{
             localizedName = "Splice";
-            requirements(Category.turret, with(Items.copper, 75, Items.lead, 50, EarthItems.iron, 50, Items.silicon, 15));
+            requirements(Category.turret, with(EarthItems.copper2, 75, Items.lead, 50, EarthItems.iron, 50, Items.silicon, 15));
             shootType = new LightningBulletType(){{
                 damage = 5;
                 lightningLength = 25;
@@ -743,7 +749,7 @@ public class EarthBlocks{
         //lancer equivelent
           spear = new PowerTurret("spear"){{
             localizedName = "Spear";
-            requirements(Category.turret, with(Items.copper, 60, Items.lead, 70, Items.silicon, 80, EarthItems.steel, 30));
+            requirements(Category.turret, with(EarthItems.copper2, 60, Items.lead, 70, Items.silicon, 80, EarthItems.steel, 30));
             range = 200f;
             shoot = new ShootSpread(3, 15f);
             shoot.firstShotDelay = 25f;
@@ -783,9 +789,9 @@ public class EarthBlocks{
         //salvo equivelent
         volley = new ItemTurret("volley"){{
             localizedName = "Volley";
-            requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, EarthItems.steel, 70, EarthItems.aluminum, 50));
+            requirements(Category.turret, with(EarthItems.copper2, 100, Items.graphite, 80, EarthItems.steel, 70, EarthItems.aluminum, 50));
             ammo(
-                Items.copper,  new BasicBulletType(2.5f, 6){{
+                EarthItems.copper2,  new BasicBulletType(2.5f, 6){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -851,7 +857,7 @@ public class EarthBlocks{
         //ripple equivelent
          ridge = new ItemTurret("ridge"){{
              localizedName = "Ridge";
-            requirements(Category.turret, with(Items.copper, 150, Items.graphite, 235, EarthItems.steel, 60, EarthItems.aluminum, 50));
+            requirements(Category.turret, with(EarthItems.copper2, 150, Items.graphite, 235, EarthItems.steel, 60, EarthItems.aluminum, 50));
             ammo(
                 Items.graphite, new ArtilleryBulletType(3f, 20){{
                     knockback = 0.8f;
@@ -918,7 +924,7 @@ public class EarthBlocks{
         //fuse equivelent
                 break1 = new ItemTurret("break"){{
                     localizedName = "Break";
-            requirements(Category.turret, with(Items.copper, 225, Items.graphite, 225, EarthItems.steel, 100, Items.surgeAlloy, 25));
+            requirements(Category.turret, with(EarthItems.copper2, 225, Items.graphite, 225, EarthItems.steel, 100, Items.surgeAlloy, 25));
 
             reload = 30f;
             shake = 4f;
@@ -958,7 +964,7 @@ public class EarthBlocks{
         //cyclone equivelent
          hurricane = new ItemTurret("hurricane"){{
              localizedName = "Hurricane";
-            requirements(Category.turret, with(Items.copper, 200, Items.titanium, 125, Items.surgeAlloy, 80, EarthItems.steel, 50));
+            requirements(Category.turret, with(EarthItems.copper2, 200, Items.titanium, 125, Items.surgeAlloy, 80, EarthItems.steel, 50));
             ammo(
                 Items.metaglass, new FlakBulletType(4f, 3){{
                     ammoMultiplier = 2f;
@@ -1032,7 +1038,7 @@ public class EarthBlocks{
                     
             shoot.firstShotDelay = 125f;
                     
-            requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
+            requirements(Category.turret, with(EarthItems.copper2, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
             ammo(
                 EarthItems.voltite, new PointBulletType(){{
                     shootEffect = new Effect(24f, e -> {
@@ -1175,7 +1181,7 @@ public class EarthBlocks{
         }};
         //spectre equivelent
         apparition = new ItemTurret("apparition"){{
-            requirements(Category.turret, with(Items.copper, 900, Items.graphite, 300, Items.surgeAlloy, 500, EarthItems.steel, 175));
+            requirements(Category.turret, with(EarthItems.copper2, 900, Items.graphite, 300, Items.surgeAlloy, 500, EarthItems.steel, 175));
             ammo(
                 Items.graphite, new BasicBulletType(7.5f, 50){{
                     hitSize = 4.8f;
@@ -1219,7 +1225,7 @@ public class EarthBlocks{
         //meltdown equivelent
         cataclysm = new LaserTurret("cataclysm"){{
             localizedName = "Cataclysm";
-            requirements(Category.turret, with(Items.copper, 1200, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 225, EarthItems.steel, 275, EarthItems.aluminum, 300));
+            requirements(Category.turret, with(EarthItems.copper2, 1200, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 225, EarthItems.steel, 275, EarthItems.aluminum, 300));
             shootEffect = Fx.shootBigSmoke2;
             shootCone = 40f;
             recoil = 4f;
@@ -1517,7 +1523,7 @@ public class EarthBlocks{
 //crafting
         steelSmelter = new GenericCrafter("steel-smelter"){{
             localizedName = "Steel smelter";
-            requirements(Category.crafting, with(EarthItems.iron, 65, Items.copper, 40, Items.lead, 60));
+            requirements(Category.crafting, with(EarthItems.iron, 65, EarthItems.copper2, 40, Items.lead, 60));
             outputItem = new ItemStack(EarthItems.steel, 3);
             craftTime = 60f;
             size = 2;
@@ -1533,7 +1539,7 @@ public class EarthBlocks{
         }};
                 bronzefurnace = new GenericCrafter("bronze-furnace"){{
             localizedName = "Bronze furnace";
-            requirements(Category.crafting, with(EarthItems.iron, 95, Items.copper, 60, Items.lead, 80, EarthItems.steel, 25));
+            requirements(Category.crafting, with(EarthItems.iron, 95, EarthItems.copper2, 60, Items.lead, 80, EarthItems.steel, 25));
             outputItem = new ItemStack(EarthItems.bronze, 2);
             craftTime = 60f;
             size = 2;
@@ -1544,7 +1550,7 @@ public class EarthBlocks{
             solid = true;
 
             consumePower(1.5f);
-            consumeItems(with(Items.copper, 3, EarthItems.tin, 1));
+            consumeItems(with(EarthItems.copper2, 3, EarthItems.tin, 1));
 
         }};
                 carbonsequestrator = new GenericCrafter("carbon-sequestrator"){{
@@ -1617,7 +1623,7 @@ public class EarthBlocks{
             outputItem = new ItemStack(EarthItems.carbon, 2);
         }};
                 siliconblastfurnace = new GenericCrafter("Silicon-Blast-Furnace"){{
-            requirements(Category.crafting, with(Items.copper, 40, Items.lead, 35, EarthItems.iron, 35, EarthItems.aluminum, 25));
+            requirements(Category.crafting, with(EarthItems.copper2, 40, Items.lead, 35, EarthItems.iron, 35, EarthItems.aluminum, 25));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.silicon, 2);
             craftTime = 30f;
@@ -1632,7 +1638,7 @@ public class EarthBlocks{
             consumePower(0.50f);
         }};
         furnace = new GenericCrafter("furnace"){{
-            requirements(Category.crafting, with(Items.copper, 60, Items.graphite, 60, Items.lead, 40, EarthItems.iron, 50));
+            requirements(Category.crafting, with(EarthItems.copper2, 60, Items.graphite, 60, Items.lead, 40, EarthItems.iron, 50));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.metaglass, 1);
             craftTime = 20f;
@@ -1673,7 +1679,7 @@ public class EarthBlocks{
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
 
             consumePower(4f);
-            consumeItems(with(Items.copper, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, EarthItems.lithium, 5));
+            consumeItems(with(EarthItems.copper2, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, EarthItems.lithium, 5));
         }};
                         voltitesynthesizer = new GenericCrafter("voltite-synthesizer"){{
             requirements(Category.crafting, with(Items.silicon, 280, Items.lead, 280, EarthItems.steel, 270, Items.metaglass, 250, EarthItems.aluminum, 275, Items.surgeAlloy, 50));
@@ -1689,7 +1695,7 @@ public class EarthBlocks{
             consumeItems(with(Items.surgeAlloy, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, EarthItems.lithium, 5, Items.phaseFabric, 2));
         }};
                 flamemixer = new GenericCrafter("flame-mixer"){{
-            requirements(Category.crafting, with(Items.copper, 40, Items.lead, 35, EarthItems.iron, 35, EarthItems.aluminum, 25));
+            requirements(Category.crafting, with(EarthItems.copper2, 40, Items.lead, 35, EarthItems.iron, 35, EarthItems.aluminum, 25));
             craftEffect = Fx.smeltsmoke;
             outputLiquid = new LiquidStack(EarthLiquids.flammablemix, 2f);
             craftTime = 30f;
@@ -1746,7 +1752,7 @@ public class EarthBlocks{
             hasPower = false;
                         drillTime = 500;
           tier = 1;
-            requirements(Category.production, with(Items.copper, 10, EarthItems.iron, 20));
+            requirements(Category.production, with(EarthItems.copper2, 10, EarthItems.iron, 20));
             consumeLiquid(Liquids.water, 0.08f).boost();
         }};
 
@@ -1756,7 +1762,7 @@ public class EarthBlocks{
             itemCapacity = 50;
             drillTime = 300;
             tier = 2;
-            requirements(Category.production, with(Items.copper, 15, EarthItems.iron, 30, EarthItems.steel, 10));
+            requirements(Category.production, with(EarthItems.copper2, 15, EarthItems.iron, 30, EarthItems.steel, 10));
             consumeLiquid(Liquids.water, 0.08f).boost();
             consumeLiquid(EarthLiquids.steam, 0.08f);
         }};
@@ -1807,7 +1813,7 @@ public class EarthBlocks{
         //armour costs 20s 25i 10g
         //base cost is 10s 10i
                groundassembler = new UnitFactory("ground-fabricator"){{
-           requirements(Category.units, with(Items.silicon, 100, Items.copper, 150, EarthItems.steel, 100, EarthItems.iron, 75));//, EarthItems.iron, 150, EarthItems.steel, 75));
+           requirements(Category.units, with(Items.silicon, 100, EarthItems.copper2, 150, EarthItems.steel, 100, EarthItems.iron, 75));//, EarthItems.iron, 150, EarthItems.steel, 75));
             size = 3;
             localizedName = "Ground fabricator";
             plans = Seq.with(
