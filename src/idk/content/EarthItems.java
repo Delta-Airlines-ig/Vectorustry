@@ -126,10 +126,10 @@ public class EarthItems{
             cost = 1;
         }};
                 EarthItems.addAll(
-                voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, metaglass, copper2, lead2, sand, surgeAlloy, phaseFabric, graphite
+                voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, metaglass, copper2, lead, sand, surgeAlloy, phaseFabric, graphite
         );
                         Begone.addAll(
-                thorium, beryllium, tungsten, oxide, carbide, fissileMatter, dormantCyst, scrap, coal, titanium, plastanium, sporePod, blastCompound, pyratite, lead, copper
+                thorium, beryllium, tungsten, oxide, carbide, fissileMatter, dormantCyst, scrap, coal, titanium, plastanium, sporePod, blastCompound, pyratite, copper
         );
     }
 }
