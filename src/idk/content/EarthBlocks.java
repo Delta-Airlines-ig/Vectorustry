@@ -359,10 +359,6 @@ public class EarthBlocks{
             new DrawRegion("-turbine"){{
                 rotateSpeed = 5f;
             }},
-            new DrawRegion("-turbine"){{
-                rotateSpeed = -5f;
-                rotation = 45f;
-            }},
             new DrawRegion("-cap"),
             new DrawLiquidRegion()
             );
@@ -384,10 +380,6 @@ public class EarthBlocks{
             new DrawWarmupRegion(),
             new DrawRegion("-turbine"){{
                 rotateSpeed = 15f;
-            }},
-            new DrawRegion("-turbine"){{
-                rotateSpeed = -15f;
-                rotation = 45f;
             }},
             new DrawRegion("-cap"),
             new DrawLiquidRegion()
@@ -534,28 +526,7 @@ public class EarthBlocks{
                     splashDamage = 27f * 1.5f;
                     splashDamageRadius = 15f;
                 }},
-                Items.metaglass, new FlakBulletType(4f, 3){{
-                    lifetime = 60f;
-                    ammoMultiplier = 5f;
-                    shootEffect = Fx.shootSmall;
-                    reloadMultiplier = 0.8f;
-                    width = 6f;
-                    height = 8f;
-                    hitEffect = Fx.flakExplosion;
-                    splashDamage = 30f * 1.5f;
-                    splashDamageRadius = 20f;
-                    fragBullets = 6;
-                    fragBullet = new BasicBulletType(3f, 5){{
-                        width = 5f;
-                        height = 12f;
-                        shrinkY = 1f;
-                        lifetime = 20f;
-                        backColor = Pal.gray;
-                        frontColor = Color.white;
-                        despawnEffect = Fx.none;
-                        collidesGround = false;
-                    }};
-                }}
+                
             );
             reload = 15f;
             range = 220f;
@@ -966,28 +937,7 @@ public class EarthBlocks{
              localizedName = "Hurricane";
             requirements(Category.turret, with(EarthItems.copper2, 200, Items.titanium, 125, Items.surgeAlloy, 80, EarthItems.steel, 50));
             ammo(
-                Items.metaglass, new FlakBulletType(4f, 3){{
-                    ammoMultiplier = 2f;
-                    shootEffect = Fx.shootSmall;
-                    reloadMultiplier = 0.8f;
-                    width = 6f;
-                    height = 8f;
-                    hitEffect = Fx.flakExplosion;
-                    splashDamage = 45f;
-                    splashDamageRadius = 25f;
-                    fragBullet = new BasicBulletType(3f, 1, "bullet"){{
-                        width = 5f;
-                        height = 12f;
-                        shrinkY = 1f;
-                        lifetime = 20f;
-                        backColor = Pal.gray;
-                        frontColor = Color.white;
-                        despawnEffect = Fx.none;
-                    }};
-                    fragBullets = 8;
-                    explodeRange = 20f;
-                    collidesGround = true;
-                }},
+                
                 EarthItems.explosivemix, new FlakBulletType(4f, 10){{
                     shootEffect = Fx.shootBig;
                     ammoMultiplier = 5f;
@@ -1038,7 +988,7 @@ public class EarthBlocks{
                     
             shoot.firstShotDelay = 125f;
                     
-            requirements(Category.turret, with(EarthItems.copper2, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
+            requirements(Category.turret, with(EarthItems.copper2, 1000, EarthItems.lithium, 600, Items.surgeAlloy, 300, EarthItems.voltite, 200, Items.silicon, 600, EarthItems.steel, 500));
             ammo(
                 EarthItems.voltite, new PointBulletType(){{
                     shootEffect = new Effect(24f, e -> {
@@ -1637,20 +1587,7 @@ public class EarthBlocks{
             consumeItems(with(EarthItems.carbon, 1, Items.sand, 2));
             consumePower(0.50f);
         }};
-        furnace = new GenericCrafter("furnace"){{
-            requirements(Category.crafting, with(EarthItems.copper2, 60, Items.graphite, 60, Items.lead, 40, EarthItems.iron, 50));
-            craftEffect = Fx.smeltsmoke;
-            outputItem = new ItemStack(Items.metaglass, 1);
-            craftTime = 20f;
-            size = 2;
-            hasPower = hasItems = true;
-            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("ffc099")));
-            ambientSound = Sounds.smelter;
-            ambientSoundVolume = 0.07f;
-
-            consumeItems(with(Items.lead, 1, Items.sand, 1));
-            consumePower(0.60f);
-        }};
+       
                 phasefabricator = new GenericCrafter("phase-fabricator"){{
             requirements(Category.crafting, with(Items.silicon, 130, Items.lead, 120, EarthItems.steel, 75, Items.surgeAlloy, 25));
             craftEffect = Fx.smeltsmoke;
@@ -1669,7 +1606,7 @@ public class EarthBlocks{
             itemCapacity = 20;
         }};
                 surgeblastfurnace = new GenericCrafter("surge-blast-furnace"){{
-            requirements(Category.crafting, with(Items.silicon, 80, Items.lead, 80, EarthItems.steel, 70, Items.metaglass, 50, EarthItems.aluminum, 75));
+            requirements(Category.crafting, with(Items.silicon, 80, Items.lead, 80, EarthItems.steel, 70, EarthItems.lithium, 50, EarthItems.aluminum, 75));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.surgeAlloy, 2);
             craftTime = 70f;
@@ -1682,7 +1619,7 @@ public class EarthBlocks{
             consumeItems(with(EarthItems.copper2, 3, Items.lead, 4, EarthItems.iron, 2, Items.silicon, 3, EarthItems.lithium, 5));
         }};
                         voltitesynthesizer = new GenericCrafter("voltite-synthesizer"){{
-            requirements(Category.crafting, with(Items.silicon, 280, Items.lead, 280, EarthItems.steel, 270, Items.metaglass, 250, EarthItems.aluminum, 275, Items.surgeAlloy, 50));
+            requirements(Category.crafting, with(Items.silicon, 280, Items.lead, 280, EarthItems.steel, 270, EarthItems.lithium, 250, EarthItems.aluminum, 275, Items.surgeAlloy, 50));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(EarthItems.voltite, 2);
             craftTime = 70f;
