@@ -525,7 +525,7 @@ public class EarthBlocks{
                     hitEffect = Fx.flakExplosion;
                     splashDamage = 27f * 1.5f;
                     splashDamageRadius = 15f;
-                }},
+                }}
                 
             );
             reload = 15f;
