@@ -42,10 +42,10 @@ public class IdkMod extends Mod{
         Log.info("Units loaded.");
        EarthBlocks.load();
         Log.info("Blocks loaded.");
-        EarthStatus.load();
-        Log.info("Status effects loaded.");
-        EarthWeather.load();
-        Log.info("Weather loaded.");
+       // EarthStatus.load();
+      //  Log.info("Status effects loaded.");
+      //  EarthWeather.load();
+      //  Log.info("Weather loaded.");
         EarthPlanets.load();
         Log.info("Planets loaded.");
         EarthSectors.load();
