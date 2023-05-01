@@ -72,7 +72,7 @@ public class EarthBlocks{
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
-    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
+    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, rust, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer, broadcaster, //broadcaster will be required for completion of required sectors 
     //power
@@ -902,7 +902,7 @@ public class EarthBlocks{
             coolant = consumeCoolant(0.2f);
         }};
         //no equivelent, new turret
-         trio = new ItemTurret("rust"){{
+         rust = new ItemTurret("rust"){{
             localizedName = "Rust";
             requirements(Category.turret, with(EarthItems.copper2, 230, EarthItems.iron, 135, EarthItems.steel, 200, EarthItems.lead2, 300, Items.silicon, 250));
                         ammo(
