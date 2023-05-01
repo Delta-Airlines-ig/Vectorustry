@@ -282,7 +282,7 @@ public class EarthBlocks{
                 y = 0;
             }}, new DrawDefault());
 				 
-	    placeEffect = pointShockwave;
+	    placeEffect = Fx.pointShockwave;
 
             researchCostMultiplier = 1.1f;
             consumePower(1f);
