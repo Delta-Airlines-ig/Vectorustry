@@ -290,7 +290,6 @@ public class EarthBlocks{
                             }};
 
             researchCostMultiplier = 1.1f;
-            consumePower(0f);
             ambientSound = Sounds.extractLoop;
             ambientSoundVolume = 0.06f;
 
