@@ -1,4 +1,4 @@
-package idk.content;
+/*package idk.content;
 
 import arc.graphics.Blending;
 import arc.graphics.g2d.Draw;
@@ -69,3 +69,4 @@ public class EarthWeather{
     
   }
 }
+*/
