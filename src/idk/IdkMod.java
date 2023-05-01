@@ -42,13 +42,16 @@ public class IdkMod extends Mod{
         Log.info("Units loaded.");
        EarthBlocks.load();
         Log.info("Blocks loaded.");
+        EarthStatus.load();
+        Log.info("Status effects loaded.");
+        EarthWeather.load();
+        Log.info("Weather loaded.");
         EarthPlanets.load();
         Log.info("Planets loaded.");
-        
         EarthSectors.load();
         Log.info("Sectors loaded.");
        EarthTechtree.load();
-        Log.info("Techtree for earth(?) loaded.");
+        Log.info("Techtree for planet numero uno (unnamed rn) loaded.");
         Log.info("Everything is loaded.");
     }
 }
