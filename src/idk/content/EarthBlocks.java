@@ -272,7 +272,7 @@ public class EarthBlocks{
 	        broadcaster = new GenericCrafter("broadcaster"){{
                     localizedName = "Radio Broadcatser";
             requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminum, 50, Items.silicon, 50));
-            size = 3;
+            size = 4;
             hasLiquids = false;
 
             drawer = new DrawMulti( new DrawRegion("-dish"){{
@@ -280,7 +280,7 @@ public class EarthBlocks{
                 rotation = 0f;
                 x = 0;
                 y = 0;
-            }}, new DrawDefault();
+            }}, new DrawDefault());
 				 
 	    placeEffect = pointShockwave;
 
