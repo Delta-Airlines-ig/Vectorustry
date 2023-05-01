@@ -269,7 +269,7 @@ public class EarthBlocks{
             researchCostMultiplier = 0.11f;
         }};
 	    //drawers are annoying
-	    /*
+	    
 	        broadcaster = new GenericCrafter("broadcaster"){{
                     localizedName = "Radio Broadcaster";
             requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminum, 50, Items.silicon, 50));
@@ -289,9 +289,9 @@ public class EarthBlocks{
             consumePower(1f);
             ambientSound = Sounds.extractLoop;
             ambientSoundVolume = 0.06f;
-*/
+
       //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
-       // }};
+        }};
         //transport
                 ironconveyor = new Conveyor("iron-conveyor"){{
             requirements(Category.distribution, with(EarthItems.iron, 1));
@@ -902,7 +902,7 @@ public class EarthBlocks{
             limitRange();
             coolant = consumeCoolant(0.2f);
         }};
- /*       //no equivelent, new turret
+        //no equivelent, new turret
          rust = new ItemTurret("rust"){{
             localizedName = "Rust";
             requirements(Category.turret, with(EarthItems.copper2, 230, EarthItems.iron, 135, EarthItems.steel, 200, EarthItems.lead2, 300, Items.silicon, 250));
@@ -929,7 +929,7 @@ public class EarthBlocks{
             shootCone = 30f;
             range = 150;
         }};
-       */ //ripple equivelent
+        //ripple equivelent
          ridge = new ItemTurret("ridge"){{
              localizedName = "Ridge";
             requirements(Category.turret, with(EarthItems.copper2, 150, Items.graphite, 235, EarthItems.steel, 60, EarthItems.aluminum, 50));
