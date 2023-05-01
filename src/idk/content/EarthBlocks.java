@@ -907,7 +907,7 @@ public class EarthBlocks{
             localizedName = "Rust";
             requirements(Category.turret, with(EarthItems.copper2, 230, EarthItems.iron, 135, EarthItems.steel, 200, EarthItems.lead2, 300, Items.silicon, 250));
                         ammo(
-                EarthItems.iron, new MissileBulletType(7f, 9){{
+                EarthItems.iron, new MissileBulletType(2f, 9){{
                     trailChance = 1f;
 		            homingPower = 0.1f;
                     width = 7f;
@@ -920,12 +920,12 @@ public class EarthBlocks{
             );
            shoot = new ShootPattern(){{
                 shots = 30;
-                shotDelay = 1f;
+                shotDelay = 0.5f;
             }};
             health = 300;
             size = 2;
             reload = 300f;
-            inaccuracy = 4f;
+            inaccuracy = 16f;
             shootCone = 30f;
             range = 150;
         }};
