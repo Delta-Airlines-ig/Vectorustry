@@ -1,6 +1,8 @@
 # Mindustry Java Mod Template
 A Java Mindustry mod template that works on Android and PC. The Kotlin version of this mod can be seen [here](https://github.com/Anuken/MindustryKotlinModTemplate).
 
+the mod has nothing to do with earth but i already named everything earth for some reason so i cant change it now
+
 # planned unit table
 
 edit this to see it clearly
