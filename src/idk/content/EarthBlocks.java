@@ -291,7 +291,7 @@ public class EarthBlocks{
             ambientSoundVolume = 0.06f;
 */
       //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
-        }};
+       // }};
         //transport
                 ironconveyor = new Conveyor("iron-conveyor"){{
             requirements(Category.distribution, with(EarthItems.iron, 1));
