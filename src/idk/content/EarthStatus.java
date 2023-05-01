@@ -40,6 +40,6 @@ public class EarthStatus{
             permanent = false;
             hideDetails = false;
             show = true;
-        }
+        }};
     }
 }
