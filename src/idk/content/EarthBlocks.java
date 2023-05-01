@@ -280,15 +280,9 @@ public class EarthBlocks{
                 rotation = 0f;
                 x = 0;
                 y = 0;
-            }}, new DrawDefault(),
-            new DrawParticles(){{
-                color = Color.valueOf("d4f0ff");
-                alpha = 0.6f;
-                particleSize = 4f;
-                particles = 10;
-                particleRad = 12f;
-                particleLife = 140f;
-            }});
+            }}, new DrawDefault();
+				 
+	    placeEffect = pointShockwave;
 
             researchCostMultiplier = 1.1f;
             consumePower(1f);
