@@ -193,8 +193,8 @@ public class EarthBlocks{
             new DrawRegion("-radio"){{
                 rotateSpeed = -2f;
                 rotation = 45f;
-                x = 25
-                y = 25
+                x = 25;
+                y = 25;
             }}
             );
 
@@ -219,8 +219,8 @@ public class EarthBlocks{
             new DrawRegion("-radio"){{
                 rotateSpeed = -1f;
                 rotation = 45f;
-                x = 50
-                y = 50
+                x = 50;
+                y = 50;
             }}
             );
 
@@ -242,20 +242,20 @@ public class EarthBlocks{
             new DrawDefault(),
             new DrawRegion("-radar"){{
                 rotateSpeed = 1f;
-                x = -75
+                x = -75;
                 
             }},
             new DrawRegion("-radio"){{
                 rotateSpeed = -1f;
                 rotation = 45f;
-                x = 75
-                y = 75
+                x = 75;
+                y = 75;
             }}, 
             new DrawRegion("-windspeed"){{
                 rotateSpeed = -5f;
                 rotation = 45f;
-                x = -75
-                y = -75
+                x = -75;
+                y = -75;
             }}
             );
             
