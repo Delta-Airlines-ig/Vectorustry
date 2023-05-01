@@ -3,7 +3,7 @@ import idk.content.*;
 import mindustry.type.SectorPreset;
 
 public class EarthSectors{
-	public static SectorPreset Reentry, placeholdersector;
+	public static SectorPreset Reentry, Breakthrough, Broadcast, Wall, Holdout, Counterattack, placeholdersector;
 	
 	public static void load(){
 		//Reentry = new SectorPreset("Reentry", EarthPlanets.earth, 1){{
