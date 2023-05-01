@@ -270,7 +270,7 @@ public class EarthBlocks{
         }};
 	    //drawers are annoying
 	        broadcaster = new GenericCrafter("broadcaster"){{
-                    localizedName = "Radio Broadcatser";
+                    localizedName = "Radio Broadcaster";
             requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminum, 50, Items.silicon, 50));
             size = 4;
             hasLiquids = false;
