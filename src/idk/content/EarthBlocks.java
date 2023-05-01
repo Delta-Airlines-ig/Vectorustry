@@ -74,7 +74,7 @@ public class EarthBlocks{
     //turrets
     solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
     //cores
-    damagedshard, fortress, stronghold, bunker, unitcomputer,  
+    damagedshard, fortress, stronghold, bunker, unitcomputer, broadcaster, //broadcaster will be required for completion of required sectors 
     //power
     voltitereactor, steamgenerator, turbinegenerator, nuclearreactor, fusionreactor, solarpanel, solarcollector, windturbine, powerline, powerpylon, smallbattery, largebattery,    
     //unit building
@@ -267,6 +267,35 @@ public class EarthBlocks{
 
             unitCapModifier = 32;
             researchCostMultiplier = 0.11f;
+        }};
+	    //drawers are annoying
+	        broadcaster = new GenericCrafter("broadcaster"){{
+                    localizedName = "Radio Broadcatser";
+            requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminum, 50, Items.silicon, 50));
+            size = 3;
+            hasLiquids = false;
+
+            drawer = new DrawMulti( new DrawRegion("-dish"){{
+                rotateSpeed = 0.2f;
+                rotation = 0f;
+                x = 0;
+                y = 0;
+            }}, new DrawDefault(),
+            new DrawParticles(){{
+                color = Color.valueOf("d4f0ff");
+                alpha = 0.6f;
+                particleSize = 4f;
+                particles = 10;
+                particleRad = 12f;
+                particleLife = 140f;
+            }});
+
+            researchCostMultiplier = 1.1f;
+            consumePower(1f);
+            ambientSound = Sounds.extractLoop;
+            ambientSoundVolume = 0.06f;
+
+      //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
         }};
         //transport
                 ironconveyor = new Conveyor("iron-conveyor"){{
