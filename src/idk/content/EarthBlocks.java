@@ -283,10 +283,14 @@ public class EarthBlocks{
                 y = 0;
             }}, new DrawDefault());
 				 
-	    placeEffect = Fx.pointShockwave;
+	    placeEffect =  new WaveEffect(){{
+                                lifetime = 60f;
+                                strokeFrom = 16f;
+                                sizeTo = 1630f;
+                            }};
 
             researchCostMultiplier = 1.1f;
-            consumePower(1f);
+            consumePower(0f);
             ambientSound = Sounds.extractLoop;
             ambientSoundVolume = 0.06f;
 
