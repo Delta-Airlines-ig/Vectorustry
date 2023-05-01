@@ -9,6 +9,31 @@ import mindustry.graphics.Pal;
 import mindustry.type.Weather;
 import mindustry.type.weather.ParticleWeather;
 import mindustry.world.meta.Attribute;
+import arc.graphics.*;
+import arc.*;
+import arc.graphics.g2d.*;
+import arc.math.geom.*;
+import arc.struct.*;
+import arc.util.*;
+import arc.math.*;
+import arc.struct.*;
+import mindustry.*;
+import mindustry.entities.*;
+import mindustry.entities.abilities.*;
+import mindustry.entities.bullet.*;
+import mindustry.entities.effect.*;
+import mindustry.entities.part.DrawPart.*;
+import mindustry.entities.part.*;
+import mindustry.entities.pattern.*;
+import mindustry.gen.*;
+import mindustry.graphics.*;
+import mindustry.type.*;
+import mindustry.type.unit.*;
+
+import static arc.graphics.g2d.Draw.rect;
+import static arc.graphics.g2d.Draw.*;
+import static arc.graphics.g2d.Lines.*;
+import static arc.math.Angles.*;
 
 public class EarthWeather{
 	public static Weather
