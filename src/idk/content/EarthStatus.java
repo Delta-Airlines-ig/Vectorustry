@@ -1,4 +1,4 @@
-package idk.content;
+/*package idk.content;
 
 import arc.graphics.Color;
 import arc.graphics.g2d.Draw;
