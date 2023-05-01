@@ -185,7 +185,7 @@ public class EarthBlocks{
             requirements(Category.effect, BuildVisibility.editorOnly, with(EarthItems.copper2, 1000, EarthItems.lead2, 800));
             alwaysUnlocked = true;
             
-            drawer = new DrawMulti(
+   /*         drawer = new DrawMulti(
             new DrawDefault(),
             new DrawRegion("-radar"){{
                 rotateSpeed = 2f;
@@ -197,7 +197,7 @@ public class EarthBlocks{
                 y = 25;
             }}
             );
-
+*/
             isFirstTier = true;
             unitType = EarthUnitTypes.delta;
             health = 3100;
@@ -211,7 +211,7 @@ public class EarthBlocks{
             localizedName = "Stronghold";
             requirements(Category.effect, with(EarthItems.copper2, 3000, EarthItems.lead2, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
             
-            drawer = new DrawMulti(
+       /*     drawer = new DrawMulti(
             new DrawDefault(),
             new DrawRegion("-radar"){{
                 rotateSpeed = 1f;
@@ -223,7 +223,7 @@ public class EarthBlocks{
                 y = 50;
             }}
             );
-
+*/
             unitType = EarthUnitTypes.theta;
             health = 8500;
             itemCapacity = 16000;
@@ -238,27 +238,27 @@ public class EarthBlocks{
             localizedName = "Bunker";
             requirements(Category.effect, with(EarthItems.copper2, 8000, EarthItems.lead2, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
-            drawer = new DrawMulti(
-            new DrawDefault(),
-            new DrawRegion("-radar"){{
-                rotateSpeed = 1f;
-                x = -75;
+      /*      //drawer = new DrawMulti(
+            //new DrawDefault(),
+           // new DrawRegion("-radar"){{
+           //     rotateSpeed = 1f;
+          //      x = -75;
                 
-            }},
-            new DrawRegion("-radio"){{
-                rotateSpeed = -1f;
-                rotation = 45f;
-                x = 75;
+         //   }},
+         ///   new DrawRegion("-radio"){{
+         //       rotateSpeed = -1f;
+        //        rotation = 45f;
+        //        x = 75;
                 y = 75;
-            }}, 
-            new DrawRegion("-windspeed"){{
-                rotateSpeed = -5f;
-                rotation = 45f;
-                x = -75;
-                y = -75;
+          //  }}, 
+          //  new DrawRegion("-windspeed"){{
+         //       rotateSpeed = -5f;
+          //      rotation = 45f;
+        //        x = -75;
+        //        y = -75;
             }}
             );
-            
+       */     
             unitType = EarthUnitTypes.zeta;
             health = 10000;
             itemCapacity = 32000;
