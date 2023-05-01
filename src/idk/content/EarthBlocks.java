@@ -184,6 +184,19 @@ public class EarthBlocks{
             localizedName = "Fortress";
             requirements(Category.effect, BuildVisibility.editorOnly, with(EarthItems.copper2, 1000, EarthItems.lead2, 800));
             alwaysUnlocked = true;
+            
+            drawer = new DrawMulti(
+            new DrawDefault(),
+            new DrawRegion("-radar"){{
+                rotateSpeed = 2f;
+            }},
+            new DrawRegion("-radio"){{
+                rotateSpeed = -2f;
+                rotation = 45f;
+                x = 25
+                y = 25
+            }}
+            );
 
             isFirstTier = true;
             unitType = EarthUnitTypes.delta;
@@ -197,6 +210,19 @@ public class EarthBlocks{
         stronghold = new CoreBlock("core-stronghold"){{
             localizedName = "Stronghold";
             requirements(Category.effect, with(EarthItems.copper2, 3000, EarthItems.lead2, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
+            
+            drawer = new DrawMulti(
+            new DrawDefault(),
+            new DrawRegion("-radar"){{
+                rotateSpeed = 1f;
+            }},
+            new DrawRegion("-radio"){{
+                rotateSpeed = -1f;
+                rotation = 45f;
+                x = 50
+                y = 50
+            }}
+            );
 
             unitType = EarthUnitTypes.theta;
             health = 8500;
@@ -212,6 +238,27 @@ public class EarthBlocks{
             localizedName = "Bunker";
             requirements(Category.effect, with(EarthItems.copper2, 8000, EarthItems.lead2, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
+            drawer = new DrawMulti(
+            new DrawDefault(),
+            new DrawRegion("-radar"){{
+                rotateSpeed = 1f;
+                x = -75
+                
+            }},
+            new DrawRegion("-radio"){{
+                rotateSpeed = -1f;
+                rotation = 45f;
+                x = 75
+                y = 75
+            }}, 
+            new DrawRegion("-windspeed"){{
+                rotateSpeed = -5f;
+                rotation = 45f;
+                x = -75
+                y = -75
+            }}
+            );
+            
             unitType = EarthUnitTypes.zeta;
             health = 10000;
             itemCapacity = 32000;
@@ -830,6 +877,33 @@ public class EarthBlocks{
 
             limitRange();
             coolant = consumeCoolant(0.2f);
+        }};
+        //no equivelent, new turret
+         trio = new ItemTurret("rust"){{
+            localizedName = "Rust";
+            requirements(Category.turret, with(EarthItems.copper2, 230, EarthItems.iron, 135, EarthItems.steel, 200, EarthItems.lead2, 300, Items.silicon, 250));
+                        ammo(
+                EarthItems.iron, new MissileBulletType(7f, 9){{
+                    trailChance = 1f;
+		            homingPower = 0.1f;
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                    ammoMultiplier = 4;
+                    lifetime = 60f;
+                    impact = true;
+                }}
+            );
+           shoot = new ShootPattern(){{
+                shots = 30;
+                shotDelay = 1f;
+            }};
+            health = 300;
+            size = 2;
+            reload = 300f;
+            inaccuracy = 4f;
+            shootCone = 30f;
+            range = 150;
         }};
         //ripple equivelent
          ridge = new ItemTurret("ridge"){{
@@ -1482,7 +1556,7 @@ public class EarthBlocks{
             requirements(Category.crafting, with(EarthItems.iron, 65, EarthItems.copper2, 40, EarthItems.lead2, 60));
             outputItem = new ItemStack(EarthItems.steel, 3);
             craftTime = 60f;
-            size = 2;
+            size = 3;
             hasPower = true;
             hasItems = true;
             hasLiquids = true;
@@ -1515,7 +1589,7 @@ public class EarthBlocks{
             size = 3;
             hasLiquids = true;
 
-            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(EarthLiquids.carbondioxide, 4.1f), new DrawDefault(), new DrawHeatInput(),
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawLiquidTile(EarthLiquids.carbondioxide, 4.1f), new DrawDefault(),
             new DrawParticles(){{
                 color = Color.valueOf("d4f0ff");
                 alpha = 0.6f;
@@ -1554,13 +1628,6 @@ public class EarthBlocks{
             drawer = new DrawMulti(
                 new DrawRegion("-bottom"),
                 new DrawLiquidTile(EarthLiquids.carbondioxide, 2f),
-                new DrawBubbles(Color.valueOf("7693e3")){{
-                    sides = 10;
-                    recurrence = 3f;
-                    spread = 6;
-                    radius = 1.5f;
-                    amount = 20;
-                }},
                 new DrawRegion(),
                 new DrawLiquidOutputs(),
                 new DrawGlowRegion(){{
