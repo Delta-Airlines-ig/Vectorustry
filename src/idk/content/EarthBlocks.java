@@ -269,6 +269,7 @@ public class EarthBlocks{
             researchCostMultiplier = 0.11f;
         }};
 	    //drawers are annoying
+	    /*
 	        broadcaster = new GenericCrafter("broadcaster"){{
                     localizedName = "Radio Broadcaster";
             requirements(Category.crafting, with(EarthItems.iron, 260, Items.graphite, 100, EarthItems.aluminum, 50, Items.silicon, 50));
@@ -288,7 +289,7 @@ public class EarthBlocks{
             consumePower(1f);
             ambientSound = Sounds.extractLoop;
             ambientSoundVolume = 0.06f;
-
+*/
       //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
         }};
         //transport
