@@ -15,29 +15,6 @@ public class EarthWeather{
 			dustStorm, smoke, lightning;
 	public static void load(){
     
-    quantumStorm = new MatterStorm("quantum-storm"){{
-			status = NHStatusEffects.ultFireBurn;
-			statusDuration = 15f;
-			rotateBullets = true;
-			
-			buildingEmp = 3;
-			
-			textureColor = primaryColor = NHColor.darkEnrColor;
-			secondaryColor = NHColor.lightSkyBack;
-		}};
-		
-		solarStorm = new MatterStorm("solar-storm"){{
-			status = NHStatusEffects.emp2;
-			statusDuration = 60f;
-			
-			force = 4;
-			noise = Sounds.fire;
-			
-			primaryColor = Pal.accent;
-			textureColor = secondaryColor = Pal.ammo;
-			
-			attrs.set(Attribute.heat, 2f);
-		}};
 		
 		dustStorm = new ParticleWeather("dustStorm"){{
 			duration = 0.5f * Time.toMinutes;
@@ -45,8 +22,9 @@ public class EarthWeather{
 			noiseLayerAlphaM = 0.7f;
 			noiseLayerSpeedM = 2f;
 			noiseLayerSclM = 0.6f;
+			density = 100;
 			baseSpeed = 0.5f;
-      force = 2;
+      			force = 2;
 			noiseColor = Color.valueOf("a87932");
 			color = Color.valueOf("a87932");
 			noiseScale = 1100f;
@@ -58,7 +36,7 @@ public class EarthWeather{
 			yspeed = 1f;
 			
 			statusAir = statusGround = true;
-		//	status = EarthStatus.dusty;
+			status = EarthStatus.dusty;
 			statusDuration = 60f;
 			attrs.set(Attribute.light, -0.8f);
 			opacityMultiplier = 0.7f;
