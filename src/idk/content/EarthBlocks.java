@@ -72,7 +72,7 @@ public class EarthBlocks{
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
-    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, rust, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
+    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, rust, ordnance, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer, broadcaster, //broadcaster will be required for completion of required sectors 
     //power
@@ -931,6 +931,65 @@ public class EarthBlocks{
             inaccuracy = 16f;
             shootCone = 30f;
             range = 150;
+        }};
+	    //no equivelent, new turret, similer to pelt/hail
+        ordnance = new ItemTurret("ordnance"){{
+            localizedName = "Ordnance";
+            requirements(Category.turret, with(EarthItems.copper2, 260, Items.graphite, 125, EarthItems.iron, 150, EarthItems.steel, 50));
+		size = 2;
+            ammo(
+                Items.graphite, new ArtilleryBulletType(3f, 10){{
+                    knockback = 1f;
+                    lifetime = 280f;
+                    width = height = 11f;
+                    collidesTiles = false;
+                    splashDamageRadius = 30f * 1f;
+                    splashDamage = 60f;
+                }},
+                Items.silicon, new ArtilleryBulletType(3f, 10){{
+                    knockback = 0.8f;
+                    lifetime = 280f;
+                    width = height = 11f;
+                    collidesTiles = false;
+                    splashDamageRadius = 30f * 1f;
+                    splashDamage = 80f;
+                    reloadMultiplier = 1.3f;
+                    ammoMultiplier = 3f;
+                    homingPower = 0.05f;
+                    homingRange = 50f;
+                }},
+                EarthItems.explosivemix, new ArtilleryBulletType(3f, 20){{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 0.8f;
+                    lifetime = 280f;
+                    width = height = 13f;
+                    collidesTiles = false;
+                    splashDamageRadius = 35f * 3f;
+                    splashDamage = 200f;
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f * 12f;
+                    frontColor = Pal.lightishOrange;
+                    backColor = Pal.lightOrange;
+                    makeFire = true;
+                    trailEffect = Fx.incendTrail;
+                    ammoMultiplier = 4f;
+                }}
+            );
+            targetAir = false;
+            reload = 60f;
+            recoil = 2f;
+            shoot.shots = 4;
+	    velocityRnd = 0.2f;
+	    ammoEjectBack = 5f;
+            ammoUseEffect = Fx.casing3Double;
+            ammoPerShot = 2;
+            range = 535f;
+            inaccuracy = 25f;
+            shootCone = 25f;
+            health = 460;
+            shootSound = Sounds.bang;
+            coolant = consumeCoolant(0.1f);
+            limitRange(0f);
         }};
         //ripple equivelent
          ridge = new ItemTurret("ridge"){{
