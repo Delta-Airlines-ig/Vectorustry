@@ -72,7 +72,7 @@ public class EarthBlocks{
     //drills
     drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
     //turrets
-    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, rust, ordnance, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
+    solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, rust, ordnance, intercept, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
     //cores
     damagedshard, fortress, stronghold, bunker, unitcomputer, broadcaster, //broadcaster will be required for completion of required sectors 
     //power
@@ -925,10 +925,11 @@ public class EarthBlocks{
                 shots = 30;
                 shotDelay = 0.5f;
             }};
+	    velocityRnd = 0.4f;
             health = 300;
             size = 2;
             reload = 300f;
-            inaccuracy = 16f;
+            inaccuracy = 30f;
             shootCone = 30f;
             range = 150;
         }};
@@ -938,7 +939,7 @@ public class EarthBlocks{
             requirements(Category.turret, with(EarthItems.copper2, 260, Items.graphite, 125, EarthItems.iron, 150, EarthItems.steel, 50));
 		size = 2;
             ammo(
-                Items.graphite, new ArtilleryBulletType(3f, 10){{
+                Items.graphite, new ArtilleryBulletType(9f, 10){{
                     knockback = 1f;
                     lifetime = 280f;
                     width = height = 11f;
@@ -946,7 +947,7 @@ public class EarthBlocks{
                     splashDamageRadius = 30f * 1f;
                     splashDamage = 60f;
                 }},
-                Items.silicon, new ArtilleryBulletType(3f, 10){{
+                Items.silicon, new ArtilleryBulletType(9f, 10){{
                     knockback = 0.8f;
                     lifetime = 280f;
                     width = height = 11f;
@@ -958,7 +959,7 @@ public class EarthBlocks{
                     homingPower = 0.05f;
                     homingRange = 50f;
                 }},
-                EarthItems.explosivemix, new ArtilleryBulletType(3f, 20){{
+                EarthItems.explosivemix, new ArtilleryBulletType(9f, 20){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.8f;
                     lifetime = 280f;
@@ -980,7 +981,7 @@ public class EarthBlocks{
             recoil = 2f;
             shoot.shots = 4;
 	    velocityRnd = 0.2f;
-	    ammoEjectBack = 5f;
+	    ammoEjectBack = 6f;
             ammoUseEffect = Fx.casing3Double;
             ammoPerShot = 2;
             range = 535f;
@@ -990,6 +991,20 @@ public class EarthBlocks{
             shootSound = Sounds.bang;
             coolant = consumeCoolant(0.1f);
             limitRange(0f);
+        }};
+	    //segment equivelent kinda?
+	            intercept = new PointDefenseTurret("intercept"){{
+            requirements(Category.turret, with(Items.copper, 130, EarthItems.steel, 180, EarthItems.iron, 40, Items.lead, 40));
+			    localizedName = "Intercept";
+            scaledHealth = 350;
+            range = 440f;
+            hasPower = true;
+            consumePower(16f);
+            size = 2;
+            shootLength = 10f;
+            bulletDamage = 60f;
+            reload = 30f;
+            envEnabled |= Env.space;
         }};
         //ripple equivelent
          ridge = new ItemTurret("ridge"){{
