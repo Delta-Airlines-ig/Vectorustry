@@ -317,7 +317,7 @@ public class EarthBlocks{
 		    		sizeFrom = 0f;
                                 sizeTo = 25f;
                             }};
-	    updateEffectChance = 120f;
+	    updateEffectChance = 0.05f;
 	    craftTime = 300f;
             researchCostMultiplier = 1.1f;
             ambientSound = Sounds.extractLoop;
