@@ -287,7 +287,7 @@ public class EarthBlocks{
                                 lifetime = 60f;
                                 strokeFrom = 16f;
                                 sizeTo = 1630f;
-		    		interp = Interp.ExpIn;
+		    		//interp = Interp.ExpIn;
                             }};
 
 	    craftEffect = new SeqEffect (new WaveEffect(){{
@@ -295,7 +295,7 @@ public class EarthBlocks{
                                 strokeFrom = 16f;
 		    		colorFrom = Color.valueOf("ffffff").a(0f);
 		    		colorTo = Color.valueOf("7aeb34").a(1f);
-		    		interp = Interp.ExpIn;
+		    		//interp = Interp.ExpIn;
 		    		sizeFrom = 200f;
                                 sizeTo = 0f;
                             }}, new WaveEffect(){{
@@ -303,7 +303,7 @@ public class EarthBlocks{
                                 strokeFrom = 16f;
 		    		colorTo = Color.valueOf("ffffff").a(0f);
 		    		colorFrom = Color.valueOf("7aeb34").a(1f);
-		    		interp = Interp.ExpOut;
+		    		//interp = Interp.ExpOut;
 		    		sizeFrom = 0f;
                                 sizeTo = 200f;
                             }});
