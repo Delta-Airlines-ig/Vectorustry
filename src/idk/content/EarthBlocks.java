@@ -70,7 +70,7 @@ public class EarthBlocks{
     //water drills
     well, 
     //drills
-    drillMechanical, drillPneumatic, drillBeam, drillExplosive, 
+    drillMechanical, drillPneumatic, drillBore, drillExcavator, 
     //turrets
     solo, trio, converge, char1, pelt, splice, spear, volley, ridge, break1, rust, ordnance, intercept, hurricane, anticipate, apparition, cataclysm, limit, aperture, 
     //cores
@@ -1682,6 +1682,38 @@ public class EarthBlocks{
 
             consumePower(1.5f);
             consumeItems(with(EarthItems.copper2, 3, EarthItems.tin, 1));
+
+        }};
+	                    boiler = new GenericCrafter("boiler"){{
+            localizedName = "Boiler";
+            requirements(Category.crafting, with(EarthItems.iron, 95, EarthItems.copper2, 60, EarthItems.lead2, 80, EarthItems.steel, 25, EarthItems.bronze, 50));
+            outputLiquid = new LiquidStack(EarthLiquids.steam, 10f / 60f);
+            craftTime = 1f;
+            size = 2;
+            hasPower = true;
+            hasItems = false;
+            hasLiquids = true;
+            rotate = false;
+            solid = true;
+
+            consumePower(1f);
+            consumeLiquid(Liquids.water, 10f / 60f);
+
+        }};
+	    	                    pressurizer = new GenericCrafter("pressurizer"){{
+            localizedName = "Pressurizer";
+            requirements(Category.crafting, with(EarthItems.iron, 195, EarthItems.copper2, 260, EarthItems.lead2, 180, EarthItems.steel, 325, EarthItems.bronze, 250));
+            outputLiquid = new LiquidStack(EarthLiquids.highpressuresteam, 1f / 60f);
+            craftTime = 1f;
+            size = 2;
+            hasPower = true;
+            hasItems = false;
+            hasLiquids = true;
+            rotate = false;
+            solid = true;
+
+            consumePower(1f);
+            consumeLiquid(EarthLiquids.steam, 5f / 60f);
 
         }};
                 carbonsequestrator = new GenericCrafter("carbon-sequestrator"){{
