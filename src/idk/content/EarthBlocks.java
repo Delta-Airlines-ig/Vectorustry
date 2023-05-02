@@ -296,7 +296,7 @@ public class EarthBlocks{
 		    		colorFrom = Color.valueOf("ffffff").a(0f);
 		    		colorTo = Color.valueOf("7aeb34").a(1f);
 		    		//interp = Interp.ExpIn;
-		    		sizeFrom = 200f;
+		    		sizeFrom = 100f;
                                 sizeTo = 0f;
                             }}, new WaveEffect(){{
                                 lifetime = 60f;
@@ -305,12 +305,20 @@ public class EarthBlocks{
 		    		colorFrom = Color.valueOf("7aeb34").a(1f);
 		    		//interp = Interp.ExpOut;
 		    		sizeFrom = 0f;
-                                sizeTo = 200f;
+                                sizeTo = 100f;
                             }});
 			
-	    updateEffect = Fx.generatespark;
-	    updateEffectChance = 30f;
-	    craftTime = 250f;
+	    updateEffect = new WaveEffect(){{
+                                lifetime = 10f;
+                                strokeFrom = 8f;
+		    		colorTo = Color.valueOf("ffffff").a(0f);
+		    		colorFrom = Color.valueOf("7aeb34").a(1f);
+		    		//interp = Interp.ExpOut;
+		    		sizeFrom = 0f;
+                                sizeTo = 25f;
+                            }};
+	    updateEffectChance = 120f;
+	    craftTime = 300f;
             researchCostMultiplier = 1.1f;
             ambientSound = Sounds.extractLoop;
             ambientSoundVolume = 0.06f;
