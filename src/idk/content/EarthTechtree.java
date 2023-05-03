@@ -60,6 +60,26 @@ public class EarthTechtree{
                     });
                 });
             });//power and stuff
+                        node(EarthBlocks.solo, () -> {
+            node(EarthBlocks.trio, () -> {
+            node(EarthBlocks.volley);
+            });
+            node(EarthBlocks.char1, () -> {
+                        node(EarthBlocks.pelt, () -> {
+            node(EarthBlocks.rust);
+            node(EarthBlocks.ordnance);
+            });
+            });
+                  node(EarthBlocks.splice, () -> {
+                  node(EarthBlocks.spear);
+                  });          
+                node(EarthBlocks.converge, () -> {
+                    node(EarthBlocks.powerpylon);
+                    node(EarthBlocks.smallbattery, () -> {
+                    node(EarthBlocks.largebattery);
+                    });
+                });
+            });//turrets
         });//end of whole tree
  }
   }
