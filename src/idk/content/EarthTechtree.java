@@ -4,7 +4,7 @@ import arc.struct.*;
 import mindustry.game.Objectives.*;
 
 import idk.content.*;
-import static mindustry.content.*;
+//import static mindustry.content.*;
 //import static mindustry.content.SectorPresets.*;
 import static mindustry.content.TechTree.*;
 import static idk.content.EarthUnitTypes.*;
@@ -22,7 +22,7 @@ public class EarthTechtree{
                                });
                             });
                        });//end of drills
-            node(EarthBlocks.ironconveyor, () -> {
+         /*   node(EarthBlocks.ironconveyor, () -> {
             node(EarthBlocks.steelconveyor);
                 node(EarthBlocks.allotor, () -> {
                     node(EarthBlocks.allocator);
