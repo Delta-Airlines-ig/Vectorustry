@@ -22,7 +22,7 @@ public class EarthTechtree{
                                });
                             });
                        });//end of drills
-           /* node(EarthBlocks.ironconveyor, () -> {
+            node(EarthBlocks.ironconveyor, () -> {
             node(EarthBlocks.steelconveyor);
                 node(EarthBlocks.allotor, () -> {
                     node(EarthBlocks.allocator);
@@ -36,7 +36,7 @@ public class EarthTechtree{
                     node(EarthBlocks.largesilo);
                     });
                 });
-            });//conveyors and stuff
+            });/*//conveyors and stuff
             node(EarthBlocks.copperpipe, () -> {
             node(EarthBlocks.bronzepipe);
                 node(EarthBlocks.smalltank, () -> {
