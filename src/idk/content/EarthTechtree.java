@@ -18,9 +18,9 @@ public class EarthTechtree{
               node(EarthBlocks.drillPneumatic, () -> {
                     node(EarthBlocks.drillBore, () -> {
                         node(EarthBlocks.drillExcavator);
-            `                   });
-            `                });
-            `           });//end of drills
+                               });
+                            });
+                       });//end of drills
             node(EarthBlocks.ironconveyor, () -> {
             node(EarthBlocks.steelconveyor);
                 node(EarthBlocks.allotor, () -> {
