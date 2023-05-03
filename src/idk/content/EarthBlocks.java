@@ -2072,7 +2072,7 @@ public class EarthBlocks{
             tier = 4;
             requirements(Category.production, with(EarthItems.copper2, 55, EarthItems.iron, 75, EarthItems.steel, 30, EarthItems.bronze, 25, EarthItems.aluminum, 25));
             consumeLiquid(Liquids.water, 0.08f).boost();
-	````liquidBoostIntensity = 1.1f;
+	    liquidBoostIntensity = 1.1f;
             consumeLiquid(EarthLiquids.highpressuresteam, 0.08f);
         }};
 	    	            drillExcavator = new Drill("drill-Excavator"){{
