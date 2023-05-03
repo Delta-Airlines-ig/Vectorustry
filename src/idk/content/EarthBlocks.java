@@ -2048,8 +2048,8 @@ public class EarthBlocks{
             localizedName = "Mechanical drill";
             itemCapacity = 35;
             hasPower = false;
-                        drillTime = 500;
-          tier = 1;
+                        drillTime = 600;
+          tier = 2;
             requirements(Category.production, with(EarthItems.copper2, 10, EarthItems.iron, 20));
             consumeLiquid(Liquids.water, 0.08f).boost();
         }};
@@ -2059,11 +2059,34 @@ public class EarthBlocks{
             size = 2;
             itemCapacity = 50;
             drillTime = 300;
-            tier = 2;
+            tier = 3;
             requirements(Category.production, with(EarthItems.copper2, 15, EarthItems.iron, 30, EarthItems.steel, 10));
             consumeLiquid(Liquids.water, 0.08f).boost();
             consumeLiquid(EarthLiquids.steam, 0.08f);
         }};
+	            drillBore = new Drill("drill-Bore"){{
+            localizedName = "Steam bore drill";
+            size = 3;
+            itemCapacity = 75;
+            drillTime = 200;
+            tier = 4;
+            requirements(Category.production, with(EarthItems.copper2, 55, EarthItems.iron, 75, EarthItems.steel, 30, EarthItems.bronze, 25, EarthItems.aluminum, 25));
+            consumeLiquid(Liquids.water, 0.08f).boost();
+	````liquidBoostIntensity = 1.1f;
+            consumeLiquid(EarthLiquids.highpressuresteam, 0.08f);
+        }};
+	    	            drillExcavator = new Drill("drill-Excavator"){{
+            localizedName = "Steam Excavator";
+            size = 4;
+            itemCapacity = 150;
+            drillTime = 100;
+            tier = 5;
+            requirements(Category.production, with(EarthItems.copper2, 255, EarthItems.iron, 175, EarthItems.steel, 230, EarthItems.bronze, 325, EarthItems.aluminum, 225));
+            consumeLiquid(Liquids.water, 0.08f).boost();
+	    liquidBoostIntensity = 1.3f;
+            consumeLiquid(EarthLiquids.highpressuresteam, 0.08f);
+        }};
+	    
      //      drillModernised = new Drill("drill-modernised"){{
      //       size = 3;
     //        itemCapacity = 50;
