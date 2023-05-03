@@ -1461,11 +1461,11 @@ public class EarthBlocks{
                         shake = 10f;
                         bullet = new ExplosionBulletType(150f, 300f){{
                             hitColor = Pal.redLight;
-                            shootEffect = new MultiEffect( new ExplosionEffect(){{
+                            shootEffect = new MultiEffect(/* new ExplosionEffect(){{
                                 lifetime = 50f;
                                 sparks = 50;
 				smokes = 25;
-                            }}, Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
+                            }}, */Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
                                 lifetime = 50f;
                                 strokeFrom = 16f;
                                 sizeTo = 300f;
