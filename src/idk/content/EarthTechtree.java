@@ -13,8 +13,53 @@ public class EarthTechtree{
 
     public static void load(){
         EarthPlanets.earth.techTree = nodeRoot("earth", EarthBlocks.fortress, () -> {
-            node(EarthBlocks.drillMechanical);
-            
-        });
+            node(EarthBlocks.drillMechanical, () -> {
+                node(EarthBlocks.well);
+              node(EarthBlocks.drillPneumatic, () -> {
+                    node(EarthBlocks.drillBore, () -> {
+                        node(EarthBlocks.drillExcavator);
+            `                   });
+            `                });
+            `           });//end of drills
+            node(EarthBlocks.ironconveyor, () -> {
+            node(EarthBlocks.steelconveyor);
+                node(EarthBlocks.allotor, () -> {
+                    node(EarthBlocks.allocator);
+                });
+                node(EarthBlocks.interchange, () -> {
+                    node(EarthBlocks.span);
+                    node(EarthBlocks.surplussorter, () -> {
+                    node(EarthBlocks.shortagesorter);
+                    });
+                });
+            });//conveyors and stuff
+            node(EarthBlocks.copperpipe, () -> {
+            node(EarthBlocks.bronzepipe);
+                node(EarthBlocks.smalltank, () -> {
+                    node(EarthBlocks.largetank);
+                });
+                node(EarthBlocks.pipeallocator);
+                node(EarthBlocks.pipeinterchange, () -> {
+                    node(EarthBlocks.pipespan);
+                });
+            });//pipes and stuff
+                        node(EarthBlocks.solarpanel, () -> {
+            node(EarthBlocks.solarcollector);
+                node(EarthBlocks.steamgenerator, () -> {
+                    node(EarthBlocks.turbinegenerator);
+                    node(EarthBlocks.nuclearreactor, () -> {
+                                            node(EarthBlocks.fusionreactor, () -> {
+                                                node(EarthBlocks.voltitereactor);
+                });
+                });
+                });
+                node(EarthBlocks.powerline, () -> {
+                    node(EarthBlocks.powerpylon);
+                    node(EarthBlocks.smallbattery, () -> {
+                    node(EarthBlocks.largebattery);
+                    });
+                });
+            });//power and stuff
+        });//end of whole tree
  }
   }
