@@ -67,19 +67,60 @@ public class EarthTechtree{
             node(EarthBlocks.char1, () -> {
                         node(EarthBlocks.pelt, () -> {
             node(EarthBlocks.rust);
-            node(EarthBlocks.ordnance);
+                            node(EarthBlocks.ordnance, () -> {
+            node(EarthBlocks.ridge);
+            });
             });
             });
                   node(EarthBlocks.splice, () -> {
-                  node(EarthBlocks.spear);
+                                    node(EarthBlocks.spear, () -> {
+                  node(EarthBlocks.break1);
+                  node(EarthBlocks.intercept);
+                                        node(EarthBlocks.anticipate, () -> {
+                                                    node(EarthBlocks.cataclysm, () -> {
+            node(EarthBlocks.aperture);
+            });
+            });
+                  });   
                   });          
                 node(EarthBlocks.converge, () -> {
-                    node(EarthBlocks.powerpylon);
-                    node(EarthBlocks.smallbattery, () -> {
-                    node(EarthBlocks.largebattery);
+                    node(EarthBlocks.apparition);
+                    node(EarthBlocks.hurricane, () -> {
+                    node(EarthBlocks.limit);
                     });
                 });
             });//turrets
+                                    node(EarthBlocks.carbonsequestrator, () -> {
+            node(EarthBlocks.carboncatalyst, () -> {
+            node(EarthBlocks.steelSmelter, () -> {
+            
+            node(EarthBlocks.siliconblastfurnace, () -> {
+                        node(EarthBlocks.surgeblastfurnace, () -> {
+                            node(EarthBlocks.phasefabricator, () -> {
+            node(EarthBlocks.voltitesynthesizer);
+            });
+            });
+            });
+                  node(EarthBlocks.oxidationmixer, () -> {
+                      node(EarthBlocks.explosivespacker, () -> {
+                      node(EarthBlocks.flamemixer);
+                      });
+                  });
+                                    
+                node(EarthBlocks.bronzefurnace, () -> {
+                    node(EarthBlocks.boiler, () -> {
+                    node(EarthBlocks.pressurizer);
+                    });
+                });
+            });
+            });
+            
+            });//crafters
+                            node(EarthBlocks.broadcaster, () -> {
+                    node(EarthBlocks.stronghold, () -> {
+                    node(EarthBlocks.bunker);
+                    });
+                });//cores
         });//end of whole tree
  }
   }
