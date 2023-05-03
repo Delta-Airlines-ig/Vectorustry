@@ -1,41 +1,36 @@
 package idk.content;
 
-import arc.*;
-import arc.assets.*;
-import arc.assets.loaders.*;
-import arc.audio.*;
-import mindustry.*;
+import arc.Core;
+import arc.assets.AssetDescriptor;
+import arc.assets.loaders.SoundLoader;
+import arc.audio.Sound;
+import mindustry.Vars;
 
 public class EarthSounds {
-    public static Sound RadioAmbent, RadioPlace, NukeLaunch, NukeHit;
-    public static final String[] soundFiles = {"RadioAmbent", "RadioPlace", "NukeLaunch", "NukeHit"};
-    private static int num = 0;
+  	public static Sound	
+  	   NukeHit = new Sound(),
+  	   NukeLaunch = new Sound(),
+       RadioAmbent = new Sound(),
+       Radioplace = new Sound()
+  	;
+  	
+  	protected static Sound loadSound(String fileName) {
+	     String name = "sounds/" + fileName;
+		   String path = Vars.tree.get(name + ".ogg").exists() ? name + ".ogg" : name + ".mp3";
 
-    public static void load() {
-        num = 0;
-        RadioAmbent = l();
-        RadioPlace = l();
-        NukeLaunch = l();
-        NukeHit = l();
-    }
-    protected static Sound l() {
-        return loadSound(soundFiles[num++]);
-    }
+		   Sound sound = new Sound();
 
-//totally not stolen from betamindy
-    protected static Sound loadSound(String soundName) {
-        if(!Vars.headless) {
-            String name = "sounds/" + soundName;
-            String path = name + ".ogg";
+	     AssetDescriptor<?> desc = Core.assets.load(path, Sound.class, new SoundLoader.SoundParameter(sound));
+		   desc.errored = Throwable::printStackTrace;
 
-            Sound sound = new Sound();
-
-            AssetDescriptor<?> desc = Core.assets.load(path, Sound.class, new SoundLoader.SoundParameter(sound));
-            desc.errored = Throwable::printStackTrace;
-
-            return sound;
-        } else {
-            return new Sound();
-        }
-    }
+	     return sound;
+  	}
+  	
+  	public static void load() {
+	     if (Vars.headless) return;
+		   NukeHit = loadSound("NukeHit");
+		   NukeLaunch = loadSound("NukeLaunch");
+            RadioAmbent = loadSound("RadioAmbent");
+            Radioplace = loadSound("Radioplace");
+  	}
 }
