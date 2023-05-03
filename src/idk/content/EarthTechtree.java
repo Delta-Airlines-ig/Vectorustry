@@ -7,7 +7,7 @@ import idk.content.*;
 //import static mindustry.content.*;
 //import static mindustry.content.SectorPresets.*;
 import static mindustry.content.TechTree.*;
-//import static mindustry.content.UnitTypes.*;
+import static idk.content.EarthUnitTypes.*;
 
 public class EarthTechtree{
 
@@ -30,6 +30,9 @@ public class EarthTechtree{
                     node(EarthBlocks.span);
                     node(EarthBlocks.surplussorter, () -> {
                     node(EarthBlocks.shortagesorter);
+                    });
+                    node(EarthBlocks.smallsilo, () -> {
+                    node(EarthBlocks.largesilo);
                     });
                 });
             });//conveyors and stuff
@@ -121,6 +124,38 @@ public class EarthTechtree{
                     node(EarthBlocks.bunker);
                     });
                 });//cores
+            node(EarthBlocks.groundassembler, () -> {
+                    node(EarthUnitTypes.LCLW, () -> {
+                    node(EarthUnitTypes.LCLWA);
+                    });
+                    node(EarthUnitTypes.MCLW, () -> {
+                    node(EarthUnitTypes.MCLWA);
+                    });
+                    node(EarthUnitTypes.HCLW, () -> {
+                    node(EarthUnitTypes.HCLWA);
+                    });
+                    node(EarthUnitTypes.LCMW, () -> {
+                    node(EarthUnitTypes.LCMWA);
+                    });
+                    node(EarthUnitTypes.MCMW, () -> {
+                    node(EarthUnitTypes.MCMWA);
+                    });
+                    node(EarthUnitTypes.HCMW, () -> {
+                    node(EarthUnitTypes.HCMWA);
+                    });
+                    node(EarthUnitTypes.LCHW, () -> {
+                    node(EarthUnitTypes.LCHWA);
+                    });
+                    node(EarthUnitTypes.MCHW, () -> {
+                    node(EarthUnitTypes.MCHWA);
+                    });
+                    node(EarthUnitTypes.HCHW, () -> {
+                    node(EarthUnitTypes.HCHWA);
+                    });
+                    node(EarthBlocks.droneport, () -> {
+                    node(EarthUnitTypes.smallbuilderdrone);
+                    });
+                });//units
         });//end of whole tree
  }
   }
