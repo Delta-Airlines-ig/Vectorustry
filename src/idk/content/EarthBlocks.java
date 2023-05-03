@@ -1463,8 +1463,8 @@ public class EarthBlocks{
                             hitColor = Pal.redLight;
                             shootEffect = new MultiEffect( new ExplosionEffect(){{
                                 lifetime = 50f;
-                                sparks = 50
-				smokes = 25
+                                sparks = 50;
+				smokes = 25;
                             }}, Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
                                 lifetime = 50f;
                                 strokeFrom = 16f;
