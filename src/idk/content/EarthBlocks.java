@@ -322,7 +322,7 @@ public class EarthBlocks{
 	    updateEffectChance = 0.00f;
 	    craftTime = 300f;
             researchCostMultiplier = 1.1f;
-            ambientSound = Sounds.RadioAmbent;
+            ambientSound = sound.RadioAmbent;
             ambientSoundVolume = 0.5f;
 
       //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
