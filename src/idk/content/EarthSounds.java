@@ -13,12 +13,10 @@ public class EarthSounds {
 
     public static void load() {
         num = 0;
-        pistonPush = l();
-        pistonPull = l();
-        presentBells = l();
-        boost = l();
-        tntfuse = l();
-        boing = l();
+        RadioAmbent = l();
+        RadioPlace = l();
+        NukeLaunch = l();
+        NukeHit = l();
     }
     protected static Sound l() {
         return loadSound(soundFiles[num++]);
