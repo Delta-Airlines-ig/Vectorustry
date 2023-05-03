@@ -82,7 +82,9 @@ public class EarthBlocks{
     //drone port wip
     droneport, 
     //crafting
-    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator, furnace, oxidationmixer, explosivespacker, boiler, pressurizer, flamemixer, bronzefurnace; 
+    steelSmelter, voltitesynthesizer, carboncatalyst, carbonsequestrator, siliconblastfurnace, surgeblastfurnace, phasefabricator, furnace, oxidationmixer, explosivespacker, boiler, pressurizer, flamemixer, bronzefurnace
+    //world processor pt2
+	   hyperworldprocessor, hyperworldcell; 
 
     public static void load() {
         Redsand = new Floor("redsand"){{
@@ -2198,7 +2200,28 @@ public class EarthBlocks{
 
          //   patterns = new TurretPattern[]{Patterns.starBlazing, Patterns.starBlazing, Patterns.chaosBuster, Patterns.starBlazing};
        // }};
+        hyperworldprocessor = new LogicBlock("hyper-world-processor"){{
+            requirements(Category.logic, BuildVisibility.editorOnly, with());
 
-   
+            canOverdrive = false;
+            targetable = false;
+            instructionsPerTick = 64;
+            forceDark = true;
+            privileged = true;
+            size = 1;
+            maxInstructionsPerTick = 2500;
+            range = Float.MAX_VALUE;
+        }};
+
+        hyperworldcell = new MemoryBlock("hyper-world-cell"){{
+            requirements(Category.logic, BuildVisibility.editorOnly, with());
+            
+            targetable = false;
+            privileged = true;
+            memoryCapacity = 1028;
+            forceDark = true;
+        }};
+
+        
     }
 }
