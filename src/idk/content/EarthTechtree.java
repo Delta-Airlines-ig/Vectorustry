@@ -124,7 +124,7 @@ public class EarthTechtree{
                     node(EarthBlocks.bunker);
                     });
                 });//cores
-            node(EarthBlocks.groundassembler, () -> {
+          /*  node(EarthBlocks.groundassembler, () -> {
                     node(EarthUnitTypes.LCLW, () -> {
                     node(EarthUnitTypes.LCLWA);
                     });
@@ -155,7 +155,7 @@ public class EarthTechtree{
                     node(EarthBlocks.droneport, () -> {
                     node(EarthUnitTypes.smallbuilderdrone);
                     });
-                });//units
-        });//end of whole tree
+                });//units 
+       */ });//end of whole tree
  }
   }
