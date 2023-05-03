@@ -8,6 +8,7 @@ import idk.content.*;
 //import static mindustry.content.SectorPresets.*;
 import static mindustry.content.TechTree.*;
 import static idk.content.EarthUnitTypes.*;
+import static idk.content.EarthBlocks.*;
 
 public class EarthTechtree{
 
@@ -21,7 +22,7 @@ public class EarthTechtree{
                                });
                             });
                        });//end of drills
-            node(EarthBlocks.ironconveyor, () -> {
+           /* node(EarthBlocks.ironconveyor, () -> {
             node(EarthBlocks.steelconveyor);
                 node(EarthBlocks.allotor, () -> {
                     node(EarthBlocks.allocator);
@@ -30,7 +31,7 @@ public class EarthTechtree{
                     node(EarthBlocks.span);
                     node(EarthBlocks.surplussorter, () -> {
                     node(EarthBlocks.shortagesorter);
-                    });
+                        });
                     node(EarthBlocks.smallsilo, () -> {
                     node(EarthBlocks.largesilo);
                     });
