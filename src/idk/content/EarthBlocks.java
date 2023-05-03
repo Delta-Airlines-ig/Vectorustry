@@ -1420,7 +1420,7 @@ public class EarthBlocks{
             consumePower(17f);
         }};
 	    //cruse missile launcher, only targets ground, medium damage but high range
-        divide = new ItemTurret("divide"){{
+       /* divide = new ItemTurret("divide"){{
             localizedName = "Divide";
             requirements(Category.turret, with(Items.silicon, 450, Items.graphite, 400, EarthItems.steel, 500, EarthItems.iron, 300, EarthItems.lithium, 100, EarthItems.aluminum, 200));
 
@@ -1430,7 +1430,7 @@ public class EarthBlocks{
                 smokeEffect = Fx.shootSmokeMissile;
                 ammoMultiplier = 1f;
 
-                spawnUnit = new MissileUnitType("Thermonuclear-missile"){{
+                spawnUnit = new MissileUnitType("cruise-missile"){{
                     speed = 16f;
                     maxRange = 6f;
                     lifetime = 60f * 5.5f;
@@ -1461,11 +1461,11 @@ public class EarthBlocks{
                         shake = 10f;
                         bullet = new ExplosionBulletType(150f, 300f){{
                             hitColor = Pal.redLight;
-                            shootEffect = new MultiEffect(/* new ExplosionEffect(){{
+                            shootEffect = new MultiEffect( new ExplosionEffect(){{
                                 lifetime = 50f;
                                 sparks = 50;
 				smokes = 25;
-                            }}, */Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
+                            }}, Fx.scatheExplosion, Fx.scatheLight, new WaveEffect(){{
                                 lifetime = 50f;
                                 strokeFrom = 16f;
                                 sizeTo = 300f;
@@ -1541,7 +1541,7 @@ public class EarthBlocks{
 
             coolant = consume(new ConsumeLiquid(Liquids.water, 15f / 60f));
             limitRange();
-        }};
+        }};*/
         //sorta like a scathe, but its a surface to air missile
         limit = new ItemTurret("limit"){{
             localizedName = "Limit";
