@@ -375,6 +375,17 @@ public class EarthBlocks{
             buildCostMultiplier = 3f;
             invert = true;
         }};
+	    
+	    sorter = new Sorter("sorter"){{
+            requirements(Category.distribution, with(EarthItems.iron, 2, EarthItems.copper2, 2));
+            buildCostMultiplier = 3f;
+        }};
+
+        reversesorter = new Sorter("reverse-sorter"){{
+            requirements(Category.distribution, with(EarthItems.iron, 2, EarthItems.copper2, 2));
+            buildCostMultiplier = 3f;
+            invert = true;
+        }};
         //transport liquid
                 copperpipe = new Conduit("copper-pipe"){{
             requirements(Category.liquid, with(EarthItems.copper2, 5));
@@ -416,6 +427,18 @@ public class EarthBlocks{
             solid = true;
             liquidCapacity = 1800f;
             health = 500;
+        }};
+	            smallsilo = new StorageBlock("smallsilo"){{
+            requirements(Category.effect, with(EarthItems.steel, 50));
+            size = 2;
+            itemCapacity = 400;
+            scaledHealth = 55;
+        }};
+	            largesilo = new StorageBlock("largesilo"){{
+            requirements(Category.effect, with(EarthItems.steel, 250, EarthItems.aluminum, 125));
+            size = 3;
+            itemCapacity = 1000;
+            scaledHealth = 55;
         }};
         
         well = new SolidPump("well"){{
