@@ -442,7 +442,7 @@ public class EarthBlocks{
         }};
         
         well = new SolidPump("well"){{
-            requirements(Category.production, with(EarthItems.bronze, 30, Items.graphite, 30, EarthItems.copper2, 30, EarthItems.iron, 30));
+            requirements(Category.production, with(/*EarthItems.bronze, 30,*/Items.graphite, 30, EarthItems.copper2, 30, EarthItems.iron, 30));
             result = Liquids.water;
             pumpAmount = 0.16f;
             size = 2;
@@ -1867,7 +1867,7 @@ public class EarthBlocks{
         }};
 	                    boiler = new GenericCrafter("boiler"){{
             localizedName = "Boiler";
-            requirements(Category.crafting, with(EarthItems.iron, 95, EarthItems.copper2, 60, EarthItems.lead2, 80, EarthItems.steel, 25, EarthItems.bronze, 50));
+            requirements(Category.crafting, with(EarthItems.iron, 95, EarthItems.copper2, 60, EarthItems.lead2, 80/*, EarthItems.steel, 25, EarthItems.bronze, 50*/));
             outputLiquid = new LiquidStack(EarthLiquids.steam, 10f / 60f);
             craftTime = 1f;
             size = 2;
