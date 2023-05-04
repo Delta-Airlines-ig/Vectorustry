@@ -12,7 +12,7 @@ import static idk.content.EarthBlocks.*;
 public class EarthTechtree{
 
     public static void load(){
-        EarthPlanets.earth.techTree = nodeRoot("earth", EarthBlocks.fortress, () -> {
+        EarthPlanets.earth.techTree = nodeRoot("earth", fortress, true, () -> {
             node(EarthBlocks.drillMechanical, () -> {
                 node(EarthBlocks.well);
               node(EarthBlocks.drillPneumatic, () -> {
