@@ -21,18 +21,18 @@ public class EarthTechtree{
                                });
                             });
                        });//end of drills
-          /*  node(ironconveyor, () -> {
-            node(steelconveyor);
+            node(ironconveyor, () -> {
+            //node(steelconveyor);
                 node(allotor, () -> {
                     node(allocator);
                 });
                 node(interchange, () -> {
-                    node(span);
+                    //node(span);
                     node(surplussorter, () -> {
                     node(shortagesorter);
                         });
                     node(smallsilo, () -> {
-                    node(largesilo);
+                    //node(largesilo);
                     });
                 });
             });/* //conveyors and stuff
