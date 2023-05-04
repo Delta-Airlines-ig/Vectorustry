@@ -24,12 +24,12 @@ public class EarthTechtree{
             node(ironconveyor, () -> {
             //node(steelconveyor);
                 node(allotor, () -> {
-                    node(allocator);
+                    //node(allocator);
                 });
                 node(interchange, () -> {
                     //node(span);
                     node(surplussorter, () -> {
-                    node(shortagesorter);
+                    //node(shortagesorter);
                         });
                     node(smallsilo, () -> {
                     //node(largesilo);
