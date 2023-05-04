@@ -30,31 +30,16 @@ public class EarthTechtree{
                     node(EarthBlocks.interchange, () -> {
                         node(EarthBlocks.span);
                             });
-                            //node(EarthBlocks.sorter, () -> {
-                               // node(EarthBlocks.reversesorter);
-                             //   node(EarthBlocks.surplussorter);
-                             //   node(EarthBlocks.shortagesorter);
-                           // });
+                            node(EarthBlocks.sorter, () -> {
+                                node(EarthBlocks.reversesorter);
+                                node(EarthBlocks.surplussorter);
+                                node(EarthBlocks.shortagesorter);
+                            });
                                node(EarthBlocks.smallsilo, () -> {
                                 node(EarthBlocks.largesilo);
                             });
                        });//idk im testing stuff
-     /*       node(ironconveyor, () -> {
-            //node(steelconveyor);
-                node(allotor, () -> {
-                    //node(allocator);
-                });
-                node(interchange, () -> {
-                    //node(span);
-                    node(surplussorter, () -> {
-                    //node(shortagesorter);
-                        });
-                    node(smallsilo, () -> {
-                    //node(largesilo);
-                    });
-                });
-            });/* //conveyors and stuff
-            node(EarthBlocks.copperpipe, () -> {
+          /*  node(EarthBlocks.copperpipe, () -> {
             node(EarthBlocks.bronzepipe);
                 node(EarthBlocks.smalltank, () -> {
                     node(EarthBlocks.largetank);
