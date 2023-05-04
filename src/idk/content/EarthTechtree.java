@@ -66,7 +66,7 @@ public class EarthTechtree{
                     });
                 });
             });//power and stuff
-      /*                  node(EarthBlocks.solo, () -> {
+                      node(EarthBlocks.solo, () -> {
             node(EarthBlocks.trio, () -> {
             node(EarthBlocks.volley);
             });
@@ -96,7 +96,7 @@ public class EarthTechtree{
                     });
                 });
             });//turrets
-                                    node(EarthBlocks.carbonsequestrator, () -> {
+       /*                             node(EarthBlocks.carbonsequestrator, () -> {
             node(EarthBlocks.carboncatalyst, () -> {
             node(EarthBlocks.steelSmelter, () -> {
             
