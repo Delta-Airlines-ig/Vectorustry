@@ -834,7 +834,7 @@ public class EarthBlocks{
             localizedName = "Spear";
             requirements(Category.turret, with(EarthItems.copper2, 60, EarthItems.lead2, 70, Items.silicon, 80, EarthItems.steel, 30));
             range = 200f;
-            shoot = new ShootSpread(3, 15f);
+            shoot = new ShootSpread(3, 5f);
             shoot.firstShotDelay = 25f;
 
             recoil = 3f;
@@ -928,7 +928,7 @@ public class EarthBlocks{
             shake = 1f;
             inaccuracy = 5f;
             shoot.shots = 16;
-            shoot.shotDelay = 0.5f;
+            shoot.shotDelay = 0.3f;
 
             ammoUseEffect = Fx.casing2;
             scaledHealth = 240;
@@ -942,9 +942,9 @@ public class EarthBlocks{
             localizedName = "Rust";
             requirements(Category.turret, with(EarthItems.copper2, 230, EarthItems.iron, 135, EarthItems.steel, 200, EarthItems.lead2, 300, Items.silicon, 250));
                         ammo(
-                EarthItems.iron, new MissileBulletType(6f, 9){{
+                EarthItems.iron, new MissileBulletType(8f, 18){{
                     trailChance = 1f;
-		            homingPower = 0.05f;
+		            homingPower = 0.02f;
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -960,7 +960,7 @@ public class EarthBlocks{
 	    velocityRnd = 0.8f;
             health = 300;
             size = 2;
-            reload = 300f;
+            reload = 250f;
             inaccuracy = 30f;
             shootCone = 30f;
             range = 150;
@@ -971,7 +971,7 @@ public class EarthBlocks{
             requirements(Category.turret, with(EarthItems.copper2, 260, Items.graphite, 125, EarthItems.iron, 150, EarthItems.steel, 50));
 		size = 2;
             ammo(
-                Items.graphite, new ArtilleryBulletType(6f, 10){{
+                Items.graphite, new ArtilleryBulletType(3f, 10){{
                     knockback = 1f;
                     lifetime = 280f;
                     width = height = 11f;
@@ -979,7 +979,7 @@ public class EarthBlocks{
                     splashDamageRadius = 30f * 1f;
                     splashDamage = 60f;
                 }},
-                Items.silicon, new ArtilleryBulletType(6f, 10){{
+                Items.silicon, new ArtilleryBulletType(3f, 10){{
                     knockback = 0.8f;
                     lifetime = 280f;
                     width = height = 11f;
@@ -991,7 +991,7 @@ public class EarthBlocks{
                     homingPower = 0.05f;
                     homingRange = 50f;
                 }},
-                EarthItems.explosivemix, new ArtilleryBulletType(6f, 20){{
+                EarthItems.explosivemix, new ArtilleryBulletType(3f, 20){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.8f;
                     lifetime = 280f;
@@ -1009,10 +1009,10 @@ public class EarthBlocks{
                 }}
             );
             targetAir = false;
-            reload = 60f;
+            reload = 120f;
             recoil = 2f;
             shoot.shots = 4;
-	    velocityRnd = 0.2f;
+	    velocityRnd = 0.4f;
 	    ammoEjectBack = 6f;
             ammoUseEffect = Fx.casing3Double;
             ammoPerShot = 2;
@@ -1043,7 +1043,7 @@ public class EarthBlocks{
              localizedName = "Ridge";
             requirements(Category.turret, with(EarthItems.copper2, 150, Items.graphite, 235, EarthItems.steel, 60, EarthItems.aluminum, 50));
             ammo(
-                Items.graphite, new ArtilleryBulletType(3f, 20){{
+                Items.graphite, new ArtilleryBulletType(3f, 30){{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 11f;
@@ -1051,7 +1051,7 @@ public class EarthBlocks{
                     splashDamageRadius = 25f * 0.75f;
                     splashDamage = 33f;
                 }},
-                Items.silicon, new ArtilleryBulletType(3f, 20){{
+                Items.silicon, new ArtilleryBulletType(3f, 30){{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 11f;
@@ -1063,7 +1063,7 @@ public class EarthBlocks{
                     homingPower = 0.08f;
                     homingRange = 50f;
                 }},
-                EarthItems.steel, new ArtilleryBulletType(3f, 25){{
+                EarthItems.steel, new ArtilleryBulletType(3f, 35){{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 15f;
@@ -1071,7 +1071,7 @@ public class EarthBlocks{
                     splashDamageRadius = 25f * 0.6f;
                     splashDamage = 33f;
                 }},
-                EarthItems.explosivemix, new ArtilleryBulletType(2f, 25, "shell"){{
+                EarthItems.explosivemix, new ArtilleryBulletType(3f, 35, "shell"){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.8f;
                     lifetime = 80f;
@@ -1089,13 +1089,13 @@ public class EarthBlocks{
 
             targetAir = false;
             size = 3;
-            shoot.shots = 32;
-            inaccuracy = 25f;
-            reload = 80f;
+            shoot.shots = 64;
+            inaccuracy = 35f;
+            reload = 280f;
             ammoEjectBack = 5f;
             ammoUseEffect = Fx.casing3Double;
             ammoPerShot = 2;
-            velocityRnd = 0.7f;
+            velocityRnd = 0.8f;
             recoil = 6f;
             shake = 2f;
             range = 290f;
@@ -1365,7 +1365,7 @@ public class EarthBlocks{
                     knockback = 0.7f;
                 }}
             );
-            reload = 60f;
+            reload = 40f;
             recoilTime = reload * 2f;
             coolantMultiplier = 0.5f;
             ammoUseEffect = Fx.casing3;
@@ -1373,8 +1373,8 @@ public class EarthBlocks{
             inaccuracy = 3f;
             recoil = 3f;
             shoot = new ShootAlternate(8f);
-            shoot.shots = 30;
-            shoot.shotDelay = 1f;
+            shoot.shots = 2;
+            shoot.shotDelay = 10f;
             shake = 2f;
             size = 4;
             shootCone = 24f;
@@ -1403,7 +1403,7 @@ public class EarthBlocks{
             loopSoundVolume = 2f;
             envEnabled |= Env.space;
 
-            shootType = new ContinuousLaserBulletType(90){{
+            shootType = new ContinuousLaserBulletType(180){{
                 length = 400f;
                 hitEffect = Fx.hitMeltdown;
                 hitColor = Pal.meltdownHit;
@@ -1556,7 +1556,7 @@ public class EarthBlocks{
                 ammoMultiplier = 1f;
 
                 spawnUnit = new MissileUnitType("sam-missile"){{
-                    speed = 20.6f;
+                    speed = 25.6f;
                     maxRange = 12f;
                     lifetime = 60f * 5.5f;
                     outlineColor = Pal.darkOutline;
