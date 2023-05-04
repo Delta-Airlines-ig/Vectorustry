@@ -369,7 +369,7 @@ public static void load() {
 		    trailChance = 1f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 30f;
                 }};
             }});
         }};
@@ -395,7 +395,7 @@ public static void load() {
 		    homingPower = 0.1f;
                     width = 7f;
                     height = 9f;
-                   lifetime = 60f;
+                   lifetime = 30f;
                 }};
             }});
         }};
@@ -421,7 +421,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 30f;
                 }};
             }});
         }};
@@ -447,7 +447,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 30f;
                 }};
             }});
         }};
@@ -480,7 +480,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 30f;
                 }};
             }});
         }};
@@ -513,7 +513,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 30f;
                }};
             }});
         }};
