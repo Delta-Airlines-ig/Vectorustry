@@ -21,7 +21,7 @@ public class EarthTechtree{
                                });
                             });
                        });//end of drills
-            node(ironconveyor, () -> {
+     /*       node(ironconveyor, () -> {
             //node(steelconveyor);
                 node(allotor, () -> {
                     //node(allocator);
