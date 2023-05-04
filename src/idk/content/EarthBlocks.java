@@ -1836,7 +1836,7 @@ public class EarthBlocks{
             localizedName = "Steel smelter";
             requirements(Category.crafting, with(EarthItems.iron, 65, EarthItems.copper2, 40, EarthItems.lead2, 60));
             outputItem = new ItemStack(EarthItems.steel, 3);
-	researchCostMultiplier = 2
+	researchCostMultiplier = 2;
             craftTime = 60f;
             size = 3;
             hasPower = true;
