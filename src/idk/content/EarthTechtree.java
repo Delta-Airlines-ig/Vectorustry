@@ -21,6 +21,14 @@ public class EarthTechtree{
                                });
                             });
                        });//end of drills
+                        node(EarthBlocks.ironconveyor, () -> {
+                node(EarthBlocks.steelconveyor);
+              node(EarthBlocks.allotor, () -> {
+                    node(EarthBlocks.interchange, () -> {
+                        node(EarthBlocks.span);
+                               });
+                            });
+                       });//idk im testing stuff
      /*       node(ironconveyor, () -> {
             //node(steelconveyor);
                 node(allotor, () -> {
