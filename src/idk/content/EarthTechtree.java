@@ -12,7 +12,7 @@ import static idk.content.EarthBlocks.*;
 public class EarthTechtree{
 
     public static void load(){
-        EarthPlanets.earth.techTree = nodeRoot("earth", EarthBlocks.fortress, true, () -> {
+        EarthPlanets.earth.techTree = nodeRoot("earth", EarthBlocks.fortress, false, () -> {
             node(EarthBlocks.drillMechanical, () -> {
                 node(EarthBlocks.well);
               node(EarthBlocks.drillPneumatic, () -> {
@@ -24,9 +24,15 @@ public class EarthTechtree{
                         node(EarthBlocks.ironconveyor, () -> {
                 node(EarthBlocks.steelconveyor);
               node(EarthBlocks.allotor, () -> {
+                  node(EarthBlocks.allocator);
+              });
                     node(EarthBlocks.interchange, () -> {
                         node(EarthBlocks.span);
-                               });
+                            });
+                            node(EarthBlocks.sorter, () -> {
+                        node(EarthBlocks.reversesorter);
+                                node(EarthBlocks.surplussorter);
+                                node(EarthBlocks.shortagesorter);
                             });
                        });//idk im testing stuff
      /*       node(ironconveyor, () -> {
