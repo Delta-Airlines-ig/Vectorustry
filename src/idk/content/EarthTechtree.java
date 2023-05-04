@@ -107,11 +107,11 @@ public class EarthTechtree{
             });
             });
             });
-                  node(EarthBlocks.oxidationmixer, () -> {
-                      node(EarthBlocks.explosivespacker, () -> {
-                      node(EarthBlocks.flamemixer);
-                      });
-                  });
+                  //node(EarthBlocks.oxidationmixer, () -> {
+                    //  node(EarthBlocks.explosivespacker, () -> {
+                   //   node(EarthBlocks.flamemixer);
+                    //  });
+                //  });
                                     
                 node(EarthBlocks.bronzefurnace, () -> {
                     node(EarthBlocks.boiler, () -> {
@@ -127,7 +127,7 @@ public class EarthTechtree{
                     node(EarthBlocks.bunker);
                     });
                 });//cores
-          /*  node(EarthBlocks.groundassembler, () -> {
+            node(EarthBlocks.groundassembler, () -> {
                     node(EarthUnitTypes.LCLW, () -> {
                     node(EarthUnitTypes.LCLWA);
                     });
@@ -159,6 +159,6 @@ public class EarthTechtree{
                     node(EarthUnitTypes.smallbuilderdrone);
                     });
                 });//units 
-       */ });//end of whole tree
+        });//end of whole tree
  }
   }
