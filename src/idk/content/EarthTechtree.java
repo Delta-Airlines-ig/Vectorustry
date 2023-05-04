@@ -96,7 +96,7 @@ public class EarthTechtree{
                     });
                 });
             });//turrets
-       /*                             node(EarthBlocks.carbonsequestrator, () -> {
+                                    node(EarthBlocks.carbonsequestrator, () -> {
             node(EarthBlocks.carboncatalyst, () -> {
             node(EarthBlocks.steelSmelter, () -> {
             
