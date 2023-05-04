@@ -12,12 +12,12 @@ import static idk.content.EarthBlocks.*;
 public class EarthTechtree{
 
     public static void load(){
-        EarthPlanets.earth.techTree = nodeRoot("earth", fortress, true, () -> {
-            node(drillMechanical, () -> {
-                node(well);
-              node(drillPneumatic, () -> {
-                    node(drillBore, () -> {
-                        node(drillExcavator);
+        EarthPlanets.earth.techTree = nodeRoot("earth", EarthBlocks.fortress, true, () -> {
+            node(EarthBlocks.drillMechanical, () -> {
+                node(EarthBlocks.well);
+              node(EarthBlocks.drillPneumatic, () -> {
+                    node(EarthBlocks.drillBore, () -> {
+                        node(EarthBlocks.drillExcavator);
                                });
                             });
                        });//end of drills
