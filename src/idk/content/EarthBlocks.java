@@ -573,6 +573,7 @@ public class EarthBlocks{
         //turrets
         solo = new ItemTurret("solo"){{
             localizedName = "Solo";
+		researchCostMultiplier = 2;
             requirements(Category.turret, with(EarthItems.copper2, 10, EarthItems.iron, 25));
             ammo(
                 EarthItems.copper2,  new BasicBulletType(6f, 5){{
@@ -598,6 +599,7 @@ public class EarthBlocks{
         }};
         trio = new ItemTurret("trio"){{
             localizedName = "Trio";
+		researchCostMultiplier = 2;
             requirements(Category.turret, with(EarthItems.copper2, 30, EarthItems.iron, 35));
                         ammo(
                 EarthItems.copper2,  new BasicBulletType(9f, 7){{
@@ -1834,6 +1836,7 @@ public class EarthBlocks{
             localizedName = "Steel smelter";
             requirements(Category.crafting, with(EarthItems.iron, 65, EarthItems.copper2, 40, EarthItems.lead2, 60));
             outputItem = new ItemStack(EarthItems.steel, 3);
+	researchCostMultiplier = 2
             craftTime = 60f;
             size = 3;
             hasPower = true;
@@ -2069,6 +2072,8 @@ public class EarthBlocks{
 //drills
         drillMechanical = new Drill("drill-mechanical"){{
             localizedName = "Mechanical drill";
+		
+researchCostMultiplier = 1;
             itemCapacity = 35;
             hasPower = false;
                         drillTime = 600;
@@ -2079,6 +2084,8 @@ public class EarthBlocks{
 
         drillPneumatic = new Drill("drill-pneumatic"){{
             localizedName = "Steam drill";
+		
+researchCostMultiplier = 2.5;
             size = 2;
             itemCapacity = 50;
             drillTime = 300;
