@@ -2076,9 +2076,9 @@ public class EarthBlocks{
 researchCostMultiplier = 1;
             itemCapacity = 35;
             hasPower = false;
-                        drillTime = 600;
+                        drillTime = 500;
           tier = 2;
-            requirements(Category.production, with(EarthItems.copper2, 10, EarthItems.iron, 20));
+            requirements(Category.production, with(EarthItems.copper2, 5, EarthItems.iron, 10));
             consumeLiquid(Liquids.water, 0.08f).boost();
         }};
 
