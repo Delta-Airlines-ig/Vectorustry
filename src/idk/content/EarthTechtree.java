@@ -4,7 +4,7 @@ import arc.struct.*;
 import mindustry.game.Objectives.*;
 
 import idk.content.*;
-//import static mindustry.content.*;
+import mindustry.content.*;
 //import static mindustry.content.SectorPresets.*;
 import static mindustry.content.TechTree.*;
 import static idk.content.EarthUnitTypes.*;
