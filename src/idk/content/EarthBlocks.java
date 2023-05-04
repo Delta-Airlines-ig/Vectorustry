@@ -2085,7 +2085,7 @@ researchCostMultiplier = 1;
         drillPneumatic = new Drill("drill-pneumatic"){{
             localizedName = "Steam drill";
 		
-researchCostMultiplier = 2.5;
+researchCostMultiplier = 2;
             size = 2;
             itemCapacity = 50;
             drillTime = 300;
