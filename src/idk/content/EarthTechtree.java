@@ -22,18 +22,18 @@ public class EarthTechtree{
                                });
                             });
                        });//end of drills
-            node(EarthBlocks.ironconveyor, () -> {
-            node(EarthBlocks.steelconveyor);
-                node(EarthBlocks.allotor, () -> {
-                    node(EarthBlocks.allocator);
+            node(ironconveyor, () -> {
+            node(steelconveyor);
+                node(allotor, () -> {
+                    node(allocator);
                 });
-                node(EarthBlocks.interchange, () -> {
-                    node(EarthBlocks.span);
-                    node(EarthBlocks.surplussorter, () -> {
-                    node(EarthBlocks.shortagesorter);
+                node(interchange, () -> {
+                    node(span);
+                    node(surplussorter, () -> {
+                    node(shortagesorter);
                         });
-                    node(EarthBlocks.smallsilo, () -> {
-                    node(EarthBlocks.largesilo);
+                    node(smallsilo, () -> {
+                    node(largesilo);
                     });
                 });
             });/* //conveyors and stuff
