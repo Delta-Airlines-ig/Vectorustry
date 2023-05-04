@@ -13,11 +13,11 @@ public class EarthTechtree{
 
     public static void load(){
         EarthPlanets.earth.techTree = nodeRoot("earth", fortress, true, () -> {
-            node(EarthBlocks.drillMechanical, () -> {
-                node(EarthBlocks.well);
-              node(EarthBlocks.drillPneumatic, () -> {
-                    node(EarthBlocks.drillBore, () -> {
-                        node(EarthBlocks.drillExcavator);
+            node(drillMechanical, () -> {
+                node(well);
+              node(drillPneumatic, () -> {
+                    node(drillBore, () -> {
+                        node(drillExcavator);
                                });
                             });
                        });//end of drills
