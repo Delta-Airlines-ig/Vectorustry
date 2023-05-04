@@ -66,6 +66,15 @@ public class EarthTechtree{
                     });
                 });
             });//power and stuff
+            node(EarthBlocks.leadWall, () -> {
+                    node(EarthBlocks.leadWallLarge);
+                    node(EarthBlocks.ironWall, () -> {
+                    node(EarthBlocks.ironWallLarge);
+                    //node(EarthBlocks.smallbattery, () -> {
+                   // node(EarthBlocks.largebattery);
+                   // });
+                    });
+                });//walls
                       node(EarthBlocks.solo, () -> {
             node(EarthBlocks.trio, () -> {
             node(EarthBlocks.volley);
