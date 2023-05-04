@@ -39,7 +39,7 @@ public class EarthTechtree{
                                 node(EarthBlocks.largesilo);
                             });
                        });//idk im testing stuff
-          /*  node(EarthBlocks.copperpipe, () -> {
+            node(EarthBlocks.copperpipe, () -> {
             node(EarthBlocks.bronzepipe);
                 node(EarthBlocks.smalltank, () -> {
                     node(EarthBlocks.largetank);
@@ -66,7 +66,7 @@ public class EarthTechtree{
                     });
                 });
             });//power and stuff
-                        node(EarthBlocks.solo, () -> {
+      /*                  node(EarthBlocks.solo, () -> {
             node(EarthBlocks.trio, () -> {
             node(EarthBlocks.volley);
             });
