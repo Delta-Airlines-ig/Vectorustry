@@ -31,7 +31,7 @@ public class IdkMod extends Mod{
     }
 
 //here?
-    //@Override
+    @Override
     public void loadContent(){
         Log.info("Hopefully everything works.");
        EarthLiquids.load();
