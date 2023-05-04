@@ -2,7 +2,8 @@ package idk.content;
 
 import arc.struct.*;
 import mindustry.game.Objectives.*;
-
+import mindustry.ctype.*;
+import mindustry.type.*;
 import mindustry.content.*;
 //import static mindustry.content.SectorPresets.*;
 import static mindustry.content.TechTree.*;
