@@ -30,10 +30,13 @@ public class EarthTechtree{
                     node(EarthBlocks.interchange, () -> {
                         node(EarthBlocks.span);
                             });
-                            node(EarthBlocks.sorter, () -> {
-                        node(EarthBlocks.reversesorter);
+                            //node(EarthBlocks.sorter, () -> {
+                               // node(EarthBlocks.reversesorter);
                              //   node(EarthBlocks.surplussorter);
                              //   node(EarthBlocks.shortagesorter);
+                           // });
+                               node(EarthBlocks.smallsilo, () -> {
+                                node(EarthBlocks.largesilo);
                             });
                        });//idk im testing stuff
      /*       node(ironconveyor, () -> {
