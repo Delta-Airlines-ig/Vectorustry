@@ -1846,7 +1846,7 @@ public class EarthBlocks{
             solid = true;
 
             consumePower(1.5f);
-            consumeItems(with(Items.coal, 2, EarthItems.iron, 5));
+            consumeItems(with(EarthItems.carbon, 2, EarthItems.iron, 5));
 
         }};
                 bronzefurnace = new GenericCrafter("bronze-furnace"){{
