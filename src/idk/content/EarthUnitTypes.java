@@ -40,7 +40,7 @@ public class EarthUnitTypes{
 //ground
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis,
 	//ground better
-	
+	//add another tree or 2 of units but make sure they are actually upgradable and stuff
 	//air
 	//L M H light medium and heavy, F = fighter(attacks air and can divebomb ground), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
 	LF, MF, HF, LB, MB, HB, LS, MS, HS, smallbuilderdrone,
