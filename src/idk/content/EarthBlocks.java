@@ -1078,7 +1078,7 @@ public class EarthBlocks{
                 }},
                 Items.silicon, new ArtilleryBulletType(3f, 30){{
                     knockback = 0.8f;
-                    lifetime = 80f;
+                    lifetime = mathf.random(30, 90);
                     width = height = 11f;
                     collidesTiles = false;
                     splashDamageRadius = 25f * 2.5f;
@@ -1090,7 +1090,7 @@ public class EarthBlocks{
                 }},
                 EarthItems.steel, new ArtilleryBulletType(3f, 35){{
                     knockback = 0.8f;
-                    lifetime = 80f;
+                    lifetime = mathf.random(30, 90);
                     width = height = 15f;
                     collidesTiles = false;
                     splashDamageRadius = 25f * 2f;
@@ -1099,7 +1099,7 @@ public class EarthBlocks{
                 EarthItems.explosivemix, new ArtilleryBulletType(3f, 35, "shell"){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.8f;
-                    lifetime = 80f;
+                    lifetime = mathf.random(30, 90);
                     width = height = 14f;
                     collidesTiles = false;
                     ammoMultiplier = 4f;
