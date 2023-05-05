@@ -39,6 +39,8 @@ public class EarthUnitTypes{
 //units are defined in the order below
 //ground
     public static UnitType dagge, LCLW, LCLWA, MCLW, MCLWA, HCLW, HCLWA, LCMW, LCMWA, MCMW, MCMWA, HCMW, HCMWA, LCHW, LCHWA, MCHW, MCHWA, HCHW, HCHWA, lightchasis, mediumchasis, heavychasis,
+	//ground better
+	
 	//air
 	//L M H light medium and heavy, F = fighter(attacks air and can divebomb ground), B = bomber(only attacks ground and occasionally air with small weapons), S = support(a poly/mega/mono)
 	LF, MF, HF, LB, MB, HB, LS, MS, HS, smallbuilderdrone,
@@ -82,9 +84,10 @@ public static void load() {
                 reload = 2f;
                 x = 4f;
                 y = 2f;
+		    inaccuracy = 2;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 5){{
+                bullet = new BasicBulletType(5f, 4){{
                   width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -104,10 +107,11 @@ public static void load() {
 		    rotationLimit = 45;
                 reload = 2f;
                 x = 4f;
+		    inaccuracy = 2;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(5f, 5){{
+                bullet = new BasicBulletType(5f, 4){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -127,13 +131,14 @@ public static void load() {
 		    rotationLimit = 45;
                 reload = 30f;
                 x = 6f;
+		    inaccuracy = 1;
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
                 bullet = new BasicBulletType(7f, 25){{
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 80f;
                 }};
             }});
         }};
@@ -148,6 +153,7 @@ public static void load() {
 		    shootSound = Sounds.shootBig;
 		    rotate = true;
 		    rotationLimit = 45;
+		    inaccuracy = 1;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -156,7 +162,7 @@ public static void load() {
                 bullet = new BasicBulletType(7f, 25){{
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime =80f;
                 }};
             }});
         }};
@@ -171,6 +177,7 @@ public static void load() {
 		    shootSound = Sounds.shootBig;
 		    rotate = true;
 		    rotationLimit = 45;
+		    inaccuracy = 1;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -179,7 +186,7 @@ public static void load() {
                bullet = new BasicBulletType(7f, 25){{
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 80f;
                 }};
             }});
         }};
@@ -195,6 +202,7 @@ public static void load() {
 		    shootSound = Sounds.shootBig;
 		    rotate = true;
 		    rotationLimit = 45;
+		    inaccuracy = 1;
                 reload = 30f;
                 x = 6f;
                 y = 2f;
@@ -203,7 +211,7 @@ public static void load() {
                 bullet = new BasicBulletType(7f, 25){{
                     width = 7f;
                     height = 9f;
-                    lifetime = 60f;
+                    lifetime = 80f;
                 }};
             }});
         }};
@@ -225,7 +233,7 @@ public static void load() {
                 y = 2f;
              top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBulletType(50f){{
+                bullet = new LaserBulletType(45f){{
 	//		Color[32a852aa, 2cd45aff, 11f04eff];
                     width = 10f;
                     lifetime = 60f;
@@ -248,7 +256,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBulletType(50f){{
+                bullet = new LaserBulletType(45f){{
 	//		Color[32a852aa, 2cd45aff, 11f04eff];
                     width = 10f;
                     lifetime = 60f;
@@ -271,7 +279,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-               bullet = new LaserBulletType(45f){{
+               bullet = new LaserBulletType(40f){{
 	//	       Color[32a863aa, 29cc83ff, 17e398ff];
                     width = 7f;
                     lifetime = 60f;
@@ -294,7 +302,7 @@ public static void load() {
                 y = 2f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBulletType(45f){{
+                bullet = new LaserBulletType(40f){{
 	//		Color[32a863aa, 29cc83ff, 17e398ff];
                     width = 7f;
                     lifetime = 60f;
@@ -317,7 +325,7 @@ public static void load() {
                 y = 0f;
                top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBulletType(50f){{
+                bullet = new LaserBulletType(45f){{
 	//		Color[32a852aa, 2cd45aff, 11f04eff];
 			width = 10;
                     lifetime = 60f;
@@ -340,7 +348,7 @@ public static void load() {
                 y = 0f;
                 top = false;
                // ejectEffect = Fx.casing1;
-                bullet = new LaserBulletType(50f){{
+                bullet = new LaserBulletType(45f){{
 		//	Color[32a852aa, 2cd45aff, 11f04eff];
 			width = 10;
                     lifetime = 60f;
@@ -369,7 +377,7 @@ public static void load() {
 		    trailChance = 1f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 30f;
+                    lifetime = 45f;
                 }};
             }});
         }};
@@ -395,7 +403,7 @@ public static void load() {
 		    homingPower = 0.1f;
                     width = 7f;
                     height = 9f;
-                   lifetime = 30f;
+                   lifetime = 45f;
                 }};
             }});
         }};
@@ -421,7 +429,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 30f;
+                    lifetime = 45f;
                 }};
             }});
         }};
@@ -447,7 +455,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 30f;
+                    lifetime = 45f;
                 }};
             }});
         }};
@@ -480,7 +488,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 30f;
+                    lifetime = 45f;
                 }};
             }});
         }};
@@ -513,7 +521,7 @@ public static void load() {
 		    homingPower = 0.4f;
                     width = 7f;
                     height = 9f;
-                    lifetime = 30f;
+                    lifetime = 45f;
                }};
             }});
         }};
