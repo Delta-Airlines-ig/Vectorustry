@@ -280,6 +280,7 @@ public class EarthBlocks{
 
             drawer = new DrawMulti( new DrawRegion("-dish"){{
                 rotateSpeed = 0.2f;
+		    layer = 70;
                 rotation = 0f;
                 x = 0;
                 y = 0;
