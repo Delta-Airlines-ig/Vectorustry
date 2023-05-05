@@ -1051,7 +1051,7 @@ public class EarthBlocks{
         }};
 	    //segment equivelent kinda?
 	            intercept = new PointDefenseTurret("intercept"){{
-            requirements(Category.turret, with(Items.copper, 130, EarthItems.steel, 180, EarthItems.iron, 40, Items.lead, 40));
+            requirements(Category.turret, with(EarthItems.copper2, 130, EarthItems.steel, 180, EarthItems.iron, 40, EarthItems.lead2, 40));
 			    localizedName = "Intercept";
             scaledHealth = 350;
             range = 440f;
