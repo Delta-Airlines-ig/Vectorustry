@@ -1037,12 +1037,12 @@ public class EarthBlocks{
             reload = 120f;
             recoil = 2f;
             shoot.shots = 4;
-	    velocityRnd = 0.4f;
+	    velocityRnd = 0.2f;
 	    ammoEjectBack = 6f;
             ammoUseEffect = Fx.casing3Double;
             ammoPerShot = 2;
             range = 535f;
-            inaccuracy = 25f;
+            inaccuracy = 5f;
             shootCone = 25f;
             health = 460;
             shootSound = Sounds.bang;
@@ -1056,7 +1056,7 @@ public class EarthBlocks{
             scaledHealth = 350;
             range = 440f;
             hasPower = true;
-            consumePower(16f);
+            consumePower(5f);
             size = 2;
             shootLength = 10f;
             bulletDamage = 60f;
@@ -1073,7 +1073,7 @@ public class EarthBlocks{
                     lifetime = 80f;
                     width = height = 11f;
                     collidesTiles = false;
-                    splashDamageRadius = 25f * 0.75f;
+                    splashDamageRadius = 25f * 2.5f;
                     splashDamage = 33f;
                 }},
                 Items.silicon, new ArtilleryBulletType(3f, 30){{
@@ -1081,7 +1081,7 @@ public class EarthBlocks{
                     lifetime = 80f;
                     width = height = 11f;
                     collidesTiles = false;
-                    splashDamageRadius = 25f * 0.75f;
+                    splashDamageRadius = 25f * 2.5f;
                     splashDamage = 33f;
                     reloadMultiplier = 1.2f;
                     ammoMultiplier = 3f;
@@ -1093,7 +1093,7 @@ public class EarthBlocks{
                     lifetime = 80f;
                     width = height = 15f;
                     collidesTiles = false;
-                    splashDamageRadius = 25f * 0.6f;
+                    splashDamageRadius = 25f * 2f;
                     splashDamage = 33f;
                 }},
                 EarthItems.explosivemix, new ArtilleryBulletType(3f, 35, "shell"){{
@@ -1103,7 +1103,7 @@ public class EarthBlocks{
                     width = height = 14f;
                     collidesTiles = false;
                     ammoMultiplier = 4f;
-                    splashDamageRadius = 45f * 1.1f;
+                    splashDamageRadius = 45f * 3f;
                     splashDamage = 60f;
                     backColor = Pal.missileYellowBack;
                     frontColor = Pal.missileYellow;
@@ -1116,7 +1116,7 @@ public class EarthBlocks{
             size = 3;
             shoot.shots = 64;
             inaccuracy = 35f;
-            reload = 280f;
+            reload = 250f;
             ammoEjectBack = 5f;
             ammoUseEffect = Fx.casing3Double;
             ammoPerShot = 2;
@@ -1137,7 +1137,7 @@ public class EarthBlocks{
 
             reload = 30f;
             shake = 4f;
-            range = 100f;
+            range = 200f;
             recoil = 6f;
 
             shoot = new ShootSpread(6, 15f);
