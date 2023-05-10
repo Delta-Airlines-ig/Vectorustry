@@ -1,13 +1,13 @@
 
-displayName: "Uncharted Territories"
+displayName: "Vectorustry"
 
-name: "UT"
+name: "VM"
 
 author: "DeltaV"
 
-main: "idk.IdkMod"
+main: "Vectorustry.VecMod"
 
-description: "Serpulo 2:Electric Boogaloo"
+description: "simple mod with simple graphics"
 
 version: 1.0
 
@@ -15,4 +15,4 @@ minGameVersion: 140
 
 java: true
 
-repo: "Delta-Airlines-ig/Idk"
+repo: "https://github.com/Delta-Airlines-ig/Vectorustry"
