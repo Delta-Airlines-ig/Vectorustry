@@ -42,11 +42,11 @@ import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 import mindustry.content.*;
-import idk.content.*;
+import Vec.content.*;
 //import idk.world.blocks.storage.*;
 
-import static idk.content.EarthLiquids.*;
-import static idk.content.EarthUnitTypes.*;
+//import static Vec.content.EarthLiquids.*;
+//import static Vec.content.EarthUnitTypes.*;
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
 import static arc.graphics.g2d.Draw.rect;
@@ -57,7 +57,7 @@ import static arc.math.Angles.*;
 @SuppressWarnings("deprecation")
 public class VecBlocks{
     //environment
-    public static Block Redsand, ExposedStone, ExposedStoneWall, RedishStoneWall, RedStonewall, RedStone, RedishStone,
+    public static Block Gridgray, Gridwhite, Gridyellow, GridRed, Gridwall,
     //ores
     oreBit, oreObject, oreFile, 
     //walls
@@ -67,11 +67,11 @@ public class VecBlocks{
     //drills
     Miner,
     //turrets
-    main, static1, converge, char1, pelt, splice, spear, volley, ridge, break1, rust, ordnance, intercept, hurricane, anticipate, apparition, cataclysm, divide, limit, aperture, 
+    main, static1, splice, network, crack,
     //cores
     System, class1, package1,
     //power
-    gridconnection, smallbattery, largebattery,    
+    gridconnection, smallbattery, largebattery, powertransmitter,  
     //unit building
     groundassembler, airassembler, groundchasisassembler, 
     //drone port wip
@@ -80,45 +80,36 @@ public class VecBlocks{
     Bitcompressor, filewriter, Bitcalculator, donationlink; 
 
     public static void load() {
-        Redsand = new Floor("redsand"){{
-            localizedName = "redsand";
-            itemDrop = Items.sand; 
-            playerUnmineable = true;
-            variants = 0;
-            albedo = 0.5f;
-        }};
-        ExposedStone = new Floor("exposed-stone"){{
+        Gridgray = new Floor("Gridgray"){{
        //     itemDrop = EarthItems.stone; 
        //     localizedName = "exposed-stone";
-            wall = ExposedStoneWall;
+            wall = Gridwall;
            // playerUnmineable = true;
             variants = 0;
             albedo = 0.5f;
         }};
-
-        ExposedStoneWall = new StaticWall("exposed-stone-wall"){{
-            localizedName = "exposed-stone-wall";
-            variants = 0;
-        }};
-        RedishStoneWall = new StaticWall("redishstone-wall"){{
-            localizedName = "redishstone-wall";
-            variants = 0;
-        }};
-        RedStonewall = new StaticWall("redstone-wall"){{
-            localizedName = "redstone-wall";
+        Gridwall = new StaticWall("Gridwall"){{
+            localizedName = "Gridwall";
             variants = 0;
         }};
 
-        RedStone = new Floor("redstone"){{
-            localizedName = "redstone";
-            wall = RedStonewall;
+        Gridwhite = new Floor("Gridwhite"){{
+            localizedName = "Gridwhite";
+            wall = Gridwall;
             speedMultiplier = 1f;
             variants = 0;
             albedo = 0.5f;
         }};
-        RedishStone = new Floor("redishstone"){{
-            localizedName = "redishstone";
-            wall = RedishStoneWall;
+        Gridyellow = new Floor("Gridyellow"){{
+            localizedName = "Gridyellow";
+            wall = Gridwall;
+            speedMultiplier = 1f;
+            variants = 0;
+            albedo = 0.5f;
+        }};
+	            GridRed = new Floor("GridRed"){{
+            localizedName = "GridRed";
+            wall = Gridwall;
             speedMultiplier = 1f;
             variants = 0;
             albedo = 0.5f;
@@ -126,57 +117,28 @@ public class VecBlocks{
         //endregion
 
         //ores
-        oreIron = new OreBlock(EarthItems.iron){{
+        oreBit = new OreBlock(VecItems.bit){{
             oreDefault = true;
             oreThreshold = 0.841f;
             oreScale = 25.580953f;
             variants = 2;
         }};
-                oreCopper2 = new OreBlock(EarthItems.copper2){{
+                oreObject = new OreBlock(VecItems.object){{
             oreDefault = true;
             oreThreshold = 0.841f;
             oreScale = 25.580953f;
             variants = 2;
         }};
-                        oreLead2 = new OreBlock(EarthItems.lead2){{
+                        oreFile = new OreBlock(VecItems.file){{
             oreDefault = true;
             oreThreshold = 0.841f;
             oreScale = 25.580953f;
             variants = 2;
         }};
-        oreAluminum = new OreBlock(EarthItems.aluminum){{
-            oreDefault = true;
-            oreThreshold = 0.849f;
-            oreScale = 15.580953f;
-            variants = 2;
-        }};
-        oreLithium = new OreBlock(EarthItems.lithium){{
-            oreDefault = true;
-            oreThreshold = 0.869f;
-            oreScale = 10.580953f;
-            variants = 2;
-        }};
-        oreTin = new OreBlock(EarthItems.tin){{
-            oreDefault = true;
-            oreThreshold = 0.879f;
-            oreScale = 9.580953f;
-            variants = 2;
-        }};
-         oreGraphite = new OreBlock(Items.graphite){{
-            oreDefault = true;
-            oreThreshold = 0.841f;
-            oreScale = 25.580953f;
-            variants = 2;
-        }};
-          oreUranium = new OreBlock(EarthItems.uranium){{
-            oreDefault = true;
-            oreThreshold = 0.889f;
-            oreScale = 25.580953f;
-            variants = 2;
-        }};
+        
         //cores and stuff
-        fortress = new CoreBlock("core-fortress"){{
-            localizedName = "Fortress";
+        System = new CoreBlock("core-system"){{
+            localizedName = "System";
             requirements(Category.effect, BuildVisibility.editorOnly, with(EarthItems.copper2, 1000, EarthItems.lead2, 800));
             alwaysUnlocked = true;
             
@@ -202,8 +164,8 @@ public class VecBlocks{
             unitCapModifier = 16;
         }};
 
-        stronghold = new CoreBlock("core-stronghold"){{
-            localizedName = "Stronghold";
+/*        class1 = new CoreBlock("core-class"){{
+            localizedName = "Class";
             requirements(Category.effect, with(EarthItems.copper2, 3000, EarthItems.lead2, 5000, Items.silicon, 3000, EarthItems.iron, 5000));
             
        /*     drawer = new DrawMulti(
@@ -219,7 +181,7 @@ public class VecBlocks{
             }}
             );
 */
-            unitType = EarthUnitTypes.theta;
+  /*          unitType = EarthUnitTypes.theta;
             health = 8500;
             itemCapacity = 16000;
             size = 4;
@@ -229,8 +191,8 @@ public class VecBlocks{
             researchCostMultiplier = 0.07f;
         }};
 
-        bunker = new CoreBlock("core-bunker"){{
-            localizedName = "Bunker";
+        package1 = new CoreBlock("core-package"){{
+            localizedName = "Package";
             requirements(Category.effect, with(EarthItems.copper2, 8000, EarthItems.lead2, 8000, Items.silicon, 5000, EarthItems.steel, 4000, EarthItems.lithium, 6000, EarthItems.aluminum, 5000, EarthItems.iron, 5000));
 
       /*      //drawer = new DrawMulti(
@@ -254,7 +216,7 @@ public class VecBlocks{
             }}
             );
        */     
-            unitType = EarthUnitTypes.zeta;
+       /*     unitType = EarthUnitTypes.zeta;
             health = 10000;
             itemCapacity = 32000;
             size = 5;
@@ -319,132 +281,40 @@ public class VecBlocks{
             ambientSound = EarthSounds.RadioAmbent;
             ambientSoundVolume = 100f;
 
-      //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
+ */     //      researchCost = with(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400);
         }};
         //transport
-                ironconveyor = new Conveyor("iron-conveyor"){{
-            requirements(Category.distribution, with(EarthItems.iron, 1));
+                networkconnection = new Conveyor("network-connection"){{
+            requirements(Category.distribution, with(VecItems.funds, 1));
             health = 50;
             speed = 0.035f;
             displayedSpeed = 4.4f;
             buildCostMultiplier = 2f;
-            researchCost = with(EarthItems.iron, 5);
         }};
-                steelconveyor = new Conveyor("steel-conveyor"){{
-            requirements(Category.distribution, with(EarthItems.copper2, 1, EarthItems.iron, 1, EarthItems.steel, 1));
+                highspeednetworkconnection = new Conveyor("high-speed-network-connection"){{
+            requirements(Category.distribution, with(VecItems.funds, 3));
             health = 75;
             speed = 0.09f;
             displayedSpeed = 12f;
         }};
-                allotor = new Router("allotor"){{
-            requirements(Category.distribution, with(EarthItems.iron, 3));
+                router = new Router("router"){{
+            requirements(Category.distribution, with(VecItems.funds, 3));
             buildCostMultiplier = 4f;
         }};
-                allocator = new Router("allocator"){{
-            requirements(Category.distribution, with(EarthItems.lead2, 2, EarthItems.iron, 6));
-            buildCostMultiplier = 3f;
-            size = 2;
-        }};
-                span = new BufferedItemBridge("span"){{
-            requirements(Category.distribution, with(EarthItems.lead2, 2, EarthItems.iron, 10));
+                networkbridge = new BufferedItemBridge("network-bridge"){{
+            requirements(Category.distribution, with(Vecitems.funds, 3, EarthItems.iron, 10));
             fadeIn = moveArrows = false;
             range = 5;
             speed = 76f;
             arrowSpacing = 4f;
             bufferCapacity = 28;
         }};
-                interchange = new Junction("interchange"){{
-            requirements(Category.distribution, with(EarthItems.iron, 2));
+                networkintersection = new Junction("network-intersection"){{
+            requirements(Category.distribution, with(VecItems.funds, 2));
             speed = 30;
             capacity = 12;
             health = 40;
             buildCostMultiplier = 6f;
-        }};
-                surplussorter = new OverflowGate("surplus-sorter"){{
-            requirements(Category.distribution, with(EarthItems.iron, 6));
-            buildCostMultiplier = 3f;
-        }};
-                shortagesorter = new OverflowGate("shortage-sorter"){{
-            requirements(Category.distribution, with(EarthItems.iron, 6));
-            buildCostMultiplier = 3f;
-            invert = true;
-        }};
-	    
-	    sorter = new Sorter("sorter"){{
-            requirements(Category.distribution, with(EarthItems.iron, 2, EarthItems.copper2, 2));
-            buildCostMultiplier = 3f;
-        }};
-
-        reversesorter = new Sorter("reverse-sorter"){{
-            requirements(Category.distribution, with(EarthItems.iron, 2, EarthItems.copper2, 2));
-            buildCostMultiplier = 3f;
-            invert = true;
-        }};
-        //transport liquid
-                copperpipe = new Conduit("copper-pipe"){{
-            requirements(Category.liquid, with(EarthItems.copper2, 5));
-            health = 50;
-        }};
-        bronzepipe = new Conduit("bronze-pipe"){{
-            requirements(Category.liquid, with(EarthItems.bronze, 2, EarthItems.copper2, 1));
-            liquidCapacity = 16f;
-            liquidPressure = 1.025f;
-            health = 100;
-        }};
-                pipeallocator = new LiquidRouter("pipe-allocator"){{
-            requirements(Category.liquid, with(EarthItems.copper2, 6));
-            liquidCapacity = 20f;
-            underBullets = true;
-            solid = false;
-        }};
-               pipeinterchange = new LiquidJunction("pipe-interchange"){{
-            requirements(Category.liquid, with(EarthItems.copper2, 18));
-            solid = false;
-        }};
-                pipespan = new LiquidBridge("pipe-span"){{
-            requirements(Category.liquid, with(EarthItems.copper2, 18));
-            fadeIn = moveArrows = false;
-            arrowSpacing = 6f;
-            range = 4;
-            hasPower = false;
-        }};
-        //liquid storage
-                smalltank = new LiquidRouter("small-tank"){{
-            requirements(Category.liquid, with(EarthItems.copper2, 10, EarthItems.bronze, 15));
-            liquidCapacity = 700f;
-            size = 2;
-            solid = true;
-        }};
-                largetank = new LiquidRouter("large-tank"){{
-            requirements(Category.liquid, with(EarthItems.copper2, 30, EarthItems.bronze, 40));
-            size = 3;
-            solid = true;
-            liquidCapacity = 1800f;
-            health = 500;
-        }};
-	            smallsilo = new StorageBlock("smallsilo"){{
-            requirements(Category.effect, with(EarthItems.steel, 50));
-            size = 2;
-            itemCapacity = 400;
-            scaledHealth = 55;
-        }};
-	            largesilo = new StorageBlock("largesilo"){{
-            requirements(Category.effect, with(EarthItems.steel, 250, EarthItems.aluminum, 125));
-            size = 3;
-            itemCapacity = 1000;
-            scaledHealth = 55;
-        }};
-        
-        well = new SolidPump("well"){{
-            requirements(Category.production, with(/*EarthItems.bronze, 30,*/Items.graphite, 30, EarthItems.copper2, 30, EarthItems.iron, 30));
-            result = Liquids.water;
-            pumpAmount = 0.16f;
-            size = 2;
-            liquidCapacity = 30f;
-            rotateSpeed = 3f;
-            attribute = Attribute.water;
-
-            consumePower(1.3f);
         }};
 //powerrrrrr
                 powerline = new PowerNode("power-line"){{
