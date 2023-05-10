@@ -14,13 +14,20 @@ import static mindustry.content.Items.*;
 public class EarthItems{
     public static Item 
     //other things
-    kilobyte, byte, bit, object, file, directory;
+    kilobyte, byte, bit, object, file, directory, funds;
   //add voltite alloys
     
    public static final Seq<Item> KeepItems = new Seq<>();
     public static final Seq<Item> Begone = new Seq<>();
     
     public static void load(){
+                funds = new Item("funds", Color.valueOf("d99d73")){{
+            localizedName = "Funds";
+                    description = "Cash, vital to fund things in the network";
+            hardness = 1;
+            cost = 0.5f;
+            alwaysUnlocked = true;
+        }};
         kilobyte = new Item("kilobyte", Color.valueOf("d99d73")){{
             localizedName = "kilobyte";
             hardness = 1;
