@@ -139,7 +139,7 @@ public class VecBlocks{
         //cores and stuff
         System = new CoreBlock("core-system"){{
             localizedName = "System";
-            requirements(Category.effect, BuildVisibility.editorOnly, with(EarthItems.copper2, 1000, EarthItems.lead2, 800));
+            requirements(Category.effect, BuildVisibility.editorOnly, with(VecItems.funds, 1000));
             alwaysUnlocked = true;
             
    /*         drawer = new DrawMulti(
@@ -156,12 +156,12 @@ public class VecBlocks{
             );
 */
             isFirstTier = true;
-            unitType = EarthUnitTypes.delta;
-            health = 3100;
+            unitType = VecUnits.;
+            health = 3000;
             itemCapacity = 8000;
             size = 3;
 
-            unitCapModifier = 16;
+            unitCapModifier = 20;
         }};
 
 /*        class1 = new CoreBlock("core-class"){{
@@ -317,18 +317,13 @@ public class VecBlocks{
             buildCostMultiplier = 6f;
         }};
 //powerrrrrr
-                powerline = new PowerNode("power-line"){{
+                powertransmitter = new PowerNode("power-transmitter"){{
             requirements(Category.power, with(EarthItems.copper2, 1, EarthItems.iron, 3, EarthItems.lithium, 5));
             maxNodes = 10;
             laserRange = 6;
         }};
 
-        powerpylon = new PowerNode("power-pylon"){{
-            requirements(Category.power, with(EarthItems.steel, 5, EarthItems.aluminum, 10, EarthItems.copper2, 3, EarthItems.lithium, 5));
-            size = 2;
-            maxNodes = 15;
-            laserRange = 15f;
-        }};
+       
                 smallbattery = new Battery("small-battery"){{
             requirements(Category.power, with(EarthItems.copper2, 5, EarthItems.lithium, 20));
             consumePowerBuffered(10000f);
@@ -342,127 +337,61 @@ public class VecBlocks{
             baseExplosiveness = 7f;
         }};
                 steamgenerator = new ConsumeGenerator("steam-generator"){{
-            requirements(Category.power, with(EarthItems.copper2, 75, Items.graphite, 35, EarthItems.bronze, 20, EarthItems.lithium, 30));
-            powerProduction = 5.5f;
-            consumeLiquid(EarthLiquids.steam, 0.2f);
-            hasLiquids = true;
+            requirements(Category.power, with(VecItems.funds, 75));
+            powerProduction = 2f;
+            hasLiquids = false;
             size = 2;
             generateEffect = Fx.generatespark;
 
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.06f;
 
-            drawer = new DrawMulti(
-            new DrawDefault(),
-            new DrawWarmupRegion(),
-            new DrawRegion("-turbine"){{
-                rotateSpeed = 5f;
-            }},
-            new DrawRegion("-cap"),
-            new DrawLiquidRegion()
-            );
+            
         }};
         
-                        turbinegenerator = new ConsumeGenerator("turbine-generator"){{
-            requirements(Category.power, with(EarthItems.copper2, 175, Items.graphite, 35, EarthItems.bronze, 30, EarthItems.lithium, 50));
-            powerProduction = 8.5f;
-            consumeLiquid(EarthLiquids.highpressuresteam, 0.3f);
-            hasLiquids = true;
-            size = 3;
-            generateEffect = Fx.generatespark;
+       
+        //turrets main, static1, splice, network, crack,
+         main = new PowerTurret("main"){{
+            localizedName = "Main";
+            requirements(Category.turret, with(EarthItems.copper2, 75, EarthItems.lead2, 50, EarthItems.iron, 50, Items.silicon, 15));
+            shootType = new LightningBulletType(){{
+                damage = 5;
+                lightningLength = 25;
+                collidesAir = false;
+                ammoMultiplier = 1f;
 
-            ambientSound = Sounds.smelter;
-            ambientSoundVolume = 0.06f;
+                //for visual stats only.
+                buildingDamageMultiplier = 0.25f;
 
-            drawer = new DrawMulti(
-            new DrawDefault(),
-            new DrawWarmupRegion(),
-            new DrawRegion("-turbine"){{
-                rotateSpeed = 15f;
-            }},
-            new DrawRegion("-cap"),
-            new DrawLiquidRegion()
-            );
-        }};
-        
-                nuclearreactor = new NuclearReactor("nuclear-reactor"){{
-            requirements(Category.power, with(EarthItems.lead2, 300, Items.silicon, 200, EarthItems.steel, 150, EarthItems.uranium, 150, EarthItems.lithium, 50));
-            ambientSound = Sounds.hum;
-            ambientSoundVolume = 0.24f;
-            size = 3;
-            health = 700;
-            itemDuration = 360f;
-            powerProduction = 16f;
-            heating = 0.03f;
-
-            consumeItem(EarthItems.uranium);
-            consumeLiquid(Liquids.water, heating / coolantPower).update(false);
-        }};
-        
-        fusionreactor = new ImpactReactor("fusion-reactor"){{
-            requirements(Category.power, with(EarthItems.lead2, 500, Items.silicon, 300, EarthItems.steel, 400, EarthItems.uranium, 100, Items.surgeAlloy, 250, EarthItems.lithium, 250));
-            size = 4;
-            health = 1000;
-            powerProduction = 150f;
-            ambientSound = Sounds.pulse;
-            ambientSoundVolume = 0.07f;
-
-            consumePower(40f);
-            consumeLiquid(Liquids.hydrogen, 0.25f);
-        }};
-                voltitereactor = new ImpactReactor("voltite-reactor"){{
-            requirements(Category.power, with(EarthItems.lead2, 700, Items.silicon, 600, EarthItems.steel, 600, EarthItems.uranium, 200, Items.surgeAlloy, 350, EarthItems.lithium, 450, EarthItems.voltite, 150));
-            size = 4;
-            health = 1500;
-            powerProduction = 230f;
-            itemDuration = 140f;
-            ambientSound = Sounds.pulse;
-            ambientSoundVolume = 0.09f;
-
-            consumePower(30f);
-            consumeItem(EarthItems.voltite);
-            consumeLiquid(Liquids.water, 25f);
-        }};
-        solarpanel = new SolarGenerator("solar-panel"){{
-            requirements(Category.power, with(EarthItems.copper2, 10, EarthItems.iron, 15));
-            powerProduction = 0.3f;
-        }};
-
-        solarcollector = new SolarGenerator("solar-collector"){{
-            requirements(Category.power, with(EarthItems.copper2, 80, EarthItems.iron, 110, EarthItems.steel, 15));
-            size = 3;
-            powerProduction = 1.5f;
-        }};
-
-        //turrets
-        solo = new ItemTurret("solo"){{
-            localizedName = "Solo";
-		researchCostMultiplier = 2;
-            requirements(Category.turret, with(EarthItems.copper2, 10, EarthItems.iron, 25));
-            ammo(
-                EarthItems.copper2,  new BasicBulletType(6f, 5){{
-                    width = 7f;
-                    height = 9f;
-                    lifetime = 60f;
-                    ammoMultiplier = 2;
-                }},
-                EarthItems.iron, new BasicBulletType(5f, 6){{
-                    width = 9f;
-                    height = 12f;
-                    reloadMultiplier = 0.6f;
-                    ammoMultiplier = 4;
-                    lifetime = 60f;
-                }}
-            );
-            health = 100;
+                lightningType = new BulletType(0.0001f, 0f){{
+                    lifetime = Fx.lightning.lifetime;
+                    hitEffect = Fx.hitLancer;
+                    despawnEffect = Fx.none;
+                    status = StatusEffects.shocked;
+                    statusDuration = 10f;
+                    hittable = false;
+                    lightColor = Color.white;
+                    collidesAir = false;
+                    buildingDamageMultiplier = 0.25f;
+                }};
+            }};
+            reload = 25f;
+            shootCone = 40f;
+            rotateSpeed = 8f;
+            targetAir = false;
+            range = 90f;
+            shoot.shots = 3;
+            shootEffect = Fx.lightningShoot;
+            heatColor = Color.red;
+            recoil = 1f;
             size = 1;
-            reload = 30f;
-            inaccuracy = 1.5f;
-            shootCone = 30f;
-            range = 100;
+            health = 260;
+            shootSound = Sounds.spark;
+            consumePower(1.5f);
+            coolant = consumeCoolant(0.1f);
         }};
-        trio = new ItemTurret("trio"){{
-            localizedName = "Trio";
+        static1 = new ItemTurret("static"){{
+            localizedName = "Static";
 		researchCostMultiplier = 2;
             requirements(Category.turret, with(EarthItems.copper2, 30, EarthItems.iron, 35));
                         ammo(
@@ -494,8 +423,8 @@ public class VecBlocks{
             range = 150;
         }};
         //scatter equivelent
-         converge = new ItemTurret("converge"){{
-             localizedName = "Converge";
+         splice = new ItemTurret("splice"){{
+             localizedName = "Splice";
             requirements(Category.turret, with(EarthItems.copper2, 95, EarthItems.lead2, 55, EarthItems.iron, 50));
             ammo(
                 EarthItems.iron, new FlakBulletType(4f, 5){{
@@ -550,8 +479,8 @@ public class VecBlocks{
             limitRange(2);
         }};
         //scortch equivelent
-        char1 = new ContinuousLiquidTurret("char"){{
-            localizedName = "Char";
+        network = new ContinuousLiquidTurret("network"){{
+            localizedName = "Network";
             requirements(Category.turret, with(EarthItems.steel, 20, EarthItems.copper2, 150, EarthItems.iron, 140, EarthItems.lead2, 200));
 
        //     drawer = new DrawTurret("reinforced-"){{
@@ -625,8 +554,8 @@ public class VecBlocks{
           //  researchCost = with(Items.tungsten, 400, Items.silicon, 400, Items.oxide, 80, Items.beryllium, 800);
         }};
         //hail equivelent
-        pelt = new ItemTurret("pelt"){{
-            localizedName = "pelt";
+        crack = new ItemTurret("crack"){{
+            localizedName = "Crack";
             requirements(Category.turret, with(EarthItems.copper2, 60, Items.graphite, 25, EarthItems.iron, 50));
             ammo(
                 Items.graphite, new ArtilleryBulletType(3f, 10){{
@@ -677,46 +606,6 @@ public class VecBlocks{
             shootSound = Sounds.bang;
             coolant = consumeCoolant(0.1f);
             limitRange(0f);
-        }};
-//arc equivelent
-        splice = new PowerTurret("splice"){{
-            localizedName = "Splice";
-            requirements(Category.turret, with(EarthItems.copper2, 75, EarthItems.lead2, 50, EarthItems.iron, 50, Items.silicon, 15));
-            shootType = new LightningBulletType(){{
-                damage = 5;
-                lightningLength = 25;
-                collidesAir = false;
-                ammoMultiplier = 1f;
-
-                //for visual stats only.
-                buildingDamageMultiplier = 0.25f;
-
-                lightningType = new BulletType(0.0001f, 0f){{
-                    lifetime = Fx.lightning.lifetime;
-                    hitEffect = Fx.hitLancer;
-                    despawnEffect = Fx.none;
-                    status = StatusEffects.shocked;
-                    statusDuration = 10f;
-                    hittable = false;
-                    lightColor = Color.white;
-                    collidesAir = false;
-                    buildingDamageMultiplier = 0.25f;
-                }};
-            }};
-            reload = 25f;
-            shootCone = 40f;
-            rotateSpeed = 8f;
-            targetAir = false;
-            range = 90f;
-            shoot.shots = 20;
-            shootEffect = Fx.lightningShoot;
-            heatColor = Color.red;
-            recoil = 1f;
-            size = 1;
-            health = 260;
-            shootSound = Sounds.spark;
-            consumePower(1.5f);
-            coolant = consumeCoolant(0.1f);
         }};
         //lancer equivelent
           spear = new PowerTurret("spear"){{
