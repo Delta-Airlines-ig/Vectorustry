@@ -11,9 +11,9 @@ import mindustry.mod.*;
 import mindustry.mod.Mods.*;
 import mindustry.ui.dialogs.*;
 
-public class IdkMod extends Mod{
+public class VecMod extends Mod{
 
-    public IdkMod(){
+    public VecMod(){
         Log.info("Loading the funny ui thing");
 
         //listen for game load event
@@ -34,24 +34,24 @@ public class IdkMod extends Mod{
     @Override
     public void loadContent(){
         Log.info("Hopefully everything works.");
-       EarthLiquids.load();
+       VecLiquids.load();
         Log.info("Liquids loaded.");
-       EarthItems.load();
+       VecItems.load();
         Log.info("Items loaded.");
-       EarthUnitTypes.load();
+       VecUnitTypes.load();
         Log.info("Units loaded.");
-       EarthBlocks.load();
+       VecBlocks.load();
         Log.info("Blocks loaded.");
        // EarthStatus.load();
       //  Log.info("Status effects loaded.");
       //  EarthWeather.load();
       //  Log.info("Weather loaded.");
-        EarthPlanets.load();
-        Log.info("Planets loaded.");
-        EarthSectors.load();
-        Log.info("Sectors loaded.");
-       EarthTechtree.load();
-        Log.info("Techtree for planet numero uno (unnamed rn) loaded.");
+    //    EarthPlanets.load();
+    //    Log.info("Planets loaded.");
+    //    EarthSectors.load();
+    //    Log.info("Sectors loaded.");
+   //    EarthTechtree.load();
+   //     Log.info("Techtree for planet numero uno (unnamed rn) loaded.");
         Log.info("Everything is loaded.");
     }
 }
