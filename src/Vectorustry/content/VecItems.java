@@ -1,4 +1,4 @@
-package idk.content;
+package Vec.content;
 
 import arc.*;
 import arc.graphics.*;
@@ -13,13 +13,11 @@ import static mindustry.content.Items.*;
 
 public class EarthItems{
     public static Item 
-        //voltite
-        voltite, 
     //other things
-    iron, lithium, tin, steel, stone, aluminum, uranium, carbon, oxidizer, explosivemix, bronze, lead2, copper2;
+    kilobyte, byte, bit, object, file, directory;
   //add voltite alloys
     
-   public static final Seq<Item> EarthItems = new Seq<>();
+   public static final Seq<Item> KeepItems = new Seq<>();
     public static final Seq<Item> Begone = new Seq<>();
     
     public static void load(){
@@ -62,11 +60,11 @@ public class EarthItems{
             explosiveness = 0f;
             hardness = 0;
         }};
-                EarthItems.addAll(
-                voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, copper2, lead2, sand, surgeAlloy, phaseFabric, graphite
-        );
-                        Begone.addAll(
-                thorium, beryllium, tungsten, oxide, carbide, fissileMatter, dormantCyst, scrap, coal, titanium, plastanium, sporePod, blastCompound, pyratite, copper, metaglass, lead
-        );
+        //        KeepItems.addAll(
+        //        voltite, iron, lithium, tin, steel, aluminum, uranium, carbon, oxidizer, explosivemix, silicon, copper2, lead2, sand, surgeAlloy, phaseFabric, graphite
+       // );
+       //                 Begone.addAll(
+       //         thorium, beryllium, tungsten, oxide, carbide, fissileMatter, dormantCyst, scrap, coal, titanium, plastanium, sporePod, blastCompound, pyratite, copper, metaglass, lead
+       // );
     }
 }
